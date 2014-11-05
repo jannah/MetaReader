@@ -4,13 +4,13 @@ $(document).on('ready', function() {
 });
 
 var TEXT_FILES = [
-//    'data/test.csv'
+    'data/test.csv'
 //    'data/mindwave_data_dump.csv'
 //    'data/titanic_raw.csv'
 //    'data/fl-ballot-2000.csv'
 //    'data/faa-ontime-sept2001.csv',
 //    'data/oakland-budget.csv',
-    'data/plane-crashes.ascii.csv'
+//    'data/plane-crashes.ascii.csv'
 //    'data/ufo-sightings.csv'
 ];
 var TEMPLATES = {
