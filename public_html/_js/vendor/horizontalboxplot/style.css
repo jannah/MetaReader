@@ -1,0 +1,115 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+ 
+.svg-wrapper {
+	text-align: center;
+}
+ 
+.boxplot {
+	font-size: 10px;
+}
+ 
+/* boxplot shapes */
+.boxplot line {
+	stroke: #1d3549;
+	stroke-width: 1px;
+}
+ 
+g.whisker circle,
+.whole-box {
+	stroke: #396a93;
+	stroke-width: 1px;
+	fill: steelblue;
+}
+ 
+.half-box {
+	fill: white;
+	stroke: none;
+	fill-opacity: 0.1;
+}
+ 
+.center-line {
+	stroke-dasharray: 3,3;
+}
+ 
+g.whisker:hover line,
+g.whisker:hover circle {
+	stroke-width: 2px;
+}
+ 
+/* boxplot outliers */
+g.outlier circle {
+	fill: #fff;
+	stroke: #aaa;
+	fill-opacity: 0.2;
+}
+ 
+g.highlight circle {
+	fill: yellow;
+	stroke: #999;
+	fill-opacity: 1;
+}
+ 
+/* boxplot labels */
+.label {
+	fill: #999;
+	text-anchor: middle;
+	opacity: 0;
+}
+ 
+g:hover > .label,
+g.highlight > .label {
+	opacity: 1;
+}
+ 
+/* axis */
+.axis path, .axis line {
+	fill: none;
+	stroke: #999;
+	stroke-width: 1px;
+	shape-rendering: crispEdges;
+}
+ 
+/* outlier table */
+.outliers-wrapper-wrapper {
+	text-align: center;
+}
+ 
+.outliers-wrapper {
+	display: inline-block;
+}
+.outliers-title {
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5px;
+	font-size: 16px;
+}
+ 
+.outliers-table {
+    border-collapse:  separate;
+    border-spacing: 1px;
+    font-size: 12px;
+}
+.outliers-table th, .outliers-table td {
+    padding: 5px;
+}
+.outliers-table th {
+    background-color: #2b506e;
+    color: #eee;
+}
+.outliers-table tr:nth-child(even) {
+    background-color: #91b6d4 ;
+}
+.outliers-table tr:nth-child(odd) {
+    background-color: #dae7f1 ;
+}
+.outliers-table td {
+	text-align: center;
+	cursor: default;
+}
+ 
+.outliers-table tr.highlight,
+.outliers-table tr:hover {
+	background-color: #FFFF66;
+}

@@ -1,0 +1,33 @@
+<label for="<%=data.id%>-notes">Questions</label></br>
+
+
+<%_.each(data.questions, function(q, i){
+console.log(q)
+
+%>
+<div id='<%=data.title%>-question-<%=i%>' 
+     class='<%=data.title%>-question card-question input-group'>
+    <span class='input-group-addon'>Q</span>
+    <textarea rows='2' class='form-control question-text'
+           onchange='updateQuestion("<%= data.title %>", <%= i %> )'><%=q%></textarea>
+    <span class='input-group-addon btn-danger btn-remove-question mr-tooltip' 
+                data-id='<%=data.id%>' data-index='<%=i%>' data-toggle='tooltip' data-placement="top" 
+                title='remove this question'
+                onclick='removeQuestion("<%= data.title %>", <%= i %> )'>
+            <span class="glyphicon glyphicon-minus"></span>
+        </span>
+  
+        
+
+    </span>
+
+
+</div>
+<%})%>
+
+<button type='button' class='btn btn-success btn-add-question mr-tooltip' 
+        data-id='<%=data.id%>' data-title='<%=data.title%>' data-toggle='tooltip' data-placement="top"
+        onclick='addQuestion("<%= data.title %>")'
+        title='Add a question'>
+    <span class="glyphicon glyphicon-plus"></span>
+</button>

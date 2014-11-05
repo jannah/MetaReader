@@ -1,0 +1,34 @@
+
+<%
+var MRC = new MetaReaderCharts();
+var box = new MRC.box(target, {'title':data.title, 'id':data.title+'-box'}, data.quartiles, data.mean)
+var fd = new MRC.histogram(target, {'title':data.title,'id':data.title+'-fd1'}, data.frequencyDistribution)
+var fd2 = new MRC.histogram(target, {'title':data.title, 'id':data.title+'-fd2'}, data.frequencyDistributionBins)
+var fd3 = new MRC.histogram(target, {'title':data.title, 'id':data.title+'-fd3'}, data.frequencyDistributionSorted)
+
+
+var stats = {'Count':data.count, 'Unique':data.countUnique, 'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros, 'Invalid':data.invalidValues}
+var titles = {'Count':'Number of Records', 
+    'Unique':'Number of unique records', 
+    'Total':'Sum of all records', 
+    'Mean':'Average value for all valid records', 
+    'Range':'Range of Values',
+    'Zeros': 'Number of records with value 0',
+    'Invalid':'Invlaid numerical values:e.g. Null,None,NaN..etc.'}
+%>
+
+<div id="<%=data.title%>-stats" class="card-stats">
+
+    <table>
+        <tr>
+            <%_.each(stats, function(value, key){%>
+            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
+                            <label class="card-key"><%=key%></label>
+            <label class="card-value"><%=value%></label>
+            </td>
+
+            <%});%>
+        </tr>
+    </table>
+</div>
+
