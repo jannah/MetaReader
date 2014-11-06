@@ -8,8 +8,15 @@ and open the template in the editor.
     Author     : Hassan
 */
 body{
-    /* margin: 0 auto; */
-background-image: url('/images/bg.png');
+body {
+/* margin: 0 auto; */
+background-image: url('../images/bg.png');
+background-color: #A0B3D4;
+background-repeat: no-repeat;
+background-size: 100%;
+background-attachment: fixed;
+background-position: 0;
+}
 }
 #content{
     width: 820px;
