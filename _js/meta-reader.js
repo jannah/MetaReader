@@ -327,7 +327,7 @@ function MetaReader() {
             }
         });
         currentItem.end = data.length;
-        currentItem.frequency = currentItem.end - currentItem.start + 1;
+        currentItem.frequency = currentItem.end - currentItem.start;
         spectrum.push(_.clone(currentItem));
         return spectrum;
     }
