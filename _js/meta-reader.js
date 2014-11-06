@@ -27,7 +27,7 @@ function MetaReader() {
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
             if (checkNull(n1) || checkNull(n2))
             {
-                console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
+//                console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
                 return d3.ascending(a, b);
             } else
                 return n1 - n2;
@@ -62,10 +62,11 @@ function MetaReader() {
     function escapeRegExp(string) {
         return string.replace(/([.*+?^=!:${}()|\[\]\/\\\s])/g, "-");
     }
-    var ObjectList = function(data, title) {
+    var ObjectList = function(data, title, metrics) {
         var self = {};
         self.title = title;
-        self.columnName= title;
+        self.columnName = title;
+        self.metrics = metrics;
         self.id = escapeRegExp(self.columnName);
         console.log(self.id);
         self.notes = '';
@@ -95,7 +96,7 @@ function MetaReader() {
         return self;
     };
     var BIN_LIMIT = 10;
-    var NumberList = function(data, title, precision) {
+    var NumberList = function(data, title, metrics, precision) {
         precision = (precision) ? precision : DEFAULT_PRECISION;
 //        console.log('precision = ' + precision)
         var self = ObjectList(data, title);
@@ -128,8 +129,8 @@ function MetaReader() {
         self.bins += 1;
         self.frequencyDistribution = getFreqDist(self.cleanData);
         self.frequencyDistributionBins = getFreqDistBins(self.cleanData, self.bins, self.min, self.range);
-        self.zeros = d3.sum(self.data, function(item) {
-            return (!item || item === 0) ? 1 : 0;
+        self.zeros = d3.sum(self.cleanData, function(item) {
+            return (item === 0) ? 1 : 0;
         });
         self.invalidValues = self.data.length - self.cleanData.length;
         self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function(d) {
@@ -140,20 +141,20 @@ function MetaReader() {
 
         return self;
     };
-    var IntList = function(data, title) {
+    var IntList = function(data, title, metrics) {
         var self = NumberList(data, title, 0);
         self.type = 'integer';
         return self;
     };
-    var FloatList = function(data, title, precision) {
-        var self = NumberList(data, title, precision);
+    var FloatList = function(data, title, metrics, precision) {
+        var self = NumberList(data, title, metrics, precision);
         self.type = 'float';
 
         return self;
     };
-    var StringList = function(data, title) {
+    var StringList = function(data, title, metrics) {
         var self = {};
-        var self = ObjectList(data, title);
+        var self = ObjectList(data, title, metrics);
         self.type = 'string';
         self.tokens = $.map(self.data, function(d) {
             return (!checkNull(d)) ? d.split(' ') : '';
@@ -169,8 +170,8 @@ function MetaReader() {
 
         return self;
     };
-    var DateList = function(data, title) {
-        var self = ObjectList(data, title);
+    var DateList = function(data, title, metrics) {
+        var self = ObjectList(data, title, metrics);
         self.type = 'date';
         return self;
     };
@@ -186,11 +187,17 @@ function MetaReader() {
         });
         var sample_limit = new_items.length;
         var sample = _.sample(new_items, sample_limit);
-        var counts = {integer: 0, float: 0, date: 0, number: 0};
+        var counts = {integer: 0, float: 0, date: 0, number: 0, string: 0};
         _.each(new_items, function(item)
         {
+            var chars = _.clone(item).toLowerCase().match(/[a-z$^{[(|)*+?\\]/i);
+            if (chars !== null)
+            {
+//                console.log(chars);
+                counts.string += 1;
+            }
             var n = Number(item);
-            if (!isNaN(n))
+            if (!_.isNaN(n) && chars === null)
             {
                 counts.number += 1;
                 if (item.indexOf('.') > -1)
@@ -205,9 +212,7 @@ function MetaReader() {
             if (item.length > 6)
             {
 
-                var d = new Date(Date.parse(item));
-//                console.log(d);
-                counts['date'] += (!_.isDate(d)) ? 0 : 1;
+                counts['date'] += (checkDate(item)) ? 1 : 0;
             }
             /*else
              {
@@ -225,22 +230,30 @@ function MetaReader() {
         });
 //        console.log(metrics);
 //        console.log(max);
+        var result = ['string', counts];
         if (max.value > new_items.length / 2)
         {
-            if (max.name === 'number' || max.name === 'integer')
+            if ((max.name === 'number' || max.name === 'integer') && counts.string === 0)
             {
                 if (counts.float > 0)
-                    return 'float';
+                    result[0] = 'float';
                 else
-                    return 'integer';
+                    result[0] = 'integer';
             }
-            else
-                return max.name;
-        }
-        else
-            return 'string';
-    }
+            else if (max.name === 'date')
+                result[0] = max.name;
 
+        }
+        console.log(result)
+        return result;
+    }
+    function checkDate(v)
+    {
+
+        var d = new Date(Date.parse(v));
+//                console.log(d+'\t'+ isNaN(d.valueOf()));
+        return !isNaN(d.valueOf())
+    }
     function getFreqDist(data, precision)
     {
         precision = (precision) ? precision : DEFAULT_PRECISION;
@@ -540,9 +553,10 @@ function MetaReader() {
         _.each(dataColumns, function(items, header) {
 
             var dataType = detectDataType(items);
-            var listType = DATA_TYPES[dataType];
+
+            var listType = DATA_TYPES[dataType[0]];
 //            console.log(listType);
-            var column = listType(items, header);
+            var column = listType(items, header, dataType[1]);
 //            console.log(column);
             columns[header] = column;
         });
@@ -560,7 +574,7 @@ function MetaReader() {
 
     function checkNull(value)
     {
-        return _.isUndefined(value) || isNaN(value) || _.isNull(value) || value === '' || value === 'None' || value === 'null';
+        return _.isUndefined(value) || _.isNaN(value) || _.isNull(value) || value === 'None' || value === 'null';
     }
 
     return mr;
