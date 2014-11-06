@@ -2,10 +2,12 @@
 <div id="card-<%=data.id%>" role="tab" data-title="<%=data.title%>" class="mrc-card panel panel-default">
     <div class="panel-heading" role='tab' id="card-<%=data.id%>-heading">
         <h2 class='panel-title'>
-            <a data-toggle="collapse" data-parent="#cards" href="#card-<%=data.id%>-collapse" aria-expanded="true" aria-controls="#card-<%=data.id%>-collapse">
-                <%=data.title%>  (<%=data.type%>)
+            <label id='<%=data.id%>-title-text' class='card-title-text mr-tooltip' title='Type to rename' contenteditable="true" oninput='renameColumn("<%=data.id%>-title-text", "<%=data.title%>")'><%=data.title%></label>
+            <a class='mr-tooltip' data-title='[Column name] (Data Type)<br><br>Click to collapse/expand' data-toggle="collapse" data-parent="#cards" href="#card-<%=data.id%>-collapse" aria-expanded="true" aria-controls="#card-<%=data.id%>-collapse">
+               [ <%=data.columnName%> ] (<%=data.type%>)
             </a>
         </h2>
+
     </div>
     <div id="card-<%=data.id%>-collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="card-<%=data.id%>-heading">
         <div class='panel-body'>
@@ -14,9 +16,9 @@
 
 
             </div>
-            
 
-  <div class="form-group card-suggestions">
+
+            <div class="form-group card-suggestions">
                 <label for="<%=data.id%>-suggestions">Suggestions</label>
                 <textarea class="form-control card-suggestion-text" rows="3" id="<%=data.id%>-description"><%=data.description%></textarea>
             </div>
@@ -28,9 +30,9 @@
                 <label for="<%=data.id%>-notes">Notes:</label>
                 <textarea class="form-control card-notes-text" rows="3" id="<%=data.id%>-notes"><%=data.notes%></textarea>
             </div>
-            
+
             <div id='<%=data.id%>-questions' class='form-group card-questions'>
-               
+
             </div>
         </div>
     </div>

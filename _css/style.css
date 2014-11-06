@@ -76,3 +76,11 @@ body{
 .btn-remove-question{
     cursor: pointer;
 }
+
+.card-title-text{
+    margin: 0 5px;
+    
+    padding: 5px 5px;
+    /* background-color: rgba(255,255,255, .2); */
+    /* font-weight: bolder; */
+}

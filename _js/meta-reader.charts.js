@@ -23,7 +23,7 @@ var MetaReaderCharts = function()
 //        console.log(opts);
         return opts;
     }
-    MRC.box = function(target, options, quartiles, mean, outliers) {
+    MRC.box = function(target, options, quartiles, mean, title, outliers) {
         var chart = {};
         var min = quartiles[0], max = quartiles[4], median = quartiles[2], iqr = quartiles[3] - quartiles[1];
 //        console.log(target);
@@ -42,7 +42,7 @@ var MetaReaderCharts = function()
                 })
                 .append('g')
                 .attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-        var title = svg.append('text').text(chart.options.title)
+        var chartTitle = svg.append('text').text(chart.options.title)
                 .attr({
                     class: 'box-title',
                     'text-anchor': 'middle',
@@ -149,13 +149,13 @@ var MetaReaderCharts = function()
     };
 
 
-    MRC.histogram = function(target, options, data)
+    MRC.histogram = function(target, options, data, title)
     {
         var chart = {};
         chart.options = loadOptions(options);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
-                ah = h - 2*chart.options.axisHeight,
+                ah = h - 2 * chart.options.axisHeight,
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
@@ -176,7 +176,7 @@ var MetaReaderCharts = function()
                 })
                 .append('g')
                 .attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-        var title = svg.append('text').text(chart.options.title)
+        var chartTitle = svg.append('text').text(chart.options.title)
                 .attr({
                     class: 'chart-title',
                     'text-anchor': 'middle',
@@ -198,7 +198,7 @@ var MetaReaderCharts = function()
                             width: w,
                             height: chart.options.axisHeight})
                 .append("g")
-                .attr("transform", "translate(" + chart.options.axisWidth + "," + (ah+chart.options.axisHeight)+ ")")
+                .attr("transform", "translate(" + chart.options.axisWidth + "," + (ah + chart.options.axisHeight) + ")")
                 .call(xAxis);
 //        console.log(ch);
         var yAxisGroup = svg.append('g')
@@ -206,7 +206,7 @@ var MetaReaderCharts = function()
                     width: chart.options.axisWidth,
                     height: ch})
                 .append("g")
-                .attr("transform", "translate(" + chart.options.axisWidth + ","+(chart.options.axisHeight)+")")
+                .attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")")
                 .call(yAxis);
 
         var bw = aw / data.length;
@@ -253,7 +253,7 @@ var MetaReaderCharts = function()
         }
         var spacing = (bw > 10) ? 2 : 0;
         var bars = svg.append('g')
-                .attr("transform", "translate(" + chart.options.axisWidth + ","+(chart.options.axisHeight)+")")
+                .attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")")
                 .selectAll('bars').data(data).enter()
                 .append('rect')
                 .attr({
@@ -286,16 +286,152 @@ var MetaReaderCharts = function()
                     'data-toggle': "tooltip",
                     'data-placement': "top",
                     'title': function(d, i) {
-                        return '<span class="chart-tooltip-key"><span class="tooltip-caption">Key</span>'
+                        return '<span class="chart-tooltip-key"><span class="tooltip-caption">'+title+'</span>'
                                 + '<span class="tooltip-value"> ' + d.key + '</span><br>'
-                                + '<span class="tooltip-caption">Value</span>'
+                                + '<span class="tooltip-caption">Frequency</span>'
                                 + '<span class="tooltip-value"> ' + d.values + '</span>';
                     }
-                })
+                });
 //                .classed('hidden-bars', bw < 10);
 
 
         return chart;
     };
+
+
+
+    MRC.spectrum = function(target, options, data, title)
+    {
+        var chart = {};
+        chart.options = loadOptions(options);
+        var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
+                h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
+                ah = h - 2 * chart.options.axisHeight,
+                aw = w - chart.options.axisWidth,
+                ch = ah,
+                cw = aw;
+        var max = d3.max(data, function(d) {
+//            console.log(d);
+            return d.end;
+        });
+        var min = d3.min(data, function(d) {
+            return d.start;
+        });
+
+        var min_value = d3.min(data, function(d) {
+            return d.value;
+        });
+        var max_value = d3.max(data, function(d) {
+            return d.value;
+        });
+//        console.log(min + '\t' + max)
+        var svg = d3.select(target).append('svg')
+                .attr({
+                    id: chart.options.id,
+                    class: 'mrc-chart mrc-spectrum',
+                    width: chart.options.width,
+                    height: chart.options.height
+                })
+                .append('g')
+                .attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
+        var chartTitle = svg.append('text').text(chart.options.title)
+                .attr({
+                    class: 'chart-title',
+                    'text-anchor': 'middle',
+                    x: w / 2,
+                    y: 0,
+                    dy: '1em'
+                });
+        var xScale = d3.scale.linear().domain([min, max]).range([0, cw]);
+        var colors = d3.scale.category20();
+//        var yScale = d3.scale.linear().domain([0, max]).range([ch, 0]);
+        var xLabels = _.map(data, function(d) {
+            return d.start;
+        });
+//        console.log(xLabels);
+        var xAxis = d3.svg.axis().scale(xScale).orient('bottom');
+//        var yAxis = d3.svg.axis().scale(yScale).orient('left').ticks(5);
+        var xAxisGroup = svg.append('g')
+                .attr(
+                        {class: "x axis",
+                            width: w,
+                            height: chart.options.axisHeight})
+                .append("g")
+                .attr("transform", "translate(" + chart.options.axisWidth + "," + (ah + chart.options.axisHeight) + ")")
+                .call(xAxis);
+//        console.log(ch);
+
+        var rects = svg.append('g')
+                .attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")")
+                .selectAll('bars').data(data).enter()
+                .append('rect')
+                .attr({
+                    class: 'bar spectrum-sqaure mr-tooltip',
+                    width: function(d) {
+                        return xScale(d.frequency);
+                    },
+                    height: function(d) {
+                        return ah;
+                    },
+                    x: function(d, i) {
+                        return xScale(d.start);
+                    },
+                    y: function(d, i) {
+                        return 0;
+                    },
+                    'data-key': function(d) {
+                        return d.value;
+                    },
+                    'data-value': function(d) {
+                        return d.frequency;
+                    },
+                    'data-toggle': "tooltip",
+                    'data-placement': "top",
+                    'title': function(d, i) {
+                        return '<span class="chart-tooltip-key"><span class="tooltip-caption">'+title+'</span>'
+                                + '<span class="tooltip-value"> ' + d.value + '</span><br>'
+                                + '<span class="tooltip-caption">Frequency</span>'
+                                + '<span class="tooltip-value"> ' + d.frequency + '</span>';
+                    }
+                })
+                .style({
+                    fill: function(d, i) {
+                        return getColorGradient(min_value, max_value, d.value, colors);
+//                        return color;
+                    }
+                });
+                var lw = aw*.4;
+        var legend = svg.append('g').attr({
+            class: 'spectrum-legend',
+            transform: "translate(" + (chart.options.margin.left + aw * .6) + "," + 0 + ")"});
+        return chart;
+    }
+    function getColorGradient(min, max, value, colors)
+    {
+        if (typeof(value)=='undefined' || value==null || value === '')
+        {
+//            console.log(value);
+            return '#000';
+        }
+        else if (isNaN(Number(value)))
+        {
+            colors = (colors) ? colors : d3.scale.category20();
+            return colors(value);
+        }
+        else {
+            value = Number(value);
+            var inner_scale = d3.scale.linear()
+                    .domain([min, max]).range([0, 1]);
+            var outer_scale = d3.scale.linear()
+                    .domain([0, 0.5, 1])
+                    .interpolate(d3.interpolateRgb)
+                    .range(["green", "yellow", "red"]);
+            var color = outer_scale(inner_scale(value));
+
+//            console.log(min + '\t' + max + '\t' + value + '\t' + color);
+            return color;
+        }
+    }
+    ;
     return MRC;
 };

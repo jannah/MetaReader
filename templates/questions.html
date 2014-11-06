@@ -5,8 +5,8 @@
 console.log(q)
 
 %>
-<div id='<%=data.title%>-question-<%=i%>' 
-     class='<%=data.title%>-question card-question input-group'>
+<div id='<%=data.id%>-question-<%=i%>' 
+     class='<%=data.id%>-question card-question input-group'>
     <span class='input-group-addon'>Q</span>
     <textarea rows='2' class='form-control question-text'
            onchange='updateQuestion("<%= data.title %>", <%= i %> )'><%=q%></textarea>

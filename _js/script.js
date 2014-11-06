@@ -4,12 +4,19 @@ $(document).on('ready', function() {
 });
 
 var TEXT_FILES = [
-    'data/test.csv'
-//    'data/mindwave_data_dump.csv'
-//    'data/titanic_raw.csv'
-//    'data/fl-ballot-2000.csv'
+    'data/test.csv',
+    'data/NC-EST2013-AGESEX-RES.csv',
+    'data/SCPRC-EST2013-18+POP-RES.csv',
+    'data/calories.csv',
+    'data/dma.csv',
+    'data/elements.csv',
+    'data/fortune500.csv',
+//    'data/test.xlsx',
+    'data/mindwave_data_dump.csv',
+    'data/titanic_raw.csv',
+//    'data/fl-ballot-2000.csv',
 //    'data/faa-ontime-sept2001.csv',
-//    'data/oakland-budget.csv',
+    'data/oakland-budget.csv'
 //    'data/plane-crashes.ascii.csv'
 //    'data/ufo-sightings.csv'
 ];
@@ -29,7 +36,13 @@ var data = [];
 function init() {
 
     TEAMPLATES = loadTemplates(TEMPLATES, '/MetaReader');
-    data = loadFile(TEXT_FILES[0]);
+    renderTemplate(TEMPLATES.UPLOAD, {files:TEXT_FILES})
+//    load(TEXT_FILES[0]);
+
+}
+function load(filename)
+{
+    data = loadFile(filename);
     console.log(data);
     showCards(data);
 }
@@ -37,7 +50,7 @@ function loadFile(filename)
 {
 
     var reader = new MetaReader();
-    reader.loadFromCSV(filename);
+    reader.loadFile(filename);
 
     return reader;
 }
@@ -69,37 +82,37 @@ function showCards(data)
 function loadQuestions(d)
 {
     renderTemplate(TEMPLATES.QUESTIONS, {data: d}, '#' + d.id + '-questions', true, false);
-    $('#'+d.title+'-questions .mr-tooltip').tooltip('hide');
+    $('#' + d.id + '-questions .mr-tooltip').tooltip('hide');
     activateTooltips();
 }
 
 
 function addQuestion(column)
 {
-    console.log(column);
+//    console.log(column);
 
     data.statistics[column].questions.push('');
-    console.log(data.statistics[column])
+//    console.log(data.statistics[column])
     loadQuestions(data.statistics[column]);
 
 }
 
 function removeQuestion(column, index)
 {
-    console.log(index);
-    console.log(data.statistics[column].questions)
+//    console.log(index);
+//    console.log(data.statistics[column].questions)
     data.statistics[column].questions.splice(index, 1);
-    console.log(data.statistics[column].questions)
+//    console.log(data.statistics[column].questions)
     loadQuestions(data.statistics[column]);
 }
 
 function updateQuestion(column, index)
 {
     var id = '#' + column + '-question-' + index + ' .question-text'
-    console.log($(id));
+//    console.log($(id));
     var question = $(id).val();
 
-    console.log(question);
+//    console.log(question);
     data.statistics[column].questions[index] = question;
 }
 
@@ -116,7 +129,7 @@ function refreshNavigation()
 
         renderTemplate(TEMPLATES.NAV_ITEM, {target: '#' + id, title: title}, null, false, false);
 
-    })
+    });
 }
 
 
@@ -177,7 +190,13 @@ function renderTemplate(template, args, target, replaceContent, replaceParent)
 //    $(target).trigger(BODY_CHANGE_EVENT);
 }
 
-
+function renameColumn(id, column)
+{
+ var title = $('#'+id).text();
+ data.statistics[column].title = title;
+// console.log(data.statistics[column].title);
+ 
+}
 function activateTooltips()
 {
 

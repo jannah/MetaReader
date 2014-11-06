@@ -2,5 +2,6 @@
 <%
 var MRC = new MetaReaderCharts();
 var fd = new MRC.histogram(target, {'title':data.title,'id':data.title+'-fd1'}, data.frequencyDistribution)
+var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum','id':data.title+'-spectrum', height:100}, data.spectrum, data.title)
 <!--var fd2 = new MRC.histogram(target, {'title':data.title, 'id':data.title+'-fd2'}, data.frequencyDistributionBins)-->
 %>

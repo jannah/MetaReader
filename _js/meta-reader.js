@@ -13,14 +13,15 @@ function MetaReader() {
     mr.columns = {};
     mr.statistics = {};
     mr.filename = '';
-    mr.loadFromCSV = function(csvFilePath)
+    mr.loadFile = function(csvFilePath)
     {
         mr.filename = csvFilePath;
-        var csv = loadCSVFile(csvFilePath);
+        var csv = loadFromFile(csvFilePath);
 //        console.log(csv);
         mr.columns = csvToColumns(csv);
         mr.statistics = process_columns(mr.columns);
     };
+
     mr.sort = {ascending: function(a, b) {
             var n1 = Number(a), n2 = Number(b);
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
@@ -44,31 +45,51 @@ function MetaReader() {
         mr.statistics = previous.statistics;
     };
 
+    function fixTitle(t)
+    {
+        var rep = [' ', ',', '#', '.', '$', '(', ')', '_', '[', ']', '{', '{', '\\', '/', '+', '=', '%', '@', '^', '&']
+        _.each(rep, function(i)
+        {
+//            console.log(i);
+            t = str.replace(new RegExp(i, '-'), replace);
 
+        });
+
+        console.log(t);
+        return t;
+    }
+
+    function escapeRegExp(string) {
+        return string.replace(/([.*+?^=!:${}()|\[\]\/\\\s])/g, "-");
+    }
     var ObjectList = function(data, title) {
         var self = {};
         self.title = title;
-        self.id = title.replace(' ', '-');
+        self.columnName= title;
+        self.id = escapeRegExp(self.columnName);
+        console.log(self.id);
         self.notes = '';
         self.description = '';
         self.questions = [];
         self.suggestions = [];
+        self.data = _.clone(data);
+        self.rawData = _.clone(data);
         data = cleanData(data);
-        self.data = data;
         self.uniqueValues = d3.set(self.data).values();
 //    console.log(self.uniqueValues);
         self.countUnique = self.uniqueValues.length;
 
         self.count = data.length;
-        self.data = data;
+
 
 
         self.prepData = function() {
-            self.sortedData = self.data.sort(d3.ascending);
+            self.sortedData = _.clone(self.data).sort(d3.ascending);
             self.cleanData = _.filter(self.sortedData, function(d) {
                 return !checkNull(d);
             });
             self.frequencyDistribution = getFreqDist(self.cleanData);
+            self.spectrum = getSequence(self.data);
         };
         self.prepData();
         return self;
@@ -249,7 +270,7 @@ function MetaReader() {
                     var key = parseInt((d - min) / binSize),
                             start = (min + key * binSize),
                             end = (min + (key + 1) * binSize);
-                    
+
                     return round(start, precision);
                 }).sortKeys(mr.sort.ascending)
                 .rollup(function(leaves) {
@@ -290,6 +311,42 @@ function MetaReader() {
         }
         return mode;
     }
+
+    function getSequence(data)
+    {
+        var spectrum = [];
+        var currentItem = {start: 0, end: 0, frequency: 0, value: data[0]};
+        _.each(data, function(d, i) {
+            if (d !== currentItem.value)
+            {
+                currentItem.end = i;
+                currentItem.frequency = currentItem.end - currentItem.start;
+                spectrum.push(_.clone(currentItem));
+                currentItem.start = i;
+                currentItem.value = d;
+            }
+        });
+        currentItem.end = data.length;
+        currentItem.frequency = currentItem.end - currentItem.start + 1;
+        spectrum.push(_.clone(currentItem));
+        return spectrum;
+    }
+
+
+    function loadFromFile(filePath)
+    {
+        console.log(filePath);
+        if (filePath.slice(-3) === 'csv' || filePath.slice(-3) === 'txt')
+            return loadCSVFile(filePath);
+        else if (filePath.slice(-3) === 'xls')
+        {
+            return loadExcelFile(filePath, 'xls');
+        }
+        else if (filePath.slice(-4) === 'xlsx')
+        {
+            return loadExcelFile(filePath, 'xlsx');
+        }
+    }
     function loadCSVFile(csvFilePath)
     {
         var jqxhr = $.ajax({
@@ -304,6 +361,164 @@ function MetaReader() {
         var data = $.csv.toObjects(csvd);
 //        console.log(data);
         return data;
+    }
+    /*console.log('load from excel');
+     var url = "test_files/formula_stress_test_ajax.xlsx";
+     var oReq = new XMLHttpRequest();
+     oReq.open("GET", url, true);
+     oReq.responseType = "arraybuffer";
+     oReq.async = false;
+     
+     oReq.onload = function(e) {
+     console.log('runnng excel')
+     var arraybuffer = oReq.response;
+     
+     
+     var data = new Uint8Array(arraybuffer);
+     var arr = new Array();
+     for (var i = 0; i != data.length; ++i)
+     arr[i] = String.fromCharCode(data[i]);
+     var bstr = arr.join("");
+     
+     var workbook
+     
+     if (version === 'xls')
+     workbook = XLS.read(bstr, {type: "binary"});
+     else
+     workbook = XLSX.read(bstr, {type: "binary"});
+     console.log(workbook);
+     return workbook;
+     };
+     var workbook = oReq.send();*/
+
+
+    /*
+     * @param {type} excelFilePath
+     * @param {type} version
+     * @returns {unresolved}
+     * 
+     */
+    function loadExcelFile(excelFilePath, version)
+    {
+        console.log('load from excel');
+        var oReq = new XMLHttpRequest();
+//        oReq.responseType = "arraybuffer";
+        oReq.open("GET", excelFilePath, false);
+
+
+        oReq.send(null);
+//        console.log(oReq.responseText)
+        var resp = oReq.response;
+        console.log(typeof (resp))
+        console.log('runnng excel')
+        var arraybuffer = s2ab(resp);
+        console.log(arraybuffer)
+        console.log(typeof (arraybuffer))
+
+        var data = new Uint8Array(arraybuffer[0]);
+        console.log(data.length);
+        var arr = new Array();
+        for (var i = 0; i != data.length; ++i)
+            arr[i] = String.fromCharCode(data[i]);
+        var bstr = arr.join("");
+
+
+
+//        var arr = new Array();
+//        var bstr = ab2str(data);
+        var workbook;
+
+        if (version === 'xls')
+            workbook = XLS.read(bstr, {type: "binary"});
+        else
+            workbook = XLSX.read(bstr, {type: "binary"});
+        console.log(workbook);
+        return workbook;
+
+        /*
+         if (version === 'xls')
+         workbook = XLS.read(bstr, {type: "binary"});
+         else
+         workbook = XLSX.read(bstr, {type: "binary"});*/
+        /* DO SOMETHING WITH workbook HERE */
+//        console.log(workbook);
+//        return workbook;
+    }
+
+    function ab2str(data) {
+        var o = "", l = 0, w = 10240;
+        for (; l < data.byteLength / w; ++l)
+            o += String.fromCharCode.apply(null, new Uint16Array(data.slice(l * w, l * w + w)));
+        o += String.fromCharCode.apply(null, new Uint16Array(data.slice(l * w)));
+        return o;
+    }
+
+    function s2ab(s) {
+        var b = new ArrayBuffer(s.length * 2), v = new Uint16Array(b);
+        for (var i = 0; i != s.length; ++i)
+            v[i] = s.charCodeAt(i);
+        return [v, b];
+    }
+
+    function loadExcelFile4(url)
+    {
+//        var url = "test_files/formula_stress_test_ajax.xlsx";
+        var oReq = new XMLHttpRequest();
+        oReq.open("GET", url, true);
+        oReq.responseType = "arraybuffer";
+
+        oReq.onload = function(e) {
+            var arraybuffer = oReq.response;
+
+            /* convert data to binary string */
+            var data = new Uint8Array(arraybuffer);
+            console.log(data.length);
+            var arr = new Array();
+            for (var i = 0; i != data.length; ++i)
+                arr[i] = String.fromCharCode(data[i]);
+            var bstr = arr.join("");
+
+            /* Call XLSX */
+            var workbook = XLSX.read(bstr, {type: "binary"});
+            console.log(workbook);
+
+            /* DO SOMETHING WITH workbook HERE */
+        }
+
+        oReq.send();
+    }
+    function loadExcelFile3(excelFilePath, version)
+    {
+        console.log('load from excel');
+
+        var jqxhr = $.ajax({
+            url: excelFilePath,
+            method: 'GET',
+            responseType: "arraybuffer",
+            processData: false,
+            async: false
+        });
+
+        console.log(jqxhr.responseText);
+        var arraybuffer = jqxhr.responseText;
+//        console.log(typeof(arraybuffer))
+        /* convert data to binary string */
+        var data = new Uint8Array(arraybuffer);
+        console.log(data);
+        var arr = new Array();
+        for (var i = 0; i != data.length; ++i)
+            arr[i] = String.fromCharCode(data[i]);
+        var bstr = arr.join("");
+        console.log(bstr);
+        var workbook;
+        /* Call XLS */
+        if (version === 'xls')
+            workbook = XLS.read(arraybuffer, {type: "binary"});
+        else
+            workbook = XLSX.read(arraybuffer, {type: "base64"});
+        /* DO SOMETHING WITH workbook HERE */
+        console.log(workbook);
+        return workbook;
     }
 
     function csvToColumns(csv)
