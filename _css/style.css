@@ -8,7 +8,6 @@ and open the template in the editor.
     Author     : Hassan
 */
 body{
-body {
 /* margin: 0 auto; */
 background-image: url('../images/bg2.png');
 background-color: #EFF2F8;
@@ -16,7 +15,6 @@ background-repeat: no-repeat;
 background-size: 100%;
 background-attachment: fixed;
 background-position: 0;
-}
 }
 #content{
     width: 820px;
