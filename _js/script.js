@@ -125,7 +125,7 @@ function refreshNavigation()
 //    var nav = $('#navigation ul');
     _.each(cards, function(card) {
         var id = $(card).attr('id');
-        var title = $('#' + id + '-title-text').text().trim();
+        var title = $('#' + id + ' .card-title-text').text().trim();
 
         renderTemplate(TEMPLATES.NAV_ITEM, {target: '#' + id, title: title}, null, false, false);
 
@@ -195,7 +195,7 @@ function renameColumn(id, column)
  var title = $('#'+id).text();
  data.statistics[column].title = title;
 // console.log(data.statistics[column].title);
- 
+ refreshNavigation()
 }
 function activateTooltips()
 {
