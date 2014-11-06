@@ -3,7 +3,7 @@
 var MRC = new MetaReaderCharts();
 var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.title+'-box'}, data.quartiles, data.mean)
 var fd = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Value','id':data.title+'-fd1'}, data.frequencyDistribution, data.title)
-var fd2 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.title+'-fd2'}, data.frequencyDistributionBins, data.title)
+var fd2 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.title+'-fd2'}, data.frequencyDistributionBins, data.title + '(Bins)')
 var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Frequency', 'id':data.title+'-fd3'}, data.frequencyDistributionSorted, data.title)
 
 var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum Chart','id':data.title+'-spectrum', height:100}, data.spectrum, data.title)
