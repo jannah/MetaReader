@@ -1,1001 +1,1000 @@
-id,text,date1,date2,date3,number1,number2,number3,text2,Text 3
-1,text 3,4/5/2013,21-Mar-14,"Sunday, March 17, 2013",-9,5.484544129,8.904037891,text2 17,Text 2
-2,text 1,8/8/2014,18-Feb-13,"Tuesday, November 11, 2014",4,9.448038258,1.408290621,text2 1,Text 2
-3,text 4,10/23/2013,31-Jul-14,"Tuesday, March 4, 2014",13,9.153927764,1.555491573,text2 5,Text 3
-4,text 1,1/21/2014,1-Feb-13,"Thursday, January 3, 2013",-5,6.860678453,5.441526997,text2 23,Text 2
-5,text 1,11/8/2014,27-Jun-14,"Monday, July 14, 2014",10,10.38471623,9.34679134,text2 8,Text 2
-6,text 2,3/6/2014,27-Mar-13,"Friday, September 6, 2013",1,10.34892977,3.824900977,text2 12,Text 1
-7,text 3,5/22/2014,28-May-13,"Monday, August 11, 2014",7,1.160151309,7.134149169,text2 12,Text 3
-8,text 3,11/13/2013,14-Mar-14,"Thursday, July 10, 2014",-13,7.346150588,5.033496922,text2 17,Text 3
-9,text 3,7/21/2013,26-Jun-14,"Thursday, December 19, 2013",17,5.24160668,9.753285826,text2 10,Text 1
-10,text 2,9/25/2013,8-Apr-14,"Tuesday, February 26, 2013",6,9.800919455,6.058947999,text2 8,Text 2
-11,text 5,8/2/2013,25-Feb-13,"Friday, May 31, 2013",-7,1.858386351,5.969537017,text2 9,Text 3
-12,text 3,1/16/2013,27-Nov-13,"Sunday, October 27, 2013",-3,7.663682901,6.925761408,text2 8,Text 1
-13,text 1,3/10/2013,20-May-14,"Saturday, November 30, 2013",-20,9.159997576,0.765518621,text2 6,Text 1
-14,text 4,7/18/2013,26-May-13,"Friday, May 23, 2014",-11,7.928123354,9.890555691,text2 2,Text 3
-15,text 2,9/10/2014,23-Dec-13,"Wednesday, October 9, 2013",9,1.788568767,4.740436796,text2 1,Text 1
-16,text 2,8/22/2014,23-Jun-14,"Saturday, May 25, 2013",4,3.43400574,1.695433935,text2 25,Text 3
-17,text 4,10/31/2014,20-Mar-13,"Wednesday, March 5, 2014",-5,3.173579537,5.854927573,text2 10,Text 3
-18,text 4,5/19/2014,25-Nov-14,"Saturday, May 18, 2013",-1,6.446128092,1.191843638,text2 15,Text 1
-19,text 5,9/15/2013,22-Jan-13,"Thursday, March 20, 2014",29,6.658264713,9.241833668,text2 6,Text 3
-20,text 1,4/6/2013,22-Apr-14,"Tuesday, February 25, 2014",-10,7.780984018,6.576427383,text2 22,Text 2
-21,text 5,9/12/2013,13-Aug-14,"Saturday, July 27, 2013",-2,7.521119598,5.877337126,text2 16,Text 1
-22,text 5,12/9/2013,28-Aug-13,"Sunday, November 16, 2014",12,9.233566289,2.950686168,text2 4,Text 1
-23,text 5,11/20/2013,8-Apr-14,"Tuesday, July 23, 2013",20,6.271944307,6.238555543,text2 18,Text 3
-24,text 2,2/10/2014,15-Dec-13,"Monday, March 3, 2014",8,7.974260434,8.722611214,text2 15,Text 2
-25,text 4,12/19/2013,10-Mar-14,"Saturday, May 17, 2014",-2,7.179379233,0.831060906,text2 6,Text 1
-26,text 5,3/21/2013,10-Nov-13,"Tuesday, December 3, 2013",0,9.901546246,4.710017786,text2 1,Text 1
-27,text 1,8/15/2014,22-Nov-13,"Wednesday, March 6, 2013",5,5.139419488,8.311195486,text2 3,Text 1
-28,text 5,12/28/2014,17-Feb-13,"Friday, January 18, 2013",24,5.594632974,10.08873874,text2 21,Text 1
-29,text 5,1/3/2013,27-Jul-14,"Wednesday, January 23, 2013",12,5.713841762,10.0438193,text2 9,Text 2
-30,text 2,3/21/2014,13-May-13,"Sunday, December 28, 2014",16,6.641995364,4.573300736,text2 10,Text 3
-31,text 5,5/15/2013,11-Nov-13,"Wednesday, December 10, 2014",23,1.487052359,5.064438274,text2 18,Text 1
-32,text 2,1/13/2013,5-Apr-13,"Sunday, February 23, 2014",-13,7.647908834,0.358866249,text2 21,Text 1
-33,text 3,12/14/2014,22-Nov-13,"Friday, June 6, 2014",27,1.244242441,1.183832124,text2 6,Text 3 20
-34,text 2,5/3/2013,22-Jun-13,"Monday, February 4, 2013",8,4.088427284,3.237899446,text2 3,Text 3 12
-35,text 5,1/16/2013,30-Jun-13,"Friday, January 31, 2014",23,7.649119582,3.503838626,text2 7,Text 3 7
-36,text 5,7/21/2013,11-Apr-13,"Tuesday, July 15, 2014",13,3.496045758,10.39993139,text2 14,Text 3 13
-37,text 1,6/12/2013,9-Apr-13,"Thursday, March 14, 2013",16,7.655984531,3.256546523,text2 8,Text 3 20
-38,text 2,4/21/2014,27-Aug-13,"Thursday, September 4, 2014",-14,2.226116199,4.101221134,text2 11,Text 3 23
-39,text 5,10/8/2013,26-Jan-14,"Thursday, September 25, 2014",-16,9.272172455,10.15264509,text2 12,Text 3 16
-40,text 5,5/18/2013,28-Jan-13,"Wednesday, October 22, 2014",29,2.27520228,0.764776273,text2 2,Text 3 2
-41,text 2,12/7/2014,10-Jul-14,"Saturday, August 9, 2014",-10,3.939668748,9.236313877,text2 18,Text 3 13
-42,text 1,12/17/2013,24-Aug-14,"Thursday, October 17, 2013",-10,7.003116745,2.571902246,text2 9,Text 3 1
-43,text 5,5/19/2014,16-Oct-14,"Tuesday, December 2, 2014",-16,2.237169795,9.16674152,text2 23,Text 3 22
-44,text 1,7/26/2013,7-May-14,"Sunday, April 6, 2014",29,4.149098107,3.884216306,text2 8,Text 3 12
-45,text 3,4/28/2014,14-Feb-13,"Thursday, January 31, 2013",-4,6.1986742,6.331171663,text2 17,Text 3 23
-46,text 5,3/25/2014,12-Jul-14,"Friday, January 4, 2013",20,9.864079971,4.815891079,text2 17,Text 3 22
-47,text 3,10/12/2013,2-Jan-14,"Tuesday, August 13, 2013",7,4.856047606,4.07323388,text2 11,Text 3 21
-48,text 1,7/1/2014,19-Sep-13,"Saturday, November 8, 2014",-17,5.689753264,2.928930613,text2 24,Text 3 25
-49,text 2,12/7/2014,31-Dec-12,"Wednesday, November 13, 2013",-1,9.436058866,9.130665198,text2 7,Text 3 17
-50,text 4,11/20/2014,28-Mar-14,"Wednesday, August 7, 2013",9,10.22703985,5.41590848,text2 10,Text 3 3
-51,text 1,11/16/2013,28-Feb-14,"Monday, December 2, 2013",6,5.381177773,2.277138138,text2 25,Text 3 9
-52,text 2,7/31/2013,6-Aug-14,"Tuesday, September 24, 2013",-8,2.865978004,5.616731394,text2 21,Text 3 9
-53,text 3,4/1/2013,26-Apr-14,"Monday, July 1, 2013",23,7.695913144,5.467250154,text2 25,Text 3 12
-54,text 4,4/6/2014,12-Nov-13,"Sunday, July 14, 2013",13,3.965632873,8.546924387,text2 8,Text 3 18
-55,text 5,5/5/2014,10-Jun-13,"Saturday, February 16, 2013",9,7.490551445,5.222580064,text2 11,Text 3 15
-56,text 5,9/25/2014,22-Mar-13,"Wednesday, June 19, 2013",23,4.327248296,8.308747412,text2 4,Text 3 23
-57,text 4,10/15/2013,25-Apr-13,"Saturday, February 23, 2013",11,1.94548861,9.929945225,text2 11,Text 3 16
-58,text 4,8/1/2013,24-Nov-13,"Friday, September 19, 2014",6,10.04072753,5.826696025,text2 1,Text 3 4
-59,text 5,1/1/2013,20-Oct-14,"Thursday, February 28, 2013",16,1.32087448,2.88204397,text2 6,Text 3 21
-60,text 2,5/6/2014,22-Jun-13,"Tuesday, May 27, 2014",17,3.396644402,6.296018925,text2 13,Text 3 22
-61,text 2,2/15/2014,20-Feb-14,"Tuesday, July 2, 2013",-2,5.060862134,1.002874538,text2 3,Text 3 1
-62,text 5,1/9/2013,23-May-13,"Saturday, May 11, 2013",-17,3.205856786,4.553399558,text2 7,Text 3 6
-63,text 3,12/9/2014,20-Sep-13,"Thursday, July 11, 2013",27,1.27305942,0.384204992,text2 19,Text 3 12
-64,text 3,5/3/2014,27-Mar-13,"Sunday, April 7, 2013",16,1.223485071,1.040994594,text2 12,Text 3 7
-65,text 4,3/17/2014,16-Oct-13,"Friday, February 14, 2014",-15,8.708935607,7.452885189,text2 4,Text 3 10
-66,text 5,3/28/2013,18-Jul-14,"Friday, February 7, 2014",30,7.476178939,5.594824345,text2 3,Text 3 15
-67,text 4,9/20/2014,6-Jan-14,"Thursday, February 6, 2014",-19,4.993588026,1.709938917,text2 4,Text 3 14
-68,text 3,4/11/2014,17-Feb-13,"Thursday, January 16, 2014",-19,6.165967576,1.245315704,text2 7,Text 3 5
-69,text 4,12/28/2013,23-Jan-13,"Thursday, January 31, 2013",13,6.372118196,7.394182398,text2 1,Text 3 8
-70,text 1,8/2/2014,22-Apr-14,"Wednesday, January 16, 2013",25,8.93581273,7.379351082,text2 11,Text 3 2
-71,text 5,7/19/2014,26-Mar-14,"Monday, May 26, 2014",-19,1.190678451,6.390097128,text2 3,Text 3 4
-72,text 4,3/11/2013,5-May-13,"Sunday, December 14, 2014",-11,9.367257476,1.10048801,text2 4,Text 3 14
-73,text 4,11/8/2014,7-Feb-14,"Monday, September 16, 2013",6,5.197694267,2.22248862,text2 5,Text 3 24
-74,text 2,9/4/2014,14-Mar-14,"Monday, December 2, 2013",25,7.971014571,5.375674685,text2 9,Text 3 5
-75,text 3,9/1/2013,12-Oct-13,"Saturday, October 25, 2014",-20,4.951178626,3.508963589,text2 22,Text 3
-76,text 5,4/22/2014,3-Mar-13,"Monday, June 17, 2013",20,9.315786847,7.629367048,text2 7,Text 2
-77,text 4,2/20/2013,4-Jan-14,"Friday, November 7, 2014",16,3.336690232,1.545853944,text2 24,Text 3
-78,text 3,1/1/2013,7-Oct-13,"Wednesday, September 4, 2013",-15,10.14108049,2.205730261,text2 21,Text 3
-79,text 3,11/13/2014,4-Dec-14,"Tuesday, May 13, 2014",-17,6.8433415,5.346341655,text2 1,Text 3
-80,text 1,6/13/2014,24-Aug-14,"Sunday, July 6, 2014",20,4.881575315,1.301274957,text2 8,Text 2
-81,text 4,6/8/2013,12-Feb-13,"Saturday, July 19, 2014",3,3.281259045,3.654210283,text2 17,Text 3
-82,text 3,9/17/2013,3-Feb-13,"Saturday, October 18, 2014",-15,2.768408267,8.948928527,text2 11,Text 1
-83,text 4,11/19/2013,16-May-14,"Sunday, November 10, 2013",23,8.087940162,4.118752682,text2 19,Text 3
-84,text 3,11/1/2013,14-Apr-14,"Thursday, June 5, 2014",19,4.245092433,9.426665598,text2 5,Text 1
-85,text 5,11/30/2014,27-Jun-14,"Tuesday, March 5, 2013",26,5.150805503,9.583157584,text2 7,Text 3
-86,text 4,6/1/2014,17-Aug-13,"Tuesday, September 10, 2013",-18,1.041828628,7.107990878,text2 13,Text 1
-87,text 2,1/2/2013,12-Jun-13,"Wednesday, February 19, 2014",-10,3.334166105,8.244798415,text2 18,Text 3
-88,text 1,2/11/2014,17-Sep-14,"Thursday, September 18, 2014",8,7.071557895,7.485830185,text2 11,Text 1
-89,text 4,12/15/2014,11-Sep-14,"Friday, February 28, 2014",3,8.501652731,4.943587758,text2 4,Text 1
-90,text 5,12/11/2014,22-Aug-13,"Friday, October 31, 2014",8,10.42955083,7.157829052,text2 4,Text 2
-91,text 3,3/2/2014,13-Mar-14,"Friday, August 23, 2013",24,5.625022746,3.712015672,text2 11,Text 3
-92,text 1,12/24/2013,21-Mar-13,"Saturday, August 3, 2013",5,5.849634975,5.064824145,text2 20,Text 1
-93,text 5,6/17/2014,9-Jul-13,"Tuesday, January 28, 2014",12,0.627815132,2.071033598,text2 9,Text 1
-94,text 1,6/6/2013,27-Oct-14,"Sunday, November 2, 2014",29,9.212616001,0.52251085,text2 21,Text 1
-95,text 1,12/23/2013,21-Dec-14,"Sunday, September 1, 2013",21,7.88509864,3.988311193,text2 1,Text 3
-96,text 2,3/27/2013,21-Jul-13,"Wednesday, January 2, 2013",-11,0.950456251,9.038642156,text2 10,Text 3
-97,text 3,8/1/2014,23-Feb-14,"Wednesday, February 5, 2014",1,5.8849384,1.709463007,text2 7,Text 1
-98,text 2,7/11/2013,4-Sep-13,"Monday, December 31, 2012",2,0.590530005,2.315971214,text2 18,Text 2
-99,text 2,3/10/2013,24-Sep-13,"Friday, August 9, 2013",6,10.36564643,3.798673506,text2 1,Text 2
-100,text 4,1/22/2013,5-May-14,"Thursday, June 20, 2013",11,2.976708572,7.60419323,text2 12,Text 1
-101,text 2,6/8/2013,1-Dec-14,"Monday, January 7, 2013",-8,8.0080232,10.38906892,text2 6,Text 1
-102,text 3,5/27/2014,12-Oct-14,"Friday, September 6, 2013",-11,1.602851058,5.603907114,text2 17,Text 3
-103,text 5,3/4/2013,23-Sep-13,"Monday, July 7, 2014",1,2.26504508,0.734134362,text2 17,Text 3
-104,text 5,3/10/2014,22-Dec-13,"Thursday, September 18, 2014",-7,3.832517846,9.008572377,text2 23,Text 3
-105,text 4,7/18/2014,3-Jul-14,"Thursday, December 11, 2014",-11,10.34904268,6.317835732,text2 15,Text 2
-106,text 1,7/20/2013,20-Jul-14,"Monday, November 4, 2013",-2,7.056517495,10.45786134,text2 22,Text 1
-107,text 4,5/2/2014,27-Apr-14,"Tuesday, September 10, 2013",1,1.574828662,9.797661593,text2 6,Text 2
-108,text 4,6/5/2013,6-Feb-14,"Monday, October 20, 2014",3,8.197147989,5.506708188,text2 9,Text 2
-109,text 1,10/16/2013,18-Nov-13,"Tuesday, April 8, 2014",-18,2.455179787,4.884060123,text2 12,Text 3
-110,text 1,4/12/2013,7-Jan-13,"Monday, July 21, 2014",23,9.674579055,9.182142438,text2 20,Text 1
-111,text 3,5/28/2014,26-Jan-13,"Sunday, July 20, 2014",20,2.340779637,6.961371105,text2 22,Text 3
-112,text 5,4/23/2013,21-May-13,"Saturday, April 13, 2013",-15,0.733296967,9.578440669,text2 16,Text 3
-113,text 3,3/5/2014,24-Jun-14,"Friday, June 27, 2014",24,8.28910364,6.254872612,text2 17,Text 3
-114,text 4,1/12/2014,7-Aug-14,"Sunday, June 16, 2013",-8,7.154610634,4.265185294,text2 10,Text 2
-115,text 1,8/20/2014,14-Apr-14,"Sunday, December 15, 2013",-20,1.395757996,6.196869428,text2 14,Text 1
-116,text 3,12/23/2014,11-Oct-13,"Tuesday, October 21, 2014",29,5.791113677,6.674340499,text2 10,Text 3
-117,text 5,6/24/2013,3-Dec-14,"Friday, October 3, 2014",17,3.527048704,8.105158596,text2 11,Text 2
-118,text 5,9/11/2013,20-Jul-14,"Thursday, September 5, 2013",-18,9.351243042,1.66602771,text2 9,Text 3
-119,text 1,2/2/2013,10-Jul-14,"Monday, March 25, 2013",29,7.928665611,9.362861367,text2 24,Text 1
-120,text 4,6/30/2013,15-Apr-13,"Sunday, October 26, 2014",1,8.403614201,1.757580716,text2 20,Text 3
-121,text 4,5/27/2014,26-May-13,"Monday, May 20, 2013",11,6.465621217,8.125011456,text2 20,Text 2
-122,text 2,12/21/2013,2-Dec-14,"Friday, January 4, 2013",-11,1.172741449,1.851376405,text2 3,Text 2
-123,text 3,1/28/2013,16-Jul-14,"Saturday, September 27, 2014",-15,10.28761936,7.412942313,text2 22,Text 1
-124,text 2,10/26/2014,4-Dec-13,"Sunday, August 4, 2013",17,9.262586072,4.657916191,text2 9,Text 3
-125,text 2,4/17/2014,21-Dec-13,"Wednesday, January 9, 2013",15,10.01842125,4.017134354,text2 21,Text 1
-126,text 2,9/22/2013,7-Oct-13,"Sunday, December 14, 2014",-19,8.3919313,10.46306897,text2 24,Text 1
-127,text 3,7/2/2014,14-Oct-13,"Saturday, May 18, 2013",29,10.17265152,5.947594666,text2 20,Text 1
-128,text 2,4/13/2014,6-Jul-14,"Wednesday, September 3, 2014",28,1.103173103,9.54876189,text2 16,Text 3
-129,text 1,11/16/2014,16-Sep-14,"Wednesday, February 6, 2013",6,8.895978393,5.432793486,text2 12,Text 2
-130,text 1,7/7/2013,15-Aug-13,"Wednesday, March 12, 2014",-1,8.860989782,2.915010954,text2 4,Text 3
-131,text 2,3/1/2013,6-Sep-13,"Thursday, August 7, 2014",11,8.372732245,2.338663563,text2 16,Text 2
-132,text 5,12/24/2013,10-Nov-14,"Monday, November 25, 2013",7,4.283736322,7.915165255,text2 14,Text 3
-133,text 2,11/8/2013,12-Aug-14,"Wednesday, October 2, 2013",-2,2.092555899,1.025369052,text2 17,Text 3
-134,text 3,12/20/2013,5-Sep-14,"Sunday, August 17, 2014",16,6.323399598,4.908516663,text2 14,Text 2
-135,text 5,11/22/2013,13-Jul-14,"Saturday, July 26, 2014",-13,1.981022685,2.900328309,text2 25,Text 3
-136,text 3,2/20/2013,28-Apr-13,"Thursday, March 7, 2013",-17,10.70815478,4.746952909,text2 19,Text 1
-137,text 1,7/4/2014,9-Oct-14,"Wednesday, September 18, 2013",5,8.931339637,7.442111047,text2 8,Text 2
-138,text 5,5/4/2014,16-May-14,"Monday, July 15, 2013",-7,3.423252631,3.792809818,text2 13,Text 2
-139,text 4,12/10/2014,26-May-13,"Friday, September 13, 2013",-1,3.566990239,6.871154985,text2 24,Text 3
-140,text 3,10/6/2013,9-Oct-13,"Wednesday, January 1, 2014",-14,5.353603917,10.04540193,text2 20,Text 1
-141,text 4,7/14/2013,5-May-13,"Saturday, September 27, 2014",3,7.304220153,8.533668999,text2 18,Text 1
-142,text 4,7/20/2014,9-Nov-14,"Monday, October 20, 2014",-7,5.558265939,4.913274631,text2 5,Text 3
-143,text 2,6/2/2013,15-Nov-14,"Monday, April 28, 2014",-5,8.941545436,4.609238316,text2 22,Text 3
-144,text 1,10/5/2013,6-Jan-13,"Saturday, September 13, 2014",12,1.045177495,2.855060859,text2 21,Text 2
-145,text 2,8/6/2013,14-Dec-14,"Wednesday, June 4, 2014",11,6.034572,4.704872534,text2 23,Text 3
-146,text 5,9/21/2014,15-Jan-13,"Thursday, July 11, 2013",0,7.342506836,1.743439176,text2 4,Text 3
-147,text 3,10/8/2014,28-Feb-14,"Wednesday, February 19, 2014",20,6.18709332,7.289651292,text2 25,Text 2
-148,text 2,2/24/2013,12-Nov-13,"Wednesday, February 19, 2014",-14,2.286266412,6.733625267,text2 4,Text 1
-149,text 3,10/19/2013,18-Mar-14,"Wednesday, November 13, 2013",5,1.329762656,1.854673975,text2 12,Text 2
-150,text 4,3/21/2013,1-Sep-13,"Monday, August 4, 2014",4,10.28929661,6.051510492,text2 10,Text 1
-151,text 3,7/8/2013,13-Jun-14,"Sunday, January 13, 2013",19,4.447939209,9.851207719,text2 9,Text 1
-152,text 3,4/17/2014,31-Dec-12,"Monday, January 28, 2013",7,2.392826379,1.523166559,text2 19,Text 2
-153,text 1,10/5/2014,1-Mar-14,"Tuesday, April 1, 2014",-17,5.55668134,6.710887529,text2 21,Text 2
-154,text 1,12/11/2014,10-Apr-14,"Thursday, May 23, 2013",24,2.35488546,3.563925249,text2 5,Text 3
-155,text 2,4/18/2014,26-Nov-14,"Wednesday, October 15, 2014",-12,3.552827901,4.645421296,text2 18,Text 3
-156,text 2,10/22/2013,16-Sep-14,"Wednesday, October 9, 2013",28,5.324819518,4.15909879,text2 7,Text 3
-157,text 5,5/25/2013,5-May-13,"Saturday, June 1, 2013",-13,6.438110025,4.851544504,text2 17,Text 2
-158,text 1,8/11/2014,26-Dec-13,"Sunday, January 19, 2014",19,7.130068422,7.673327762,text2 15,Text 3
-159,text 1,9/5/2014,25-Jun-14,"Monday, September 9, 2013",15,8.662754286,7.486873934,text2 6,Text 3
-160,text 5,9/2/2013,14-Dec-13,"Saturday, November 23, 2013",-17,5.974403198,2.678947871,text2 13,Text 1
-161,text 2,7/12/2013,17-Feb-13,"Saturday, August 9, 2014",26,6.835374865,8.911012772,text2 11,Text 2
-162,text 5,6/11/2013,15-May-14,"Tuesday, April 2, 2013",-9,9.636495704,1.448261525,text2 1,Text 1
-163,text 1,5/22/2014,23-Apr-14,"Tuesday, March 4, 2014",1,4.694221951,8.228122813,text2 23,Text 1
-164,text 4,6/11/2013,8-Jun-14,"Sunday, July 6, 2014",1,1.90857604,2.833228068,text2 14,Text 1
-165,text 3,9/1/2014,12-Feb-13,"Tuesday, December 24, 2013",-5,6.456008925,9.571503989,text2 24,Text 1
-166,text 1,2/9/2013,17-Dec-13,"Tuesday, August 19, 2014",30,7.450821171,10.16941571,text2 6,Text 2
-167,text 4,3/9/2013,2-Nov-14,"Saturday, July 12, 2014",-2,7.611008448,6.009504756,text2 15,Text 1
-168,text 1,2/20/2013,2-Aug-14,"Friday, September 19, 2014",8,5.218699089,5.234551047,text2 25,Text 1
-169,text 5,1/24/2014,2-Apr-14,"Friday, October 18, 2013",-8,8.040319508,6.096568303,text2 23,Text 1
-170,text 5,3/31/2014,1-Jan-14,"Friday, October 24, 2014",23,9.615193266,5.072658306,text2 4,Text 2
-171,text 5,9/17/2014,25-May-13,"Friday, February 8, 2013",25,7.32990514,3.749758513,text2 4,Text 1
-172,text 3,10/6/2014,28-Oct-13,"Sunday, March 17, 2013",-15,5.424489087,2.043937769,text2 12,Text 3
-173,text 3,3/11/2013,5-Jun-13,"Friday, February 1, 2013",-2,5.161824378,7.608164367,text2 2,Text 2
-174,text 1,9/24/2013,3-Dec-14,"Wednesday, December 3, 2014",29,6.665773798,4.809752229,text2 24,Text 3
-175,text 1,12/7/2013,18-May-13,"Thursday, August 7, 2014",-20,7.915353285,6.995886912,text2 1,Text 1
-176,text 5,11/21/2013,12-Aug-13,"Saturday, May 31, 2014",16,8.537554322,4.860793391,text2 14,Text 3
-177,text 4,11/14/2013,3-Jun-14,"Thursday, September 11, 2014",12,6.195875332,0.556145757,text2 23,Text 3
-178,text 3,6/2/2014,7-Feb-14,"Saturday, August 2, 2014",28,9.508092948,8.980966462,text2 14,Text 3
-179,text 1,11/1/2014,7-Jul-14,"Wednesday, November 5, 2014",-1,5.967780655,7.035056509,text2 8,Text 2
-180,text 2,4/7/2013,13-Jun-14,"Tuesday, September 10, 2013",0,5.98113952,3.891431124,text2 20,Text 3
-181,text 2,9/4/2014,17-Mar-13,"Thursday, June 6, 2013",13,1.755944535,2.941104068,text2 4,Text 2
-182,text 5,12/12/2014,10-Jun-13,"Thursday, March 13, 2014",8,6.227399527,9.882428284,text2 7,Text 1
-183,text 4,4/6/2014,26-Aug-13,"Saturday, May 24, 2014",-16,9.945869697,10.28346863,text2 25,Text 1
-184,text 3,10/22/2014,22-Dec-13,"Wednesday, September 25, 2013",15,6.341510755,7.309062198,text2 13,Text 3
-185,text 4,4/21/2013,28-Jun-14,"Sunday, July 20, 2014",10,2.634957095,10.14062404,text2 3,Text 1
-186,text 4,10/8/2013,5-Sep-13,"Sunday, January 27, 2013",14,7.673901954,8.441422563,text2 19,Text 2
-187,text 3,8/11/2013,21-Apr-13,"Thursday, February 6, 2014",-16,8.19207522,6.563390584,text2 18,Text 2
-188,text 1,10/31/2014,22-May-13,"Thursday, January 2, 2014",-8,5.610883867,4.150729007,text2 18,Text 1
-189,text 5,6/15/2013,10-Jan-13,"Saturday, April 6, 2013",-13,4.447351195,5.592513685,text2 19,Text 1
-190,text 1,4/4/2014,21-Feb-14,"Saturday, May 18, 2013",-2,1.201272927,0.961809127,text2 11,Text 1
-191,text 5,6/9/2014,7-Aug-14,"Friday, May 9, 2014",-18,5.422860669,1.799625666,text2 7,Text 3
-192,text 3,5/14/2013,16-Sep-14,"Thursday, December 12, 2013",28,1.850755538,9.898892951,text2 24,Text 1
-193,text 3,12/27/2014,5-Nov-13,"Wednesday, December 3, 2014",-5,1.264812862,7.065133007,text2 2,Text 2
-194,text 1,4/21/2014,25-May-13,"Sunday, May 11, 2014",-2,9.577328226,3.767147118,text2 4,Text 1
-195,text 1,7/9/2014,6-Jan-13,"Saturday, September 6, 2014",30,2.350108577,3.016251669,text2 7,Text 2
-196,text 3,1/2/2014,31-Dec-12,"Friday, July 19, 2013",26,9.380570055,7.227383252,text2 20,Text 3
-197,text 3,1/9/2014,5-Oct-13,"Saturday, October 5, 2013",25,9.627102733,9.335372716,text2 17,Text 1
-198,text 4,7/5/2014,19-Dec-14,"Saturday, November 30, 2013",-16,9.169304314,5.476306207,text2 2,Text 1
-199,text 4,4/30/2013,19-May-14,"Monday, August 11, 2014",30,5.73121067,6.873090994,text2 24,Text 1
-200,text 4,1/1/2014,18-Jun-13,"Monday, June 2, 2014",13,9.709137472,9.500096146,text2 10,Text 2
-201,text 3,6/17/2013,25-Dec-13,"Wednesday, September 4, 2013",0,7.778285248,6.16220798,text2 23,Text 2
-202,text 1,12/22/2013,16-Dec-14,"Wednesday, January 2, 2013",6,6.913291622,7.949584147,text2 5,Text 1
-203,text 4,7/20/2013,23-Nov-14,"Wednesday, October 23, 2013",-5,9.234697342,6.460850629,text2 2,Text 1
-204,text 5,1/8/2013,25-Feb-13,"Wednesday, April 23, 2014",11,9.309383503,10.25423955,text2 11,Text 3
-205,text 5,11/11/2013,2-Aug-14,"Sunday, July 7, 2013",9,5.682287941,9.844000866,text2 18,Text 3
-206,text 2,2/6/2013,25-May-14,"Saturday, June 7, 2014",7,6.046305056,4.523435245,text2 22,Text 3
-207,text 1,5/3/2014,15-Nov-13,"Thursday, November 28, 2013",24,4.271152932,10.17334849,text2 25,Text 2
-208,text 5,4/18/2014,6-Sep-14,"Friday, October 10, 2014",-17,8.074078645,5.615021453,text2 12,Text 3
-209,text 3,9/12/2013,10-Jul-13,"Tuesday, July 16, 2013",-15,0.520616177,2.389862307,text2 7,Text 1
-210,text 3,10/20/2014,21-Dec-14,"Thursday, August 1, 2013",10,3.989767489,7.63346201,text2 23,Text 1
-211,text 1,6/24/2014,19-Oct-14,"Thursday, November 6, 2014",-10,4.252564619,2.966154041,text2 9,Text 2
-212,text 1,12/21/2013,17-Mar-14,"Wednesday, December 11, 2013",19,9.387725682,10.25934209,text2 13,Text 3
-213,text 5,2/24/2014,19-Dec-14,"Wednesday, April 30, 2014",18,8.066705985,5.245188607,text2 21,Text 1
-214,text 2,10/14/2014,5-Jun-13,"Friday, December 27, 2013",-17,1.887751318,1.354559863,text2 24,Text 3
-215,text 1,6/2/2014,4-Jun-13,"Wednesday, June 4, 2014",12,3.713148919,9.885393688,text2 2,Text 2
-216,text 5,4/24/2014,17-May-13,"Thursday, July 4, 2013",-16,5.623355375,5.433468058,text2 18,Text 3
-217,text 1,3/7/2013,26-Aug-13,"Saturday, April 5, 2014",5,1.832494156,5.136665157,text2 6,Text 2
-218,text 5,8/4/2014,25-Mar-13,"Saturday, July 6, 2013",6,4.477583996,4.432336517,text2 5,Text 3
-219,text 5,6/21/2014,2-Sep-14,"Thursday, March 13, 2014",20,8.048686085,1.188786622,text2 22,Text 1
-220,text 1,4/30/2013,13-Oct-14,"Tuesday, August 20, 2013",28,7.055698597,7.753073815,text2 18,Text 3
-221,text 5,11/27/2013,2-Dec-14,"Tuesday, September 3, 2013",0,0.292445663,3.236554442,text2 9,Text 3
-222,text 2,3/17/2014,25-Jul-14,"Saturday, June 15, 2013",10,2.83892478,1.301868089,text2 7,Text 2
-223,text 3,2/11/2013,8-Apr-14,"Saturday, July 12, 2014",25,2.977670398,3.652212215,text2 19,Text 2
-224,text 1,11/22/2014,20-Aug-14,"Tuesday, January 14, 2014",1,5.13582161,7.376159197,text2 24,Text 2
-225,text 4,4/22/2013,13-Mar-13,"Friday, December 6, 2013",-19,10.00637756,1.102945267,text2 13,Text 3
-226,text 4,5/2/2013,16-Aug-13,"Wednesday, January 8, 2014",-6,10.01435932,9.972495928,text2 12,Text 2
-227,text 5,11/17/2014,23-Mar-14,"Wednesday, July 24, 2013",2,5.055110247,7.165748818,text2 1,Text 2
-228,text 5,6/8/2013,19-Apr-13,"Sunday, November 17, 2013",22,8.60020695,8.079956927,text2 17,Text 3
-229,text 4,12/14/2014,4-May-13,"Saturday, December 21, 2013",12,6.431599149,8.813361827,text2 2,Text 1
-230,text 3,2/10/2014,6-Jun-14,"Saturday, November 16, 2013",9,3.620978048,5.436594213,text2 22,Text 1
-231,text 5,4/3/2014,28-Feb-14,"Friday, July 18, 2014",-18,6.988255596,1.254314213,text2 12,Text 3
-232,text 5,5/4/2013,16-Feb-13,"Friday, August 8, 2014",16,3.754572157,7.020984801,text2 16,Text 3
-233,text 2,5/10/2013,10-Mar-14,"Saturday, January 26, 2013",-19,6.087300973,5.531659055,text2 23,Text 1
-234,text 3,1/28/2013,9-Jun-13,"Saturday, February 1, 2014",-18,1.173510993,8.75244063,text2 2,Text 2
-235,text 4,10/3/2013,12-Oct-14,"Thursday, September 5, 2013",-7,9.32010665,8.562280832,text2 25,Text 1
-236,text 5,9/22/2014,23-Apr-13,"Wednesday, January 22, 2014",17,4.395181113,3.56412536,text2 7,Text 3
-237,text 5,8/7/2013,31-Dec-13,"Monday, October 14, 2013",18,1.331572014,2.63685856,text2 20,Text 2
-238,text 5,3/16/2014,3-Mar-14,"Tuesday, January 14, 2014",29,10.295755,8.31358063,text2 19,Text 3
-239,text 3,5/20/2014,22-Apr-13,"Sunday, February 2, 2014",-10,0.964756347,7.402842492,text2 25,Text 1
-240,text 5,6/18/2013,24-Apr-14,"Saturday, July 19, 2014",-20,5.459217213,2.474211629,text2 8,Text 1
-241,text 3,9/27/2014,5-Jan-14,"Sunday, June 9, 2013",-7,6.306270996,4.875481446,text2 21,Text 3
-242,text 5,2/10/2013,19-Apr-14,"Tuesday, January 21, 2014",-3,0.753469078,5.344422145,text2 11,Text 2
-243,text 3,4/30/2013,2-Mar-14,"Friday, May 3, 2013",23,5.446784895,6.597167957,text2 17,Text 2
-244,text 5,12/23/2014,31-Jul-13,"Saturday, May 24, 2014",-20,0.774661222,7.17652587,text2 13,Text 2
-245,text 3,12/10/2013,11-Apr-13,"Saturday, August 10, 2013",3,7.936667077,6.844908767,text2 9,Text 2
-246,text 3,2/26/2013,18-Nov-13,"Wednesday, July 31, 2013",-3,9.393299604,4.973492638,text2 14,Text 2
-247,text 3,7/24/2013,10-Oct-14,"Wednesday, December 3, 2014",12,4.529680336,9.985485908,text2 13,Text 1
-248,text 2,11/12/2013,9-Nov-13,"Saturday, December 20, 2014",19,7.192817634,3.643512463,text2 12,Text 3
-249,text 1,6/19/2014,6-Feb-13,"Saturday, January 18, 2014",30,9.818646488,4.454558808,text2 9,Text 3
-250,text 3,8/15/2014,5-Jul-14,"Tuesday, July 8, 2014",21,1.347897094,4.026820424,text2 22,Text 3
-251,text 5,12/3/2014,16-Apr-13,"Saturday, June 22, 2013",-5,8.359807568,8.770035605,text2 8,Text 1
-252,text 1,12/26/2014,13-Feb-14,"Tuesday, March 25, 2014",2,0.992344837,5.039762812,text2 9,Text 1
-253,text 3,6/1/2013,5-Feb-13,"Saturday, June 21, 2014",7,4.610692609,9.761670405,text2 17,Text 3
-254,text 5,9/17/2013,8-Mar-13,"Sunday, April 13, 2014",-3,1.451409817,2.143694017,text2 12,Text 1
-255,text 4,1/9/2014,24-Jun-13,"Saturday, September 7, 2013",9,2.076987812,7.153364253,text2 2,Text 1
-256,text 3,11/28/2013,1-Jul-13,"Wednesday, October 1, 2014",22,3.745119668,6.382748317,text2 5,Text 3
-257,text 2,11/15/2014,3-Feb-13,"Thursday, January 16, 2014",-13,7.251045078,1.548658162,text2 22,Text 2
-258,text 1,11/20/2013,27-May-13,"Tuesday, December 16, 2014",-2,8.06675243,5.592944571,text2 20,Text 1
-259,text 5,7/7/2013,25-Sep-13,"Friday, September 5, 2014",11,4.931074684,7.053356167,text2 13,Text 2
-260,text 5,8/14/2013,21-Nov-13,"Sunday, June 15, 2014",14,9.824969645,10.5977082,text2 24,Text 3
-261,text 2,9/27/2014,4-Jan-14,"Tuesday, February 18, 2014",28,7.409981058,3.200508219,text2 22,Text 1
-262,text 5,8/24/2014,1-Mar-14,"Friday, April 4, 2014",10,7.768834419,6.651192724,text2 2,Text 2
-263,text 3,1/3/2014,3-Feb-13,"Friday, October 25, 2013",24,3.034656641,9.818039972,text2 14,Text 3
-264,text 5,8/9/2014,31-Jul-13,"Friday, August 9, 2013",4,6.335657521,4.753331852,text2 16,Text 2
-265,text 3,7/31/2013,19-Jun-14,"Monday, May 20, 2013",-5,8.694281356,6.551875515,text2 24,Text 1
-266,text 4,2/27/2014,6-Aug-13,"Thursday, February 27, 2014",-1,7.035173569,1.159613294,text2 2,Text 2
-267,text 2,3/19/2014,22-May-14,"Sunday, October 26, 2014",-18,1.386375415,6.402101774,text2 4,Text 3
-268,text 3,7/23/2013,7-Dec-13,"Monday, April 22, 2013",25,2.4567731,2.806630559,text2 14,Text 1
-269,text 3,3/7/2013,14-Sep-13,"Saturday, May 4, 2013",19,3.373362825,3.699278999,text2 16,Text 3
-270,text 1,7/19/2013,25-Mar-14,"Sunday, October 12, 2014",-4,0.945639471,5.381487994,text2 3,Text 2
-271,text 4,3/15/2014,23-Oct-13,"Saturday, January 18, 2014",-14,8.906501992,8.647139415,text2 1,Text 1
-272,text 1,8/4/2014,25-Nov-14,"Thursday, June 13, 2013",7,8.12214655,7.368484603,text2 22,Text 1
-273,text 5,5/8/2014,21-Jan-14,"Saturday, January 19, 2013",6,3.674283293,1.231669098,text2 13,Text 3
-274,text 3,8/20/2014,22-Oct-14,"Thursday, October 3, 2013",17,5.310216778,7.212567066,text2 23,Text 2
-275,text 1,5/4/2013,25-Apr-14,"Tuesday, April 23, 2013",19,10.21787134,0.860139125,text2 10,Text 1
-276,text 1,12/7/2013,10-Mar-13,"Thursday, January 2, 2014",27,2.597131615,10.10708649,text2 7,Text 1
-277,text 4,12/23/2013,3-Jun-14,"Sunday, June 30, 2013",-5,8.310905718,8.74518449,text2 13,Text 3
-278,text 1,11/7/2014,18-Oct-13,"Saturday, November 30, 2013",13,5.084167624,6.774205414,text2 7,Text 3
-279,text 3,11/22/2013,17-Sep-13,"Saturday, August 16, 2014",12,6.998919944,6.958752737,text2 25,Text 3
-280,text 5,9/9/2014,19-Mar-13,"Thursday, November 21, 2013",-13,1.360853427,10.107751,text2 13,Text 2
-281,text 1,9/15/2014,4-Oct-13,"Monday, February 11, 2013",-8,1.552884533,6.01060207,text2 24,Text 3
-282,text 3,12/28/2013,21-Apr-13,"Friday, December 12, 2014",6,5.45999294,2.640733482,text2 10,Text 3
-283,text 1,4/1/2013,1-May-14,"Saturday, March 8, 2014",-8,7.868874639,6.820978494,text2 23,Text 2
-284,text 1,6/11/2013,20-Feb-13,"Tuesday, March 18, 2014",28,1.741878161,2.448099604,text2 8,Text 3
-285,text 4,8/3/2013,16-Jul-14,"Saturday, December 7, 2013",-12,5.908534022,5.532233625,text2 23,Text 2
-286,text 4,7/1/2014,20-Dec-14,"Wednesday, April 3, 2013",-5,6.934030253,6.796581046,text2 2,Text 3
-287,text 2,6/27/2013,6-Aug-14,"Sunday, August 10, 2014",20,4.409787968,2.019947291,text2 19,Text 1
-288,text 1,10/22/2014,6-Dec-13,"Tuesday, January 8, 2013",-1,10.47034564,5.252742138,text2 19,Text 2
-289,text 4,3/15/2013,21-Feb-13,"Saturday, December 14, 2013",-16,1.277203431,10.1933505,text2 5,Text 1
-290,text 3,7/19/2014,10-Jul-13,"Tuesday, May 13, 2014",-19,0.751036771,8.47772017,text2 11,Text 3
-291,text 5,10/19/2014,11-Jan-13,"Wednesday, February 5, 2014",-9,3.460936971,3.724675569,text2 24,Text 3
-292,text 1,11/9/2014,18-Feb-14,"Wednesday, January 22, 2014",6,7.244131749,7.999943957,text2 19,Text 1
-293,text 2,7/12/2013,7-Jun-14,"Tuesday, March 12, 2013",9,4.156672843,5.861273617,text2 19,Text 2
-294,text 1,12/14/2014,31-Jul-13,"Monday, July 7, 2014",-11,7.384632272,7.937918845,text2 7,Text 1
-295,text 1,6/13/2014,13-Jan-14,"Sunday, March 31, 2013",-8,4.539636152,4.329790536,text2 24,Text 2
-296,text 5,5/25/2014,26-Nov-14,"Sunday, February 17, 2013",18,4.436790963,7.339081161,text2 8,Text 2
-297,text 5,8/3/2014,22-Mar-14,"Tuesday, September 23, 2014",9,5.629201843,9.52554933,text2 16,Text 2
-298,text 3,10/25/2013,7-Sep-14,"Saturday, February 8, 2014",18,9.188947626,3.922701839,text2 23,Text 2
-299,text 5,11/8/2014,19-May-13,"Friday, February 1, 2013",-19,6.044276075,4.411747464,text2 23,Text 3
-300,text 2,9/12/2014,19-Jul-13,"Saturday, July 5, 2014",-14,6.93041305,9.208327239,text2 13,Text 1
-301,text 5,8/25/2014,25-Oct-14,"Monday, November 3, 2014",5,6.339087509,4.2513128,text2 6,Text 3
-302,text 4,7/14/2014,17-Jul-14,"Thursday, August 21, 2014",14,1.774172267,0.398838654,text2 21,Text 2
-303,text 1,2/19/2014,9-Oct-13,"Sunday, June 1, 2014",3,1.758114164,6.782184162,text2 3,
-304,text 5,8/3/2014,11-Jan-13,"Saturday, April 13, 2013",22,1.336426365,5.89093811,text2 19,
-305,text 1,12/15/2014,13-Sep-13,"Wednesday, January 15, 2014",1,3.967597725,3.472253407,text2 23,
-306,text 5,11/15/2014,6-Aug-14,"Tuesday, September 3, 2013",4,1.860944128,1.127529217,text2 24,
-307,text 3,1/27/2014,7-Dec-13,"Thursday, December 4, 2014",3,1.005016824,2.316966914,text2 22,
-308,text 1,11/19/2014,10-Jul-13,"Wednesday, September 3, 2014",-5,8.814705278,9.528814369,text2 18,
-309,text 2,10/25/2013,17-May-13,"Thursday, June 19, 2014",23,4.748051633,9.615343392,text2 24,
-310,text 4,4/12/2013,19-Jan-14,"Wednesday, May 8, 2013",-3,7.926429951,6.216968491,text2 25,
-311,text 3,8/19/2014,18-Jun-13,"Saturday, November 9, 2013",27,7.145826017,7.57801397,text2 2,
-312,text 3,2/20/2014,5-Oct-14,"Wednesday, August 27, 2014",19,8.361939347,9.626653886,text2 24,
-313,text 3,12/27/2013,24-Dec-13,"Monday, November 3, 2014",20,6.607932038,6.213465919,text2 21,
-314,text 2,9/14/2013,25-Jul-14,"Thursday, March 27, 2014",-7,1.927580898,6.947053772,text2 9,
-315,text 4,1/8/2013,16-Dec-14,"Sunday, February 2, 2014",21,9.877842492,6.027034818,text2 12,
-316,text 3,9/14/2014,14-Feb-14,"Thursday, July 17, 2014",16,10.13767188,3.210537112,text2 13,
-317,text 2,2/11/2013,30-Jun-14,"Monday, February 18, 2013",28,7.160566654,9.675106606,text2 19,
-318,text 4,6/22/2014,4-Jul-13,"Sunday, January 12, 2014",2,0.455774947,4.815792935,text2 11,
-319,text 3,11/13/2014,5-Mar-14,"Sunday, April 20, 2014",-8,6.352168931,5.30989299,text2 19,
-320,text 3,10/14/2014,10-Jun-14,"Saturday, July 20, 2013",-9,6.985423889,4.783897072,text2 14,
-321,text 3,6/15/2014,5-Mar-13,"Friday, May 31, 2013",-7,9.252781006,0.953270696,text2 2,
-322,text 1,7/8/2013,22-Aug-14,"Friday, March 22, 2013",8,6.84501388,9.75695754,text2 17,
-323,text 4,4/4/2014,26-Aug-14,"Thursday, October 3, 2013",14,8.638875965,8.676648378,text2 24,
-324,text 2,1/6/2013,21-Feb-14,"Sunday, October 13, 2013",24,7.275939878,6.003043605,text2 17,
-325,text 1,12/10/2014,14-Aug-13,"Saturday, April 13, 2013",-5,1.102657285,5.79445131,text2 12,
-326,text 3,8/27/2014,23-Sep-14,"Wednesday, July 17, 2013",25,5.089124278,10.76685281,text2 8,
-327,text 4,7/27/2013,28-Nov-14,"Monday, March 10, 2014",25,3.272137502,0.541998706,text2 18,
-328,text 5,12/8/2014,3-Jun-14,"Monday, November 10, 2014",-20,7.844831057,6.824549763,text2 7,
-329,text 5,11/28/2014,7-Apr-13,"Friday, February 22, 2013",2,5.262377107,6.2647687,text2 14,
-330,text 3,5/17/2014,11-Feb-13,"Thursday, May 22, 2014",17,7.823472457,9.196557508,text2 17,
-331,text 2,6/10/2013,21-Jan-13,"Saturday, January 12, 2013",18,1.795761869,1.437691846,text2 18,
-332,text 1,10/12/2013,16-Aug-13,"Monday, December 15, 2014",27,2.69911682,6.588776727,text2 5,
-333,text 5,1/19/2014,5-Jun-13,"Friday, January 3, 2014",10,3.140918048,10.50920658,text2 20,
-334,text 2,5/3/2013,2-Jul-14,"Tuesday, May 6, 2014",-12,1.101007117,1.698870629,text2 8,
-335,text 4,3/18/2014,21-Apr-14,"Wednesday, July 10, 2013",7,1.811964444,3.829570854,text2 16,
-336,text 4,4/23/2014,25-May-14,"Wednesday, September 3, 2014",-10,2.508503273,2.570455772,text2 6,Text 3
-337,text 4,8/19/2014,17-Dec-13,"Friday, August 8, 2014",-20,4.890441923,4.01285961,text2 21,Text 3
-338,text 1,1/6/2013,22-Oct-13,"Thursday, February 14, 2013",7,7.657181026,4.23661952,text2 15,Text 1
-339,text 1,10/6/2013,14-Nov-14,"Tuesday, December 23, 2014",17,4.355540014,2.763994383,text2 8,Text 2
-340,text 4,7/15/2014,12-Dec-13,"Sunday, August 10, 2014",-16,10.74425228,5.284303584,text2 15,Text 3
-341,text 4,11/20/2013,2-Mar-14,"Friday, October 24, 2014",-1,7.298768714,7.8041378,text2 1,Text 3
-342,text 3,4/26/2014,13-Jan-14,"Wednesday, November 26, 2014",-6,9.15401065,3.726011569,text2 17,Text 3
-343,text 5,10/12/2013,15-Sep-13,"Saturday, February 15, 2014",29,7.019437818,7.399813461,text2 14,Text 3
-344,text 3,3/2/2014,9-Nov-13,"Thursday, February 13, 2014",-7,2.006726787,4.28754066,text2 13,Text 1
-345,text 1,9/6/2013,25-Oct-13,"Monday, July 1, 2013",7,6.477998217,8.0872467,text2 1,Text 2
-346,text 4,11/4/2014,13-Aug-13,"Friday, May 3, 2013",7,9.115767862,2.906550765,text2 17,Text 1
-347,text 5,4/23/2013,5-Apr-13,"Saturday, February 16, 2013",-7,3.902534145,5.994258148,text2 12,Text 1
-348,text 2,7/24/2014,6-Jun-14,"Sunday, March 17, 2013",-10,5.648167892,9.24272373,text2 12,Text 3
-349,text 5,1/2/2014,12-May-13,"Saturday, July 13, 2013",29,1.912338481,9.388947102,text2 25,Text 3
-350,text 4,8/4/2013,5-Mar-14,"Saturday, May 18, 2013",-18,8.055849569,7.643772584,text2 11,Text 3
-351,text 1,4/8/2013,21-Jul-14,"Wednesday, July 3, 2013",9,2.045258554,5.830473279,text2 2,Text 2
-352,text 1,9/27/2014,25-May-13,"Monday, September 8, 2014",-4,1.534607036,3.030683341,text2 1,Text 2
-353,text 2,5/14/2013,23-Dec-14,"Friday, January 3, 2014",25,8.158299605,3.920958123,text2 5,Text 3
-354,text 4,2/14/2013,4-Apr-13,"Wednesday, November 6, 2013",-3,5.582259523,8.728651574,text2 21,Text 1
-355,text 1,8/7/2014,7-Mar-14,"Saturday, March 15, 2014",23,2.866110113,3.028743669,text2 4,Text 2
-356,text 5,12/9/2014,28-Jan-13,"Monday, March 11, 2013",-17,4.220081778,6.287848484,text2 1,Text 1
-357,text 5,3/13/2014,13-Nov-14,"Monday, June 16, 2014",-1,9.365008432,9.147764666,text2 2,Text 2
-358,text 4,4/22/2014,5-Jan-14,"Monday, September 15, 2014",-10,9.097066529,4.995187761,text2 16,Text 2
-359,text 4,7/22/2013,15-Mar-13,"Sunday, September 7, 2014",26,9.676640291,9.520680235,text2 9,Text 2
-360,text 3,8/6/2013,8-Mar-13,"Sunday, April 21, 2013",24,2.364733864,1.752237672,text2 22,Text 3
-361,text 1,9/30/2014,8-Jan-14,"Wednesday, September 18, 2013",-2,2.514117866,4.926203578,text2 23,Text 1
-362,text 1,1/28/2013,7-Feb-14,"Sunday, April 21, 2013",30,5.210270404,9.926137887,text2 15,Text 3
-363,text 4,4/12/2014,8-Oct-13,"Friday, May 24, 2013",20,1.649113885,1.863212844,text2 20,Text 3
-364,text 3,11/18/2013,27-Jul-13,"Thursday, May 16, 2013",21,3.537010798,7.564538675,text2 6,Text 1
-365,text 3,7/13/2013,11-Jan-14,"Monday, January 20, 2014",23,8.240799761,5.834753616,text2 6,Text 3
-366,text 3,6/18/2013,13-Jan-14,"Monday, September 16, 2013",-17,5.102786635,8.162206276,text2 25,Text 2
-367,text 1,8/25/2014,16-Apr-14,"Monday, January 27, 2014",0,7.918113017,7.981717393,text2 10,Text 1
-368,text 1,1/23/2013,26-Oct-14,"Sunday, March 17, 2013",30,5.378004376,9.03297183,text2 20,Text 2
-369,text 4,8/25/2014,13-Oct-13,"Tuesday, January 15, 2013",0,8.054337969,1.911399736,text2 18,Text 1
-370,text 3,11/28/2014,25-Mar-14,"Tuesday, June 17, 2014",27,6.547050549,0.935202269,text2 1,Text 3
-371,text 1,4/20/2013,10-Aug-13,"Monday, September 1, 2014",19,2.317154259,7.060718412,text2 10,Text 1
-372,text 2,3/18/2013,31-Mar-13,"Wednesday, September 24, 2014",3,8.760054312,4.796722994,text2 1,Text 2
-373,text 1,4/9/2014,2-May-14,"Tuesday, May 13, 2014",22,8.919719633,5.718220907,text2 6,Text 2
-374,text 2,6/23/2014,8-Jun-13,"Tuesday, February 4, 2014",-12,3.969698895,0.835378933,text2 17,Text 3
-375,text 1,10/1/2013,7-Jun-14,"Sunday, February 17, 2013",18,1.846739713,6.920950501,text2 10,Text 3
-376,text 5,11/18/2013,19-Sep-14,"Saturday, June 28, 2014",-18,5.020405862,3.98166374,text2 1,Text 3
-377,text 4,3/19/2014,22-Apr-14,"Friday, October 3, 2014",-5,10.76866392,1.92997812,text2 3,Text 2
-378,text 5,9/19/2014,27-Jun-13,"Tuesday, February 19, 2013",-4,2.152342567,2.68539794,text2 17,Text 2
-379,text 4,12/14/2013,28-May-14,"Saturday, June 21, 2014",6,1.819651675,10.817387,text2 4,Text 1
-380,text 1,2/27/2013,13-Jun-13,"Friday, November 8, 2013",12,2.852257812,2.931016932,text2 10,Text 3
-381,text 2,12/15/2013,6-Oct-14,"Monday, May 5, 2014",26,7.399848593,7.007749074,text2 11,Text 3
-382,text 4,2/24/2013,17-Mar-13,"Tuesday, January 21, 2014",-10,2.681738102,2.191921258,text2 15,Text 2
-383,text 5,1/21/2013,9-May-14,"Sunday, May 26, 2013",-17,0.893133442,9.623843433,text2 23,Text 2
-384,text 3,7/6/2014,3-Nov-13,"Wednesday, January 15, 2014",2,3.209879898,10.61933146,text2 14,Text 3
-385,text 4,6/7/2014,14-Jan-13,"Thursday, May 23, 2013",7,10.63192025,9.864251491,text2 12,Text 3
-386,text 5,10/12/2013,2-Oct-14,"Saturday, December 14, 2013",14,9.950304541,1.290102042,text2 22,Text 3
-387,text 1,5/28/2014,3-Apr-13,"Tuesday, August 19, 2014",-9,5.114631104,4.921951082,text2 5,Text 1
-388,text 1,3/11/2014,5-Aug-14,"Friday, July 19, 2013",-3,9.451715918,6.622990078,text2 9,Text 1
-389,text 1,12/6/2013,2-Oct-14,"Sunday, September 15, 2013",5,4.227202484,10.45662614,text2 21,Text 1
-390,text 3,11/18/2013,28-Feb-13,"Wednesday, December 3, 2014",24,2.888349707,4.807092217,text2 20,Text 3
-391,text 5,4/24/2014,15-Nov-14,"Friday, April 18, 2014",9,5.448679354,8.194700865,text2 14,Text 3
-392,text 1,4/14/2013,17-Jun-13,"Monday, January 7, 2013",24,2.908178837,5.515348437,text2 20,Text 1
-393,text 5,7/26/2013,19-Dec-14,"Thursday, November 14, 2013",-8,9.998874227,3.492827875,text2 20,Text 2
-394,text 5,6/18/2014,6-Aug-13,"Wednesday, December 18, 2013",22,6.246836453,1.262102033,text2 22,Text 2
-395,text 1,6/8/2013,19-Oct-14,"Monday, January 14, 2013",20,3.030700536,2.263264415,text2 20,Text 3
-396,text 5,4/23/2014,14-Jan-13,"Sunday, November 9, 2014",-19,7.622866868,8.541702514,text2 5,Text 1
-397,text 2,4/20/2013,23-Oct-13,"Friday, April 19, 2013",8,9.998990979,8.426044135,text2 2,Text 1
-398,text 3,10/11/2014,17-Sep-14,"Wednesday, May 21, 2014",-6,7.320699661,8.238834281,text2 18,Text 2
-399,text 5,10/5/2014,21-Sep-14,"Thursday, June 27, 2013",12,7.965594456,0.171877753,text2 7,Text 2
-400,text 5,8/15/2014,12-May-14,"Sunday, February 10, 2013",9,9.997071385,3.96468148,text2 10,Text 2
-401,text 1,3/5/2013,8-Sep-13,"Wednesday, June 5, 2013",-9,8.982402731,7.530241678,text2 4,Text 1
-402,text 1,9/5/2013,24-Dec-14,"Friday, April 19, 2013",15,2.825614319,0.530593904,text2 5,Text 2
-403,text 1,1/23/2013,6-Oct-13,"Wednesday, September 3, 2014",-15,0.877536153,8.481565029,text2 10,Text 3
-404,text 3,5/31/2014,18-Jul-14,"Monday, April 28, 2014",-11,1.780027845,8.352281432,text2 4,Text 2
-405,text 1,12/17/2013,27-Dec-14,"Monday, September 15, 2014",24,3.499401704,5.36749746,text2 2,Text 3
-406,text 2,2/10/2014,18-Apr-13,"Sunday, December 7, 2014",-3,0.973068617,1.249620439,text2 6,Text 2
-407,text 3,3/1/2013,4-Jul-13,"Friday, May 17, 2013",19,6.097686047,5.499825961,text2 11,Text 2
-408,text 4,4/27/2013,31-May-13,"Sunday, January 26, 2014",-3,4.277076477,1.496207772,text2 13,Text 3
-409,text 4,4/23/2014,11-Sep-14,"Sunday, May 26, 2013",-8,1.124194212,7.255980135,text2 20,Text 3
-410,text 2,9/18/2014,27-Nov-13,"Wednesday, October 23, 2013",8,7.82381835,5.247172412,text2 6,Text 1
-411,text 3,10/26/2013,8-Jun-14,"Monday, March 4, 2013",-1,6.419222064,4.954604771,text2 8,Text 3
-412,text 5,11/30/2014,13-Mar-14,"Sunday, February 3, 2013",-5,2.520886746,4.332810404,text2 21,Text 1
-413,text 2,6/21/2013,2-Feb-14,"Tuesday, September 30, 2014",4,0.269116936,1.129975256,text2 19,Text 3
-414,text 3,6/11/2013,27-Sep-14,"Sunday, April 20, 2014",29,7.646167111,0.547512533,text2 4,Text 2
-415,text 5,6/1/2014,5-Feb-14,"Friday, October 3, 2014",10,3.195083198,9.524361145,text2 14,Text 2
-416,text 2,2/16/2013,27-Nov-13,"Friday, March 28, 2014",-12,9.95678971,10.28024417,text2 12,Text 3
-417,text 4,11/12/2013,2-Dec-14,"Wednesday, June 11, 2014",23,9.827327075,9.551234217,text2 23,Text 3
-418,text 5,1/1/2014,18-Jul-14,"Monday, January 7, 2013",19,6.824053515,1.440972774,text2 3,Text 1
-419,text 4,11/13/2013,11-Dec-13,"Sunday, November 17, 2013",6,2.446295085,9.394691614,text2 12,Text 3
-420,text 1,12/31/2013,26-Dec-13,"Friday, February 14, 2014",10,7.12464626,7.95016825,text2 24,Text 3
-421,text 5,12/7/2014,10-Dec-13,"Wednesday, March 19, 2014",21,1.620689661,8.509345451,text2 22,Text 2
-422,text 3,10/20/2014,28-Apr-13,"Thursday, March 21, 2013",-3,8.352606761,4.33639608,text2 16,Text 1
-423,text 5,6/6/2014,24-Sep-13,"Thursday, December 25, 2014",0,1.27072559,2.580499956,text2 20,Text 2
-424,text 2,2/28/2014,23-Jan-14,"Saturday, July 13, 2013",15,10.90705538,4.008189801,text2 5,Text 3
-425,text 3,12/21/2013,19-Mar-13,"Wednesday, November 20, 2013",22,3.880413362,1.255488453,text2 19,Text 3
-426,text 3,9/1/2013,1-Sep-14,"Friday, October 18, 2013",-12,3.20920346,4.740704521,text2 10,Text 2
-427,text 1,2/5/2013,1-Jun-13,"Wednesday, February 20, 2013",-14,4.100764768,10.20840227,text2 11,Text 1
-428,text 5,2/4/2014,9-Jul-14,"Thursday, September 5, 2013",5,4.758597871,3.540119139,text2 20,Text 1
-429,text 1,2/9/2013,11-Nov-13,"Tuesday, July 9, 2013",-10,3.608623013,7.27782186,text2 17,Text 3
-430,text 3,10/18/2013,13-Nov-13,"Sunday, October 5, 2014",23,6.153497962,2.97095785,text2 12,Text 3
-431,text 2,4/5/2013,30-Nov-13,"Sunday, June 1, 2014",-13,1.31050442,1.080261656,text2 12,Text 2
-432,text 5,1/28/2013,21-Jun-13,"Saturday, May 25, 2013",-1,6.623335738,2.857521787,text2 2,Text 2
-433,text 5,3/17/2014,15-Jan-14,"Friday, November 7, 2014",27,7.720494941,3.28521378,text2 16,Text 3
-434,text 5,10/1/2014,2-Aug-13,"Thursday, August 21, 2014",-8,6.722594224,7.240054419,text2 20,Text 2
-435,text 4,5/28/2014,8-Oct-14,"Monday, May 26, 2014",-8,0.387915902,0.899090259,text2 5,Text 3
-436,text 2,8/26/2013,10-May-14,"Friday, January 25, 2013",-3,7.247278445,2.600212036,text2 22,Text 3
-437,text 1,10/28/2013,3-Jul-13,"Monday, March 25, 2013",23,4.362094551,5.485150767,text2 5,Text 3
-438,text 5,3/22/2013,14-Jan-13,"Tuesday, April 23, 2013",-11,4.731014991,5.373111045,text2 9,Text 3
-439,text 2,11/1/2013,5-Feb-13,"Sunday, October 5, 2014",4,9.211222362,2.293841169,text2 18,Text 3
-440,text 4,9/7/2013,8-Dec-13,"Monday, August 26, 2013",3,5.201204804,5.427777017,text2 1,Text 3
-441,text 5,4/5/2014,13-Mar-14,"Monday, November 11, 2013",-19,3.188005894,9.604230943,text2 24,Text 2
-442,text 1,11/24/2014,5-Aug-14,"Monday, July 28, 2014",-16,5.891264172,3.960082472,text2 14,Text 3
-443,text 1,10/19/2014,22-May-13,"Wednesday, January 8, 2014",11,6.916683565,5.61946866,text2 8,Text 1
-444,text 2,12/31/2013,15-Aug-14,"Tuesday, August 19, 2014",-7,6.320644825,5.643462321,text2 24,Text 3
-445,text 2,3/6/2014,12-Jul-14,"Saturday, April 19, 2014",-15,7.672443648,9.556805294,text2 17,Text 3
-446,text 2,12/5/2014,26-Oct-14,"Sunday, July 6, 2014",0,7.721393225,6.453568016,text2 25,Text 2
-447,text 4,11/23/2013,18-Oct-14,"Wednesday, October 8, 2014",-13,4.857395601,4.37618748,text2 8,Text 1
-448,text 4,11/23/2013,27-Nov-14,"Friday, December 6, 2013",15,8.901682363,7.28311266,text2 10,Text 1
-449,text 1,12/10/2014,14-May-14,"Friday, June 6, 2014",6,8.63897908,7.271293193,text2 25,Text 3
-450,text 5,11/6/2013,27-May-13,"Wednesday, April 10, 2013",-1,4.718739335,8.108684254,text2 15,Text 3
-451,text 1,2/19/2013,1-Apr-13,"Thursday, November 28, 2013",25,4.00802951,3.631254833,text2 11,Text 1
-452,text 2,7/6/2013,11-Sep-13,"Saturday, June 21, 2014",17,10.24940454,1.550433879,text2 14,Text 2
-453,text 4,5/7/2014,24-Feb-13,"Saturday, November 8, 2014",26,7.138603883,3.943514863,text2 7,Text 1
-454,text 4,9/2/2013,26-Jul-13,"Tuesday, October 1, 2013",0,3.233875306,3.043232045,text2 13,Text 3
-455,text 3,2/24/2014,30-Sep-14,"Thursday, November 27, 2014",26,5.100030239,2.759770586,text2 9,Text 1
-456,text 3,10/3/2013,13-Dec-13,"Wednesday, May 21, 2014",-10,8.157252418,1.727580718,text2 19,Text 2
-457,text 4,2/19/2013,11-Jul-14,"Tuesday, September 23, 2014",17,2.549333131,9.533248703,text2 17,Text 2
-458,text 3,4/7/2013,15-Jan-14,"Wednesday, November 20, 2013",7,2.58692239,5.549705757,text2 6,Text 2
-459,text 2,5/24/2014,19-Feb-13,"Friday, June 14, 2013",22,3.301566505,8.760311051,text2 8,Text 3
-460,text 1,8/6/2014,15-Jun-13,"Monday, March 25, 2013",1,1.006567721,2.939609704,text2 8,Text 2
-461,text 1,10/26/2014,4-Dec-14,"Saturday, April 6, 2013",1,5.569466392,5.573034561,text2 22,Text 2
-462,text 5,5/28/2014,1-Nov-13,"Sunday, June 30, 2013",21,1.346234014,2.215768997,text2 10,Text 2
-463,text 5,5/1/2013,26-Jun-13,"Monday, April 14, 2014",3,1.07758743,3.05510722,text2 13,Text 1
-464,text 2,10/24/2013,23-Jul-13,"Tuesday, August 6, 2013",3,4.855253253,0.585386305,text2 17,Text 3
-465,text 1,11/21/2014,16-Jun-14,"Tuesday, July 15, 2014",-15,2.557914684,3.762103855,text2 8,Text 1
-466,text 2,11/8/2014,21-Aug-13,"Saturday, November 9, 2013",-6,8.795241583,5.530610549,text2 7,Text 2
-467,text 3,4/6/2013,7-Oct-14,"Saturday, March 22, 2014",1,1.990532962,4.61159464,text2 6,Text 1
-468,text 5,9/17/2014,13-Sep-13,"Tuesday, August 5, 2014",-18,0.202777383,8.622618425,text2 5,Text 2
-469,text 2,6/19/2014,17-Aug-14,"Saturday, February 15, 2014",29,3.127743035,9.379238496,text2 8,Text 3
-470,text 2,1/21/2013,10-Nov-14,"Tuesday, May 28, 2013",0,8.403533034,6.189151506,text2 11,Text 3
-471,text 4,10/16/2013,24-Feb-13,"Friday, December 6, 2013",-17,2.468730601,7.614070081,text2 5,Text 1
-472,text 2,5/6/2013,13-Dec-13,"Sunday, December 1, 2013",-1,6.112546811,9.017770118,text2 8,Text 1
-473,text 5,2/1/2014,27-Aug-14,"Monday, October 21, 2013",6,8.638607858,9.326941503,text2 7,Text 3
-474,text 2,6/5/2014,9-Apr-13,"Tuesday, March 18, 2014",-1,4.430461772,7.226829355,text2 14,Text 1
-475,text 2,9/28/2014,11-Nov-13,"Friday, December 13, 2013",30,9.580605223,5.71982409,text2 23,Text 3
-476,text 3,7/13/2014,19-Oct-14,"Wednesday, March 13, 2013",2,9.642407854,3.876986942,text2 2,Text 2
-477,text 3,8/24/2014,26-Nov-14,"Friday, July 26, 2013",21,7.946382365,1.040599178,text2 24,Text 2
-478,text 2,6/24/2014,17-Feb-14,"Wednesday, January 22, 2014",4,7.066063025,6.769903111,text2 15,Text 2
-479,text 1,9/27/2013,6-Apr-13,"Wednesday, May 7, 2014",13,6.946205489,4.603547923,text2 18,Text 2
-480,text 4,6/3/2014,12-Oct-14,"Thursday, May 23, 2013",-12,2.593809657,4.103622154,text2 13,Text 2
-481,text 5,12/19/2014,19-Nov-14,"Tuesday, August 20, 2013",11,9.672862775,6.673212565,text2 6,Text 2
-482,text 3,11/9/2014,10-Nov-13,"Friday, March 15, 2013",7,4.056931477,10.47427627,text2 13,Text 1
-483,text 4,10/26/2014,20-Aug-13,"Monday, July 22, 2013",7,0.974346652,7.422953374,text2 11,Text 1
-484,text 1,6/27/2014,23-Dec-14,"Saturday, June 14, 2014",-12,7.098620737,9.296252111,text2 20,Text 3
-485,text 1,4/18/2013,2-Mar-14,"Sunday, May 26, 2013",-6,9.906847587,5.286998749,text2 7,Text 1
-486,text 2,7/10/2014,20-Apr-13,"Saturday, November 2, 2013",-3,5.767387194,10.70073694,text2 5,Text 1
-487,text 3,7/19/2013,13-Nov-13,"Monday, August 19, 2013",5,1.779316386,2.728782364,text2 19,Text 2
-488,text 4,4/30/2013,19-Oct-14,"Saturday, October 11, 2014",26,3.154870376,8.47793155,text2 8,Text 2
-489,text 2,2/19/2014,6-Feb-13,"Saturday, April 5, 2014",26,7.741383968,9.669070759,text2 21,
-490,text 3,3/31/2013,27-Jan-14,"Monday, May 12, 2014",19,4.062520108,8.770678895,text2 6,
-491,text 3,10/15/2014,16-Oct-13,"Friday, December 26, 2014",12,4.341112731,10.06489004,text2 21,
-492,text 1,7/7/2013,7-Nov-14,"Monday, June 3, 2013",-10,5.810996907,4.439295661,text2 14,
-493,text 1,8/24/2014,21-Jul-14,"Tuesday, June 11, 2013",28,8.064552942,4.19683969,text2 4,
-494,text 5,6/27/2014,17-Dec-13,"Thursday, January 23, 2014",28,1.103353532,7.054417483,text2 22,
-495,text 1,5/4/2013,14-Mar-14,"Friday, June 20, 2014",10,7.770342815,1.969871834,text2 11,
-496,text 3,6/28/2013,24-Dec-14,"Thursday, January 2, 2014",-5,2.707481213,4.102850417,text2 23,
-497,text 3,6/11/2014,22-Nov-14,"Sunday, June 30, 2013",20,1.253793493,3.031932976,text2 20,
-498,text 1,3/13/2013,25-Oct-13,"Tuesday, March 26, 2013",-9,4.18990176,9.75318882,text2 1,
-499,text 3,8/5/2013,17-Sep-13,"Wednesday, January 8, 2014",0,7.311460462,0.947802346,text2 18,
-500,text 4,9/20/2014,12-Nov-14,"Tuesday, November 26, 2013",8,7.264907255,1.720659167,text2 20,
-501,text 4,2/10/2013,24-Apr-13,"Monday, June 16, 2014",-2,2.270300531,2.017651673,text2 21,
-502,text 1,10/14/2014,5-Aug-13,"Friday, January 11, 2013",19,8.759723086,3.423562052,text2 21,
-503,text 3,6/14/2013,18-Nov-14,"Monday, March 3, 2014",18,2.784703479,2.21358105,text2 8,
-504,text 5,6/9/2014,15-Jul-14,"Monday, October 14, 2013",24,10.43198162,6.087616919,text2 5,
-505,text 2,12/24/2013,4-Dec-14,"Saturday, June 21, 2014",1,10.61520075,4.410402947,text2 10,
-506,text 1,10/4/2013,24-Jan-14,"Sunday, June 15, 2014",9,8.795921315,2.984936221,text2 4,
-507,text 5,4/17/2013,22-Jun-13,"Saturday, May 10, 2014",30,3.343428649,1.396834629,text2 1,
-508,text 2,6/12/2014,21-Jul-14,"Sunday, April 13, 2014",-16,1.317579028,4.842618573,text2 11,
-509,text 4,11/25/2013,2-Jul-13,"Friday, August 22, 2014",-10,9.193287168,2.829682827,text2 10,
-510,text 1,11/7/2013,13-Nov-13,"Thursday, May 23, 2013",-2,7.468535692,5.028323196,text2 8,
-511,text 5,4/12/2013,18-Sep-13,"Friday, July 11, 2014",15,7.205264475,4.587297095,text2 4,
-512,text 4,3/17/2013,17-Sep-14,"Tuesday, September 23, 2014",18,8.892597213,3.60691776,text2 23,
-513,text 5,3/26/2014,31-Jan-13,"Saturday, October 12, 2013",10,0.950568556,7.841126517,text2 18,
-514,text 4,4/10/2013,10-Aug-13,"Wednesday, July 3, 2013",16,1.025315811,3.755977027,text2 2,
-515,text 5,2/28/2014,13-Apr-14,"Tuesday, April 15, 2014",-19,7.170604508,2.318734376,text2 10,
-516,text 4,6/26/2013,21-Dec-13,"Thursday, June 6, 2013",-9,3.456207232,1.835339717,text2 25,
-517,text 1,9/16/2014,7-Dec-13,"Sunday, December 14, 2014",-5,7.485586191,2.952710585,text2 8,
-518,text 3,3/15/2014,12-Oct-14,"Saturday, May 24, 2014",2,9.654657971,5.160648086,text2 3,
-519,text 5,7/14/2014,3-Mar-13,"Wednesday, December 4, 2013",1,3.327134376,6.072343934,text2 9,
-520,text 5,4/3/2014,17-Nov-14,"Wednesday, April 24, 2013",-7,1.011428646,3.021937752,text2 1,
-521,text 3,12/27/2014,25-Jan-14,"Tuesday, January 7, 2014",29,2.85284049,6.862685729,text2 16,
-522,text 1,7/26/2014,3-Dec-14,"Sunday, October 5, 2014",-3,9.051980543,8.397014485,text2 20,
-523,text 1,1/2/2014,12-Oct-13,"Friday, December 13, 2013",30,6.663409106,1.223573903,text2 17,
-524,text 1,1/8/2014,28-Oct-14,"Monday, June 9, 2014",-16,3.192256448,7.803094362,text2 13,
-525,text 3,4/14/2014,12-Jul-14,"Friday, January 17, 2014",5,4.676339985,3.495457292,text2 3,
-526,text 4,7/28/2013,18-Feb-13,"Monday, April 1, 2013",22,7.77058777,0.499092581,text2 21,
-527,text 5,11/10/2013,10-Jun-13,"Saturday, September 27, 2014",-9,8.28037461,9.997191947,text2 8,
-528,text 5,4/26/2014,12-Dec-14,"Tuesday, August 13, 2013",14,4.442601344,7.783884558,text2 17,
-529,text 4,3/12/2014,16-Mar-13,"Monday, August 25, 2014",25,9.141192771,6.4207558,text2 19,
-530,text 3,3/13/2014,14-Jun-13,"Tuesday, March 5, 2013",10,2.99022464,1.302698447,text2 4,
-531,text 5,12/13/2013,20-Nov-14,"Wednesday, April 16, 2014",-20,5.982569755,6.815185908,text2 13,
-532,text 1,11/26/2014,3-Apr-14,"Thursday, October 9, 2014",15,0.368030723,4.668722148,text2 9,
-533,text 4,6/20/2013,15-Sep-14,"Wednesday, November 27, 2013",28,5.340664836,6.736004757,text2 21,
-534,text 1,5/19/2014,4-Feb-13,"Thursday, January 31, 2013",19,8.032387571,7.951552487,text2 7,
-535,text 1,4/12/2014,18-Dec-13,"Sunday, September 21, 2014",19,5.650090666,2.84730616,text2 1,
-536,text 5,2/13/2014,19-Aug-13,"Thursday, May 2, 2013",4,1.608484677,7.121227895,text2 18,
-537,text 2,10/3/2013,15-Dec-13,"Saturday, October 12, 2013",9,1.716160143,2.109468823,text2 22,
-538,text 3,9/8/2013,21-Oct-13,"Saturday, April 5, 2014",11,1.82844958,3.782337615,text2 14,Text 2
-539,text 3,2/5/2013,4-Jul-14,"Tuesday, December 2, 2014",13,4.945889645,10.10556496,text2 18,Text 3
-540,text 3,4/3/2014,17-Sep-14,"Friday, October 18, 2013",21,1.968128636,1.024902497,text2 6,Text 3
-541,text 4,6/6/2014,27-Sep-13,"Thursday, April 18, 2013",22,3.723021317,5.814862082,text2 18,Text 1
-542,text 4,8/18/2013,22-Jul-14,"Wednesday, April 2, 2014",17,2.783081714,1.236553493,text2 24,Text 1
-543,text 4,2/7/2014,23-May-14,"Sunday, May 11, 2014",2,5.213551786,1.162282666,text2 19,Text 1
-544,text 3,4/24/2013,20-Aug-13,"Saturday, June 1, 2013",-18,4.433647553,8.008063609,text2 22,Text 2
-545,text 2,4/24/2014,8-May-13,"Friday, February 7, 2014",14,5.393795663,8.639891028,text2 20,Text 2
-546,text 1,10/31/2014,6-Aug-13,"Sunday, May 12, 2013",0,5.286270032,2.196704788,text2 16,Text 1
-547,text 2,4/26/2014,31-Jan-13,"Thursday, March 13, 2014",17,10.01754214,10.10465417,text2 21,Text 3
-548,text 4,5/1/2014,1-Jun-13,"Sunday, March 16, 2014",27,0.272347711,5.38548279,text2 19,Text 1
-549,text 3,2/28/2013,15-Oct-14,"Monday, June 17, 2013",17,8.42035668,3.852178133,text2 4,Text 1
-550,text 5,2/26/2013,23-May-14,"Wednesday, June 25, 2014",-18,0.949278393,3.729221878,text2 5,Text 3
-551,text 1,5/25/2014,4-Jul-14,"Thursday, March 7, 2013",-18,9.733988571,8.35220572,text2 11,Text 1
-552,text 2,9/3/2014,25-Mar-13,"Tuesday, February 25, 2014",-12,2.571836273,4.254296834,text2 20,Text 2
-553,text 1,7/17/2014,26-Jul-14,"Tuesday, May 7, 2013",5,9.384206955,3.436227789,text2 3,Text 1
-554,text 3,8/5/2014,24-May-14,"Monday, June 30, 2014",25,10.81015973,2.746333145,text2 2,Text 1
-555,text 4,9/21/2013,21-Nov-14,"Friday, January 31, 2014",12,8.0993431,1.039063318,text2 12,Text 2
-556,text 2,6/26/2013,12-Mar-14,"Friday, July 5, 2013",13,10.42002796,2.094045983,text2 4,Text 3
-557,text 1,8/10/2014,14-Sep-13,"Tuesday, August 27, 2013",-6,8.576321043,9.709762264,text2 21,Text 1
-558,text 1,6/13/2014,17-Sep-13,"Monday, October 6, 2014",1,7.407672645,5.36170189,text2 7,Text 2
-559,text 4,8/5/2014,19-Feb-13,"Tuesday, March 5, 2013",20,5.293533341,9.060425518,text2 13,Text 2
-560,text 5,10/8/2013,6-Aug-13,"Thursday, April 3, 2014",30,4.253186467,1.245235644,text2 10,Text 3
-561,text 1,9/24/2014,12-Mar-14,"Thursday, December 4, 2014",-14,5.536597732,4.473285356,text2 8,Text 2
-562,text 3,2/15/2014,1-Nov-13,"Monday, July 28, 2014",-14,7.676868912,1.164132546,text2 21,Text 2
-563,text 4,10/22/2014,12-May-13,"Sunday, August 25, 2013",30,8.960151208,1.233957061,text2 15,Text 2
-564,text 2,9/14/2014,15-May-14,"Wednesday, September 4, 2013",7,2.065092929,1.394850061,text2 21,Text 1
-565,text 3,9/28/2013,17-Jul-14,"Wednesday, July 31, 2013",-7,5.818924158,7.602867185,text2 21,Text 3
-566,text 2,4/3/2013,9-Feb-13,"Monday, November 25, 2013",17,1.889267857,2.166478273,text2 21,Text 2
-567,text 5,3/26/2014,4-Aug-14,"Monday, December 9, 2013",-17,4.809500885,3.571921828,text2 10,Text 1
-568,text 2,3/17/2013,17-Apr-14,"Saturday, February 9, 2013",-8,2.255811384,6.636284765,text2 24,Text 1
-569,text 1,11/27/2014,2-Oct-13,"Wednesday, June 11, 2014",18,5.813154781,10.46222358,text2 20,Text 2
-570,text 2,1/22/2013,19-May-13,"Monday, September 30, 2013",14,4.771624763,2.685604076,text2 12,Text 2
-571,text 3,6/1/2014,31-Mar-14,"Monday, May 5, 2014",-20,5.857851471,10.5628382,text2 6,Text 3
-572,text 4,9/9/2014,16-Mar-13,"Monday, April 7, 2014",29,4.845018748,8.341680915,text2 11,Text 1
-573,text 2,6/8/2013,15-May-14,"Saturday, January 19, 2013",-8,6.447951045,5.011329559,text2 1,Text 1
-574,text 5,10/10/2013,10-Nov-13,"Thursday, April 11, 2013",19,5.378857105,8.599018526,text2 18,Text 3
-575,text 4,2/21/2014,6-Sep-13,"Monday, February 3, 2014",5,4.811900873,3.692830566,text2 18,Text 1
-576,text 4,12/31/2013,13-Jun-13,"Wednesday, October 22, 2014",-7,0.757868945,4.42085125,text2 3,Text 2
-577,text 3,1/2/2014,27-Nov-13,"Thursday, June 26, 2014",12,8.488564318,2.132413277,text2 1,Text 2
-578,text 3,2/17/2014,19-Nov-14,"Friday, June 21, 2013",3,4.544723302,3.903781501,text2 12,Text 1
-579,text 1,4/18/2013,6-Sep-13,"Thursday, December 18, 2014",-15,9.566421782,4.089027549,text2 5,Text 3
-580,text 3,4/17/2013,20-Aug-13,"Sunday, September 22, 2013",23,10.24455827,9.244058087,text2 3,Text 3
-581,text 1,12/3/2014,11-Jul-13,"Thursday, September 19, 2013",13,8.795314314,6.889505349,text2 25,Text 2
-582,text 5,4/30/2014,10-Mar-14,"Wednesday, May 1, 2013",29,9.374284091,6.134989323,text2 19,Text 3
-583,text 4,9/12/2013,1-May-13,"Tuesday, January 15, 2013",30,8.291697604,5.406815683,text2 7,Text 2
-584,text 3,3/24/2014,5-Nov-14,"Thursday, March 6, 2014",-17,7.397729018,10.86779713,text2 12,Text 1
-585,text 1,5/10/2013,20-Jul-14,"Friday, April 11, 2014",-19,5.098766744,7.871356122,text2 22,Text 2
-586,text 2,1/26/2013,8-Feb-13,"Monday, January 13, 2014",-3,9.786421779,8.85703107,text2 15,Text 2
-587,text 3,8/26/2014,7-Feb-14,"Tuesday, February 26, 2013",9,9.451186821,1.362514111,text2 12,Text 1
-588,text 2,3/1/2013,28-Feb-13,"Wednesday, April 2, 2014",24,1.825221137,0.667804213,text2 25,Text 2
-589,text 3,3/1/2013,8-May-14,"Saturday, November 8, 2014",27,5.660682598,2.343149876,text2 11,Text 3
-590,text 4,2/23/2014,2-Jan-13,"Tuesday, February 5, 2013",-12,6.917577,6.696264141,text2 5,Text 2
-591,text 1,9/14/2014,22-Jan-14,"Tuesday, May 7, 2013",-4,10.16567876,4.996126613,text2 18,Text 3
-592,text 1,11/9/2013,13-Nov-13,"Wednesday, January 23, 2013",-3,4.537068341,1.583852547,text2 9,Text 3
-593,text 3,8/14/2014,27-Nov-14,"Monday, March 25, 2013",7,9.676902663,0.993604739,text2 22,Text 3
-594,text 5,10/22/2013,8-Aug-13,"Friday, February 15, 2013",-20,3.663531292,8.918394905,text2 3,Text 3
-595,text 5,6/9/2013,23-Nov-13,"Friday, August 8, 2014",-10,1.610212679,9.167049965,text2 4,Text 1
-596,text 3,9/11/2014,15-Feb-13,"Tuesday, April 9, 2013",1,0.876032268,7.128762235,text2 22,Text 3
-597,text 1,1/14/2013,16-Apr-13,"Monday, April 7, 2014",12,5.619363346,8.342541907,text2 8,Text 2
-598,text 4,6/9/2013,2-Apr-14,"Sunday, March 3, 2013",17,5.13546771,7.40098088,text2 25,Text 1
-599,text 3,4/25/2014,20-Feb-14,"Sunday, December 21, 2014",14,10.09990432,3.490222939,text2 24,Text 1
-600,text 5,12/19/2014,26-Oct-13,"Monday, November 18, 2013",13,9.080512685,3.26760086,text2 7,Text 1
-601,text 5,8/20/2014,5-Jul-14,"Tuesday, October 21, 2014",-19,6.355661351,8.639999173,text2 6,Text 2
-602,text 5,11/20/2014,11-Nov-13,"Tuesday, April 8, 2014",7,6.190484578,10.23064615,text2 5,Text 1
-603,text 1,9/16/2014,1-Apr-14,"Saturday, September 28, 2013",24,0.602307075,7.906009845,text2 3,Text 2
-604,text 3,9/11/2014,18-Dec-14,"Wednesday, May 22, 2013",9,5.606212871,4.55339696,text2 13,Text 1
-605,text 5,11/30/2014,12-Apr-14,"Tuesday, July 22, 2014",-2,9.693447001,9.157915687,text2 18,Text 2
-606,text 5,4/10/2014,10-May-14,"Tuesday, August 13, 2013",22,7.284600909,5.687033149,text2 5,Text 3
-607,text 2,4/7/2014,11-Nov-13,"Friday, December 20, 2013",12,10.14782995,5.028608403,text2 9,Text 2
-608,text 5,2/28/2014,8-Mar-13,"Saturday, September 6, 2014",-2,1.191341012,5.489389531,text2 23,Text 1
-609,text 2,6/11/2013,20-Apr-14,"Tuesday, October 14, 2014",25,7.56382322,7.926088228,text2 12,Text 3
-610,text 4,7/26/2013,24-Mar-13,"Friday, August 8, 2014",22,0.894911277,10.44756889,text2 18,Text 1
-611,text 2,4/8/2013,17-Oct-14,"Wednesday, September 25, 2013",8,2.932025372,3.580000355,text2 6,Text 3
-612,text 1,12/6/2013,19-Nov-14,"Monday, February 17, 2014",4,2.551130298,10.40430985,text2 8,Text 2
-613,text 1,10/12/2014,31-May-13,"Tuesday, January 14, 2014",4,4.208799724,3.761192158,text2 19,Text 2
-614,text 5,4/18/2013,2-Apr-14,"Sunday, June 1, 2014",-3,8.644300492,5.3440014,text2 16,Text 2
-615,text 3,4/4/2014,18-Feb-14,"Sunday, August 10, 2014",-2,2.801450716,9.586066461,text2 12,Text 1
-616,text 5,9/17/2014,7-Dec-14,"Friday, February 28, 2014",-20,1.018340632,3.141145887,text2 6,Text 1
-617,text 5,11/18/2014,25-Oct-14,"Thursday, October 17, 2013",9,7.153223833,4.867096703,text2 22,Text 1
-618,text 2,10/20/2013,2-Jun-13,"Thursday, May 23, 2013",7,6.677292746,8.396386127,text2 4,Text 1
-619,text 4,2/6/2014,16-May-13,"Sunday, November 10, 2013",27,7.221702738,5.482667935,text2 4,Text 2
-620,text 1,11/14/2014,19-Oct-13,"Friday, April 4, 2014",4,1.869124658,1.857844756,text2 23,Text 3
-621,text 3,2/13/2013,7-May-13,"Thursday, July 11, 2013",5,9.348502501,6.999830476,text2 7,Text 1
-622,text 3,11/27/2013,13-Jan-14,"Tuesday, June 25, 2013",-19,8.051892023,5.165699743,text2 14,Text 2
-623,text 4,8/31/2014,1-Sep-13,"Tuesday, November 4, 2014",-18,10.41436476,5.640309882,text2 12,Text 2
-624,text 4,12/15/2013,8-Jun-13,"Friday, August 23, 2013",-4,3.868564133,8.289990834,text2 12,Text 3
-625,text 1,7/13/2013,1-Jan-13,"Sunday, December 22, 2013",-15,7.703753618,2.386156948,text2 3,Text 2
-626,text 4,12/5/2014,2-Jan-13,"Wednesday, September 24, 2014",4,3.780616532,5.408541551,text2 8,Text 2
-627,text 3,4/12/2014,18-May-14,"Friday, September 6, 2013",-3,5.256379505,10.17143404,text2 18,Text 1
-628,text 1,3/2/2014,13-Jan-14,"Tuesday, March 4, 2014",21,0.586375648,8.212631263,text2 12,Text 1
-629,text 5,5/18/2013,23-Mar-13,"Tuesday, May 7, 2013",-12,8.937217663,9.347929641,text2 3,Text 1
-630,text 2,4/20/2013,25-Feb-13,"Sunday, January 5, 2014",6,2.67120142,6.605469219,text2 8,Text 1
-631,text 3,5/13/2013,19-Jan-13,"Friday, January 17, 2014",-1,1.852082272,3.670096867,text2 17,Text 3
-632,text 3,6/20/2013,4-Apr-13,"Monday, May 12, 2014",-13,6.935113764,3.154708237,text2 15,Text 2
-633,text 2,9/16/2013,3-May-13,"Wednesday, July 9, 2014",-18,3.410939919,2.390643436,text2 8,Text 3
-634,text 2,6/3/2013,20-Jan-13,"Sunday, July 13, 2014",0,7.744829465,0.795312007,text2 15,Text 2
-635,text 3,1/24/2013,5-Dec-14,"Friday, February 8, 2013",-17,5.062957037,9.151122312,text2 23,
-636,text 5,3/28/2013,12-Oct-13,"Tuesday, September 10, 2013",25,4.599414906,2.325276083,text2 21,
-637,text 4,8/22/2013,22-Nov-14,"Sunday, February 10, 2013",-8,5.72509476,7.48765718,text2 15,
-638,text 4,8/28/2014,26-Aug-13,"Tuesday, October 14, 2014",-16,7.730175499,5.337869311,text2 16,
-639,text 1,10/17/2014,5-Dec-14,"Tuesday, May 20, 2014",18,4.955788793,6.631711106,text2 15,
-640,text 4,4/10/2013,5-May-13,"Wednesday, March 12, 2014",0,3.218722486,6.430534648,text2 9,
-641,text 2,8/6/2013,22-Mar-14,"Tuesday, August 6, 2013",12,8.304043416,3.719688772,text2 16,
-642,text 1,10/4/2013,14-Jul-14,"Friday, November 1, 2013",27,6.742174753,10.38788261,text2 21,
-643,text 4,1/26/2014,16-Jun-13,"Tuesday, April 1, 2014",25,7.871751757,3.683903008,text2 17,
-644,text 5,12/19/2013,20-Apr-13,"Saturday, November 9, 2013",3,8.480776976,9.10577087,text2 15,
-645,text 4,1/3/2014,21-May-13,"Tuesday, September 24, 2013",-15,3.944540646,1.45502718,text2 5,
-646,text 4,11/16/2013,19-Apr-13,"Wednesday, September 18, 2013",-15,5.334588425,8.855517188,text2 14,
-647,text 2,9/30/2013,15-Apr-14,"Tuesday, October 1, 2013",-3,7.371878259,10.22686687,text2 3,
-648,text 1,1/17/2013,3-Jan-14,"Sunday, April 27, 2014",10,6.263258749,6.968207215,text2 24,
-649,text 5,6/23/2013,24-Oct-14,"Monday, October 21, 2013",23,4.125240229,1.840393992,text2 1,
-650,text 4,1/9/2014,3-Oct-14,"Sunday, February 23, 2014",16,9.179397206,1.140973117,text2 5,
-651,text 5,10/4/2013,11-Nov-13,"Sunday, August 3, 2014",-16,5.955917264,3.807516665,text2 17,
-652,text 1,1/15/2013,11-Sep-13,"Tuesday, January 1, 2013",10,10.77466368,3.602842015,text2 20,
-653,text 1,12/22/2013,4-Jan-14,"Wednesday, July 16, 2014",-11,2.339238037,1.13669929,text2 6,
-654,text 4,1/7/2013,9-Sep-13,"Wednesday, March 5, 2014",17,5.151781148,7.913778757,text2 1,
-655,text 3,7/13/2013,10-Dec-14,"Saturday, December 27, 2014",29,4.511790662,9.560606552,text2 16,
-656,text 1,8/21/2014,26-Jan-13,"Tuesday, June 3, 2014",13,8.331329921,5.01833315,text2 4,
-657,text 2,6/19/2014,8-Mar-13,"Friday, March 8, 2013",17,3.175968581,3.18433965,text2 3,
-658,text 4,10/28/2013,7-May-13,"Friday, June 20, 2014",20,1.510916887,3.090733291,text2 22,
-659,text 2,3/27/2014,27-Oct-14,"Tuesday, April 23, 2013",4,4.557324238,7.494823125,text2 25,
-660,text 4,4/23/2014,8-Mar-14,"Thursday, August 28, 2014",3,8.549474022,5.783546673,text2 6,
-661,text 5,5/23/2014,31-Aug-13,"Friday, September 13, 2013",24,9.794074261,9.717401393,text2 6,
-662,text 2,10/1/2013,6-Sep-13,"Wednesday, December 24, 2014",25,4.628871847,4.810591909,text2 25,
-663,text 1,11/1/2014,10-Sep-14,"Thursday, July 4, 2013",26,10.05427364,4.668651146,text2 12,
-664,text 2,9/27/2014,24-Feb-14,"Saturday, August 17, 2013",-12,3.121962739,8.338850984,text2 18,
-665,text 2,3/31/2013,21-Jun-13,"Wednesday, October 15, 2014",6,4.933262492,3.75292559,text2 1,
-666,text 4,6/12/2014,14-May-14,"Wednesday, July 23, 2014",20,4.278285374,7.031535888,text2 3,
-667,text 2,1/20/2013,2-Feb-13,"Monday, February 25, 2013",-6,4.533505476,9.616853822,text2 25,Text 3
-668,text 1,7/3/2014,31-Mar-14,"Wednesday, September 4, 2013",-15,4.490535732,4.431845485,text2 16,Text 3
-669,text 4,10/20/2013,13-Jan-14,"Wednesday, November 27, 2013",-17,3.968080712,5.557533116,text2 15,Text 1
-670,text 5,4/28/2014,2-Jun-13,"Sunday, May 25, 2014",7,8.579794171,0.954842756,text2 2,Text 2
-671,text 1,3/6/2013,31-Dec-12,"Sunday, November 2, 2014",-17,3.440797744,3.773277499,text2 14,Text 2
-672,text 5,6/25/2014,31-Jan-13,"Saturday, March 9, 2013",-9,8.705433255,1.403385052,text2 3,Text 2
-673,text 5,12/14/2013,2-Jul-14,"Tuesday, May 6, 2014",19,0.851493754,7.811149247,text2 24,Text 2
-674,text 3,7/21/2014,26-Apr-13,"Sunday, January 26, 2014",14,7.669361972,4.361741109,text2 4,Text 1
-675,text 4,8/4/2013,31-Oct-13,"Wednesday, November 20, 2013",4,1.750751527,10.27692323,text2 19,Text 3
-676,text 4,5/2/2013,3-May-13,"Sunday, November 23, 2014",15,7.605884699,4.267469589,text2 22,Text 2
-677,text 3,10/23/2013,27-Dec-13,"Wednesday, August 7, 2013",-14,1.066653147,7.879345807,text2 3,Text 2
-678,text 5,12/18/2014,23-Aug-13,"Sunday, December 22, 2013",10,1.514875488,3.200818106,text2 3,Text 3
-679,text 5,2/28/2013,23-May-13,"Tuesday, August 20, 2013",-15,1.015770335,2.114707366,text2 15,Text 1
-680,text 2,8/8/2014,10-Dec-14,"Wednesday, July 31, 2013",8,8.341783161,10.29444876,text2 20,Text 2
-681,text 3,1/17/2014,4-Feb-13,"Sunday, August 31, 2014",27,6.467391452,7.465887668,text2 9,Text 1
-682,text 3,8/3/2013,15-Mar-14,"Wednesday, December 11, 2013",18,5.053119793,2.910966947,text2 15,Text 3
-683,text 1,3/31/2013,27-Feb-14,"Tuesday, July 22, 2014",-18,5.211386204,1.319698023,text2 8,Text 2
-684,text 1,5/1/2014,4-Apr-14,"Thursday, June 27, 2013",17,5.202850657,6.469896452,text2 6,Text 2
-685,text 3,4/19/2013,3-Feb-13,"Thursday, February 7, 2013",-16,4.435684784,10.1575672,text2 2,Text 1
-686,text 1,3/4/2014,17-Jan-13,"Saturday, April 27, 2013",19,2.672729858,7.781355259,text2 24,Text 1
-687,text 2,7/22/2013,2-Jun-14,"Monday, April 15, 2013",20,7.964772272,2.127331645,text2 12,Text 3
-688,text 4,11/2/2014,13-Feb-14,"Friday, February 28, 2014",-5,9.386158156,7.163819629,text2 2,Text 2
-689,text 5,12/25/2013,6-May-14,"Wednesday, February 19, 2014",-16,6.743101368,2.309423327,text2 15,Text 2
-690,text 3,6/23/2013,10-Mar-14,"Saturday, November 23, 2013",-20,0.781830317,5.129314243,text2 22,Text 1
-691,text 5,8/17/2014,16-Jun-14,"Thursday, December 12, 2013",1,9.131071663,0.915837581,text2 11,Text 3
-692,text 5,10/5/2014,6-Mar-13,"Saturday, August 9, 2014",15,9.556413655,8.468595401,text2 16,Text 3
-693,text 4,9/8/2013,8-Aug-14,"Monday, April 14, 2014",1,0.605658268,3.104249009,text2 1,Text 2
-694,text 1,1/26/2013,16-Aug-14,"Sunday, August 17, 2014",-1,9.208789592,4.838782501,text2 10,Text 1
-695,text 1,5/9/2013,2-Feb-14,"Tuesday, June 24, 2014",28,2.607475146,9.520922165,text2 14,Text 2
-696,text 4,2/13/2013,20-Nov-14,"Wednesday, July 31, 2013",20,0.544716945,0.611791209,text2 2,Text 1
-697,text 4,1/14/2013,15-Feb-13,"Tuesday, April 22, 2014",-16,6.669343444,1.495472185,text2 9,Text 1
-698,text 3,4/20/2013,27-Jul-14,"Friday, February 14, 2014",25,7.092137117,9.784347313,text2 15,Text 1
-699,text 2,9/17/2014,6-Jun-13,"Saturday, December 7, 2013",-9,4.340692819,0.921226565,text2 12,Text 1
-700,text 2,2/9/2013,27-Nov-14,"Wednesday, October 16, 2013",1,3.28139232,4.578711929,text2 17,Text 2
-701,text 4,8/14/2014,16-Jan-14,"Monday, May 26, 2014",-12,7.564670361,2.485171937,text2 2,Text 3
-702,text 1,6/13/2014,8-Apr-14,"Friday, March 15, 2013",-3,1.113703746,1.617719083,text2 21,Text 2
-703,text 4,5/12/2014,11-Aug-13,"Sunday, July 13, 2014",16,8.606889598,0.306388246,text2 21,Text 1
-704,text 4,12/16/2013,24-Jul-14,"Saturday, September 14, 2013",-4,9.92926977,9.64520298,text2 24,Text 1
-705,text 3,11/18/2014,27-Mar-14,"Saturday, June 28, 2014",-15,2.905407435,2.387261119,text2 8,Text 2
-706,text 1,7/5/2014,12-Jan-13,"Monday, October 20, 2014",24,7.802537343,3.887348695,text2 14,Text 1
-707,text 5,7/8/2014,5-May-13,"Saturday, June 28, 2014",-7,2.871041673,9.36958529,text2 21,Text 3
-708,text 2,11/27/2014,18-Nov-14,"Friday, November 1, 2013",24,3.540638931,6.984847242,text2 13,Text 1
-709,text 5,10/6/2014,24-Oct-13,"Wednesday, April 23, 2014",7,6.691413712,10.67912806,text2 20,Text 2
-710,text 4,8/25/2014,9-Jul-13,"Tuesday, July 23, 2013",11,5.115917425,5.273690851,text2 17,Text 1
-711,text 5,3/7/2014,2-Jun-13,"Sunday, January 26, 2014",2,9.268677911,1.327983023,text2 23,Text 1
-712,text 4,4/18/2014,5-Nov-13,"Sunday, April 27, 2014",0,3.58122343,9.632048609,text2 8,Text 1
-713,text 2,12/8/2013,2-Aug-13,"Thursday, March 14, 2013",-19,2.888090505,9.202411379,text2 4,Text 3
-714,text 1,5/21/2013,14-Mar-14,"Sunday, March 9, 2014",23,3.346213463,4.31813956,text2 21,Text 1
-715,text 1,3/14/2013,9-Aug-14,"Wednesday, March 6, 2013",-9,8.562987256,6.029970058,text2 7,Text 3
-716,text 3,3/15/2013,7-Jul-13,"Friday, December 6, 2013",9,2.284105216,8.320262324,text2 11,Text 1
-717,text 5,4/10/2013,10-Aug-14,"Thursday, August 14, 2014",16,5.433184691,10.25148719,text2 20,Text 2
-718,text 3,11/20/2013,27-Dec-14,"Thursday, January 16, 2014",-8,0.360710117,1.819105063,text2 25,Text 2
-719,text 4,2/6/2014,7-Apr-13,"Friday, May 17, 2013",5,2.985615748,4.038130629,text2 19,Text 2
-720,text 4,6/8/2014,1-Aug-14,"Tuesday, August 19, 2014",30,5.352834351,0.865346193,text2 10,Text 2
-721,text 3,4/18/2013,6-Jun-13,"Saturday, May 25, 2013",18,4.227903034,5.844028809,text2 19,Text 3
-722,text 4,8/6/2014,14-Feb-13,"Monday, April 21, 2014",2,4.194220345,8.108617668,text2 23,Text 1
-723,text 1,9/23/2014,1-Feb-13,"Sunday, March 3, 2013",-7,0.390360391,3.497218229,text2 15,Text 3
-724,text 4,9/30/2013,2-Nov-13,"Thursday, August 8, 2013",-6,8.607497724,8.539714545,text2 23,Text 2
-725,text 2,1/13/2014,25-Sep-14,"Wednesday, October 8, 2014",17,6.050152731,7.611212305,text2 21,Text 2
-726,text 3,5/4/2014,27-Sep-14,"Friday, December 13, 2013",12,6.597381504,10.49316447,text2 20,Text 2
-727,text 5,8/15/2013,28-Jan-14,"Sunday, November 17, 2013",-14,3.250859113,1.206365391,text2 11,Text 1
-728,text 3,10/1/2014,13-Jun-13,"Monday, January 6, 2014",15,4.563939404,0.801200687,text2 6,Text 2
-729,text 2,7/28/2013,4-Jan-14,"Wednesday, June 4, 2014",11,4.857576756,3.645229031,text2 19,Text 2
-730,text 4,9/25/2013,5-Dec-13,"Wednesday, March 27, 2013",0,6.044155907,5.57389254,text2 24,Text 2
-731,text 1,12/27/2013,15-Aug-13,"Sunday, June 16, 2013",-10,9.287467494,6.785779903,text2 6,Text 2
-732,text 5,10/31/2013,28-Apr-13,"Thursday, December 12, 2013",19,8.761685479,1.933142977,text2 12,Text 2
-733,text 5,9/9/2013,11-Jun-13,"Saturday, August 17, 2013",-5,0.948072383,8.153410837,text2 2,Text 3
-734,text 2,9/21/2014,9-May-13,"Thursday, January 31, 2013",3,5.771267411,9.750616675,text2 11,Text 1
-735,text 5,9/13/2014,1-Nov-14,"Friday, July 18, 2014",-4,2.121241293,3.439296329,text2 24,Text 1
-736,text 1,11/21/2014,17-Jan-14,"Friday, May 3, 2013",-3,7.541563076,2.73979575,text2 9,Text 1
-737,text 5,5/10/2013,28-May-13,"Wednesday, November 27, 2013",-14,5.118905535,6.705132835,text2 2,Text 2
-738,text 1,9/13/2013,5-Aug-13,"Thursday, December 12, 2013",3,6.315833672,0.826171403,text2 12,Text 2
-739,text 4,10/6/2014,12-Feb-13,"Thursday, December 25, 2014",-16,9.767855324,9.327173876,text2 22,Text 2
-740,text 3,5/23/2013,26-Feb-13,"Friday, May 17, 2013",21,2.642190561,7.866548217,text2 8,Text 2
-741,text 3,8/10/2014,16-Sep-14,"Monday, August 25, 2014",-16,7.593116157,4.610495026,text2 6,Text 3
-742,text 5,10/31/2013,20-Mar-14,"Wednesday, October 23, 2013",11,9.145285439,7.409857743,text2 11,Text 2
-743,text 5,3/19/2013,16-Dec-13,"Saturday, February 9, 2013",-7,9.078035114,4.55115382,text2 7,Text 1
-744,text 5,1/1/2014,3-Feb-14,"Sunday, November 2, 2014",-14,4.119193164,3.27205919,text2 15,Text 3
-745,text 1,6/9/2013,26-Nov-14,"Tuesday, October 8, 2013",-20,2.540792536,9.106555482,text2 9,Text 1
-746,text 1,7/1/2014,14-Feb-14,"Sunday, December 15, 2013",6,5.258186346,5.540261198,text2 17,Text 2
-747,text 2,2/26/2014,22-May-13,"Wednesday, December 24, 2014",15,4.676717406,3.410214104,text2 21,Text 2
-748,text 2,12/3/2013,23-Jan-13,"Friday, July 12, 2013",-14,5.785020972,5.766139348,text2 22,Text 1
-749,text 4,5/2/2013,7-Jun-13,"Sunday, May 5, 2013",-8,4.763054501,1.46703047,text2 17,Text 3
-750,text 4,9/19/2013,19-Mar-14,"Wednesday, December 4, 2013",-20,9.651676748,3.225165772,text2 24,Text 2
-751,text 4,1/6/2014,17-Oct-14,"Friday, August 22, 2014",4,8.866219756,7.11861724,text2 24,Text 1
-752,text 1,10/8/2013,31-May-13,"Tuesday, October 14, 2014",-17,8.598309849,7.047540257,text2 9,Text 2
-753,text 3,6/23/2013,9-Mar-14,"Monday, August 26, 2013",1,9.111355737,4.335473828,text2 2,Text 2
-754,text 5,9/28/2014,13-Jun-13,"Monday, July 15, 2013",15,4.952017011,10.0809329,text2 7,Text 3
-755,text 5,9/19/2014,26-Feb-13,"Thursday, January 31, 2013",-5,9.751175975,4.121966538,text2 7,Text 2
-756,text 1,3/16/2014,6-Oct-14,"Sunday, October 12, 2014",28,9.962056411,6.821731536,text2 4,Text 2
-757,text 2,3/18/2014,23-Sep-14,"Sunday, May 19, 2013",-17,7.550782693,9.798074004,text2 18,
-758,text 5,12/7/2013,17-Sep-14,"Monday, May 19, 2014",-14,6.921619117,3.924042317,text2 5,
-759,text 3,10/27/2013,20-May-13,"Thursday, February 28, 2013",10,2.304279391,6.386055115,text2 15,
-760,text 4,7/6/2013,12-Mar-13,"Thursday, August 7, 2014",-20,3.907299564,7.68814762,text2 20,
-761,text 2,12/28/2014,11-Dec-14,"Tuesday, November 12, 2013",2,0.084514485,1.418513598,text2 20,
-762,text 1,10/18/2013,20-Mar-14,"Sunday, December 14, 2014",-17,4.69260655,8.184041452,text2 18,
-763,text 3,8/31/2013,13-Nov-13,"Saturday, March 2, 2013",28,0.755524645,1.481481379,text2 24,
-764,text 2,4/26/2014,24-Mar-13,"Wednesday, September 4, 2013",-8,3.48783329,6.862528782,text2 19,
-765,text 3,1/9/2014,26-Nov-13,"Thursday, May 2, 2013",16,6.785304482,1.836423953,text2 11,
-766,text 2,6/15/2013,23-Oct-14,"Tuesday, March 11, 2014",17,2.98826514,1.581230928,text2 5,
-767,text 5,11/1/2013,13-Mar-13,"Thursday, February 13, 2014",-5,1.01462098,6.902815257,text2 3,
-768,text 4,4/22/2013,17-Oct-14,"Tuesday, March 19, 2013",-11,2.749359962,0.834318241,text2 12,
-769,text 2,9/24/2014,6-Apr-13,"Friday, August 15, 2014",2,8.60529458,2.024398725,text2 23,
-770,text 2,4/23/2013,7-Feb-14,"Sunday, March 31, 2013",-17,0.940996296,1.18052513,text2 16,
-771,text 2,4/7/2014,11-Nov-14,"Friday, May 23, 2014",-9,1.319476022,9.216834062,text2 9,
-772,text 3,5/16/2014,5-Oct-13,"Thursday, January 10, 2013",4,9.384162528,1.973151972,text2 9,
-773,text 3,3/31/2013,6-Jan-13,"Thursday, July 24, 2014",4,4.662703509,6.911553488,text2 23,Text 2
-774,text 4,7/12/2013,27-Aug-14,"Sunday, June 15, 2014",2,1.132749501,7.491485778,text2 16,Text 1
-775,text 5,10/8/2013,15-Oct-13,"Monday, June 3, 2013",21,2.993603831,9.331726954,text2 5,Text 2
-776,text 4,4/30/2013,13-Mar-14,"Wednesday, July 24, 2013",-8,6.01884306,6.370092106,text2 18,Text 2
-777,text 4,7/17/2014,2-Jan-13,"Sunday, May 18, 2014",6,5.855324385,3.184193141,text2 4,Text 2
-778,text 1,5/27/2013,12-Mar-14,"Friday, March 1, 2013",-16,1.475778885,2.786948399,text2 5,Text 3
-779,text 3,8/14/2013,9-Aug-14,"Saturday, June 22, 2013",-11,7.765041765,2.395735621,text2 8,Text 3
-780,text 3,1/21/2013,25-Dec-14,"Sunday, July 28, 2013",-1,9.26499883,4.520519989,text2 20,Text 3
-781,text 2,9/19/2013,19-Jul-13,"Tuesday, January 7, 2014",26,4.551215825,9.634994217,text2 23,Text 3
-782,text 1,7/26/2013,10-Mar-14,"Thursday, August 1, 2013",7,1.511979147,0.40387651,text2 4,Text 1
-783,text 3,11/27/2013,9-Oct-13,"Thursday, February 7, 2013",21,5.151394266,1.956785495,text2 3,Text 2
-784,text 2,5/15/2014,23-Aug-14,"Thursday, October 24, 2013",17,4.903889844,2.896975611,text2 15,Text 3
-785,text 2,10/9/2014,2-Feb-14,"Friday, February 28, 2014",-20,10.16853255,6.548189909,text2 17,Text 2
-786,text 2,12/17/2014,16-Feb-13,"Thursday, February 20, 2014",-18,10.22272365,2.04256516,text2 8,Text 2
-787,text 5,1/19/2013,26-Nov-13,"Tuesday, January 22, 2013",25,9.932352738,0.24140924,text2 19,Text 2
-788,text 3,2/13/2013,20-May-14,"Thursday, March 28, 2013",19,3.015210991,8.741352172,text2 16,Text 3
-789,text 4,6/13/2013,10-Dec-14,"Thursday, March 6, 2014",-17,8.748945401,9.858107299,text2 4,Text 3
-790,text 3,11/26/2014,1-Nov-13,"Wednesday, March 26, 2014",-8,3.933826534,0.534291001,text2 7,Text 2
-791,text 1,9/15/2013,28-Mar-13,"Thursday, January 9, 2014",3,1.868940859,10.46754235,text2 5,Text 3
-792,text 5,8/12/2014,13-May-13,"Monday, March 31, 2014",-8,2.402747901,4.144649224,text2 20,Text 2
-793,text 4,8/26/2014,3-Nov-13,"Friday, January 10, 2014",16,3.951238782,1.611043319,text2 5,Text 1
-794,text 4,10/25/2013,28-Aug-13,"Saturday, March 23, 2013",30,7.057071451,2.638049679,text2 15,Text 1
-795,text 2,4/7/2013,8-Nov-13,"Monday, October 28, 2013",4,1.95230641,1.866027104,text2 25,Text 1
-796,text 1,5/5/2014,26-Jul-13,"Thursday, June 26, 2014",-5,1.365516187,3.704777604,text2 20,Text 2
-797,text 4,4/28/2013,12-Nov-13,"Sunday, November 2, 2014",30,2.417853321,2.412376396,text2 8,Text 1
-798,text 5,12/22/2014,6-Aug-14,"Friday, November 7, 2014",12,10.02016984,5.886700693,text2 8,Text 2
-799,text 1,11/26/2014,20-Dec-13,"Thursday, June 20, 2013",-20,10.79585998,8.192162999,text2 18,Text 1
-800,text 1,8/14/2014,26-Dec-13,"Sunday, May 19, 2013",-20,2.704773426,9.26650314,text2 23,Text 1
-801,text 4,4/21/2013,26-Jan-14,"Thursday, July 11, 2013",3,9.67165198,5.456964722,text2 22,Text 1
-802,text 4,8/17/2014,19-Nov-14,"Thursday, April 18, 2013",26,7.459300552,6.24703745,text2 13,Text 1
-803,text 3,7/21/2014,3-Jan-13,"Thursday, March 27, 2014",-15,3.116720228,8.829634315,text2 2,Text 3
-804,text 4,8/24/2013,7-Dec-13,"Monday, April 1, 2013",-12,0.877702554,1.728723138,text2 15,Text 2
-805,text 1,1/26/2013,8-Jan-14,"Friday, March 8, 2013",26,2.238749534,9.444436656,text2 17,Text 3
-806,text 4,7/10/2013,16-Aug-14,"Saturday, May 17, 2014",27,6.78482095,2.941147313,text2 16,Text 2
-807,text 5,4/10/2013,25-Aug-14,"Wednesday, December 25, 2013",16,9.718886591,3.334069488,text2 14,Text 1
-808,text 5,10/9/2014,14-Apr-14,"Thursday, April 24, 2014",14,7.001492423,1.091353698,text2 1,Text 1
-809,text 2,11/24/2014,19-Jul-14,"Saturday, January 19, 2013",7,8.768030845,7.595677711,text2 6,Text 3
-810,text 1,6/21/2013,31-Jul-13,"Saturday, January 25, 2014",1,2.581998157,4.230179796,text2 2,Text 2
-811,text 2,2/18/2014,27-Oct-13,"Saturday, April 5, 2014",-18,6.475817397,8.672649548,text2 12,Text 1
-812,text 5,4/4/2014,12-Jul-14,"Monday, January 13, 2014",-3,4.909599974,6.043430561,text2 5,Text 2
-813,text 5,10/24/2014,9-Jul-14,"Wednesday, November 27, 2013",-5,7.614855293,8.561055089,text2 23,Text 1
-814,text 1,7/27/2014,26-Nov-13,"Thursday, November 7, 2013",19,10.06139925,3.020387756,text2 19,Text 1
-815,text 2,12/11/2014,19-Jun-13,"Saturday, March 8, 2014",-17,4.474719208,5.061243822,text2 19,Text 3
-816,text 4,4/24/2014,9-Aug-14,"Saturday, September 6, 2014",10,8.581503264,2.114556576,text2 25,Text 2
-817,text 4,7/10/2013,5-Jul-14,"Thursday, September 4, 2014",20,2.739910768,9.31085071,text2 9,Text 1
-818,text 1,4/2/2014,4-Oct-14,"Thursday, February 7, 2013",24,5.969601278,7.010889135,text2 21,Text 3
-819,text 4,12/28/2013,24-Feb-13,"Tuesday, March 26, 2013",-1,0.788107367,8.291135832,text2 6,Text 2
-820,text 3,9/4/2014,4-Dec-14,"Tuesday, April 15, 2014",20,6.472170081,6.949840918,text2 5,Text 1
-821,text 3,9/6/2014,24-Aug-13,"Monday, June 3, 2013",-4,8.635643622,9.021148513,text2 23,Text 2
-822,text 1,4/15/2013,14-May-14,"Monday, April 8, 2013",14,2.507123084,4.951610752,text2 7,Text 3
-823,text 4,10/5/2013,12-May-13,"Tuesday, May 13, 2014",13,4.356168985,2.917725299,text2 17,Text 1
-824,text 4,4/22/2013,11-Apr-13,"Thursday, March 21, 2013",10,6.547626629,6.158519627,text2 23,Text 1
-825,text 4,8/24/2013,26-May-13,"Saturday, January 11, 2014",28,5.599712792,6.057791494,text2 21,Text 2
-826,text 4,6/12/2014,5-Jul-14,"Tuesday, December 9, 2014",-6,7.322770068,10.80394436,text2 15,Text 2
-827,text 2,5/15/2014,30-Sep-13,"Wednesday, October 8, 2014",-10,6.969029767,3.709793927,text2 22,Text 1
-828,text 5,1/28/2014,11-Apr-13,"Saturday, May 25, 2013",20,4.109613204,8.241308914,text2 7,Text 2
-829,text 5,10/5/2013,25-Jul-13,"Monday, August 25, 2014",7,3.626750889,7.664507108,text2 6,Text 1
-830,text 1,2/2/2013,4-Aug-13,"Wednesday, March 6, 2013",11,10.43336111,5.812781249,text2 25,Text 3
-831,text 3,4/6/2013,21-Feb-14,"Monday, June 10, 2013",-15,10.10469511,9.753173221,text2 7,Text 3
-832,text 2,1/23/2013,15-Sep-13,"Monday, September 8, 2014",24,3.029754284,0.112619825,text2 20,Text 1
-833,text 2,5/25/2013,3-Nov-14,"Monday, July 14, 2014",-1,8.254172997,5.16926749,text2 2,Text 3
-834,text 2,12/24/2013,9-Jul-14,"Friday, October 18, 2013",6,7.663762819,5.241984481,text2 20,Text 3
-835,text 3,7/12/2014,5-Apr-14,"Thursday, February 14, 2013",-12,8.579292008,0.784132289,text2 1,Text 2
-836,text 3,7/4/2014,24-Sep-14,"Monday, June 24, 2013",-16,5.281700032,2.228068068,text2 8,Text 2
-837,text 4,8/25/2013,11-Jul-14,"Friday, March 28, 2014",-1,4.217982628,8.34260318,text2 23,Text 2
-838,text 1,2/18/2013,3-Jul-14,"Monday, April 8, 2013",18,8.852382533,1.82856604,text2 19,Text 3
-839,text 2,9/23/2014,21-Aug-14,"Sunday, July 14, 2013",17,7.936610147,3.971516123,text2 14,Text 2
-840,text 5,7/10/2013,31-Jan-13,"Thursday, February 20, 2014",-17,9.586342485,2.344260326,text2 12,Text 3
-841,text 1,11/15/2014,31-Dec-12,"Sunday, January 26, 2014",22,7.657198041,9.176170978,text2 7,Text 2
-842,text 2,1/7/2014,23-Jul-13,"Saturday, June 22, 2013",5,0.88283205,0.816404801,text2 3,Text 3
-843,text 3,1/16/2013,14-Aug-13,"Saturday, July 12, 2014",-10,4.580455859,2.604605074,text2 2,Text 3
-844,text 2,4/28/2014,26-Jul-14,"Monday, November 10, 2014",12,4.95375937,3.293125711,text2 17,Text 3
-845,text 4,12/27/2013,8-Nov-13,"Saturday, November 8, 2014",20,2.222014053,7.557877097,text2 7,Text 3
-846,text 2,11/18/2014,10-Nov-13,"Friday, September 20, 2013",1,8.831181808,1.575825982,text2 16,Text 2
-847,text 4,9/15/2014,22-Jun-13,"Tuesday, August 19, 2014",-17,4.197705197,8.293922754,text2 14,Text 1
-848,text 1,8/24/2013,24-May-14,"Saturday, March 2, 2013",13,9.189673914,1.738855362,text2 9,Text 2
-849,text 2,11/11/2013,31-Jul-14,"Wednesday, March 6, 2013",-7,9.030468474,10.15742435,text2 5,Text 2
-850,text 4,2/22/2013,12-Sep-13,"Sunday, February 9, 2014",24,4.741449631,9.488652314,text2 15,Text 3
-851,text 1,4/23/2014,17-Oct-13,"Wednesday, September 4, 2013",-10,9.765507742,10.06222103,text2 6,Text 2
-852,text 3,8/28/2014,30-Jun-13,"Friday, July 25, 2014",-17,2.629479283,8.396846858,text2 9,Text 2
-853,text 2,5/22/2014,28-Apr-14,"Tuesday, January 21, 2014",-12,9.18059178,2.774417385,text2 18,Text 3
-854,text 5,8/7/2014,5-Nov-14,"Thursday, July 18, 2013",25,1.956704917,8.228464591,text2 18,Text 2
-855,text 5,7/7/2013,25-Nov-13,"Thursday, May 23, 2013",26,8.103853576,3.62060236,text2 16,Text 1
-856,text 1,6/11/2014,3-Dec-13,"Tuesday, July 16, 2013",14,10.05465545,0.689761435,text2 20,Text 3
-857,text 2,4/3/2014,9-Sep-13,"Monday, March 18, 2013",-15,5.292417477,7.159774326,text2 14,Text 3
-858,text 3,7/20/2014,20-Sep-14,"Friday, September 26, 2014",21,5.913060582,4.814815578,text2 11,Text 1
-859,text 4,11/4/2013,27-Jan-13,"Thursday, March 21, 2013",22,1.658093842,7.711110777,text2 13,Text 1
-860,text 3,2/5/2014,5-Apr-13,"Sunday, October 13, 2013",25,7.967105885,6.061392505,text2 17,Text 3
-861,text 1,8/5/2014,26-Jun-13,"Tuesday, November 18, 2014",0,1.172741666,8.858434421,text2 13,Text 3
-862,text 5,9/22/2014,9-Jan-13,"Wednesday, May 7, 2014",0,9.417578199,4.902937278,text2 19,Text 2
-863,text 4,2/18/2013,21-Sep-13,"Monday, April 22, 2013",22,0.705151912,4.445293913,text2 8,Text 2
-864,text 4,7/11/2013,8-Mar-13,"Thursday, June 13, 2013",-17,5.692859585,1.292809254,text2 12,Text 3
-865,text 5,8/12/2013,2-Apr-14,"Saturday, August 24, 2013",17,0.836595055,4.129390759,text2 18,Text 3
-866,text 5,12/26/2013,10-Sep-14,"Tuesday, October 1, 2013",13,2.449524816,4.075322302,text2 9,Text 2
-867,text 3,10/26/2014,6-Jan-14,"Friday, January 24, 2014",-6,0.81493222,4.810584533,text2 11,Text 1
-868,text 1,9/18/2013,26-Jun-13,"Saturday, August 24, 2013",-19,6.451007614,2.11280097,text2 10,Text 2
-869,text 4,7/28/2013,11-Jul-14,"Sunday, May 19, 2013",29,4.877567807,2.790669225,text2 1,Text 2
-870,text 3,9/8/2013,2-Apr-14,"Wednesday, July 3, 2013",19,3.36829555,4.210078784,text2 5,Text 2
-871,text 4,3/3/2013,13-Jul-14,"Tuesday, June 17, 2014",17,8.968157897,3.261176949,text2 13,Text 2
-872,text 4,4/21/2014,28-Nov-14,"Wednesday, August 20, 2014",-13,2.457912905,2.747362412,text2 2,Text 2
-873,text 2,10/22/2014,28-Mar-14,"Saturday, November 30, 2013",24,4.845663731,0.844314912,text2 20,Text 2
-874,text 2,8/12/2014,31-Jul-13,"Thursday, January 10, 2013",-2,4.911996714,2.094148762,text2 22,Text 3
-875,text 2,1/24/2014,22-Jul-14,"Thursday, March 20, 2014",-13,10.24652525,8.832824206,text2 2,Text 3
-876,text 1,11/8/2013,17-Jun-13,"Tuesday, December 31, 2013",5,9.187402858,9.765272284,text2 4,Text 3
-877,text 2,9/19/2013,24-Jul-13,"Friday, October 4, 2013",28,2.637820697,10.31855395,text2 10,
-878,text 1,8/11/2013,10-Dec-14,"Sunday, January 6, 2013",24,7.789820299,8.446632541,text2 19,
-879,text 1,2/13/2014,23-Nov-14,"Saturday, October 5, 2013",-7,4.69563758,4.067988299,text2 3,
-880,text 4,4/26/2013,25-Sep-14,"Saturday, October 18, 2014",9,6.685875129,8.587253728,text2 20,
-881,text 3,4/5/2014,2-Sep-14,"Monday, March 31, 2014",-6,10.72091314,7.785138298,text2 19,
-882,text 4,11/21/2014,11-Jan-13,"Sunday, July 21, 2013",-13,2.81305986,8.448618208,text2 4,
-883,text 3,12/16/2014,8-Jun-13,"Saturday, December 6, 2014",10,2.384737245,9.454701955,text2 9,
-884,text 5,12/22/2013,20-Jun-14,"Thursday, March 13, 2014",9,6.590965954,8.612030505,text2 6,
-885,text 5,5/13/2013,1-Dec-13,"Wednesday, July 9, 2014",28,8.243972866,3.636121833,text2 5,
-886,text 2,8/26/2013,28-Jul-14,"Tuesday, May 21, 2013",-9,3.011448006,2.649267501,text2 10,
-887,text 1,8/10/2014,12-Apr-14,"Monday, January 27, 2014",12,5.014951233,0.762321008,text2 6,
-888,text 2,4/5/2013,19-Dec-13,"Sunday, May 25, 2014",5,1.870402634,4.412497431,text2 17,
-889,text 5,4/5/2013,13-Dec-14,"Sunday, December 15, 2013",-8,3.658021837,6.368332822,text2 3,
-890,text 4,2/15/2013,6-Aug-13,"Wednesday, October 15, 2014",6,1.931039351,2.150450417,text2 16,
-891,text 2,6/2/2013,20-Jul-13,"Sunday, March 3, 2013",1,5.884358682,9.333709911,text2 6,
-892,text 2,8/10/2014,6-Oct-14,"Thursday, January 17, 2013",-4,5.930069526,9.378635841,text2 23,
-893,text 4,6/25/2014,3-Aug-13,"Friday, January 11, 2013",14,2.924823477,1.278472812,text2 19,
-894,text 5,3/31/2013,11-Aug-14,"Saturday, April 12, 2014",-20,7.535600945,6.361225344,text2 12,
-895,text 3,7/27/2014,13-Sep-13,"Saturday, September 7, 2013",29,7.635407829,5.599848631,text2 4,Text 2
-896,text 4,3/18/2013,3-Oct-13,"Tuesday, May 28, 2013",-8,3.207881439,8.539655337,text2 24,Text 1
-897,text 4,12/2/2014,4-Feb-13,"Saturday, June 1, 2013",7,3.250159803,3.786675685,text2 10,Text 3
-898,text 1,1/9/2013,6-Nov-13,"Monday, May 19, 2014",-11,10.21140388,3.387879418,text2 5,Text 1
-899,text 1,1/9/2014,28-Feb-13,"Friday, July 4, 2014",23,6.362623342,6.535218154,text2 17,Text 1
-900,text 3,7/25/2014,13-Jan-13,"Sunday, June 16, 2013",-20,2.041422121,7.616597213,text2 6,Text 2
-901,text 4,5/14/2013,2-Jan-14,"Sunday, July 21, 2013",-10,7.421493906,1.49159363,text2 6,Text 1
-902,text 2,12/31/2012,8-Dec-13,"Tuesday, March 26, 2013",3,6.782710586,8.172495445,text2 12,Text 2
-903,text 3,3/5/2014,9-Nov-14,"Tuesday, March 4, 2014",18,6.994175947,9.663814422,text2 24,Text 1
-904,text 3,6/1/2013,25-Apr-14,"Saturday, July 19, 2014",-19,9.366110203,5.648094795,text2 8,Text 3
-905,text 4,3/7/2013,28-Apr-13,"Wednesday, August 7, 2013",19,9.499202775,1.442785297,text2 9,Text 1
-906,text 1,8/4/2014,12-Feb-14,"Friday, January 11, 2013",20,6.353914521,4.367606268,text2 22,Text 3
-907,text 4,11/2/2013,18-Nov-14,"Saturday, August 3, 2013",-2,9.668034452,2.783708698,text2 24,Text 2
-908,text 5,5/13/2013,7-Aug-13,"Wednesday, September 24, 2014",-11,6.995662944,7.966768843,text2 11,Text 3
-909,text 4,2/12/2014,1-Mar-13,"Sunday, April 6, 2014",-15,4.922995774,4.48020708,text2 18,Text 1
-910,text 3,7/20/2014,3-Apr-13,"Saturday, December 7, 2013",12,7.099366912,6.608011628,text2 21,Text 1
-911,text 2,9/13/2013,3-May-14,"Monday, March 10, 2014",17,6.498261756,7.471057099,text2 9,Text 1
-912,text 4,6/26/2013,23-Jun-13,"Wednesday, February 20, 2013",-7,6.643775376,4.113361988,text2 24,Text 1
-913,text 1,1/9/2014,17-May-13,"Sunday, September 28, 2014",25,10.18068994,8.874961122,text2 6,Text 3
-914,text 5,7/18/2013,6-Jul-14,"Friday, July 5, 2013",-18,3.600743369,5.846841603,text2 1,Text 1
-915,text 2,11/27/2014,11-May-13,"Saturday, July 5, 2014",9,10.04031383,8.779087129,text2 9,Text 3
-916,text 3,7/23/2013,20-Nov-13,"Thursday, July 18, 2013",17,1.105230042,8.760479702,text2 9,Text 3
-917,text 1,10/12/2013,11-Sep-13,"Sunday, February 10, 2013",6,1.089176918,9.553642508,text2 20,Text 1
-918,text 2,11/17/2013,7-Mar-14,"Sunday, October 5, 2014",25,3.527584509,1.817840757,text2 7,Text 3
-919,text 5,3/23/2013,8-Jul-13,"Thursday, January 24, 2013",30,3.461986812,8.260594488,text2 18,Text 3
-920,text 2,12/13/2014,27-Sep-14,"Wednesday, October 1, 2014",13,1.461846528,6.861336657,text2 14,Text 2
-921,text 1,6/21/2014,25-Nov-13,"Saturday, July 20, 2013",-10,2.884292647,7.847224601,text2 23,Text 3
-922,text 4,4/17/2014,15-Apr-13,"Monday, December 16, 2013",-1,3.120561112,10.8412687,text2 7,Text 2
-923,text 1,6/6/2013,11-Jul-14,"Tuesday, June 18, 2013",30,2.78120179,8.501356259,text2 23,Text 1
-924,text 4,9/18/2013,15-Feb-13,"Monday, October 14, 2013",19,6.679225468,6.057917487,text2 9,Text 1
-925,text 2,9/6/2014,23-Nov-14,"Thursday, September 19, 2013",11,6.614381743,7.975198273,text2 22,Text 3
-926,text 3,6/30/2014,2-Jul-14,"Tuesday, March 4, 2014",-9,5.129757899,10.10697709,text2 1,Text 1
-927,text 3,8/2/2014,9-Oct-14,"Friday, August 16, 2013",26,5.026298442,8.589855709,text2 12,Text 1
-928,text 5,10/22/2013,15-Oct-13,"Wednesday, December 24, 2014",15,10.75809096,9.681681262,text2 4,Text 1
-929,text 1,2/19/2013,9-Mar-14,"Friday, February 21, 2014",28,9.823632254,1.690443111,text2 22,Text 3
-930,text 5,9/9/2013,22-May-13,"Friday, March 14, 2014",12,2.733050871,5.9238952,text2 19,Text 1
-931,text 1,11/30/2014,12-Feb-13,"Tuesday, August 6, 2013",-8,0.631798252,6.267204813,text2 11,Text 3
-932,text 5,9/30/2014,1-Sep-13,"Thursday, June 6, 2013",-16,10.56012364,7.913403891,text2 6,Text 3
-933,text 1,12/23/2014,2-Mar-14,"Thursday, June 20, 2013",-14,2.406914126,10.58984093,text2 19,Text 3
-934,text 4,2/20/2014,8-Mar-13,"Saturday, May 31, 2014",30,5.7624753,7.455193286,text2 25,Text 2
-935,text 2,4/16/2013,22-Nov-13,"Saturday, January 5, 2013",-15,0.852979364,2.767066403,text2 11,Text 2
-936,text 1,6/4/2014,19-Mar-13,"Monday, July 8, 2013",18,6.794386777,1.585968008,text2 19,Text 3
-937,text 5,1/31/2014,6-Jul-13,"Sunday, August 17, 2014",18,5.472427667,1.192436149,text2 15,Text 2
-938,text 4,1/25/2013,15-Jun-14,"Wednesday, September 11, 2013",-11,9.438557932,10.6459294,text2 3,Text 2
-939,text 5,10/11/2014,10-Oct-14,"Friday, December 26, 2014",28,10.61440023,7.517968763,text2 11,Text 1
-940,text 2,11/8/2014,22-May-13,"Sunday, September 21, 2014",-20,5.697408169,5.652804759,text2 18,Text 2
-941,text 4,12/2/2013,16-Nov-13,"Monday, July 21, 2014",11,6.305237384,5.919119925,text2 24,Text 1
-942,text 5,9/6/2014,15-Jul-14,"Friday, July 18, 2014",29,4.697112969,8.156535723,text2 19,Text 3
-943,text 2,11/4/2014,27-Feb-14,"Thursday, January 10, 2013",-1,1.503369182,2.930615011,text2 1,Text 3
-944,text 5,10/14/2014,3-Sep-13,"Thursday, May 22, 2014",24,7.011079972,2.187357538,text2 13,Text 2
-945,text 2,3/26/2014,16-Apr-14,"Sunday, December 22, 2013",28,4.833645286,4.038868992,text2 3,Text 3
-946,text 5,8/28/2013,18-Dec-13,"Tuesday, March 12, 2013",-12,5.196411788,8.887939111,text2 24,Text 1
-947,text 2,12/31/2013,11-Jun-14,"Friday, September 20, 2013",-5,2.946895604,3.065576594,text2 19,Text 2
-948,text 2,4/11/2014,11-Oct-14,"Thursday, November 20, 2014",13,8.758464284,5.066219631,text2 16,Text 3
-949,text 3,11/2/2014,6-Mar-13,"Friday, March 1, 2013",2,2.748528697,3.260346289,text2 20,Text 3
-950,text 1,1/12/2014,5-Feb-13,"Saturday, November 23, 2013",10,5.22191141,9.158108104,text2 17,Text 3
-951,text 3,3/19/2013,1-Aug-14,"Monday, May 6, 2013",-5,4.422377241,3.127185664,text2 17,Text 1
-952,text 4,12/31/2012,28-Jun-14,"Wednesday, June 26, 2013",-1,0.976279528,5.007417363,text2 19,Text 2
-953,text 3,1/31/2013,16-Jul-14,"Monday, January 13, 2014",3,6.988760268,5.406328001,text2 25,Text 3
-954,text 1,11/5/2014,24-Feb-13,"Saturday, October 11, 2014",-6,6.164466014,5.945709203,text2 18,Text 3
-955,text 2,4/28/2014,8-Jan-13,"Thursday, August 15, 2013",-2,2.047497917,7.617833258,text2 11,Text 1
-956,text 4,11/9/2014,22-Nov-13,"Tuesday, January 21, 2014",1,1.426696112,1.235046556,text2 18,Text 1
-957,text 4,6/3/2014,31-Jan-14,"Tuesday, June 10, 2014",12,6.789843556,9.05520774,text2 13,Text 3
-958,text 4,8/19/2013,4-Mar-13,"Saturday, January 19, 2013",-3,8.467390111,0.94657701,text2 12,Text 1
-959,text 4,11/18/2014,4-Oct-13,"Friday, March 15, 2013",-6,2.807372138,7.310002732,text2 6,Text 3
-960,text 5,2/9/2013,27-Feb-14,"Friday, May 24, 2013",19,2.996774777,8.2358156,text2 4,Text 2
-961,text 2,6/14/2013,23-Feb-13,"Friday, March 14, 2014",9,0.596052906,0.398513695,text2 11,Text 1
-962,text 3,10/12/2013,1-Aug-14,"Sunday, September 15, 2013",13,6.212781053,5.19283996,text2 24,Text 1
-963,text 2,3/6/2014,25-Oct-14,"Thursday, June 12, 2014",15,6.02608416,1.57532656,text2 7,Text 2
-964,text 2,8/20/2013,4-Feb-14,"Saturday, April 27, 2013",21,2.659457393,2.765701147,text2 5,Text 3
-965,text 2,4/5/2014,6-Feb-14,"Tuesday, June 10, 2014",-4,4.92930898,0.889374754,text2 16,Text 3
-966,text 2,4/20/2014,25-Feb-13,"Wednesday, July 23, 2014",-2,2.524968297,9.086824257,text2 18,
-967,text 1,10/22/2014,14-Sep-13,"Monday, December 2, 2013",24,7.108374218,9.079932667,text2 1,
-968,text 2,2/6/2013,5-Apr-13,"Friday, July 5, 2013",-6,8.213432374,3.953100666,text2 6,
-969,text 2,3/1/2013,2-Dec-14,"Saturday, March 8, 2014",13,7.165521451,3.711921189,text2 4,
-970,text 2,7/14/2013,27-Sep-13,"Wednesday, March 20, 2013",-10,6.054693368,2.74257508,text2 6,
-971,text 5,8/5/2014,16-Jul-13,"Saturday, December 28, 2013",16,3.274425477,6.228366,text2 7,
-972,text 1,11/25/2014,22-Sep-14,"Saturday, February 16, 2013",-4,0.644168528,5.810753846,text2 4,
-973,text 5,6/23/2013,27-Aug-14,"Thursday, December 11, 2014",18,0.529722589,9.122134968,text2 14,
-974,text 4,2/16/2014,6-Dec-13,"Wednesday, March 13, 2013",-18,7.784778299,9.887518433,text2 3,
-975,text 3,7/16/2014,25-Nov-14,"Sunday, October 27, 2013",21,1.042353142,7.410393423,text2 19,
-976,text 4,7/15/2014,12-Sep-13,"Tuesday, December 31, 2013",24,0.772784828,5.448039987,text2 15,
-977,text 1,12/11/2014,6-Jul-13,"Saturday, April 19, 2014",4,2.249465429,9.493994514,text2 13,
-978,text 2,10/31/2013,4-Oct-14,"Monday, May 20, 2013",-14,5.929310939,2.536871928,text2 12,
-979,text 2,11/13/2014,25-Oct-13,"Monday, July 22, 2013",14,1.200134944,6.778764289,text2 21,
-980,text 1,1/1/2014,5-May-14,"Thursday, June 12, 2014",7,3.610289709,4.602910552,text2 10,
-981,text 2,5/18/2014,26-May-13,"Sunday, February 2, 2014",-9,9.940807035,8.222239937,text2 19,
-982,text 1,4/4/2013,10-May-13,"Monday, August 25, 2014",-20,1.816920765,1.773792967,text2 10,
-983,text 3,3/16/2013,1-Nov-13,"Tuesday, February 4, 2014",-17,8.730396916,3.18226001,text2 10,
-984,text 5,7/13/2013,23-Jun-13,"Thursday, October 24, 2013",-20,9.763883021,1.302257243,text2 1,
-985,text 2,2/8/2014,23-Sep-14,"Saturday, April 20, 2013",1,8.785186201,4.725196502,text2 2,
-986,text 3,11/22/2014,11-Mar-13,"Saturday, September 13, 2014",-8,9.803425265,4.921907009,text2 6,
-987,text 3,1/20/2013,13-Dec-14,"Friday, January 24, 2014",10,2.549717496,1.623887613,text2 15,
-988,text 1,8/11/2014,25-Mar-14,"Wednesday, January 9, 2013",10,1.247531708,3.108220535,text2 21,
-989,text 5,11/27/2014,13-Jun-13,"Wednesday, February 12, 2014",29,2.142220672,2.473361298,text2 5,
-990,text 2,10/14/2014,2-May-13,"Wednesday, September 18, 2013",15,8.028604013,7.009169894,text2 11,
-991,text 2,10/19/2014,14-Jul-13,"Sunday, March 16, 2014",3,8.963414175,1.302952185,text2 19,
-992,text 3,7/25/2013,24-Aug-14,"Friday, October 17, 2014",16,5.559253628,2.528666935,text2 11,Text 3
-993,text 1,5/5/2014,22-Jan-13,"Monday, March 24, 2014",-1,10.60831778,6.111699406,text2 3,Text 2
-994,text 3,2/17/2014,20-Oct-13,"Saturday, March 22, 2014",30,8.472222639,8.655758629,text2 11,Text 2
-995,text 5,11/15/2013,17-Nov-14,"Sunday, September 21, 2014",13,6.822210648,8.060411155,text2 8,Text 3
-996,text 3,2/16/2014,2-Jun-14,"Thursday, October 24, 2013",0,6.255156651,4.949109762,text2 23,Text 2
-997,text 1,9/10/2014,25-May-13,"Monday, July 22, 2013",-14,6.637160251,3.677906834,text2 8,Text 3
-998,text 5,5/26/2013,4-Jul-14,"Thursday, January 10, 2013",-19,6.329706021,7.006273867,text2 1,Text 2
-999,text 2,2/10/2013,8-Sep-13,"Tuesday, June 18, 2013",23,3.470118855,10.42783566,text2 6,Text 2
-1000,text 2,9/23/2013,18-Jan-14,"Thursday, February 6, 2014",-17,2.110893115,10.81272651,text2 19,Text 3
+id,text,date1,date2,date3,number1,number2,number3,text2
+1,text 4,5/10/2013,21-May-13,"Monday, August 4, 2014",-7,9.1276136,1.919315722,text2 24
+2,text 4,12/12/2014,13-Jul-14,"Friday, September 19, 2014",-17,9.855081199,4.423670199,text2 10
+3,text 3,6/19/2013,6-Oct-13,"Saturday, December 21, 2013",-20,1.657216341,4.365128663,text2 15
+4,text 5,11/6/2014,3-Jan-14,"Tuesday, January 8, 2013",-3,1.686399697,6.41309503,text2 23
+5,text 4,10/12/2013,13-May-14,"Friday, December 13, 2013",8,3.940970435,6.410277932,text2 2
+6,text 2,9/30/2013,18-Jun-13,"Monday, June 9, 2014",-17,7.867959972,4.410255141,text2 6
+7,text 3,4/19/2014,16-Sep-14,"Thursday, August 1, 2013",8,6.743138394,9.672296542,text2 18
+8,text 2,11/22/2013,10-Aug-13,"Saturday, December 20, 2014",25,10.21242269,9.818355229,text2 25
+9,text 5,12/27/2014,10-Sep-14,"Wednesday, July 31, 2013",-19,5.555199736,7.065712061,text2 16
+10,text 5,2/16/2014,7-Oct-13,"Friday, January 18, 2013",-16,3.687470351,8.261953165,text2 6
+11,text 2,8/28/2013,11-Dec-14,"Thursday, January 23, 2014",21,1.928979135,8.849832296,text2 5
+12,text 3,6/16/2014,6-Nov-14,"Sunday, October 13, 2013",7,8.839730067,9.422302693,text2 16
+13,text 3,5/17/2014,9-May-13,"Sunday, August 31, 2014",-3,9.186603118,8.441527955,text2 13
+14,text 1,2/27/2014,31-Aug-14,"Monday, January 20, 2014",-6,9.218482006,8.889676232,text2 13
+15,text 4,2/16/2013,28-Sep-14,"Monday, November 10, 2014",26,2.479421601,0.963828216,text2 5
+16,text 1,2/26/2014,28-Feb-14,"Saturday, August 9, 2014",4,7.958776644,9.839130069,text2 9
+17,text 4,7/16/2013,3-Oct-14,"Thursday, April 25, 2013",28,4.165013509,2.90010279,text2 5
+18,text 4,3/26/2013,12-Oct-13,"Wednesday, May 8, 2013",16,8.738328151,7.933507659,text2 6
+19,text 2,10/18/2014,22-Jun-13,"Friday, January 3, 2014",-10,9.505883992,4.543579005,text2 17
+20,text 2,7/24/2013,6-Oct-13,"Wednesday, September 17, 2014",14,7.598234078,4.532500731,text2 2
+21,text 5,6/19/2013,28-Apr-13,"Tuesday, January 8, 2013",24,7.933731317,0.41431916,text2 19
+22,text 3,11/8/2013,26-Nov-14,"Sunday, January 6, 2013",18,6.743633036,3.201100264,text2 17
+23,text 2,2/23/2013,24-Dec-14,"Monday, September 30, 2013",-5,6.122771363,5.235169156,text2 1
+24,text 4,2/15/2014,16-Sep-14,"Monday, January 21, 2013",-9,2.601785027,1.050765672,text2 21
+25,text 5,1/2/2013,16-Jul-13,"Wednesday, December 25, 2013",27,3.380485657,4.521030495,text2 19
+26,text 2,12/8/2014,31-Jan-13,"Thursday, December 18, 2014",9,7.878517322,1.991945026,text2 19
+27,text 4,11/1/2013,20-Mar-13,"Wednesday, August 6, 2014",24,0.924861735,10.33310128,text2 8
+28,text 2,8/24/2014,24-Oct-14,"Sunday, February 17, 2013",-1,5.260037931,9.246072679,text2 15
+29,text 3,2/1/2014,20-Aug-13,"Thursday, October 16, 2014",-14,0.326622381,5.96944928,text2 3
+30,text 1,4/18/2013,22-Jul-14,"Thursday, November 13, 2014",-6,8.0356165,3.95209329,text2 7
+31,text 4,6/27/2014,7-Sep-13,"Tuesday, May 7, 2013",-11,3.716103344,3.146620372,text2 5
+32,text 1,8/21/2014,1-Sep-14,"Friday, May 17, 2013",22,8.409535464,9.302750066,text2 10
+33,text 2,4/22/2014,26-Jun-14,"Tuesday, March 26, 2013",25,1.329604407,8.571213743,text2 14
+34,text 5,8/3/2014,9-Feb-14,"Thursday, May 22, 2014",18,6.119849828,1.410588027,text2 17
+35,text 3,11/10/2013,11-Sep-13,"Saturday, November 1, 2014",-4,7.17280404,2.903281744,text2 7
+36,text 3,8/14/2013,28-Jul-13,"Sunday, October 12, 2014",-4,8.096086783,2.686911541,text2 7
+37,text 5,11/11/2014,1-Jul-13,"Saturday, December 13, 2014",11,3.401613629,3.003704801,text2 2
+38,text 2,6/25/2013,6-Nov-13,"Tuesday, October 1, 2013",-16,9.231050759,4.822591485,text2 3
+39,text 3,10/14/2013,20-Sep-14,"Sunday, November 9, 2014",25,6.817987274,0.447896054,text2 3
+40,text 5,3/13/2014,3-Jun-14,"Friday, May 2, 2014",-1,8.399691342,5.263222097,text2 8
+41,text 5,1/11/2013,26-Jul-14,"Monday, February 4, 2013",-15,2.855149228,7.922843478,text2 2
+42,text 5,10/18/2013,28-Sep-14,"Wednesday, September 10, 2014",24,9.099566898,2.139417026,text2 9
+43,text 3,11/12/2014,6-Feb-14,"Saturday, December 6, 2014",9,10.46153753,1.817388312,text2 7
+44,text 2,7/17/2014,10-Nov-13,"Wednesday, August 28, 2013",-3,4.581683742,3.310201545,text2 11
+45,text 2,6/15/2013,21-Feb-14,"Friday, April 18, 2014",0,0.825888452,3.055230022,text2 8
+46,text 1,2/25/2013,21-Sep-14,"Wednesday, December 10, 2014",8,3.637009525,2.815632451,text2 12
+47,text 1,11/6/2013,27-Feb-14,"Saturday, January 12, 2013",12,6.565107254,1.101132879,text2 1
+48,text 1,7/9/2014,2-May-14,"Friday, February 14, 2014",-1,5.639542082,2.003132917,text2 19
+49,text 4,4/22/2014,21-Aug-13,"Tuesday, November 5, 2013",0,8.033172066,6.052540167,text2 16
+50,text 5,10/22/2014,31-Mar-14,"Friday, May 17, 2013",15,2.501722976,1.867705412,text2 13
+51,text 5,12/10/2013,24-Apr-13,"Tuesday, August 26, 2014",-1,9.229286138,0.52391114,text2 19
+52,text 2,8/16/2013,10-Nov-13,"Thursday, December 11, 2014",-14,8.527673858,10.04615681,text2 11
+53,text 3,7/7/2014,27-Apr-13,"Sunday, April 7, 2013",11,9.211263369,6.48536164,text2 25
+54,text 3,12/14/2014,13-Aug-13,"Sunday, March 3, 2013",21,9.229619738,8.537883176,text2 20
+55,text 5,1/23/2013,23-Jul-14,"Monday, February 17, 2014",-13,10.34471894,7.076065847,text2 9
+56,text 4,12/4/2014,28-Jul-14,"Thursday, December 12, 2013",21,9.633089331,3.34221893,text2 20
+57,text 3,4/7/2013,2-Apr-13,"Wednesday, June 25, 2014",26,2.023842449,5.877211628,text2 23
+58,text 5,6/18/2013,9-Nov-14,"Tuesday, August 6, 2013",15,1.879805011,3.431929618,text2 2
+59,text 1,4/7/2013,5-Jun-13,"Monday, October 13, 2014",21,5.136215591,0.475312202,text2 23
+60,text 2,11/27/2013,14-Dec-13,"Monday, January 7, 2013",29,8.2290263,10.54974954,text2 14
+61,text 3,1/16/2014,17-Mar-14,"Sunday, September 22, 2013",11,10.79390679,3.448794602,text2 9
+62,text 2,1/14/2013,19-Aug-13,"Wednesday, July 16, 2014",13,1.215140492,9.35185497,text2 20
+63,text 5,3/27/2014,26-Sep-13,"Friday, January 11, 2013",25,3.521805517,7.980004199,text2 1
+64,text 5,9/12/2013,13-Mar-13,"Wednesday, November 26, 2014",14,6.955417495,6.3667064,text2 5
+65,text 5,12/3/2014,28-Feb-13,"Thursday, October 10, 2013",-6,2.592022737,6.202613551,text2 19
+66,text 1,1/14/2013,4-Dec-14,"Sunday, September 22, 2013",-11,6.917013541,7.116514252,text2 22
+67,text 1,6/9/2013,28-May-13,"Sunday, September 21, 2014",-9,2.583588859,4.042943469,text2 16
+68,text 5,10/6/2013,1-Oct-13,"Sunday, February 10, 2013",-6,1.049234967,2.717011192,text2 14
+69,text 3,7/19/2013,4-Jan-13,"Monday, November 3, 2014",14,3.988265986,6.106867085,text2 20
+70,text 4,8/23/2013,10-Mar-13,"Friday, September 6, 2013",-19,7.66799697,8.544132477,text2 14
+71,text 1,1/1/2013,19-Feb-13,"Monday, March 24, 2014",-17,6.792041405,1.017909376,text2 6
+72,text 5,12/20/2014,20-Jul-14,"Saturday, February 23, 2013",-8,3.203564225,8.141050828,text2 7
+73,text 1,4/28/2013,25-Apr-13,"Friday, October 25, 2013",13,7.526752386,3.533273362,text2 17
+74,text 5,10/23/2013,2-Apr-14,"Monday, May 19, 2014",20,6.891750211,5.427194081,text2 1
+75,text 3,5/9/2013,28-Apr-14,"Friday, August 9, 2013",8,3.065678052,5.944823202,text2 4
+76,text 2,6/3/2014,12-Sep-13,"Monday, January 27, 2014",-2,2.214097433,4.388103697,text2 14
+77,text 2,9/5/2013,18-Jul-13,"Thursday, October 24, 2013",1,7.105630045,7.894470958,text2 15
+78,text 2,4/23/2014,31-May-13,"Thursday, April 24, 2014",-3,8.667286814,7.463414796,text2 3
+79,text 2,9/27/2014,21-Feb-13,"Monday, November 4, 2013",17,6.607084861,10.12896439,text2 4
+80,text 3,1/13/2013,12-Jul-14,"Tuesday, November 4, 2014",13,1.032529656,0.510898546,text2 22
+81,text 2,7/13/2014,9-Dec-13,"Saturday, December 7, 2013",14,7.423361093,6.892225278,text2 10
+82,text 3,8/11/2014,1-Feb-13,"Saturday, November 23, 2013",3,0.506493405,6.526187399,text2 21
+83,text 5,12/24/2014,24-Sep-13,"Sunday, August 10, 2014",24,7.459197951,5.267463615,text2 8
+84,text 2,1/13/2014,23-Nov-13,"Wednesday, July 31, 2013",3,0.9412022,5.312438463,text2 2
+85,text 4,7/12/2014,26-Mar-14,"Sunday, June 23, 2013",3,2.118979965,5.287670169,text2 10
+86,text 3,11/9/2014,13-Sep-14,"Tuesday, November 5, 2013",4,7.448678431,1.846465232,text2 23
+87,text 4,2/15/2014,6-Nov-13,"Saturday, February 15, 2014",3,0.962514484,5.100620952,text2 22
+88,text 5,10/12/2013,7-Feb-14,"Thursday, August 28, 2014",7,6.518252603,4.414560074,text2 11
+89,text 3,12/28/2013,7-Feb-13,"Thursday, March 21, 2013",28,7.024042433,5.134136379,text2 17
+90,text 4,5/4/2014,31-Dec-12,"Monday, November 11, 2013",-14,0.747730722,6.687327668,text2 7
+91,text 1,6/8/2014,8-Jan-13,"Saturday, April 5, 2014",16,6.98208565,8.909897645,text2 25
+92,text 2,1/11/2014,31-May-14,"Tuesday, November 5, 2013",7,1.728074889,8.389814943,text2 2
+93,text 5,12/7/2014,15-Apr-13,"Monday, January 20, 2014",2,1.161362704,8.757597028,text2 20
+94,text 5,8/21/2014,28-Jul-13,"Tuesday, August 12, 2014",28,8.632999427,8.925895073,text2 13
+95,text 4,8/26/2013,13-May-13,"Friday, November 22, 2013",16,4.256048985,5.451725128,text2 20
+96,text 1,10/25/2014,12-Jun-14,"Wednesday, July 23, 2014",-15,1.283061983,3.184130109,text2 17
+97,text 1,11/1/2013,10-Aug-14,"Saturday, January 26, 2013",12,3.436880204,7.990764782,text2 12
+98,text 1,12/22/2013,16-Apr-14,"Friday, July 5, 2013",-7,6.153079755,2.033283472,text2 19
+99,text 5,1/11/2013,22-Jul-13,"Thursday, April 24, 2014",-19,7.478214534,8.606060507,text2 18
+100,text 4,11/11/2013,25-Aug-14,"Tuesday, April 30, 2013",14,9.879386492,2.02243746,text2 21
+101,text 1,11/10/2014,10-Jan-14,"Friday, June 27, 2014",14,2.595901112,2.051450672,text2 14
+102,text 5,5/27/2013,15-Jun-14,"Tuesday, July 2, 2013",-2,2.164421225,10.01105771,text2 18
+103,text 2,1/31/2014,19-Aug-14,"Monday, February 4, 2013",-3,7.789697557,2.742981918,text2 7
+104,text 4,4/12/2014,25-Sep-13,"Sunday, October 12, 2014",10,9.503339072,10.15531205,text2 8
+105,text 5,3/4/2013,28-May-14,"Saturday, July 26, 2014",2,7.080806366,7.04198887,text2 7
+106,text 1,9/10/2014,15-Mar-13,"Friday, August 23, 2013",19,7.098441994,3.717610515,text2 22
+107,text 3,4/21/2014,22-Jul-13,"Friday, November 1, 2013",4,3.590717982,3.102794078,text2 8
+108,text 1,4/23/2014,23-Jun-13,"Thursday, November 13, 2014",23,8.024005806,4.845821947,text2 12
+109,text 4,10/1/2014,21-Oct-14,"Thursday, October 17, 2013",-16,9.772151853,2.423837523,text2 10
+110,text 1,12/11/2013,8-Apr-13,"Thursday, May 23, 2013",-12,8.565996402,3.495221566,text2 7
+111,text 2,8/28/2014,2-Aug-13,"Sunday, February 24, 2013",-20,8.543342811,9.722832493,text2 23
+112,text 4,8/26/2014,13-Jul-13,"Friday, September 6, 2013",30,1.946548023,5.854000474,text2 1
+113,text 2,9/15/2014,21-Sep-13,"Sunday, November 30, 2014",21,8.786733313,10.24960619,text2 12
+114,text 2,8/27/2013,1-Nov-14,"Wednesday, October 1, 2014",9,4.452889348,3.82339879,text2 13
+115,text 4,6/6/2013,27-Nov-13,"Monday, May 27, 2013",4,7.220643964,5.334580925,text2 3
+116,text 4,11/26/2013,28-Jul-14,"Thursday, October 23, 2014",24,4.993458498,10.4209777,text2 14
+117,text 1,9/9/2014,18-Jan-14,"Friday, April 25, 2014",-20,0.904584705,6.507868165,text2 25
+118,text 4,12/26/2013,20-Apr-14,"Monday, October 21, 2013",25,1.270729916,9.954109409,text2 14
+119,text 1,1/12/2013,24-Jul-13,"Friday, September 27, 2013",-3,3.439233386,7.805641204,text2 9
+120,text 2,10/9/2013,24-Sep-14,"Tuesday, November 26, 2013",-2,4.495165025,7.370401378,text2 9
+121,text 1,12/2/2013,12-Mar-14,"Thursday, December 19, 2013",-6,4.867776844,3.186657538,text2 7
+122,text 1,10/17/2013,30-Nov-14,"Friday, June 13, 2014",-18,2.612801055,4.286320399,text2 20
+123,text 5,11/21/2013,4-Jul-14,"Friday, March 1, 2013",3,7.663298358,5.289658876,text2 2
+124,text 1,6/22/2013,19-Jul-14,"Thursday, January 10, 2013",16,0.230820767,8.295978756,text2 20
+125,text 5,8/14/2014,31-Oct-14,"Saturday, July 13, 2013",13,6.878213528,3.554054436,text2 25
+126,text 4,5/21/2014,8-Jun-14,"Monday, August 19, 2013",-3,9.666759307,6.799723781,text2 23
+127,text 1,10/31/2014,22-Jul-13,"Sunday, February 24, 2013",-15,3.837029469,5.944541727,text2 14
+128,text 5,2/13/2013,10-Mar-14,"Saturday, June 1, 2013",-14,5.880545364,8.629287935,text2 13
+129,text 5,10/3/2013,16-Jul-13,"Saturday, January 25, 2014",-9,1.854559681,2.319785272,text2 3
+130,text 3,5/27/2013,9-Mar-14,"Saturday, September 21, 2013",15,6.046458455,5.377919068,text2 8
+131,text 2,9/1/2014,28-Dec-13,"Saturday, December 28, 2013",4,7.641481704,7.825756298,text2 4
+132,text 3,7/22/2013,24-Mar-14,"Wednesday, November 12, 2014",12,9.014660643,7.054236185,text2 4
+133,text 1,7/15/2013,20-Aug-14,"Thursday, February 7, 2013",14,6.956605124,9.118786358,text2 9
+134,text 5,3/5/2014,17-May-13,"Sunday, December 28, 2014",-14,6.901335126,1.57099501,text2 23
+135,text 4,1/17/2014,13-Jun-14,"Sunday, March 16, 2014",19,9.932654084,6.21123239,text2 22
+136,text 1,11/27/2013,22-Oct-14,"Friday, October 4, 2013",5,7.927825921,4.200334352,text2 12
+137,text 2,10/14/2013,7-Jan-14,"Saturday, May 18, 2013",7,0.387302571,6.698649049,text2 16
+138,text 3,2/2/2014,13-Jun-13,"Tuesday, July 15, 2014",19,10.37190495,3.443317545,text2 11
+139,text 1,1/18/2014,5-Aug-14,"Saturday, February 23, 2013",29,10.11310824,4.468257549,text2 10
+140,text 1,8/31/2013,14-Feb-13,"Monday, March 25, 2013",10,4.655852863,4.650109468,text2 16
+141,text 5,5/14/2014,23-Aug-13,"Sunday, November 30, 2014",24,4.302032917,6.966425686,text2 6
+142,text 2,4/3/2014,9-Jun-14,"Sunday, August 24, 2014",21,4.187350758,6.747775195,text2 7
+143,text 5,12/22/2013,5-Jan-13,"Wednesday, December 17, 2014",2,7.868295938,7.741601655,text2 14
+144,text 1,3/3/2013,26-Oct-14,"Saturday, February 15, 2014",-11,9.565935024,3.481429543,text2 21
+145,text 1,9/30/2014,23-Aug-14,"Saturday, October 5, 2013",30,6.74868295,4.681818702,text2 4
+146,text 3,12/23/2013,12-Feb-14,"Wednesday, May 22, 2013",28,7.302199031,6.586245753,text2 16
+147,text 5,2/12/2014,19-Feb-13,"Saturday, August 3, 2013",0,4.522068353,4.222362764,text2 20
+148,text 2,3/28/2013,2-Jan-13,"Friday, November 15, 2013",21,3.03507336,1.111450084,text2 21
+149,text 2,1/8/2013,15-Sep-14,"Tuesday, May 6, 2014",-12,6.039061889,6.391932028,text2 6
+150,text 2,2/20/2014,1-Sep-13,"Tuesday, November 11, 2014",-8,5.854208636,1.70427186,text2 9
+151,text 3,7/10/2013,18-May-14,"Tuesday, February 25, 2014",8,7.991024629,6.039529122,text2 9
+152,text 3,5/22/2014,4-Nov-13,"Monday, July 21, 2014",10,4.665184232,8.694083105,text2 7
+153,text 5,8/13/2013,14-Oct-13,"Tuesday, August 20, 2013",8,3.671069934,1.306769923,text2 7
+154,text 5,12/26/2014,26-Mar-14,"Friday, February 14, 2014",25,4.526309117,0.624865824,text2 14
+155,text 5,11/18/2013,31-Aug-13,"Thursday, October 9, 2014",23,7.253351884,6.921586691,text2 9
+156,text 1,1/26/2014,23-Sep-13,"Friday, November 15, 2013",-9,9.901405256,5.419121538,text2 3
+157,text 5,5/25/2014,12-Jan-14,"Sunday, February 16, 2014",-16,9.338360305,5.702064644,text2 21
+158,text 3,4/17/2013,24-May-14,"Friday, January 31, 2014",-16,5.781868171,6.690261133,text2 6
+159,text 3,4/12/2014,31-Aug-14,"Saturday, March 15, 2014",8,2.160010738,2.725330112,text2 15
+160,text 5,8/5/2014,28-Mar-14,"Sunday, November 24, 2013",-2,5.231341391,8.25291748,text2 6
+161,text 3,1/5/2013,24-Mar-14,"Thursday, February 20, 2014",24,4.441185754,5.164799311,text2 16
+162,text 5,2/26/2013,28-Oct-13,"Sunday, July 14, 2013",-7,9.526087593,7.797746169,text2 7
+163,text 3,10/16/2013,31-Aug-14,"Wednesday, September 24, 2014",22,2.065576237,7.50378419,text2 4
+164,text 2,11/11/2014,3-Jul-13,"Wednesday, January 22, 2014",17,9.579145127,7.054418556,text2 8
+165,text 5,1/7/2013,26-Sep-14,"Monday, May 12, 2014",-8,7.420440441,8.616465322,text2 5
+166,text 5,10/15/2014,18-Feb-14,"Sunday, December 15, 2013",9,1.916480247,6.358978082,text2 7
+167,text 2,3/8/2014,26-Feb-14,"Tuesday, August 20, 2013",-19,4.100808889,3.122072344,text2 22
+168,text 1,12/21/2014,3-Jun-13,"Tuesday, July 15, 2014",22,7.562426217,6.074912082,text2 8
+169,text 3,4/10/2013,22-Jul-13,"Wednesday, November 13, 2013",-13,3.240200767,4.06344928,text2 25
+170,text 3,7/16/2014,19-May-14,"Sunday, July 13, 2014",7,1.258722668,5.816928717,text2 5
+171,text 4,5/27/2014,14-Dec-13,"Wednesday, August 7, 2013",-12,2.595833233,2.576992418,text2 9
+172,text 5,12/23/2014,28-Apr-13,"Friday, July 5, 2013",16,3.612770352,8.190949597,text2 23
+173,text 1,6/12/2013,14-Jun-14,"Wednesday, August 27, 2014",7,2.935696621,1.658090942,text2 12
+174,text 4,3/23/2013,15-Apr-13,"Friday, December 20, 2013",-8,3.135315117,6.078213701,text2 2
+175,text 5,6/17/2013,3-Aug-13,"Wednesday, March 6, 2013",-6,0.649475367,8.797871512,text2 17
+176,text 4,12/5/2014,17-Dec-13,"Sunday, January 27, 2013",30,1.173559557,5.798606948,text2 18
+177,text 2,11/30/2013,27-Aug-14,"Saturday, June 28, 2014",3,9.084998945,2.424116749,text2 23
+178,text 3,2/15/2013,4-Sep-13,"Friday, August 2, 2013",24,9.194371773,4.357733876,text2 5
+179,text 3,5/20/2013,8-Dec-13,"Sunday, September 28, 2014",26,8.733693818,8.668144293,text2 18
+180,text 2,3/7/2013,4-Oct-13,"Friday, September 26, 2014",7,3.987335164,9.989312391,text2 18
+181,text 4,1/10/2013,11-Jan-14,"Thursday, April 11, 2013",21,7.956690382,5.864199204,text2 3
+182,text 3,12/21/2014,31-May-13,"Saturday, November 8, 2014",-19,10.15247768,7.583918849,text2 9
+183,text 3,1/9/2013,8-Sep-13,"Tuesday, June 17, 2014",19,7.25392811,4.166908443,text2 6
+184,text 2,5/8/2013,7-Jan-14,"Monday, December 2, 2013",-8,5.029701354,7.002829691,text2 19
+185,text 1,7/20/2014,10-Jan-14,"Wednesday, February 27, 2013",16,5.427513754,1.410611016,text2 6
+186,text 5,5/5/2014,9-Mar-14,"Friday, May 17, 2013",7,8.549829827,3.327949716,text2 19
+187,text 1,7/3/2014,13-Oct-14,"Friday, March 8, 2013",9,7.73208174,1.244700881,text2 7
+188,text 5,10/8/2013,19-Nov-14,"Tuesday, June 18, 2013",30,6.808212337,8.266593839,text2 4
+189,text 2,5/18/2014,4-Jul-13,"Sunday, December 14, 2014",-11,5.147046107,6.219137915,text2 3
+190,text 3,7/2/2014,13-Jan-13,"Thursday, June 27, 2013",15,8.413271808,5.204740424,text2 9
+191,text 4,7/8/2013,22-Oct-14,"Saturday, June 7, 2014",-7,9.733783693,3.810481569,text2 8
+192,text 4,7/17/2013,2-Feb-13,"Thursday, April 3, 2014",20,5.626611546,2.730273497,text2 23
+193,text 4,9/20/2013,30-Sep-14,"Thursday, December 26, 2013",27,8.909223273,5.983218364,text2 4
+194,text 3,7/16/2014,8-Feb-14,"Saturday, September 14, 2013",-12,4.690071511,6.168671775,text2 6
+195,text 4,7/17/2014,15-Nov-14,"Sunday, September 1, 2013",6,1.677426222,9.42509288,text2 25
+196,text 5,5/21/2013,12-Aug-14,"Wednesday, January 16, 2013",26,8.494229073,8.466256539,text2 3
+197,text 1,5/8/2014,25-May-14,"Sunday, April 6, 2014",-14,6.60657411,1.082315489,text2 9
+198,text 5,4/25/2014,17-Feb-14,"Tuesday, December 17, 2013",-18,4.538892685,3.392625575,text2 22
+199,text 2,3/25/2014,19-Aug-14,"Thursday, September 19, 2013",0,7.419010978,2.780390723,text2 21
+200,text 2,11/30/2013,20-Nov-13,"Friday, February 7, 2014",-4,9.433416316,3.169158986,text2 2
+201,text 4,5/10/2013,3-Apr-14,"Friday, June 14, 2013",-7,9.741961131,8.371698637,text2 20
+202,text 4,6/10/2013,28-Jul-14,"Tuesday, May 14, 2013",4,0.843282613,8.853601012,text2 21
+203,text 5,4/20/2014,25-Jan-14,"Friday, February 28, 2014",-20,9.183203574,0.056853609,text2 15
+204,text 5,5/26/2014,12-Jan-13,"Sunday, May 11, 2014",-10,3.996192075,2.441891293,text2 15
+205,text 1,4/20/2014,2-May-13,"Sunday, March 10, 2013",0,9.115275673,8.346728885,text2 20
+206,text 4,9/6/2013,30-Nov-13,"Thursday, May 16, 2013",16,3.571711406,10.06412982,text2 17
+207,text 5,10/27/2013,10-Jul-13,"Monday, November 4, 2013",15,9.683936396,6.041099671,text2 15
+208,text 5,7/13/2013,1-Dec-13,"Saturday, October 4, 2014",6,1.792329044,6.710352194,text2 3
+209,text 4,4/3/2013,6-Dec-14,"Saturday, December 14, 2013",-4,7.92024623,9.987042644,text2 7
+210,text 5,8/17/2013,1-Mar-14,"Thursday, September 5, 2013",2,3.277664784,5.40159904,text2 10
+211,text 4,3/21/2014,19-May-13,"Saturday, March 16, 2013",-4,5.217411255,0.059757702,text2 1
+212,text 4,1/23/2014,3-Oct-13,"Thursday, August 15, 2013",-6,8.709908122,1.103614883,text2 3
+213,text 2,6/22/2013,4-Dec-13,"Sunday, October 26, 2014",29,8.817615138,6.565054731,text2 20
+214,text 2,5/11/2014,17-Jun-14,"Tuesday, March 26, 2013",-17,2.215070647,6.734096679,text2 4
+215,text 5,11/7/2013,12-Mar-14,"Thursday, October 17, 2013",-11,4.197163784,3.020671971,text2 24
+216,text 2,11/9/2014,6-Oct-13,"Sunday, February 23, 2014",-8,4.002294003,4.662397939,text2 15
+217,text 1,8/1/2014,1-Dec-13,"Saturday, January 25, 2014",1,4.37069224,9.823277962,text2 16
+218,text 2,6/12/2014,14-Aug-13,"Wednesday, September 17, 2014",1,2.155499126,5.414867913,text2 25
+219,text 3,8/19/2014,13-May-14,"Thursday, September 19, 2013",9,3.224396937,3.786472652,text2 20
+220,text 3,6/8/2013,24-Jul-14,"Friday, September 20, 2013",23,6.205255211,7.435441362,text2 14
+221,text 4,5/23/2013,14-Jul-13,"Friday, September 26, 2014",16,3.658957527,2.034189522,text2 3
+222,text 3,1/21/2014,3-Sep-13,"Monday, June 2, 2014",11,5.219623683,1.795763858,text2 5
+223,text 2,11/21/2013,31-Aug-13,"Sunday, November 23, 2014",-14,2.342501285,0.75810971,text2 6
+224,text 5,8/15/2013,2-Nov-14,"Sunday, July 13, 2014",22,3.861604007,4.481316847,text2 16
+225,text 3,9/28/2014,6-Mar-13,"Thursday, April 24, 2014",13,2.782519372,7.882419423,text2 20
+226,text 4,1/31/2013,19-Jun-13,"Thursday, August 1, 2013",-16,7.561458938,6.887732369,text2 24
+227,text 4,3/13/2014,7-May-13,"Saturday, January 25, 2014",-3,2.19921142,2.376969031,text2 25
+228,text 4,5/26/2013,6-Jul-14,"Saturday, July 6, 2013",-5,3.352780241,4.410001634,text2 2
+229,text 5,4/15/2013,14-Jan-14,"Thursday, December 25, 2014",-15,2.196082756,7.929617834,text2 13
+230,text 2,3/10/2014,24-May-13,"Sunday, September 21, 2014",14,10.38426749,4.205953939,text2 1
+231,text 3,7/1/2013,14-Mar-14,"Thursday, November 14, 2013",-4,2.074554495,3.892908007,text2 24
+232,text 4,8/23/2014,18-May-14,"Tuesday, August 13, 2013",6,3.134052297,8.138963715,text2 5
+233,text 1,12/7/2014,11-Aug-14,"Wednesday, May 7, 2014",3,4.222560101,4.389475543,text2 19
+234,text 4,5/31/2013,25-Aug-13,"Friday, February 15, 2013",-1,8.587897695,4.428956372,text2 22
+235,text 5,2/13/2013,18-Dec-13,"Tuesday, September 10, 2013",10,4.386727743,2.840946894,text2 6
+236,text 3,2/24/2013,12-Jun-14,"Tuesday, December 2, 2014",-4,9.62987563,0.811795103,text2 22
+237,text 5,8/23/2014,12-May-14,"Tuesday, December 23, 2014",28,4.972048708,6.677013407,text2 20
+238,text 2,8/18/2013,3-Apr-13,"Thursday, December 4, 2014",6,3.903790845,10.21949618,text2 3
+239,text 2,3/31/2014,20-Aug-13,"Monday, May 19, 2014",-1,6.47705731,5.344943967,text2 19
+240,text 2,9/2/2013,13-Jul-13,"Monday, December 8, 2014",17,6.584454794,6.750477035,text2 24
+241,text 4,12/17/2013,16-Feb-14,"Thursday, August 1, 2013",-11,2.483137748,3.376142263,text2 9
+242,text 2,10/23/2013,22-Jan-14,"Friday, April 26, 2013",-20,0.687194128,8.691062049,text2 20
+243,text 1,10/11/2013,16-Nov-13,"Monday, June 10, 2013",15,6.768580564,10.97082014,text2 22
+244,text 5,3/6/2013,20-Jun-14,"Thursday, November 20, 2014",17,3.622169185,9.840635692,text2 12
+245,text 5,12/16/2014,22-Sep-13,"Sunday, July 27, 2014",12,4.187284567,6.767641931,text2 11
+246,text 3,2/19/2014,21-Feb-13,"Sunday, August 31, 2014",27,8.696878866,4.436908121,text2 9
+247,text 1,9/13/2014,27-Dec-13,"Thursday, April 10, 2014",-5,9.605692457,3.826465256,text2 17
+248,text 1,12/8/2014,1-Apr-13,"Sunday, September 1, 2013",-17,1.12750944,7.702346496,text2 22
+249,text 4,8/13/2013,3-Feb-14,"Saturday, June 15, 2013",20,0.702976613,9.845902224,text2 6
+250,text 5,8/27/2014,7-Aug-14,"Saturday, June 7, 2014",30,6.667262575,8.307100872,text2 6
+251,text 5,5/26/2014,2-Mar-13,"Monday, January 13, 2014",-3,8.200072834,3.844039118,text2 22
+252,text 2,7/12/2014,10-Jun-14,"Tuesday, January 22, 2013",-9,5.854419533,7.108771885,text2 11
+253,text 3,2/15/2014,23-Apr-14,"Saturday, December 13, 2014",20,0.414354526,2.928348098,text2 11
+254,text 4,7/9/2014,15-Jun-13,"Friday, January 25, 2013",10,8.039839093,7.920312191,text2 23
+255,text 4,7/13/2014,19-Jun-13,"Saturday, June 14, 2014",-7,9.756401543,9.848684184,text2 18
+256,text 2,4/9/2013,15-May-13,"Tuesday, November 5, 2013",14,1.844329915,7.853251888,text2 7
+257,text 1,10/9/2013,17-Jul-13,"Sunday, November 17, 2013",-12,8.45684879,6.900249803,text2 24
+258,text 2,7/20/2014,5-Nov-14,"Friday, January 24, 2014",6,5.011862265,2.427204781,text2 6
+259,text 1,1/23/2013,5-Oct-13,"Thursday, April 24, 2014",-15,1.055396009,2.323310337,text2 16
+260,text 3,11/13/2013,26-Feb-13,"Saturday, June 7, 2014",26,8.230204505,7.110383255,text2 20
+261,text 4,8/17/2014,20-Feb-13,"Friday, January 31, 2014",-2,9.379548875,1.695647824,text2 19
+262,text 1,5/3/2014,26-Apr-13,"Thursday, May 23, 2013",-18,10.56900777,6.757548978,text2 15
+263,text 2,7/1/2013,22-Dec-14,"Tuesday, December 3, 2013",23,2.699296114,7.771134794,text2 22
+264,text 5,6/11/2014,24-May-14,"Sunday, July 21, 2013",8,1.949660848,0.165457531,text2 11
+265,text 1,6/10/2013,24-Sep-14,"Monday, March 10, 2014",-4,6.470425212,0.787158349,text2 1
+266,text 2,5/28/2014,26-Dec-13,"Monday, September 16, 2013",-12,0.999207267,4.391287977,text2 14
+267,text 2,5/28/2014,16-Nov-14,"Thursday, October 31, 2013",-13,0.574411875,7.108949001,text2 19
+268,text 5,10/17/2014,5-Jan-13,"Friday, September 26, 2014",12,8.136732194,2.619549232,text2 2
+269,text 4,11/22/2014,24-Sep-13,"Wednesday, August 7, 2013",-3,6.532029069,2.137750791,text2 10
+270,text 4,7/8/2013,17-Jan-14,"Tuesday, March 26, 2013",-1,2.433550846,8.809065419,text2 4
+271,text 2,3/21/2013,12-Apr-13,"Saturday, July 26, 2014",26,4.752685827,7.583466594,text2 17
+272,text 3,4/30/2013,30-Apr-14,"Saturday, May 3, 2014",-18,7.434825584,8.171552304,text2 15
+273,text 4,12/11/2014,6-May-14,"Wednesday, September 11, 2013",2,5.927831031,3.471018195,text2 9
+274,text 5,1/26/2013,25-Nov-14,"Tuesday, June 3, 2014",20,7.85068812,2.548798861,text2 7
+275,text 1,12/20/2014,23-Jan-13,"Tuesday, January 1, 2013",4,5.846989607,6.909044486,text2 1
+276,text 1,11/16/2014,18-Oct-13,"Sunday, October 6, 2013",27,5.817946562,3.180348804,text2 7
+277,text 4,10/25/2013,16-Dec-14,"Friday, September 27, 2013",-11,0.570359397,2.284981234,text2 5
+278,text 4,12/15/2014,2-Sep-14,"Sunday, December 8, 2013",-13,7.58570675,1.894889473,text2 24
+279,text 5,7/1/2014,24-Dec-14,"Friday, November 22, 2013",8,2.724056127,9.132336883,text2 9
+280,text 1,11/24/2013,24-Apr-13,"Friday, January 24, 2014",-10,7.478797298,4.55168291,text2 2
+281,text 2,8/3/2013,5-Oct-13,"Sunday, November 9, 2014",0,2.068098496,7.756551053,text2 22
+282,text 4,9/30/2013,2-Oct-14,"Thursday, June 19, 2014",17,5.799493816,3.894060479,text2 8
+283,text 2,4/17/2014,14-Feb-14,"Wednesday, September 17, 2014",16,3.904616145,5.020912154,text2 19
+284,text 4,9/8/2013,1-Nov-14,"Saturday, May 17, 2014",-9,9.078124649,8.984264056,text2 21
+285,text 5,6/25/2014,30-Nov-13,"Monday, March 24, 2014",23,6.136615555,0.919945801,text2 2
+286,text 2,7/19/2014,3-Dec-14,"Wednesday, February 12, 2014",8,6.927757356,8.024069399,text2 21
+287,text 1,7/20/2013,21-Feb-14,"Sunday, October 13, 2013",-7,1.08680762,2.23178051,text2 6
+288,text 3,2/14/2013,8-Sep-13,"Saturday, December 13, 2014",-14,5.566223798,10.11134079,text2 12
+289,text 1,1/16/2013,11-Jul-14,"Friday, April 11, 2014",3,1.51466894,9.302284729,text2 25
+290,text 4,8/6/2013,18-Jan-14,"Monday, July 21, 2014",19,6.696748176,6.415407817,text2 15
+291,text 1,10/26/2014,12-Jan-14,"Friday, March 1, 2013",-20,5.008082933,5.808128722,text2 17
+292,text 3,2/23/2013,5-Aug-13,"Saturday, January 12, 2013",19,2.723225364,9.411507764,text2 21
+293,text 4,11/19/2013,10-Apr-14,"Sunday, January 12, 2014",6,5.343340974,6.541854943,text2 4
+294,text 1,10/7/2013,18-Sep-14,"Thursday, January 17, 2013",-17,8.985642132,8.156879594,text2 10
+295,text 1,10/2/2014,19-Mar-13,"Tuesday, April 23, 2013",-20,6.667981691,8.006423544,text2 24
+296,text 2,10/10/2013,8-Sep-13,"Monday, February 25, 2013",-6,4.665170957,3.825382385,text2 13
+297,text 5,10/18/2014,3-Feb-13,"Thursday, June 26, 2014",1,3.39505114,0.883797638,text2 3
+298,text 5,4/2/2013,13-Feb-14,"Wednesday, January 8, 2014",-13,6.199571971,2.115258047,text2 24
+299,text 3,11/5/2014,24-Jul-13,"Friday, November 14, 2014",15,7.059753536,5.837680037,text2 2
+300,text 4,10/17/2013,3-Feb-14,"Saturday, June 14, 2014",6,8.404741866,9.613199418,text2 12
+301,text 5,10/18/2013,22-Jun-14,"Monday, September 2, 2013",-5,7.343823546,1.55825152,text2 18
+302,text 3,9/8/2013,31-Mar-14,"Thursday, May 22, 2014",-4,6.425475066,7.46187236,text2 13
+303,text 1,6/26/2014,28-Sep-14,"Friday, May 23, 2014",23,9.821774712,4.820307873,text2 1
+304,text 2,11/30/2013,7-Sep-13,"Monday, January 14, 2013",27,3.761609834,1.211328273,text2 12
+305,text 5,6/14/2013,24-Aug-13,"Friday, July 25, 2014",24,1.601586975,2.597854207,text2 21
+306,text 4,6/23/2014,27-Jan-14,"Wednesday, June 4, 2014",10,0.174070511,0.627246893,text2 21
+307,text 4,7/19/2013,24-Oct-14,"Tuesday, February 11, 2014",30,5.163676364,9.224811656,text2 21
+308,text 4,11/4/2014,7-May-14,"Friday, September 6, 2013",1,8.599396889,9.462491285,text2 14
+309,text 3,9/16/2013,28-Sep-13,"Monday, December 16, 2013",15,9.288551267,9.079242289,text2 11
+310,text 3,8/16/2013,26-Jun-13,"Monday, January 13, 2014",-9,3.174945383,8.580291983,text2 20
+311,text 1,12/5/2013,6-Jul-13,"Saturday, September 28, 2013",-2,8.080251746,4.53052469,text2 7
+312,text 5,7/16/2013,11-Feb-14,"Friday, February 22, 2013",-5,3.630140477,4.366195478,text2 23
+313,text 1,2/19/2013,6-Jan-14,"Sunday, July 21, 2013",-2,2.49803859,5.85323944,text2 6
+314,text 5,5/5/2013,11-May-13,"Wednesday, September 11, 2013",15,8.327801088,9.962167271,text2 14
+315,text 3,8/12/2014,24-Sep-13,"Thursday, November 27, 2014",-1,1.095820715,3.401100631,text2 24
+316,text 2,9/20/2013,27-Aug-14,"Monday, June 16, 2014",-14,6.284794389,1.6018414,text2 13
+317,text 1,5/8/2013,28-Oct-13,"Thursday, March 20, 2014",14,1.230189309,2.813960433,text2 12
+318,text 5,9/27/2013,23-Apr-13,"Sunday, December 22, 2013",4,10.35249327,7.554895334,text2 18
+319,text 1,3/16/2013,17-Oct-13,"Friday, January 11, 2013",-15,5.271145267,10.1029059,text2 20
+320,text 3,3/18/2013,14-Mar-14,"Wednesday, November 6, 2013",29,5.171774988,6.197044685,text2 19
+321,text 3,1/5/2014,23-Apr-14,"Sunday, August 10, 2014",-16,10.3252007,5.98630248,text2 11
+322,text 1,7/28/2014,13-Dec-14,"Tuesday, September 9, 2014",-19,9.763188576,8.48175143,text2 20
+323,text 4,5/7/2013,14-Sep-13,"Wednesday, December 17, 2014",17,0.193489883,2.468412308,text2 23
+324,text 1,9/1/2013,26-Nov-13,"Tuesday, April 30, 2013",-4,1.256274561,5.315758033,text2 7
+325,text 1,4/4/2014,27-Sep-13,"Tuesday, May 6, 2014",7,4.929631811,5.068703699,text2 21
+326,text 2,11/19/2013,9-Jun-14,"Sunday, October 19, 2014",-19,3.954958255,6.674154864,text2 12
+327,text 5,7/16/2014,4-Oct-13,"Monday, August 11, 2014",20,2.164085391,7.851063204,text2 24
+328,text 1,1/4/2014,11-Dec-13,"Tuesday, March 11, 2014",-5,4.571133791,4.286620433,text2 17
+329,text 4,1/28/2013,27-Mar-14,"Wednesday, January 16, 2013",-6,2.504063425,1.259835427,text2 12
+330,text 1,11/8/2014,7-May-14,"Monday, February 4, 2013",17,2.384735452,10.04749521,text2 4
+331,text 2,2/23/2014,20-Apr-13,"Saturday, June 7, 2014",-4,7.589901804,3.937332316,text2 5
+332,text 5,7/7/2014,31-Mar-14,"Thursday, February 14, 2013",-5,5.341972229,3.545943145,text2 18
+333,text 5,11/10/2013,19-May-14,"Thursday, November 20, 2014",16,8.488543039,3.633071459,text2 25
+334,text 5,2/11/2013,1-May-14,"Wednesday, October 15, 2014",-11,8.978836207,7.520034134,text2 13
+335,text 2,7/18/2013,14-Nov-14,"Friday, December 5, 2014",23,1.634804187,5.959317462,text2 20
+336,text 4,6/21/2014,12-Jul-13,"Wednesday, March 19, 2014",22,3.318748058,7.114131745,text2 4
+337,text 3,1/20/2013,3-Oct-14,"Monday, May 19, 2014",10,5.123631436,8.038498299,text2 12
+338,text 3,8/11/2014,1-Nov-14,"Tuesday, August 27, 2013",2,4.751394432,0.770457983,text2 20
+339,text 1,8/19/2014,13-Jan-13,"Thursday, March 13, 2014",-6,0.815869745,2.111113792,text2 1
+340,text 2,10/21/2013,18-Nov-14,"Monday, August 5, 2013",-19,3.743289615,1.206967948,text2 16
+341,text 1,4/20/2014,14-Jun-14,"Saturday, June 14, 2014",29,2.539846545,3.768571167,text2 21
+342,text 2,1/4/2014,22-Jun-14,"Thursday, May 9, 2013",18,4.728836899,9.982042419,text2 1
+343,text 2,10/11/2013,10-Jul-14,"Friday, November 22, 2013",23,2.472510505,7.924119726,text2 8
+344,text 3,7/8/2014,14-Mar-14,"Thursday, July 10, 2014",5,6.786467408,3.450612496,text2 11
+345,text 3,2/16/2014,21-Apr-14,"Saturday, October 4, 2014",-14,9.281314192,9.396350031,text2 1
+346,text 5,5/28/2014,2-Sep-13,"Monday, April 8, 2013",30,7.982712275,5.494201874,text2 22
+347,text 1,9/6/2013,5-Apr-13,"Saturday, March 22, 2014",-20,5.020843861,3.715082897,text2 6
+348,text 2,6/11/2014,7-Sep-13,"Saturday, November 9, 2013",19,3.599436838,5.644850068,text2 1
+349,text 2,11/14/2014,3-Jul-14,"Saturday, December 7, 2013",10,3.798702245,6.064750443,text2 21
+350,text 2,11/23/2014,20-Jul-13,"Wednesday, August 28, 2013",-7,2.08877253,9.593195207,text2 1
+351,text 2,7/22/2014,15-Sep-13,"Sunday, January 19, 2014",-15,1.065625645,4.045975306,text2 22
+352,text 5,11/27/2014,22-Mar-14,"Wednesday, August 27, 2014",7,9.159118386,4.744379779,text2 19
+353,text 1,6/21/2014,28-Nov-14,"Saturday, May 31, 2014",15,7.211919857,9.108580863,text2 22
+354,text 3,3/19/2013,7-Apr-13,"Thursday, April 24, 2014",11,2.855815294,8.867486211,text2 21
+355,text 3,7/26/2014,11-Sep-13,"Wednesday, February 12, 2014",30,4.522670125,7.784231023,text2 19
+356,text 4,11/13/2013,8-Jun-14,"Friday, July 18, 2014",24,6.629291119,9.490471628,text2 1
+357,text 5,12/23/2013,5-Oct-13,"Wednesday, November 6, 2013",-10,5.639339268,9.793515704,text2 14
+358,text 3,6/14/2013,11-May-13,"Saturday, December 21, 2013",14,6.064579963,1.999829561,text2 2
+359,text 1,1/6/2013,30-Sep-13,"Friday, December 12, 2014",11,2.417097039,8.396612581,text2 21
+360,text 4,4/5/2014,7-Sep-14,"Sunday, November 17, 2013",8,1.947890766,5.745155945,text2 7
+361,text 3,3/28/2013,19-Oct-14,"Tuesday, February 18, 2014",26,3.93686415,4.388729081,text2 24
+362,text 5,2/12/2013,17-Oct-13,"Sunday, December 7, 2014",-13,3.784524746,0.975950347,text2 12
+363,text 2,4/19/2014,18-Oct-14,"Monday, December 8, 2014",15,2.06222512,3.516564218,text2 5
+364,text 4,9/3/2013,25-Aug-13,"Sunday, January 12, 2014",-16,9.452250641,4.759963968,text2 15
+365,text 5,5/20/2014,2-Jun-13,"Tuesday, July 2, 2013",-2,1.4867352,6.500012275,text2 9
+366,text 2,3/25/2013,17-Jun-13,"Wednesday, October 1, 2014",13,1.440810128,0.7904926,text2 20
+367,text 3,3/2/2014,20-Feb-14,"Friday, August 16, 2013",30,4.275357653,2.889397391,text2 11
+368,text 5,6/17/2014,5-Oct-14,"Saturday, January 18, 2014",-9,2.163701914,3.877061306,text2 25
+369,text 1,12/21/2014,1-May-14,"Monday, October 6, 2014",5,0.915729682,2.967249227,text2 7
+370,text 3,2/27/2014,8-Nov-13,"Sunday, November 24, 2013",-16,5.199768734,4.625859299,text2 7
+371,text 1,8/3/2013,6-May-14,"Saturday, February 9, 2013",-15,6.894745531,2.604127549,text2 1
+372,text 5,4/3/2014,11-Mar-13,"Saturday, February 9, 2013",13,10.68659252,8.262051064,text2 21
+373,text 1,7/18/2014,19-Jan-14,"Tuesday, July 22, 2014",-6,7.160552403,5.368183807,text2 13
+374,text 5,3/4/2013,2-Nov-14,"Thursday, May 23, 2013",26,4.758650842,3.775916977,text2 19
+375,text 1,11/30/2014,27-Nov-13,"Saturday, May 18, 2013",3,5.375382355,8.710149012,text2 6
+376,text 2,4/18/2014,9-Apr-13,"Tuesday, May 13, 2014",-16,1.121204548,3.491903592,text2 5
+377,text 5,10/8/2013,10-Oct-13,"Monday, June 3, 2013",4,0.293058922,9.426597586,text2 21
+378,text 2,9/11/2013,2-Jan-13,"Wednesday, April 3, 2013",27,2.308529526,6.716968151,text2 4
+379,text 2,1/8/2014,23-Jan-14,"Tuesday, September 9, 2014",-16,5.098271246,4.151515886,text2 1
+380,text 1,5/26/2013,19-Nov-14,"Friday, January 24, 2014",-8,1.775764796,6.518849174,text2 10
+381,text 1,6/6/2013,11-Nov-13,"Tuesday, March 19, 2013",21,9.941670074,1.647416852,text2 11
+382,text 3,3/27/2014,25-Dec-14,"Sunday, March 24, 2013",16,4.374753128,7.955523521,text2 13
+383,text 2,7/20/2013,8-Jul-14,"Saturday, October 19, 2013",-6,9.757777031,5.631540757,text2 24
+384,text 4,5/21/2013,19-Aug-14,"Monday, March 4, 2013",8,1.778519507,6.214901893,text2 23
+385,text 1,4/25/2014,1-Feb-14,"Friday, January 24, 2014",10,9.566242776,5.961495476,text2 18
+386,text 2,8/24/2013,20-Dec-13,"Monday, September 30, 2013",6,3.203128442,8.785555746,text2 8
+387,text 4,4/14/2013,16-Jan-14,"Monday, February 3, 2014",8,9.493618936,5.50724437,text2 21
+388,text 5,10/8/2013,15-Jun-13,"Friday, February 22, 2013",21,7.663531015,7.716314236,text2 12
+389,text 2,8/17/2014,22-Mar-14,"Wednesday, December 11, 2013",4,1.567934742,2.342107586,text2 18
+390,text 5,3/31/2013,11-Aug-13,"Tuesday, October 28, 2014",12,0.416123384,2.376527054,text2 3
+391,text 1,5/16/2013,11-Sep-13,"Tuesday, March 18, 2014",-7,3.753442348,8.98141076,text2 20
+392,text 4,11/1/2013,9-Jan-13,"Friday, September 13, 2013",-15,9.574240278,1.548970583,text2 12
+393,text 3,12/20/2013,17-Jun-13,"Saturday, August 2, 2014",-19,3.450016607,8.124047318,text2 15
+394,text 3,12/18/2013,22-Jul-14,"Tuesday, January 28, 2014",-18,8.12567724,9.47814108,text2 13
+395,text 1,10/1/2013,12-Oct-14,"Friday, March 7, 2014",4,10.3799081,9.351417794,text2 11
+396,text 4,7/2/2014,20-Sep-13,"Monday, January 20, 2014",-5,8.488147261,5.243565763,text2 11
+397,text 2,9/23/2013,25-Jul-13,"Sunday, April 13, 2014",-11,2.238290922,6.435241299,text2 19
+398,text 4,10/3/2013,11-Jul-13,"Friday, June 21, 2013",7,4.60013531,4.553390153,text2 20
+399,text 3,5/25/2013,25-Oct-13,"Wednesday, September 4, 2013",-4,10.09057759,10.2444394,text2 12
+400,text 5,11/15/2014,16-Jul-14,"Saturday, February 1, 2014",20,1.96359291,2.875856872,text2 12
+401,text 3,5/14/2013,9-Mar-14,"Saturday, August 17, 2013",-8,0.483910216,8.601844224,text2 3
+402,text 5,7/22/2014,24-Jun-13,"Thursday, September 19, 2013",28,3.38417438,0.928015256,text2 3
+403,text 1,1/20/2013,7-Oct-14,"Sunday, February 24, 2013",14,9.23073683,3.34175257,text2 23
+404,text 5,1/20/2014,9-Sep-13,"Monday, October 14, 2013",17,0.957008964,3.074374256,text2 13
+405,text 5,6/26/2014,21-Oct-14,"Wednesday, April 30, 2014",11,2.088713785,0.987423788,text2 20
+406,text 1,4/19/2014,2-Jan-14,"Tuesday, June 25, 2013",23,4.706000391,6.206707333,text2 10
+407,text 3,2/23/2013,4-Sep-14,"Saturday, November 8, 2014",8,10.36013507,3.605697355,text2 2
+408,text 4,12/27/2014,25-Apr-13,"Wednesday, July 24, 2013",28,1.463316528,1.843745481,text2 3
+409,text 3,10/12/2014,12-Dec-13,"Wednesday, May 15, 2013",7,9.71349669,9.783549382,text2 24
+410,text 1,3/7/2013,2-Nov-14,"Thursday, October 24, 2013",23,1.380733684,9.835662195,text2 11
+411,text 2,4/28/2014,7-Mar-13,"Tuesday, October 7, 2014",-8,9.143890564,9.070818548,text2 3
+412,text 1,6/13/2013,8-Apr-14,"Thursday, March 13, 2014",16,5.299410476,8.636887823,text2 6
+413,text 2,12/21/2014,30-Nov-13,"Saturday, February 23, 2013",28,9.549064322,1.134224676,text2 1
+414,text 2,9/3/2013,10-Nov-14,"Sunday, February 24, 2013",10,4.071105878,9.178247249,text2 11
+415,text 1,11/3/2013,26-Jan-13,"Friday, November 8, 2013",27,5.618854963,10.32545552,text2 16
+416,text 5,11/27/2013,10-Mar-14,"Friday, February 28, 2014",10,8.828635723,8.396706152,text2 6
+417,text 1,4/25/2014,5-Jun-14,"Wednesday, May 8, 2013",24,7.471877547,8.180428676,text2 9
+418,text 3,12/14/2014,6-Jun-14,"Monday, April 14, 2014",1,1.987354227,5.088733084,text2 2
+419,text 2,2/27/2013,8-Jul-14,"Saturday, April 26, 2014",-5,8.233934902,5.127901502,text2 24
+420,text 5,7/8/2014,27-Dec-14,"Tuesday, May 13, 2014",0,10.26422835,6.41742674,text2 24
+421,text 4,4/9/2013,23-Jul-14,"Monday, June 17, 2013",-19,2.061554912,0.897563438,text2 3
+422,text 2,11/2/2014,10-Feb-14,"Friday, March 28, 2014",-12,9.505834859,6.774513643,text2 8
+423,text 3,7/21/2014,12-May-14,"Wednesday, March 5, 2014",12,2.246806395,0.905158825,text2 8
+424,text 4,3/7/2013,9-Nov-13,"Sunday, February 3, 2013",16,8.784398663,5.461097327,text2 13
+425,text 4,11/1/2014,22-Jul-13,"Friday, January 24, 2014",-7,2.339190991,3.057959992,text2 18
+426,text 1,6/1/2013,9-Aug-13,"Friday, August 9, 2013",-16,3.765717389,7.277629747,text2 18
+427,text 3,7/25/2013,21-Jan-14,"Sunday, March 16, 2014",-17,10.04887567,8.166669539,text2 3
+428,text 3,6/10/2014,6-Feb-14,"Tuesday, September 9, 2014",-14,0.871062439,3.794128343,text2 13
+429,text 3,8/27/2014,15-Aug-14,"Sunday, July 13, 2014",0,1.013333744,0.84945047,text2 8
+430,text 5,1/8/2013,5-Oct-14,"Saturday, September 28, 2013",-9,7.238078916,9.18570925,text2 21
+431,text 1,8/7/2013,27-May-14,"Saturday, October 18, 2014",14,3.007692837,4.270205388,text2 5
+432,text 1,6/27/2013,26-Oct-14,"Saturday, February 1, 2014",20,9.911602265,0.972113537,text2 15
+433,text 5,2/20/2013,20-Jul-13,"Friday, January 25, 2013",9,5.476412397,0.431593681,text2 11
+434,text 1,4/26/2014,16-Sep-14,"Friday, January 24, 2014",21,4.182083925,6.140535986,text2 18
+435,text 5,8/31/2014,16-May-14,"Monday, April 14, 2014",20,4.04755398,5.077098169,text2 5
+436,text 1,9/11/2013,25-Sep-14,"Friday, May 10, 2013",-7,1.181763051,2.923375357,text2 12
+437,text 1,8/14/2014,20-Dec-13,"Tuesday, February 18, 2014",28,9.936185501,4.322566621,text2 8
+438,text 5,11/3/2013,5-Nov-14,"Saturday, November 16, 2013",-3,5.741225622,8.45350493,text2 15
+439,text 3,9/23/2013,15-May-13,"Friday, October 31, 2014",-9,4.065158952,5.151920131,text2 14
+440,text 4,6/4/2014,2-Jun-14,"Saturday, June 7, 2014",1,1.344717792,4.199128849,text2 16
+441,text 3,5/17/2013,10-May-13,"Thursday, February 6, 2014",-9,5.8498373,7.198038303,text2 14
+442,text 3,1/22/2014,23-Jan-14,"Wednesday, September 18, 2013",27,9.866286034,6.005093703,text2 3
+443,text 3,12/20/2014,8-Nov-14,"Thursday, July 24, 2014",26,4.233484533,9.064687276,text2 13
+444,text 3,10/18/2013,27-Dec-13,"Friday, April 19, 2013",19,3.851949344,8.834241297,text2 25
+445,text 3,2/13/2014,25-Sep-13,"Tuesday, November 4, 2014",7,1.142416476,6.226419358,text2 19
+446,text 3,11/8/2013,1-Feb-14,"Saturday, June 8, 2013",-5,9.037784752,5.240846456,text2 23
+447,text 3,8/12/2014,10-Oct-13,"Tuesday, August 19, 2014",3,4.085711189,2.696542386,text2 23
+448,text 2,7/28/2013,19-Jan-13,"Friday, October 18, 2013",10,2.912764769,5.981053754,text2 4
+449,text 2,9/6/2014,1-Aug-13,"Sunday, March 23, 2014",-4,0.312776547,7.834064338,text2 24
+450,text 1,4/18/2013,6-Feb-14,"Friday, February 28, 2014",7,10.44190611,6.165214225,text2 23
+451,text 2,12/25/2013,22-Jan-14,"Saturday, February 1, 2014",16,8.811298252,2.091468691,text2 21
+452,text 2,6/7/2013,10-Mar-14,"Wednesday, December 11, 2013",-11,3.150589167,10.73070578,text2 10
+453,text 5,3/3/2013,22-Jun-14,"Wednesday, November 12, 2014",-19,8.293138176,0.080609358,text2 16
+454,text 2,5/2/2013,1-Mar-14,"Tuesday, March 25, 2014",18,9.164647914,4.74028935,text2 8
+455,text 2,11/23/2013,10-Aug-14,"Wednesday, April 23, 2014",0,7.731666961,3.11342432,text2 17
+456,text 4,6/1/2013,28-May-14,"Wednesday, July 24, 2013",0,6.021157492,8.200739364,text2 17
+457,text 4,2/1/2014,9-Dec-14,"Thursday, September 11, 2014",10,0.077960673,6.055435983,text2 13
+458,text 3,8/16/2013,7-Oct-13,"Sunday, January 19, 2014",-15,9.839432194,1.339538946,text2 5
+459,text 1,10/27/2013,21-Sep-13,"Wednesday, January 1, 2014",13,9.118417732,4.031791005,text2 7
+460,text 5,1/13/2014,15-Feb-14,"Thursday, April 10, 2014",11,5.862744049,3.45450833,text2 25
+461,text 3,3/22/2013,25-Mar-13,"Saturday, April 13, 2013",19,0.841616036,2.760403262,text2 25
+462,text 1,8/4/2013,12-Jun-13,"Sunday, January 6, 2013",-18,3.066741878,8.2112695,text2 3
+463,text 4,1/19/2013,6-Jan-13,"Monday, April 1, 2013",22,8.55033303,1.833528102,text2 21
+464,text 5,10/21/2013,24-May-13,"Saturday, November 23, 2013",0,9.931113285,0.588800134,text2 16
+465,text 4,11/10/2014,5-Jul-13,"Thursday, October 16, 2014",7,3.248571664,3.547865236,text2 15
+466,text 3,6/2/2014,26-Jun-13,"Thursday, July 31, 2014",11,4.655091102,4.767167513,text2 16
+467,text 5,11/21/2014,4-Nov-14,"Sunday, December 22, 2013",-6,8.592069714,0.848444873,text2 6
+468,text 1,9/26/2014,18-Dec-14,"Friday, January 18, 2013",23,3.220041742,4.957997149,text2 23
+469,text 2,7/15/2014,9-Jan-13,"Saturday, December 13, 2014",4,4.305072675,5.870092097,text2 1
+470,text 5,2/17/2014,27-Jun-14,"Tuesday, January 28, 2014",-19,5.681780056,3.053602772,text2 25
+471,text 1,1/26/2014,22-Jan-14,"Thursday, December 18, 2014",-6,10.3883957,3.072239835,text2 2
+472,text 5,10/1/2014,16-Aug-14,"Wednesday, November 27, 2013",-13,8.400483233,3.964419704,text2 22
+473,text 2,9/14/2014,20-Jun-13,"Tuesday, January 7, 2014",18,9.33667686,3.413138778,text2 11
+474,text 2,11/11/2013,4-Dec-13,"Wednesday, May 8, 2013",16,6.924760699,0.967866336,text2 2
+475,text 4,8/14/2013,10-Sep-14,"Tuesday, January 1, 2013",-12,3.850417517,3.458391206,text2 4
+476,text 2,2/20/2013,2-Dec-13,"Saturday, October 12, 2013",4,2.884343403,8.999414429,text2 15
+477,text 3,4/19/2013,28-Sep-14,"Saturday, May 4, 2013",8,8.76694134,7.913710934,text2 12
+478,text 5,1/9/2014,21-Jan-13,"Wednesday, March 13, 2013",-2,8.507777543,9.843137852,text2 20
+479,text 3,12/25/2014,17-Dec-13,"Wednesday, September 10, 2014",20,10.33475387,10.00546496,text2 8
+480,text 1,6/19/2014,13-May-13,"Friday, February 28, 2014",14,8.882421234,4.255585776,text2 6
+481,text 5,9/7/2014,15-Jan-13,"Tuesday, March 25, 2014",0,10.31565148,5.751148467,text2 23
+482,text 1,8/2/2013,20-Sep-13,"Wednesday, February 6, 2013",18,5.844105754,3.468336927,text2 19
+483,text 2,4/7/2014,5-Sep-13,"Sunday, March 10, 2013",-1,1.892869281,7.360302271,text2 17
+484,text 5,3/22/2014,6-May-14,"Tuesday, December 24, 2013",25,7.777073858,7.385063683,text2 10
+485,text 5,5/16/2014,11-Jul-14,"Friday, September 20, 2013",22,3.225446187,8.148659905,text2 2
+486,text 5,1/24/2014,10-Jan-13,"Friday, January 3, 2014",7,4.385037369,2.984735388,text2 8
+487,text 4,8/28/2013,22-Jan-14,"Saturday, June 15, 2013",8,8.382031946,5.092744446,text2 13
+488,text 1,9/8/2014,18-Jan-14,"Friday, June 7, 2013",-8,8.250801982,0.93855895,text2 1
+489,text 4,9/4/2013,19-May-14,"Thursday, June 19, 2014",14,6.352543772,4.186193521,text2 24
+490,text 5,3/27/2014,5-Sep-14,"Tuesday, November 19, 2013",-10,6.884739602,1.339534172,text2 13
+491,text 1,7/23/2013,2-Jun-14,"Monday, October 14, 2013",-16,2.589933972,2.481445765,text2 14
+492,text 3,11/18/2013,18-May-13,"Monday, November 10, 2014",8,9.94264735,9.176389472,text2 21
+493,text 2,1/1/2013,9-Mar-14,"Wednesday, October 1, 2014",3,4.293206376,4.234872359,text2 2
+494,text 5,6/28/2013,16-Sep-13,"Thursday, January 31, 2013",-11,4.924878007,6.755774963,text2 7
+495,text 1,7/14/2014,5-Dec-13,"Saturday, November 1, 2014",27,3.571672813,0.848144454,text2 17
+496,text 2,3/4/2014,15-Mar-13,"Monday, March 10, 2014",23,9.014294094,9.006533088,text2 15
+497,text 4,10/15/2014,24-May-14,"Wednesday, May 14, 2014",-8,1.632088906,2.9565723,text2 24
+498,text 1,9/21/2014,26-Apr-13,"Tuesday, August 26, 2014",23,10.15048116,9.484539744,text2 19
+499,text 2,5/13/2014,8-Jul-14,"Tuesday, February 5, 2013",-19,2.421222531,10.29754541,text2 20
+500,text 4,1/11/2013,4-Dec-14,"Wednesday, September 10, 2014",11,3.60103868,9.10457387,text2 4
+501,text 1,2/7/2013,30-Jun-14,"Tuesday, May 20, 2014",29,4.005031945,4.258195366,text2 14
+502,text 3,12/2/2014,28-Jun-14,"Thursday, November 13, 2014",2,9.927138152,10.42671005,text2 25
+503,text 1,5/20/2013,11-Aug-14,"Sunday, February 3, 2013",18,4.075019016,1.845389142,text2 24
+504,text 3,9/18/2014,10-Feb-13,"Thursday, October 24, 2013",-13,5.947849307,7.177063669,text2 24
+505,text 4,3/2/2014,19-Aug-14,"Sunday, December 28, 2014",17,1.821067581,8.285094754,text2 10
+506,text 2,12/15/2013,25-Mar-14,"Friday, January 18, 2013",28,7.600388806,9.957742378,text2 6
+507,text 1,3/3/2013,9-Aug-14,"Friday, August 2, 2013",23,2.077831622,1.80901546,text2 17
+508,text 4,7/28/2014,26-Oct-14,"Sunday, March 23, 2014",-9,10.29750766,3.791161902,text2 1
+509,text 5,7/1/2013,3-May-14,"Sunday, August 3, 2014",-16,9.292707781,3.569776356,text2 5
+510,text 5,7/24/2013,1-Dec-13,"Saturday, October 19, 2013",-2,3.758199766,3.283508133,text2 9
+511,text 2,4/13/2014,24-Jun-13,"Saturday, December 13, 2014",13,6.424491204,5.326356622,text2 24
+512,text 5,5/25/2013,6-Jan-13,"Wednesday, May 15, 2013",-2,8.76384714,3.101674724,text2 4
+513,text 1,8/9/2013,24-Oct-13,"Friday, August 15, 2014",22,7.353549838,2.628685662,text2 14
+514,text 5,4/10/2013,14-Apr-14,"Saturday, November 23, 2013",14,7.404893997,8.579486321,text2 23
+515,text 3,10/4/2014,27-May-13,"Friday, November 28, 2014",-17,6.562228444,1.703904572,text2 23
+516,text 3,10/3/2013,20-Dec-13,"Thursday, May 15, 2014",2,4.476453058,3.275389555,text2 7
+517,text 3,8/21/2014,26-Jan-13,"Tuesday, April 30, 2013",25,7.070092383,1.057084683,text2 14
+518,text 1,3/13/2013,23-Jul-13,"Monday, September 1, 2014",17,3.121957906,7.887162198,text2 14
+519,text 1,8/13/2014,10-Jul-14,"Friday, July 18, 2014",1,5.989659467,1.026116863,text2 17
+520,text 3,2/10/2014,14-Apr-13,"Tuesday, March 19, 2013",24,1.38713574,7.283747967,text2 10
+521,text 4,2/15/2013,5-Jun-13,"Thursday, February 20, 2014",24,9.543116162,5.695330228,text2 12
+522,text 3,1/22/2014,15-Jun-14,"Monday, November 10, 2014",8,10.24750059,0.232147917,text2 6
+523,text 1,12/8/2014,7-Nov-13,"Monday, January 13, 2014",23,7.30490926,0.857077198,text2 1
+524,text 3,8/15/2014,27-Nov-14,"Thursday, January 23, 2014",26,3.632471937,4.931688058,text2 6
+525,text 2,5/17/2014,24-Apr-14,"Monday, March 10, 2014",-8,1.476580602,1.624604279,text2 13
+526,text 1,9/10/2014,11-Jul-13,"Saturday, March 9, 2013",25,6.665758267,6.325280718,text2 21
+527,text 2,1/12/2013,31-Jul-14,"Sunday, August 4, 2013",12,2.66623206,5.042832867,text2 2
+528,text 4,3/10/2014,10-Aug-14,"Tuesday, December 24, 2013",25,1.38782163,5.322983396,text2 9
+529,text 5,9/9/2013,25-May-13,"Monday, April 14, 2014",-1,4.098223905,3.323834511,text2 11
+530,text 4,9/6/2013,15-Feb-14,"Friday, January 10, 2014",26,6.819360898,0.622348744,text2 9
+531,text 1,10/3/2013,8-Feb-13,"Tuesday, September 16, 2014",-14,2.54342116,7.718518375,text2 17
+532,text 4,5/7/2014,14-Aug-14,"Wednesday, August 7, 2013",29,3.972450622,3.98460749,text2 23
+533,text 1,7/4/2014,11-Apr-14,"Friday, June 14, 2013",21,9.503713158,6.07797849,text2 25
+534,text 5,11/16/2013,11-Jul-14,"Tuesday, September 24, 2013",11,1.047502213,10.30699239,text2 18
+535,text 4,10/9/2013,26-Jan-13,"Saturday, May 25, 2013",19,3.224299331,4.88355678,text2 15
+536,text 5,12/4/2013,3-Mar-13,"Thursday, April 3, 2014",3,1.293636645,10.26628704,text2 21
+537,text 5,7/24/2013,28-Mar-14,"Tuesday, January 8, 2013",26,10.47260945,6.127663526,text2 18
+538,text 3,1/27/2014,22-May-13,"Saturday, May 11, 2013",-12,7.325233822,4.578001957,text2 15
+539,text 2,8/17/2013,17-Oct-13,"Saturday, December 20, 2014",5,6.841902622,2.440767041,text2 7
+540,text 5,11/28/2013,26-Jan-13,"Thursday, October 3, 2013",12,0.710307821,9.006856114,text2 25
+541,text 1,10/22/2014,15-Sep-13,"Sunday, July 13, 2014",-18,5.342489561,3.343688145,text2 11
+542,text 1,9/4/2014,23-Apr-14,"Tuesday, May 13, 2014",-5,10.52769359,4.006440642,text2 10
+543,text 2,2/12/2013,18-Apr-13,"Friday, August 15, 2014",18,5.402176535,9.510243847,text2 18
+544,text 3,2/18/2014,23-Mar-14,"Thursday, June 19, 2014",-12,5.710824398,3.15717542,text2 17
+545,text 2,9/28/2013,12-Aug-13,"Thursday, June 27, 2013",4,4.651733773,0.989519439,text2 6
+546,text 2,8/4/2013,31-Dec-12,"Thursday, January 2, 2014",-20,2.956863257,2.942042829,text2 20
+547,text 1,11/2/2014,17-Feb-13,"Monday, November 18, 2013",-18,4.093316924,6.605703295,text2 15
+548,text 3,11/20/2013,15-Oct-14,"Sunday, December 1, 2013",24,0.57804759,8.286262699,text2 2
+549,text 2,10/17/2014,6-Jul-14,"Sunday, March 17, 2013",10,7.614281558,5.291869567,text2 15
+550,text 5,6/16/2013,17-Dec-14,"Wednesday, September 3, 2014",-19,8.42784465,8.568009599,text2 13
+551,text 4,12/8/2014,2-Jan-14,"Tuesday, July 9, 2013",22,6.683193164,1.902775878,text2 15
+552,text 1,7/24/2013,18-Jan-13,"Friday, March 22, 2013",-17,5.432494193,5.618515332,text2 3
+553,text 3,4/28/2013,21-Oct-14,"Monday, January 6, 2014",29,7.253966323,9.885802994,text2 13
+554,text 3,7/15/2013,5-Dec-13,"Monday, December 23, 2013",-12,6.569502192,0.886631954,text2 20
+555,text 3,6/21/2013,7-Jan-14,"Saturday, April 20, 2013",9,10.65333505,9.114830576,text2 21
+556,text 1,4/16/2013,22-May-14,"Wednesday, August 20, 2014",-1,7.861971585,9.275361516,text2 3
+557,text 5,3/8/2013,25-Sep-13,"Thursday, February 7, 2013",-7,9.866028649,9.129463279,text2 20
+558,text 4,7/22/2014,22-Oct-13,"Friday, August 23, 2013",29,2.239075047,2.837885186,text2 18
+559,text 1,9/5/2013,21-Nov-13,"Thursday, April 17, 2014",-19,1.095990951,1.228663464,text2 18
+560,text 1,2/6/2014,25-Aug-14,"Thursday, March 13, 2014",14,3.49267372,2.514556453,text2 11
+561,text 2,3/28/2013,18-Sep-13,"Thursday, April 24, 2014",-4,7.742523378,4.72214665,text2 4
+562,text 4,7/16/2013,18-Oct-14,"Saturday, August 24, 2013",27,4.283260169,2.831032749,text2 17
+563,text 4,7/22/2014,10-Dec-14,"Thursday, August 14, 2014",-20,4.982519292,6.952588785,text2 10
+564,text 2,8/13/2014,28-Feb-13,"Wednesday, July 16, 2014",-2,4.72737659,1.221086967,text2 13
+565,text 1,2/7/2013,26-Apr-14,"Sunday, January 5, 2014",-4,10.23412331,8.766991076,text2 11
+566,text 5,9/25/2014,5-Nov-13,"Friday, March 7, 2014",28,2.660784551,1.503580497,text2 4
+567,text 5,4/27/2014,28-Feb-14,"Sunday, August 24, 2014",27,5.886203215,9.806729918,text2 6
+568,text 2,6/20/2013,25-Apr-14,"Friday, November 7, 2014",23,8.080687181,6.18153776,text2 13
+569,text 4,6/15/2013,1-Jul-14,"Friday, June 28, 2013",4,2.782819501,8.082599324,text2 1
+570,text 2,10/2/2014,15-Jun-13,"Thursday, November 13, 2014",0,8.633825669,3.30476328,text2 4
+571,text 1,3/24/2013,17-May-13,"Wednesday, April 10, 2013",26,5.11102808,9.091411462,text2 5
+572,text 3,5/26/2014,6-Dec-14,"Sunday, January 5, 2014",-3,5.59407639,2.176966591,text2 23
+573,text 5,7/23/2013,19-Jan-14,"Friday, March 15, 2013",-4,9.315952026,4.232608762,text2 3
+574,text 1,2/28/2013,10-Nov-13,"Wednesday, June 18, 2014",10,8.244017954,3.104306223,text2 19
+575,text 5,2/15/2014,5-May-14,"Monday, March 4, 2013",30,7.87798552,5.368254351,text2 10
+576,text 1,12/17/2014,15-Jul-14,"Friday, July 11, 2014",-2,4.02131897,6.567717455,text2 6
+577,text 2,2/12/2013,22-Aug-13,"Saturday, February 9, 2013",-11,3.134294953,7.906754114,text2 14
+578,text 5,8/3/2014,23-Jun-13,"Saturday, November 16, 2013",-9,3.779630971,4.769427241,text2 18
+579,text 4,9/2/2014,12-May-14,"Tuesday, January 15, 2013",22,3.003403584,3.122131289,text2 23
+580,text 1,5/6/2014,4-Apr-13,"Tuesday, February 5, 2013",26,7.809402391,3.038045493,text2 14
+581,text 4,11/9/2013,1-Mar-13,"Monday, March 31, 2014",5,10.09230011,5.476261871,text2 7
+582,text 5,9/23/2013,6-Feb-14,"Friday, March 21, 2014",-11,7.361686553,7.282286069,text2 23
+583,text 5,5/18/2013,14-Aug-14,"Tuesday, May 28, 2013",-7,0.067715835,5.974818202,text2 7
+584,text 4,2/28/2013,11-Jun-14,"Friday, June 13, 2014",7,7.602110286,2.263822131,text2 1
+585,text 1,10/26/2013,25-May-13,"Tuesday, December 3, 2013",27,10.37807034,5.800806075,text2 22
+586,text 3,2/18/2014,16-Sep-14,"Thursday, April 3, 2014",-8,7.377723784,9.099163845,text2 4
+587,text 4,8/20/2013,27-Apr-13,"Sunday, November 24, 2013",-18,5.392610323,5.577749929,text2 8
+588,text 4,2/11/2014,20-Apr-14,"Tuesday, January 28, 2014",7,4.40457892,3.132580199,text2 7
+589,text 3,10/24/2013,17-Jun-14,"Saturday, July 27, 2013",-2,2.540080998,7.217177009,text2 19
+590,text 2,6/17/2013,11-Aug-14,"Friday, January 4, 2013",-1,4.988491772,1.299473775,text2 5
+591,text 2,4/20/2013,20-Feb-14,"Monday, July 14, 2014",2,9.220139009,2.354588502,text2 25
+592,text 2,3/18/2014,20-Nov-13,"Wednesday, November 13, 2013",-11,0.936647557,7.053144425,text2 24
+593,text 1,10/6/2013,1-Jan-14,"Tuesday, February 11, 2014",30,3.854093369,9.316717716,text2 12
+594,text 2,12/9/2014,9-Jun-14,"Saturday, March 1, 2014",-7,10.51328841,6.384348977,text2 16
+595,text 2,9/6/2013,2-Aug-14,"Monday, November 11, 2013",7,1.821266413,2.025246718,text2 2
+596,text 2,1/17/2014,25-Dec-14,"Monday, September 15, 2014",26,6.846057199,1.057278028,text2 3
+597,text 3,1/9/2014,8-Aug-13,"Thursday, February 7, 2013",-7,0.762101048,8.007652627,text2 12
+598,text 3,4/9/2013,15-Feb-13,"Friday, February 1, 2013",18,4.746061022,8.960224075,text2 5
+599,text 2,4/10/2013,19-Dec-13,"Monday, November 17, 2014",-10,2.288870902,9.45031432,text2 4
+600,text 2,3/17/2013,18-May-13,"Saturday, November 2, 2013",18,4.10868842,9.460639607,text2 16
+601,text 5,3/11/2014,21-Aug-14,"Wednesday, June 12, 2013",-5,9.350728667,5.811038979,text2 23
+602,text 1,6/14/2014,23-Apr-13,"Sunday, March 23, 2014",28,1.138885733,0.860888931,text2 4
+603,text 5,6/11/2013,15-Nov-13,"Thursday, March 6, 2014",4,5.460394154,9.026116462,text2 6
+604,text 1,6/1/2013,11-Sep-14,"Thursday, June 20, 2013",29,3.354268783,4.118414482,text2 11
+605,text 2,7/27/2013,22-Dec-13,"Thursday, March 6, 2014",29,9.141177564,4.458809924,text2 25
+606,text 4,6/27/2013,7-Dec-13,"Wednesday, June 26, 2013",6,2.283142826,1.561821232,text2 13
+607,text 1,3/16/2014,26-Dec-14,"Sunday, October 6, 2013",-11,8.866379411,6.208174186,text2 9
+608,text 1,7/11/2013,19-Aug-14,"Tuesday, February 4, 2014",17,1.217190075,6.795675087,text2 12
+609,text 4,10/10/2013,12-Dec-13,"Friday, February 14, 2014",-7,2.216226352,7.343603201,text2 7
+610,text 2,12/18/2013,9-Dec-14,"Saturday, January 26, 2013",-18,7.930659405,7.684085764,text2 25
+611,text 4,6/13/2014,27-Feb-14,"Monday, July 15, 2013",18,7.446797496,8.311020467,text2 4
+612,text 3,1/2/2014,23-Mar-13,"Sunday, January 26, 2014",-20,6.009713383,3.612905341,text2 14
+613,text 1,4/5/2014,10-Sep-13,"Monday, May 19, 2014",27,2.58923964,1.435416262,text2 2
+614,text 5,10/8/2014,19-Mar-14,"Monday, May 26, 2014",-18,8.189385961,2.104599682,text2 25
+615,text 5,5/10/2013,26-Apr-13,"Saturday, June 7, 2014",-12,5.214616029,3.730117744,text2 18
+616,text 4,7/27/2014,1-Jun-14,"Monday, December 16, 2013",-19,8.438052507,3.7645156,text2 12
+617,text 4,4/24/2013,11-Jan-13,"Thursday, February 6, 2014",3,3.668699762,8.4605253,text2 11
+618,text 1,9/28/2013,13-Dec-13,"Saturday, December 27, 2014",2,2.886286142,2.849827098,text2 20
+619,text 3,6/12/2014,19-Jan-13,"Saturday, November 23, 2013",11,9.744491038,0.612923364,text2 6
+620,text 5,1/13/2014,3-Feb-13,"Tuesday, September 9, 2014",10,4.612482926,9.73597332,text2 13
+621,text 3,10/16/2013,9-Feb-13,"Monday, July 15, 2013",-13,6.954832098,4.044150953,text2 9
+622,text 4,2/12/2014,7-Apr-14,"Wednesday, September 24, 2014",25,4.52979146,2.546374131,text2 15
+623,text 5,2/4/2014,22-Sep-14,"Sunday, May 25, 2014",17,0.985009784,2.892628673,text2 13
+624,text 2,12/16/2013,24-Jul-13,"Thursday, January 10, 2013",4,10.03551755,4.363255252,text2 25
+625,text 2,4/1/2014,1-Apr-14,"Sunday, September 7, 2014",15,2.842489241,8.333276501,text2 2
+626,text 2,7/24/2013,17-Dec-13,"Saturday, December 14, 2013",-19,7.900133997,8.796968705,text2 14
+627,text 4,5/7/2014,24-Jan-13,"Monday, September 22, 2014",22,4.657412778,3.822411676,text2 22
+628,text 4,11/5/2013,8-Jan-14,"Wednesday, December 17, 2014",-12,1.718556389,9.320267118,text2 6
+629,text 4,3/24/2013,14-Sep-14,"Thursday, April 10, 2014",30,4.250928967,3.421036363,text2 3
+630,text 1,1/31/2014,30-Apr-13,"Saturday, April 26, 2014",-18,1.49247401,4.710284106,text2 11
+631,text 3,5/24/2014,20-Apr-13,"Wednesday, May 8, 2013",12,9.905132065,7.973906571,text2 6
+632,text 4,4/20/2014,17-Mar-14,"Friday, August 22, 2014",-1,2.316588681,3.066550975,text2 19
+633,text 3,11/6/2014,31-Jul-14,"Tuesday, January 15, 2013",15,9.672700106,4.055488806,text2 20
+634,text 2,3/23/2013,30-Sep-13,"Saturday, June 22, 2013",10,4.972543114,10.24656862,text2 3
+635,text 1,4/15/2013,18-Jan-14,"Saturday, January 18, 2014",29,5.684463407,4.226776125,text2 15
+636,text 3,4/25/2013,9-Mar-13,"Friday, August 2, 2013",13,1.093530213,5.743639307,text2 24
+637,text 5,1/17/2013,16-Jul-14,"Thursday, June 27, 2013",2,7.637254095,1.577880284,text2 24
+638,text 5,6/6/2014,13-Mar-13,"Wednesday, September 10, 2014",2,9.983018338,0.954671551,text2 17
+639,text 1,5/8/2013,8-Jul-13,"Thursday, March 6, 2014",-18,5.095075025,5.595430623,text2 22
+640,text 3,3/3/2014,24-Jun-14,"Saturday, April 20, 2013",10,9.711268966,2.775131385,text2 14
+641,text 3,3/22/2013,12-Mar-13,"Thursday, June 13, 2013",14,1.336322664,7.838070958,text2 13
+642,text 1,12/7/2013,26-Sep-14,"Tuesday, October 28, 2014",-2,5.164365307,3.9270463,text2 17
+643,text 3,10/5/2014,31-Aug-14,"Saturday, June 15, 2013",-6,4.973602898,7.015866733,text2 25
+644,text 5,2/19/2013,27-Jul-13,"Thursday, October 24, 2013",15,6.773450866,1.174136689,text2 5
+645,text 2,8/12/2014,7-Dec-14,"Friday, June 21, 2013",-16,7.22034975,2.701140655,text2 25
+646,text 4,1/17/2013,13-Feb-14,"Tuesday, February 19, 2013",22,4.648613092,8.260502888,text2 10
+647,text 4,8/25/2014,27-Dec-14,"Friday, June 7, 2013",2,0.773256737,8.814944259,text2 13
+648,text 2,9/12/2014,20-Mar-13,"Wednesday, January 23, 2013",-11,7.926035307,4.147164508,text2 23
+649,text 2,10/16/2014,26-Jun-13,"Tuesday, January 14, 2014",2,10.77290161,0.492607281,text2 12
+650,text 5,4/7/2013,27-Nov-13,"Saturday, March 9, 2013",-3,9.975620976,8.870712413,text2 18
+651,text 3,9/12/2014,8-Jun-14,"Friday, October 3, 2014",26,5.366969956,9.948414274,text2 22
+652,text 2,8/17/2013,27-Jan-13,"Tuesday, April 2, 2013",-8,5.043989514,7.910613571,text2 15
+653,text 3,8/25/2013,2-May-14,"Thursday, July 31, 2014",-18,3.195300519,5.972974321,text2 25
+654,text 4,5/12/2014,3-Jun-13,"Wednesday, April 23, 2014",-9,2.763554937,5.261164614,text2 24
+655,text 5,6/17/2013,31-Jan-13,"Friday, July 25, 2014",-19,0.954924112,2.012518202,text2 23
+656,text 3,4/27/2013,14-Sep-14,"Monday, July 28, 2014",-13,2.93864999,10.23259178,text2 11
+657,text 1,3/17/2014,4-Oct-14,"Saturday, January 11, 2014",3,8.088313,5.78839863,text2 16
+658,text 1,9/6/2014,5-Dec-13,"Friday, January 17, 2014",29,7.32646018,0.235143816,text2 17
+659,text 1,3/21/2013,16-Feb-14,"Monday, October 20, 2014",29,4.13082927,4.044389724,text2 5
+660,text 1,5/20/2014,15-Apr-13,"Friday, May 17, 2013",13,9.985588242,8.719992201,text2 17
+661,text 2,4/25/2013,18-Aug-14,"Tuesday, July 1, 2014",22,1.377120319,5.555832778,text2 7
+662,text 2,9/14/2013,9-Oct-13,"Thursday, February 6, 2014",-14,5.679066826,2.522480226,text2 24
+663,text 3,2/26/2013,20-Jul-14,"Friday, December 26, 2014",26,5.646360938,8.929952765,text2 4
+664,text 1,6/6/2013,31-May-13,"Friday, April 18, 2014",0,8.649876896,0.989750921,text2 12
+665,text 4,10/26/2014,20-Aug-14,"Monday, February 17, 2014",23,3.263102023,1.670527999,text2 15
+666,text 2,11/4/2013,4-May-13,"Saturday, May 10, 2014",18,9.658531147,3.525158372,text2 4
+667,text 3,11/22/2014,25-Aug-14,"Sunday, October 13, 2013",-15,5.670576726,6.852755005,text2 20
+668,text 1,7/18/2014,6-Feb-14,"Thursday, November 28, 2013",18,0.937059312,4.697086352,text2 5
+669,text 4,1/10/2013,2-Mar-13,"Wednesday, August 21, 2013",-13,10.06263437,5.956078345,text2 5
+670,text 5,7/1/2014,6-Jun-14,"Tuesday, December 2, 2014",6,9.738900728,7.129080417,text2 5
+671,text 3,4/12/2014,11-Aug-13,"Tuesday, January 14, 2014",-4,1.885463117,9.225093017,text2 25
+672,text 4,4/5/2013,6-Dec-13,"Thursday, October 31, 2013",0,2.444276919,6.682670029,text2 4
+673,text 3,3/7/2014,1-Nov-14,"Wednesday, November 12, 2014",15,5.850241852,3.658556093,text2 4
+674,text 1,7/23/2014,20-Dec-13,"Sunday, September 28, 2014",-18,1.477189167,9.586648908,text2 22
+675,text 4,10/26/2013,21-Apr-13,"Friday, January 11, 2013",3,9.384649408,8.1473469,text2 11
+676,text 1,12/16/2014,27-Sep-13,"Monday, July 21, 2014",-6,8.292461945,6.611283569,text2 22
+677,text 2,8/25/2013,11-Nov-14,"Sunday, October 12, 2014",7,0.467888316,2.72655605,text2 8
+678,text 5,4/28/2013,1-Jun-14,"Sunday, January 20, 2013",-7,2.234793939,9.731257235,text2 22
+679,text 4,4/25/2013,5-May-13,"Friday, June 28, 2013",-17,5.760232675,10.0878265,text2 18
+680,text 4,3/11/2014,11-Jun-13,"Wednesday, August 7, 2013",27,5.096610477,4.427707717,text2 25
+681,text 5,3/11/2013,8-Apr-13,"Saturday, November 1, 2014",-6,8.910077391,5.632076446,text2 19
+682,text 2,11/19/2013,11-Nov-14,"Thursday, February 20, 2014",8,7.385429906,7.760852359,text2 6
+683,text 5,10/1/2013,1-Aug-14,"Friday, July 12, 2013",20,2.0238446,9.946897095,text2 15
+684,text 1,4/19/2014,28-Dec-14,"Thursday, August 1, 2013",23,3.586148952,4.084705387,text2 22
+685,text 5,3/23/2014,18-May-13,"Saturday, January 19, 2013",8,10.1557829,6.349684234,text2 3
+686,text 2,8/25/2014,11-Dec-14,"Thursday, September 26, 2013",1,3.379565856,8.265141045,text2 17
+687,text 1,10/17/2014,21-Jun-14,"Thursday, February 21, 2013",27,2.592684021,3.420636832,text2 23
+688,text 5,8/18/2013,3-Feb-14,"Wednesday, November 13, 2013",-14,7.379698503,7.772586555,text2 20
+689,text 5,10/1/2013,6-May-13,"Friday, December 6, 2013",-16,3.254573503,4.526650754,text2 14
+690,text 2,9/19/2014,6-Sep-14,"Wednesday, July 23, 2014",-2,10.48645899,3.699850071,text2 16
+691,text 4,9/26/2014,13-Mar-13,"Monday, June 23, 2014",29,0.471338769,7.997065242,text2 8
+692,text 3,9/22/2014,6-Mar-14,"Sunday, December 7, 2014",8,1.511009922,10.45986213,text2 1
+693,text 2,8/23/2014,27-Jul-13,"Friday, January 10, 2014",20,7.479860845,8.22078055,text2 9
+694,text 2,11/13/2013,4-Dec-14,"Sunday, December 1, 2013",7,1.23663626,6.83116189,text2 3
+695,text 1,11/9/2013,27-May-14,"Wednesday, September 10, 2014",15,1.199795091,3.001388813,text2 19
+696,text 3,5/7/2014,30-Apr-14,"Wednesday, October 23, 2013",-1,6.821055571,2.843138689,text2 1
+697,text 3,9/9/2014,6-Jul-14,"Tuesday, July 2, 2013",-8,8.556303947,1.149231681,text2 8
+698,text 2,8/22/2014,24-Aug-13,"Monday, October 13, 2014",21,0.753915863,3.776900966,text2 2
+699,text 4,6/7/2013,1-Nov-14,"Saturday, November 15, 2014",-9,4.621415877,6.940196374,text2 4
+700,text 4,9/27/2014,23-Nov-13,"Saturday, January 25, 2014",24,9.625963019,8.23952742,text2 10
+701,text 4,6/9/2013,27-Jun-14,"Friday, April 12, 2013",-17,5.964179118,4.587304086,text2 14
+702,text 2,10/19/2013,20-Jun-14,"Monday, October 14, 2013",-7,8.620555478,5.554311496,text2 3
+703,text 3,2/18/2013,1-Sep-14,"Monday, December 23, 2013",22,7.952581955,8.847742379,text2 16
+704,text 3,2/2/2014,14-Apr-14,"Saturday, February 1, 2014",-2,8.143179639,4.752663222,text2 18
+705,text 5,2/13/2014,26-Oct-13,"Monday, September 30, 2013",29,5.812861806,3.024101914,text2 5
+706,text 5,11/15/2014,13-Apr-14,"Wednesday, October 22, 2014",3,2.440578425,3.648718547,text2 16
+707,text 3,6/8/2014,17-Sep-13,"Sunday, April 28, 2013",-13,3.240743306,4.781654391,text2 18
+708,text 2,1/7/2013,17-Aug-14,"Wednesday, August 21, 2013",-3,5.98424194,10.27129583,text2 14
+709,text 3,2/18/2014,7-Sep-13,"Saturday, June 8, 2013",25,2.040565594,4.905810892,text2 23
+710,text 5,6/6/2014,10-Dec-14,"Tuesday, May 20, 2014",-18,4.056352432,5.045220484,text2 11
+711,text 2,11/20/2013,5-Sep-14,"Saturday, April 13, 2013",-3,2.423928255,4.430914893,text2 4
+712,text 1,8/27/2013,20-Sep-13,"Monday, September 30, 2013",14,4.489821381,2.13709117,text2 3
+713,text 1,10/3/2014,22-Oct-14,"Tuesday, February 18, 2014",11,6.889430383,3.606247264,text2 21
+714,text 2,9/14/2014,1-Sep-14,"Wednesday, April 17, 2013",12,2.690544957,0.609375482,text2 1
+715,text 1,10/24/2014,2-Sep-13,"Monday, June 3, 2013",-16,9.833063592,7.538066636,text2 17
+716,text 4,10/17/2013,12-Sep-13,"Thursday, November 28, 2013",15,3.786023922,4.947538182,text2 24
+717,text 4,2/24/2014,30-Nov-14,"Thursday, June 5, 2014",5,10.56106368,9.317395264,text2 15
+718,text 2,3/13/2014,14-Jul-13,"Monday, February 18, 2013",9,6.373273388,5.569055287,text2 24
+719,text 2,3/19/2014,8-Aug-13,"Tuesday, May 28, 2013",-3,3.251322585,6.58526504,text2 18
+720,text 3,2/25/2013,13-Apr-14,"Saturday, February 23, 2013",4,6.148368377,3.560123609,text2 16
+721,text 5,6/15/2014,27-Apr-13,"Sunday, January 6, 2013",13,5.34346808,0.211370275,text2 24
+722,text 1,5/15/2013,7-Apr-14,"Monday, October 13, 2014",18,5.620112382,0.772915379,text2 18
+723,text 4,9/26/2014,11-Oct-14,"Thursday, May 8, 2014",-6,8.609713948,7.025220724,text2 14
+724,text 1,8/28/2014,24-Jul-14,"Monday, February 18, 2013",-13,8.003309021,4.490538526,text2 1
+725,text 5,12/28/2014,23-Nov-14,"Sunday, March 3, 2013",-9,6.044146668,0.867016672,text2 8
+726,text 4,12/13/2013,21-Nov-14,"Monday, February 3, 2014",23,1.461690746,1.328904133,text2 7
+727,text 4,5/4/2013,20-Aug-14,"Tuesday, June 10, 2014",-3,10.20852303,2.815722211,text2 2
+728,text 1,11/15/2014,10-Jul-14,"Tuesday, March 5, 2013",25,0.393949055,6.792283472,text2 8
+729,text 1,3/7/2013,27-May-13,"Sunday, May 12, 2013",-10,10.3113101,1.61118057,text2 6
+730,text 1,11/27/2014,4-Nov-13,"Friday, March 1, 2013",20,8.181216884,4.563011956,text2 20
+731,text 5,4/12/2013,31-Oct-13,"Sunday, August 10, 2014",24,2.815734949,7.499573598,text2 6
+732,text 3,2/16/2014,20-Sep-13,"Saturday, June 21, 2014",11,8.159133471,10.12061202,text2 22
+733,text 3,4/19/2013,4-Feb-13,"Monday, February 3, 2014",-4,8.196332271,2.884267717,text2 8
+734,text 5,5/2/2014,3-Aug-13,"Monday, May 5, 2014",8,4.975174689,5.434091342,text2 3
+735,text 2,9/9/2013,27-Jul-13,"Monday, October 21, 2013",-14,1.972636494,9.780135296,text2 10
+736,text 3,4/17/2013,3-Jul-13,"Sunday, January 12, 2014",11,8.56526915,5.585716307,text2 24
+737,text 3,6/8/2013,14-Jun-13,"Tuesday, January 21, 2014",-11,4.855136289,6.486680689,text2 21
+738,text 5,4/5/2013,22-Oct-14,"Tuesday, May 13, 2014",19,2.540984727,6.286064592,text2 12
+739,text 4,10/16/2013,25-Jun-14,"Wednesday, July 16, 2014",-9,7.402976812,4.68056437,text2 23
+740,text 5,7/19/2013,18-Jun-13,"Thursday, April 24, 2014",-4,0.819548524,1.694043056,text2 20
+741,text 1,12/26/2014,2-May-13,"Thursday, October 9, 2014",3,4.797828079,8.241034249,text2 18
+742,text 2,3/10/2013,30-Sep-14,"Wednesday, July 10, 2013",-10,9.435026132,10.1273093,text2 25
+743,text 5,5/5/2013,18-May-13,"Monday, May 6, 2013",-4,1.62364019,9.286649211,text2 13
+744,text 5,12/31/2012,25-Aug-13,"Monday, February 11, 2013",-15,6.066313631,7.873438397,text2 4
+745,text 3,6/26/2014,22-Jun-14,"Thursday, January 10, 2013",11,5.943267643,4.394451409,text2 9
+746,text 1,6/16/2013,15-Jul-13,"Friday, March 21, 2014",28,2.524807035,3.662427652,text2 7
+747,text 3,2/15/2013,27-Oct-14,"Thursday, January 23, 2014",-5,7.01641769,2.159097421,text2 22
+748,text 5,10/7/2014,7-Apr-14,"Sunday, April 28, 2013",13,9.205227879,1.31713872,text2 3
+749,text 1,10/23/2014,27-Sep-13,"Saturday, June 15, 2013",-17,5.338306415,8.429074585,text2 18
+750,text 5,5/19/2014,26-May-14,"Tuesday, September 16, 2014",14,1.764291626,1.313800708,text2 21
+751,text 1,2/23/2013,4-May-13,"Monday, July 21, 2014",16,10.37281579,1.26776382,text2 5
+752,text 1,1/14/2014,1-May-13,"Friday, August 2, 2013",5,9.858735213,8.695671721,text2 16
+753,text 1,9/8/2014,6-Dec-14,"Saturday, May 18, 2013",25,2.598331828,6.848925973,text2 6
+754,text 5,6/25/2014,28-Nov-13,"Sunday, December 1, 2013",9,7.347888242,5.17343962,text2 11
+755,text 4,3/16/2014,23-Jul-13,"Monday, May 20, 2013",16,6.286966102,1.724641786,text2 15
+756,text 2,6/20/2014,19-May-14,"Sunday, October 13, 2013",-10,4.42306666,3.387125893,text2 13
+757,text 4,9/7/2014,12-Jun-14,"Tuesday, February 25, 2014",2,4.095168559,9.382677071,text2 1
+758,text 3,10/6/2014,10-Feb-13,"Sunday, November 2, 2014",-2,5.172131429,1.966983678,text2 11
+759,text 5,4/4/2014,8-Nov-13,"Thursday, September 4, 2014",29,7.966073383,6.106434391,text2 13
+760,text 2,10/11/2014,6-Jul-14,"Friday, August 15, 2014",-2,3.015398838,1.075541978,text2 15
+761,text 4,6/14/2013,19-Jan-13,"Saturday, April 5, 2014",21,9.758888532,2.485500607,text2 11
+762,text 4,2/19/2013,10-Nov-13,"Tuesday, May 28, 2013",25,4.736360612,2.686313108,text2 3
+763,text 5,9/1/2013,28-Oct-14,"Tuesday, May 14, 2013",0,3.497177174,7.185422291,text2 12
+764,text 1,2/3/2013,6-Oct-14,"Thursday, January 17, 2013",-8,6.845088374,5.884917753,text2 22
+765,text 4,4/16/2014,11-Nov-14,"Thursday, November 28, 2013",25,10.09741163,4.071081229,text2 15
+766,text 2,1/5/2014,11-Feb-13,"Sunday, April 7, 2013",-5,0.799482329,2.13386374,text2 2
+767,text 2,9/10/2014,14-Jul-13,"Saturday, August 17, 2013",14,1.341833361,10.4861032,text2 19
+768,text 1,9/2/2013,4-Dec-13,"Thursday, June 5, 2014",2,2.13610142,0.39421358,text2 10
+769,text 1,7/25/2013,23-Nov-13,"Friday, February 22, 2013",2,5.198291268,10.810525,text2 15
+770,text 4,9/30/2014,22-Apr-14,"Wednesday, August 28, 2013",10,8.959534017,8.17947463,text2 23
+771,text 3,5/14/2014,20-Apr-13,"Friday, June 13, 2014",1,8.453521113,1.389569726,text2 25
+772,text 3,1/13/2013,19-Aug-13,"Tuesday, April 9, 2013",24,2.276596469,5.715196144,text2 2
+773,text 2,8/4/2014,7-Mar-13,"Thursday, August 22, 2013",-20,9.801125247,1.519240434,text2 21
+774,text 3,11/2/2013,6-Oct-13,"Sunday, February 3, 2013",26,9.975123708,4.687040033,text2 6
+775,text 2,7/25/2014,15-Dec-14,"Sunday, May 12, 2013",-14,8.81297731,7.666012925,text2 2
+776,text 2,4/21/2013,9-Jul-14,"Monday, May 26, 2014",5,4.920515593,10.53668544,text2 11
+777,text 1,12/23/2014,16-Aug-13,"Sunday, April 28, 2013",6,7.093988933,4.150771353,text2 15
+778,text 1,12/9/2014,8-Sep-13,"Sunday, February 3, 2013",20,7.655901554,4.103441312,text2 25
+779,text 5,4/28/2013,6-Sep-13,"Sunday, February 24, 2013",17,3.823790234,4.811200439,text2 22
+780,text 3,1/3/2013,3-Jun-13,"Tuesday, May 21, 2013",3,8.08229142,5.183921328,text2 19
+781,text 3,9/21/2013,7-Apr-14,"Saturday, September 21, 2013",-15,1.486158012,2.773043726,text2 13
+782,text 1,11/8/2013,3-Jul-13,"Monday, November 25, 2013",8,10.31400385,6.567355825,text2 8
+783,text 3,12/17/2013,24-Jun-14,"Monday, October 13, 2014",-12,2.473800056,2.422525536,text2 20
+784,text 4,4/5/2013,14-Oct-13,"Wednesday, May 22, 2013",-10,10.00245227,2.9796867,text2 4
+785,text 3,6/13/2014,4-Mar-14,"Monday, April 15, 2013",12,4.617277292,8.879344536,text2 3
+786,text 3,6/5/2013,17-Apr-13,"Monday, November 25, 2013",17,3.049182948,4.290973094,text2 2
+787,text 5,6/28/2014,8-Jul-13,"Sunday, May 4, 2014",8,9.170223229,0.886419026,text2 22
+788,text 5,5/7/2014,14-Aug-13,"Tuesday, September 16, 2014",16,7.258068474,7.612517226,text2 19
+789,text 5,3/16/2014,4-Jul-14,"Saturday, November 23, 2013",8,3.895912562,1.392580308,text2 5
+790,text 1,7/21/2013,25-Mar-13,"Thursday, June 27, 2013",-11,9.319649672,3.601056293,text2 15
+791,text 5,4/13/2014,17-Apr-14,"Thursday, September 26, 2013",-18,1.638284492,2.579639506,text2 9
+792,text 4,9/9/2014,28-Jan-13,"Sunday, November 30, 2014",16,4.465008436,2.432547889,text2 19
+793,text 2,1/17/2014,7-Aug-14,"Monday, January 13, 2014",18,8.730422782,4.095468711,text2 14
+794,text 2,5/11/2013,4-Aug-13,"Monday, September 15, 2014",12,9.339962669,8.310999202,text2 23
+795,text 1,9/7/2013,26-Nov-13,"Saturday, June 14, 2014",-10,4.86408135,8.798058718,text2 16
+796,text 2,3/19/2013,3-Feb-13,"Sunday, July 14, 2013",7,7.192427472,8.18377429,text2 25
+797,text 5,3/2/2013,1-Jun-13,"Monday, August 12, 2013",-4,3.269034166,9.8854529,text2 9
+798,text 1,3/1/2014,20-May-14,"Monday, August 5, 2013",0,3.274182561,9.109484723,text2 17
+799,text 2,7/26/2013,17-Feb-14,"Friday, June 21, 2013",5,7.763609285,7.064162722,text2 1
+800,text 3,6/12/2014,9-Jun-13,"Saturday, June 8, 2013",22,1.648573281,8.502534767,text2 12
+801,text 1,4/8/2014,13-Jul-14,"Sunday, November 9, 2014",28,10.54579791,7.873679064,text2 11
+802,text 4,12/22/2014,23-Jan-14,"Sunday, July 6, 2014",21,9.216897622,1.948760564,text2 17
+803,text 3,11/27/2013,28-Jan-14,"Monday, September 2, 2013",19,3.965988599,1.905102959,text2 11
+804,text 4,1/22/2014,28-Jun-14,"Monday, May 13, 2013",5,3.894145123,6.312192391,text2 15
+805,text 3,5/7/2014,8-Mar-13,"Wednesday, August 27, 2014",-2,1.964500306,3.693700756,text2 5
+806,text 4,12/13/2014,7-Nov-14,"Saturday, September 21, 2013",-12,3.626920345,7.672627358,text2 19
+807,text 4,1/31/2014,16-Aug-13,"Sunday, May 5, 2013",-19,3.336576932,5.494631373,text2 13
+808,text 4,12/2/2013,17-Aug-13,"Friday, May 24, 2013",-11,4.682895299,5.659863419,text2 3
+809,text 2,1/18/2013,23-Dec-13,"Saturday, January 25, 2014",19,5.077496626,6.415816381,text2 6
+810,text 1,2/17/2014,1-May-13,"Thursday, September 5, 2013",-9,4.208626242,9.921674003,text2 24
+811,text 1,10/14/2014,10-Jul-14,"Wednesday, November 13, 2013",-8,5.600654331,4.289929519,text2 16
+812,text 3,1/17/2013,19-Jun-13,"Sunday, June 23, 2013",3,8.445835319,6.31031215,text2 22
+813,text 3,9/9/2013,12-Dec-14,"Monday, May 12, 2014",2,4.52538497,9.802969929,text2 7
+814,text 3,6/15/2014,6-Oct-13,"Friday, April 19, 2013",-6,7.061944494,7.102603954,text2 4
+815,text 2,1/25/2013,6-May-14,"Friday, July 19, 2013",8,9.915417232,9.019169592,text2 13
+816,text 4,2/12/2014,5-Mar-13,"Sunday, March 16, 2014",9,8.242257721,5.942072084,text2 1
+817,text 2,10/6/2014,2-May-13,"Monday, March 3, 2014",1,8.132257031,9.650726217,text2 21
+818,text 2,10/13/2014,3-Jul-13,"Saturday, April 20, 2013",-10,1.972328094,1.003405563,text2 15
+819,text 1,1/12/2014,18-Mar-14,"Tuesday, October 7, 2014",24,5.494911381,5.086411539,text2 9
+820,text 3,12/19/2013,7-Dec-14,"Thursday, July 10, 2014",11,6.574344831,1.955900957,text2 7
+821,text 4,12/19/2013,3-Mar-13,"Friday, February 28, 2014",25,5.803997825,1.518431332,text2 2
+822,text 4,5/23/2014,21-May-14,"Friday, May 24, 2013",21,0.80523549,9.69074725,text2 8
+823,text 1,4/16/2013,30-Sep-13,"Friday, January 25, 2013",-17,4.690791564,7.20422582,text2 2
+824,text 1,1/11/2014,28-Mar-14,"Wednesday, February 6, 2013",25,5.871255734,2.028598201,text2 10
+825,text 1,4/26/2014,17-Nov-14,"Saturday, May 24, 2014",5,3.043462662,7.972746613,text2 19
+826,text 4,5/26/2014,13-Jul-14,"Sunday, August 11, 2013",-20,9.886411352,1.307120966,text2 10
+827,text 3,8/17/2013,7-Feb-14,"Saturday, October 18, 2014",11,4.667050515,6.111388155,text2 19
+828,text 3,4/20/2014,1-Jul-14,"Saturday, May 17, 2014",12,5.177135567,5.16787085,text2 19
+829,text 3,4/6/2014,1-Feb-13,"Tuesday, December 31, 2013",-10,1.595106148,1.086565793,text2 9
+830,text 5,6/21/2014,4-Mar-14,"Thursday, May 1, 2014",19,6.86669191,1.273798646,text2 4
+831,text 5,5/9/2014,25-Nov-14,"Friday, January 31, 2014",17,5.813520555,1.020276691,text2 5
+832,text 3,12/1/2014,11-Jul-14,"Thursday, January 10, 2013",-16,5.749334685,3.528077204,text2 20
+833,text 4,8/3/2014,9-Jan-13,"Thursday, October 31, 2013",-15,3.300522135,6.53966379,text2 4
+834,text 4,6/16/2013,17-Sep-13,"Thursday, July 25, 2013",-10,7.93860631,1.506838704,text2 4
+835,text 2,3/13/2013,7-Jan-14,"Friday, February 28, 2014",-18,9.412486039,5.722563366,text2 4
+836,text 3,3/10/2013,5-Sep-14,"Friday, April 12, 2013",30,6.570512823,0.833336773,text2 18
+837,text 1,1/24/2013,4-May-13,"Tuesday, August 26, 2014",26,9.326603835,4.097099705,text2 19
+838,text 4,10/22/2014,24-Nov-13,"Sunday, November 16, 2014",15,6.267631942,10.6888109,text2 9
+839,text 1,4/5/2013,22-May-13,"Monday, September 1, 2014",-13,5.803721914,0.610527137,text2 24
+840,text 2,2/19/2014,6-Jan-13,"Wednesday, February 13, 2013",9,0.90746441,4.28925333,text2 4
+841,text 3,11/28/2014,10-Apr-14,"Monday, December 1, 2014",10,4.912915855,3.377785297,text2 8
+842,text 5,8/24/2014,27-Dec-13,"Sunday, October 5, 2014",-4,7.914850453,0.166561651,text2 14
+843,text 2,9/19/2013,3-Feb-14,"Friday, February 21, 2014",-11,5.065176733,0.187389474,text2 19
+844,text 3,5/20/2013,31-Dec-12,"Wednesday, May 1, 2013",-11,7.60719955,8.260594642,text2 11
+845,text 1,10/28/2013,27-Apr-14,"Monday, December 8, 2014",-16,4.747438627,8.110846474,text2 19
+846,text 4,5/9/2013,15-Oct-14,"Thursday, April 17, 2014",-13,0.642428673,7.875815094,text2 11
+847,text 5,2/16/2014,1-Oct-14,"Friday, February 15, 2013",-13,7.860581428,1.956343331,text2 15
+848,text 4,7/5/2013,13-Sep-14,"Thursday, September 11, 2014",-11,0.594949761,6.58959338,text2 10
+849,text 1,6/7/2013,18-Jan-13,"Thursday, November 20, 2014",16,9.26406292,5.134438669,text2 3
+850,text 5,12/14/2013,5-Sep-14,"Thursday, December 26, 2013",22,7.879505155,6.18990617,text2 4
+851,text 4,10/14/2013,28-Dec-13,"Saturday, September 28, 2013",-5,4.854723873,5.733152888,text2 12
+852,text 1,4/2/2014,24-Oct-14,"Tuesday, April 22, 2014",6,3.031387665,9.593296473,text2 14
+853,text 4,5/13/2014,14-Mar-14,"Monday, January 28, 2013",0,4.072176998,3.286955631,text2 23
+854,text 5,12/31/2013,28-Aug-14,"Monday, May 6, 2013",29,7.149380272,8.171389006,text2 1
+855,text 4,5/6/2014,5-Jan-13,"Monday, December 8, 2014",20,3.252361139,8.724419053,text2 20
+856,text 5,3/14/2013,12-May-14,"Tuesday, October 15, 2013",-2,8.47682608,0.967696198,text2 24
+857,text 5,12/15/2014,9-Nov-13,"Monday, November 17, 2014",23,7.83261558,1.07265805,text2 21
+858,text 5,6/25/2014,28-Jun-14,"Wednesday, November 13, 2013",28,3.759849342,8.948022162,text2 5
+859,text 1,1/22/2014,3-Oct-14,"Tuesday, June 18, 2013",28,9.437736596,7.552587474,text2 19
+860,text 2,11/15/2014,16-Jul-13,"Wednesday, March 20, 2013",-7,4.923281067,9.965113604,text2 6
+861,text 1,12/26/2014,15-Feb-13,"Thursday, April 25, 2013",-2,9.238138881,5.505069133,text2 16
+862,text 1,6/17/2014,4-Mar-13,"Wednesday, March 5, 2014",-11,4.549311573,7.107194174,text2 11
+863,text 2,11/19/2013,16-Jul-14,"Saturday, February 9, 2013",19,7.061982062,2.977542177,text2 22
+864,text 2,1/4/2013,5-Feb-13,"Sunday, October 27, 2013",9,4.186837204,7.479204656,text2 5
+865,text 4,3/21/2014,12-Oct-13,"Friday, July 4, 2014",11,9.297278915,2.425718303,text2 12
+866,text 5,12/8/2014,3-Dec-14,"Friday, September 5, 2014",-19,2.286549193,3.891818039,text2 25
+867,text 2,9/23/2014,12-Apr-13,"Wednesday, June 12, 2013",28,0.803275774,7.121859542,text2 1
+868,text 5,10/2/2014,26-Sep-14,"Monday, February 25, 2013",-6,6.687726166,0.945964109,text2 17
+869,text 1,4/11/2013,22-Oct-14,"Friday, November 22, 2013",25,1.824256197,2.46804777,text2 10
+870,text 1,10/31/2013,9-Sep-13,"Saturday, March 1, 2014",-19,3.654732533,3.220587488,text2 19
+871,text 5,4/24/2013,14-Sep-13,"Sunday, July 14, 2013",-16,4.200581803,6.293863917,text2 19
+872,text 2,8/4/2014,26-Jul-13,"Thursday, November 28, 2013",30,8.524778802,1.009605943,text2 4
+873,text 2,8/1/2014,11-Sep-14,"Monday, January 21, 2013",23,2.782223595,1.163327442,text2 20
+874,text 5,10/3/2013,8-Sep-13,"Tuesday, May 13, 2014",17,4.532483788,0.514862585,text2 20
+875,text 4,1/12/2014,17-May-14,"Tuesday, August 26, 2014",-3,3.709333738,4.923239779,text2 11
+876,text 2,9/3/2013,20-Jan-14,"Tuesday, July 1, 2014",-9,9.672416511,6.146694117,text2 20
+877,text 3,6/10/2013,26-Nov-13,"Friday, October 3, 2014",-20,9.036933043,4.946671587,text2 1
+878,text 3,7/27/2014,23-Jun-14,"Wednesday, June 5, 2013",14,7.181764143,1.869450661,text2 12
+879,text 1,8/16/2014,6-Sep-13,"Thursday, June 13, 2013",28,3.221228996,4.466891375,text2 3
+880,text 3,3/18/2013,18-Jul-13,"Monday, September 8, 2014",0,4.8974971,8.309828609,text2 4
+881,text 5,4/24/2013,17-Jul-14,"Thursday, March 14, 2013",25,6.063511011,0.897829609,text2 12
+882,text 3,5/23/2013,3-Nov-13,"Thursday, February 7, 2013",25,0.822611723,4.125694025,text2 17
+883,text 2,5/27/2013,14-Jun-14,"Monday, January 28, 2013",-5,3.354081296,1.518779964,text2 23
+884,text 3,11/3/2013,8-Jul-13,"Tuesday, December 31, 2013",3,9.868056792,1.104656093,text2 5
+885,text 1,5/15/2014,2-Jul-14,"Saturday, June 1, 2013",-12,0.440920716,7.785705529,text2 8
+886,text 4,8/22/2013,23-Jun-13,"Thursday, July 24, 2014",15,2.405646458,8.18787375,text2 10
+887,text 4,9/7/2014,10-Aug-13,"Sunday, November 9, 2014",-10,4.597610793,5.201691754,text2 25
+888,text 4,6/27/2013,17-Jan-13,"Sunday, July 28, 2013",-1,8.175393719,7.342152258,text2 6
+889,text 4,12/25/2014,24-May-13,"Sunday, September 14, 2014",-14,9.432098559,7.228981856,text2 5
+890,text 1,6/28/2013,9-Jul-13,"Monday, October 7, 2013",6,6.393391946,7.696415088,text2 9
+891,text 5,11/3/2014,15-Apr-14,"Wednesday, February 27, 2013",5,6.059007863,10.08753899,text2 8
+892,text 5,7/1/2014,17-Apr-13,"Wednesday, April 9, 2014",30,10.04591181,8.392921164,text2 15
+893,text 3,3/18/2014,5-Aug-14,"Wednesday, May 14, 2014",8,2.436514271,1.311597519,text2 22
+894,text 3,10/11/2013,11-Aug-14,"Friday, February 28, 2014",-6,5.266618055,8.747817072,text2 13
+895,text 2,8/12/2014,25-Apr-13,"Friday, December 13, 2013",17,2.563480728,1.515860612,text2 21
+896,text 4,9/27/2014,23-Jan-13,"Wednesday, July 24, 2013",4,4.222444275,9.302990466,text2 10
+897,text 1,7/2/2013,7-Jan-14,"Sunday, February 3, 2013",-11,3.071662254,7.065855296,text2 23
+898,text 2,2/14/2013,28-Aug-13,"Thursday, February 14, 2013",-17,7.852889628,2.490631346,text2 15
+899,text 4,3/1/2013,23-Nov-14,"Sunday, November 16, 2014",-14,6.590192453,1.2241472,text2 14
+900,text 5,7/3/2014,14-Apr-14,"Friday, October 11, 2013",12,8.886109796,7.603639209,text2 13
+901,text 2,4/18/2013,1-Dec-14,"Wednesday, July 23, 2014",15,10.01744216,8.98047037,text2 10
+902,text 1,4/3/2014,3-Oct-13,"Sunday, January 19, 2014",2,6.483217434,5.571331126,text2 22
+903,text 5,11/22/2013,2-Dec-13,"Thursday, January 10, 2013",11,5.506393144,7.744621573,text2 9
+904,text 1,9/24/2014,5-Mar-14,"Wednesday, July 31, 2013",26,1.735724904,4.917067257,text2 3
+905,text 3,10/24/2014,22-Jan-13,"Wednesday, August 6, 2014",8,9.813266301,4.679486311,text2 9
+906,text 2,1/8/2014,25-Nov-14,"Friday, November 7, 2014",-20,5.912257021,4.250502293,text2 24
+907,text 5,6/10/2013,1-Feb-13,"Wednesday, December 11, 2013",5,5.684197286,2.155010993,text2 1
+908,text 3,11/10/2013,5-Mar-14,"Tuesday, July 16, 2013",3,1.250922819,2.313836812,text2 5
+909,text 1,6/14/2014,19-Dec-13,"Thursday, November 6, 2014",2,4.033980884,8.476752392,text2 1
+910,text 2,10/25/2014,22-Jan-14,"Wednesday, November 26, 2014",0,0.793712349,5.14565379,text2 8
+911,text 3,12/31/2013,31-Jan-13,"Saturday, July 27, 2013",3,5.567474075,7.208801787,text2 10
+912,text 2,5/12/2014,25-Jun-14,"Wednesday, November 26, 2014",3,8.906206014,3.673446307,text2 15
+913,text 1,9/28/2014,7-Dec-13,"Friday, March 28, 2014",20,4.372346676,3.715621512,text2 5
+914,text 2,12/4/2014,24-Jan-13,"Tuesday, August 27, 2013",3,5.981401367,5.193819635,text2 2
+915,text 1,1/9/2014,17-Feb-14,"Tuesday, November 11, 2014",2,6.238067117,2.886204345,text2 12
+916,text 4,12/17/2013,31-Oct-14,"Thursday, December 12, 2013",17,6.854173265,1.410894961,text2 4
+917,text 1,10/12/2014,22-May-13,"Sunday, April 7, 2013",-14,7.155052815,2.768851326,text2 2
+918,text 1,10/13/2013,24-Sep-14,"Thursday, May 22, 2014",26,1.583444579,9.667301564,text2 15
+919,text 3,6/28/2013,16-Nov-14,"Friday, December 13, 2013",-18,0.564685067,3.744847725,text2 17
+920,text 4,10/22/2013,3-May-14,"Saturday, October 4, 2014",22,7.614608618,10.60143566,text2 12
+921,text 2,12/23/2013,15-Nov-14,"Tuesday, October 14, 2014",-11,8.408021933,9.465951976,text2 5
+922,text 4,4/12/2013,11-Mar-13,"Tuesday, January 14, 2014",-4,2.317963741,6.157638223,text2 8
+923,text 1,2/11/2013,3-Jun-13,"Wednesday, May 8, 2013",-15,1.646053826,2.161928508,text2 21
+924,text 1,11/7/2014,18-Oct-13,"Saturday, May 31, 2014",-20,4.170386727,0.803021,text2 15
+925,text 1,10/13/2014,11-Aug-13,"Thursday, November 14, 2013",19,8.58667625,7.085016173,text2 16
+926,text 3,6/11/2014,2-May-13,"Saturday, December 28, 2013",29,3.843890565,6.626130925,text2 11
+927,text 3,6/10/2013,27-Apr-14,"Friday, May 23, 2014",25,3.190586862,2.53852358,text2 20
+928,text 1,12/21/2013,21-Mar-13,"Friday, March 14, 2014",-9,6.903305133,9.78742074,text2 16
+929,text 1,12/28/2013,3-Aug-14,"Saturday, July 5, 2014",-5,9.820824197,9.222029696,text2 10
+930,text 2,4/19/2013,25-Oct-13,"Sunday, December 7, 2014",25,0.469131375,9.239080612,text2 22
+931,text 2,10/20/2014,24-Apr-14,"Tuesday, February 25, 2014",-17,6.506904333,9.651776844,text2 16
+932,text 1,10/24/2014,14-Oct-14,"Friday, October 11, 2013",14,9.023199311,3.477937347,text2 14
+933,text 1,9/3/2013,4-Nov-13,"Wednesday, June 19, 2013",17,3.76906107,5.431015368,text2 3
+934,text 1,8/19/2014,18-Oct-14,"Thursday, October 17, 2013",15,9.347133489,6.000578308,text2 1
+935,text 3,11/23/2014,27-May-13,"Friday, June 28, 2013",-15,4.018356978,5.723972136,text2 20
+936,text 1,10/11/2014,11-Sep-14,"Wednesday, July 23, 2014",-6,8.426719367,9.383649819,text2 19
+937,text 2,6/16/2014,26-Jan-14,"Tuesday, January 1, 2013",7,7.67752827,1.464039937,text2 8
+938,text 2,8/9/2014,25-Mar-13,"Monday, December 22, 2014",30,0.875812401,7.489185092,text2 12
+939,text 5,6/25/2013,10-Apr-13,"Wednesday, August 21, 2013",-5,6.838099668,5.688351372,text2 25
+940,text 4,5/27/2014,3-Feb-14,"Sunday, February 16, 2014",-14,5.555513996,5.682786407,text2 23
+941,text 2,2/2/2014,31-Jul-13,"Tuesday, July 1, 2014",6,1.878443533,9.211023941,text2 22
+942,text 4,6/4/2013,15-Mar-14,"Tuesday, June 24, 2014",-19,1.951842526,8.362647869,text2 1
+943,text 5,12/23/2013,10-Apr-13,"Sunday, August 10, 2014",9,1.979528215,2.745019929,text2 3
+944,text 5,1/8/2013,12-May-13,"Thursday, February 14, 2013",12,5.614723305,3.690590036,text2 3
+945,text 4,9/24/2013,10-May-13,"Sunday, April 20, 2014",10,5.170312928,8.518329176,text2 19
+946,text 1,6/17/2014,10-Mar-14,"Thursday, November 7, 2013",10,5.453643446,0.672666222,text2 22
+947,text 4,7/18/2014,26-Apr-14,"Thursday, January 9, 2014",-14,8.065831276,7.480265047,text2 16
+948,text 5,1/22/2014,9-Dec-14,"Wednesday, November 5, 2014",5,8.490168244,4.506394963,text2 12
+949,text 2,11/18/2013,27-Apr-13,"Thursday, July 24, 2014",-5,4.100505787,9.492198661,text2 7
+950,text 3,6/26/2013,25-Apr-13,"Friday, March 21, 2014",20,2.103672082,8.512349784,text2 25
+951,text 1,6/1/2013,17-Apr-14,"Friday, September 20, 2013",17,7.694436126,5.646643882,text2 23
+952,text 1,7/4/2014,8-Apr-13,"Wednesday, July 10, 2013",6,0.173572945,1.506254304,text2 8
+953,text 1,1/6/2014,13-Jan-13,"Tuesday, November 11, 2014",-15,8.422373598,6.531072431,text2 6
+954,text 4,3/1/2014,16-Aug-13,"Wednesday, May 21, 2014",23,0.59373625,0.768243129,text2 20
+955,text 4,2/28/2013,5-Sep-14,"Sunday, October 19, 2014",28,7.810660787,6.507777912,text2 20
+956,text 1,4/17/2013,1-Jul-13,"Tuesday, September 30, 2014",-13,2.526980028,3.229895919,text2 21
+957,text 4,6/9/2014,11-Dec-14,"Friday, July 5, 2013",9,9.283965872,6.361485846,text2 20
+958,text 5,9/25/2013,31-May-14,"Tuesday, May 28, 2013",22,4.372353325,4.382425656,text2 14
+959,text 4,2/11/2014,6-Jul-14,"Tuesday, October 1, 2013",-19,4.342469056,2.714071875,text2 11
+960,text 2,6/11/2014,12-Nov-14,"Friday, February 28, 2014",-5,2.750323034,1.274176788,text2 7
+961,text 3,4/2/2014,4-Apr-14,"Sunday, April 7, 2013",-7,2.059651832,7.168172557,text2 22
+962,text 3,11/16/2013,4-Jan-14,"Tuesday, October 22, 2013",-11,7.350485117,8.342789816,text2 2
+963,text 4,6/18/2014,3-May-13,"Tuesday, March 5, 2013",17,0.719489895,5.390520071,text2 16
+964,text 5,11/21/2013,4-Jul-13,"Monday, January 13, 2014",-9,1.893271916,9.929361385,text2 19
+965,text 3,9/21/2013,18-Jun-14,"Sunday, November 9, 2014",28,9.229550069,7.212667301,text2 22
+966,text 1,9/21/2014,12-Sep-14,"Friday, February 8, 2013",23,9.963360273,8.871997508,text2 17
+967,text 2,5/24/2014,5-May-13,"Tuesday, August 26, 2014",4,8.947034592,9.421681797,text2 15
+968,text 3,4/24/2013,18-Jun-13,"Monday, July 8, 2013",-11,4.149381796,3.927380709,text2 19
+969,text 4,12/4/2014,3-Jan-14,"Tuesday, October 14, 2014",-7,2.930750375,8.449132904,text2 12
+970,text 5,7/23/2014,11-Feb-14,"Wednesday, May 28, 2014",19,9.844948817,1.724381361,text2 1
+971,text 4,10/26/2014,6-Aug-13,"Monday, April 21, 2014",10,7.206335826,4.853524269,text2 25
+972,text 5,7/26/2014,24-Nov-14,"Sunday, February 9, 2014",-10,4.073959898,1.653725322,text2 25
+973,text 1,9/21/2013,1-Aug-14,"Friday, September 5, 2014",-8,8.406193777,2.64003167,text2 2
+974,text 2,11/27/2013,28-Oct-13,"Tuesday, November 19, 2013",-3,2.21907095,9.852087314,text2 12
+975,text 2,6/8/2013,1-Oct-14,"Monday, April 7, 2014",14,9.637559477,3.904721293,text2 4
+976,text 3,7/26/2014,24-Jul-13,"Friday, June 13, 2014",9,5.271137236,6.143384512,text2 9
+977,text 3,8/27/2013,15-Mar-14,"Thursday, May 8, 2014",1,6.677272358,1.220343372,text2 24
+978,text 5,12/27/2014,8-Feb-13,"Tuesday, December 23, 2014",20,3.194742165,6.728602306,text2 10
+979,text 1,11/19/2013,15-Mar-13,"Sunday, August 11, 2013",26,3.850341005,1.460856009,text2 25
+980,text 5,5/17/2014,28-May-14,"Thursday, March 6, 2014",16,2.999270108,2.201801496,text2 14
+981,text 3,2/3/2014,31-Oct-13,"Tuesday, September 9, 2014",4,0.902076032,2.766225669,text2 17
+982,text 3,2/25/2013,7-Nov-13,"Monday, October 6, 2014",19,0.780532978,4.754374061,text2 9
+983,text 5,2/14/2014,9-Jul-13,"Sunday, June 8, 2014",23,3.817313091,8.31812166,text2 11
+984,text 2,8/23/2014,23-Sep-13,"Tuesday, October 22, 2013",-16,4.405517986,5.008566832,text2 7
+985,text 1,12/5/2014,26-Jan-14,"Sunday, December 28, 2014",17,6.871553699,4.940220904,text2 25
+986,text 2,3/24/2014,6-Oct-13,"Saturday, May 11, 2013",27,3.268302116,4.082339865,text2 12
+987,text 3,6/16/2014,24-Mar-14,"Saturday, April 6, 2013",29,2.87269103,10.27244075,text2 18
+988,text 5,1/7/2014,7-May-14,"Sunday, July 6, 2014",23,9.305750521,6.476572512,text2 8
+989,text 2,7/28/2014,7-Feb-13,"Monday, March 3, 2014",18,3.620980767,7.922797429,text2 24
+990,text 4,11/17/2014,10-Oct-13,"Wednesday, November 19, 2014",11,5.390813075,6.100548812,text2 7
+991,text 4,12/24/2013,25-May-14,"Thursday, March 6, 2014",28,9.368884738,10.29255393,text2 23
+992,text 2,3/24/2013,11-Feb-14,"Wednesday, August 21, 2013",7,6.613140124,1.057467386,text2 4
+993,text 3,9/6/2014,17-Sep-13,"Saturday, October 18, 2014",-10,5.269363806,9.950035972,text2 5
+994,text 1,9/8/2014,9-Feb-14,"Thursday, December 26, 2013",24,6.531891106,7.753924633,text2 9
+995,text 4,8/5/2014,27-Feb-14,"Tuesday, December 24, 2013",-17,9.833423025,1.114312695,text2 25
+996,text 1,11/2/2013,14-Dec-14,"Thursday, November 14, 2013",-12,4.777476427,4.198830234,text2 5
+997,text 2,6/26/2014,26-Oct-13,"Wednesday, February 26, 2014",-9,9.863646956,8.804958252,text2 1
+998,text 2,12/17/2014,31-May-14,"Sunday, October 20, 2013",-1,5.262061999,3.189336204,text2 24
+999,text 5,2/23/2013,1-Jan-14,"Wednesday, June 26, 2013",-18,6.913991542,4.951347226,text2 22
