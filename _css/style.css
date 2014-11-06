@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 body{
     /* margin: 0 auto; */
-background-image: '/images/BG.png';
+background-image: url('/images/bg.png');
 }
 #content{
     width: 820px;
