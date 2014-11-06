@@ -125,7 +125,7 @@ function refreshNavigation()
 //    var nav = $('#navigation ul');
     _.each(cards, function(card) {
         var id = $(card).attr('id');
-        var title = $('#' + id + ' .panel-title a').text().trim();
+        var title = $('#' + id + '-title-text').text().trim();
 
         renderTemplate(TEMPLATES.NAV_ITEM, {target: '#' + id, title: title}, null, false, false);
 
