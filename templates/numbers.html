@@ -7,14 +7,15 @@ var fd2 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distributio
 var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Frequency', 'id':data.title+'-fd3'}, data.frequencyDistributionSorted, data.title)
 
 var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum Chart','id':data.title+'-spectrum', height:100}, data.spectrum, data.title)
-var stats = {'Count':data.count, 'Unique':data.countUnique, 'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros, 'Invalid':data.invalidValues}
+var spectrumLine = new MRC.spectrumLine(target, {'title':data.title + ' Spectrum Chart','id':data.title+'-spectrum'}, data.data, data.title)
+var stats = {'Count':data.count, 'Unique':data.countUnique, 'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros, 'Missing':data.invalidValues}
 var titles = {'Count':'Number of Records', 
     'Unique':'Number of unique records', 
     'Total':'Sum of all records', 
     'Mean':'Average value for all valid records', 
     'Range':'Range of Values',
     'Zeros': 'Number of records with value 0',
-    'Invalid':'Invlaid numerical values:e.g. Null,None,NaN..etc.'}
+    'Missing':'Missing or Invaliid numerical values:e.g. Null,None,NaN..etc.'}
 %>
 
 <div id="<%=data.title%>-stats" class="card-stats">
