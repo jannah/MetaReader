@@ -15,8 +15,8 @@ and open the template in the editor.
 
 .mrc-chart line
 {
-     stroke-width: 1.5px;
-     stroke:#000;
+    stroke-width: 1.5px;
+    stroke:#000;
 }
 .mrc-chart rect,
 .mrc-chart .area,
@@ -69,34 +69,34 @@ and open the template in the editor.
 
 .mrc-card{
     border-radius: 0px !important;
-    
+
     box-shadow: 2px 2px 5px #888888;
     margin: 0 0 10px 0 !important;
     border: None !important;
 }
 .mrc-card .panel-heading{
     background: gold;
-    
+
 }
 .mrc-card .panel-body{
     padding: 10px;
-    
+
 }
 .mrc-card .panel-title{
     font-size: 1.5em;
-    
+
     font-weight: bold;
 }
 .card-description,
 .card-notes{
-    
+
 }
 .card-stats{
-    
+
 }
 .card-stats table{
     width: 100%;
-    
+
     text-align: center;
     border-spacing: 6px;      border-collapse: separate;
 }
@@ -108,14 +108,14 @@ and open the template in the editor.
 }
 .card-key{
     background-color: gold;
-    
+
     font-size: 1.5em;
     margin: 0%;
     width: 100%;
 }
 .card-value{
     /* background-color: #eee; */
-    
+
     width: 100%;
     padding: 5px;
 }
@@ -125,7 +125,20 @@ and open the template in the editor.
 /**************************
 Spectrum Diagram
 *************************/
-
+.line-marker:hover,
 .spectrum-sqaure:hover{
     opacity:.7;
+}
+
+
+.spectrum-line{
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+.line-marker{
+
+}
+.mrc-chart .missing-bar{
+    fill: rgba(255, 0,0, .3);
 }

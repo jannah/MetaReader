@@ -6,3 +6,5 @@
 data/faa-ontime-sept2001.csv
 images/Thumbs.db
 images/~$Presentation1.pptx
+*.sublime-project
+*.sublime-workspace

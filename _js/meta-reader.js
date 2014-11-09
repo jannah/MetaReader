@@ -101,8 +101,8 @@ function MetaReader() {
 //        console.log('precision = ' + precision)
         var self = ObjectList(data, title);
         _.each(self.data, function(d, i) {
-            var n = Number(d), x;
-            self.data[i] = (checkNull(n)) ? x : round(n, precision);
+            var n = (d==='')? null: Number(d);
+            self.data[i] = (checkNull(n,true)) ? null : round(n, precision);
         });
 
         self.prepData();
@@ -233,7 +233,7 @@ function MetaReader() {
         var result = ['string', counts];
         if (max.value > new_items.length / 2)
         {
-            if ((max.name === 'number' || max.name === 'integer') && counts.string === 0)
+            if ((max.name === 'number' || max.name === 'integer' || max.name==='float') && counts.string === 0)
             {
                 if (counts.float > 0)
                     result[0] = 'float';
@@ -423,7 +423,7 @@ function MetaReader() {
 //        console.log(oReq.responseText)
         var resp = oReq.response;
         console.log(typeof (resp))
-        console.log('runnng excel')
+        console.log('running excel')
         var arraybuffer = s2ab(resp);
         console.log(arraybuffer)
         console.log(typeof (arraybuffer))
@@ -572,9 +572,10 @@ function MetaReader() {
         return data;
     }
 
-    function checkNull(value)
+    function checkNull(value, exclude_empty)
     {
-        return _.isUndefined(value) || _.isNaN(value) || _.isNull(value) || value === 'None' || value === 'null';
+        return _.isUndefined(value) || _.isNaN(value) || _.isNull(value) || value === 'None' 
+        || value === 'null' || (value==='' && exclude_empty);
     }
 
     return mr;
