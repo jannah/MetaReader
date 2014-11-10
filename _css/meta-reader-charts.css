@@ -62,7 +62,35 @@ and open the template in the editor.
     stroke: #ccc;
 }
 
+/************************
+*       Axes
+*******************/
 
+
+.mrc-chart .axis text{
+    fill:black;
+    stroke: none;
+}
+.mrc-chart .axis
+{
+    stroke-width: .5px;
+    stroke: lightblue;
+    fill:none;
+}
+.mrc-chart .y.axis{
+
+}
+.mrc-chart .x.axis{
+
+}
+
+.mrc-chart .tick.major{
+    
+}
+.mrc-chart .tick.major line{
+    stroke: lightblue;
+    
+}
 /***********************
         CARDS
 ***********************/

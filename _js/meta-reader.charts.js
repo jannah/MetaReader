@@ -12,8 +12,8 @@ var MetaReaderCharts = function() {
             margin: {
                 top: 10,
                 bottom: 10,
-                left: 10,
-                right: 10
+                left: 20,
+                right: 20
             },
             axisHeight: 30,
             axisWidth: 30,
@@ -187,8 +187,8 @@ var MetaReaderCharts = function() {
             class: 'x axis-title',
             'text-anchor': 'middle',
             x: w / 2,
-            y: h - 10
-        }).text('index');
+            y: 35
+        }).text('');
         //        console.log(ch);
         var yAxisGroup = svg.append('g').attr({
             class: "y axis",
@@ -326,7 +326,7 @@ var MetaReaderCharts = function() {
             class: 'x axis-title',
             'text-anchor': 'middle',
             x: w / 2,
-            y: h - 10
+            y: 35
         }).text('index');
         //        console.log(ch);
         var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")").selectAll('bars').data(data).enter().append('rect').attr({
@@ -418,7 +418,7 @@ var MetaReaderCharts = function() {
             class: 'x axis-title',
             'text-anchor': 'middle',
             x: w / 2,
-            y: h - 10
+            y: 35
         }).text('index');
         //        console.log(ch);
         var yAxisGroup = svg.append('g')
@@ -518,7 +518,7 @@ var MetaReaderCharts = function() {
     };
 
     function getColorGradient(min, max, value, colors) {
-        if (typeof (value) == 'undefined' || value == null || value === '') {
+        if (_.isUndefined(value) || _.isNull(value) || value === '') {
             //            console.log(value);
             return '#000';
         } else if (isNaN(Number(value))) {
