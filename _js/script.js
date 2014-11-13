@@ -11,6 +11,7 @@ var TEXT_FILES = [
     'data/dma.csv',
     'data/elements.csv',
     'data/fortune500.csv',
+    'data/migraine_i290_8.csv',
 //    'data/test.xlsx',
     'data/mindwave_data_dump.csv',
     'data/titanic_raw.csv',
