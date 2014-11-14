@@ -1,13 +1,13 @@
 
 <%
 var MRC = new MetaReaderCharts();
-var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.title+'-box'}, data.quartiles, data.mean)
-var fd = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Value','id':data.title+'-fd1'}, data.frequencyDistribution, data.title)
-var fd2 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.title+'-fd2'}, data.frequencyDistributionBins, data.title + '(Bins)')
-var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Frequency', 'id':data.title+'-fd3'}, data.frequencyDistributionSorted, data.title)
+var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.id+'-box'}, data.quartiles, data.mean)
+var fd = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Value','id':data.id+'-fd1'}, data.frequencyDistribution, data.title)
+var fd2 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.id+'-fd2'}, data.frequencyDistributionBins, data.title + '(Bins)')
 
-var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum Chart','id':data.title+'-spectrum', height:100}, data.spectrum, data.title)
-var spectrumLine = new MRC.spectrumLine(target, {'title':data.title + ' Spectrum Chart','id':data.title+'-spectrum'}, data.data, data.title)
+
+var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum Chart','id':data.id+'-spectrum', height:100}, data.spectrum, data.title)
+var spectrumLine = new MRC.spectrumLine(target, {'title':data.title + ' Spectrum Chart','id':data.id+'-spectrum'}, data.data, data.title)
 var stats = {'Count':data.count, 'Unique':data.countUnique, 'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros, 'Missing':data.invalidValues}
 var titles = {'Count':'Number of Records', 
     'Unique':'Number of unique records', 

@@ -3,64 +3,59 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
+
 /* 
     Created on : Nov 1, 2014, 4:47:06 PM
     Author     : Hassan
 */
 
-
 .mrc-chart {
     font: 10px sans-serif;
 }
-
-.mrc-chart line
-{
+.mrc-chart line {
     stroke-width: 1.5px;
-    stroke:#000;
+    stroke: #000;
 }
-.mrc-chart rect,
-.mrc-chart .area,
-.mrc-chart circle {
+.mrc-chart rect, .mrc-chart .area, .mrc-chart circle {
     /*fill: #ddd;*/
-    /*stroke: #fff;*/
-    stroke-width: 1.5px;
+
+/*stroke: #fff;*/
+
+stroke-width: 1.5px;
     fill: steelblue;
     shape-rendering: crispEdges;
 }
-
-.mrc-chart .hidden-bars{
-    opacity:0;
+.mrc-chart .hidden-bars {
+    opacity: 0;
     z-index: 100;
 }
-.mrc-chart .histogram:hover,
-.mrc-chart .highlight-bar{
-    opacity:1;
-    fill:red;
+.mrc-chart .histogram:hover, .mrc-chart .highlight-bar {
+    opacity: 1;
+    fill: red;
     z-index: 100;
 }
-
-.mrc-chart text{
+.mrc-chart text {
     font-size: 1.5em;
 }
-
 .mrc-box .center {
-    stroke-dasharray: 3,3;
+    stroke-dasharray: 3, 3;
 }
-.mrc-box .median-line{
-    z-index:100;
+.mrc-box .median-line {
+    z-index: 100;
     stroke: red;
 }
-.mrc-box .mean-line{
-    stroke-dasharray: 3,3;
+.mrc-box .mean-line {
+    stroke-dasharray: 3, 3;
     stroke: orange;
 }
-.mrc-box .mean-label{
+.mrc-box .mean-label {
     fill: blue;
 }
 .mrc-box .outlier {
     fill: none;
     stroke: #ccc;
 }
+<<<<<<< HEAD
 
 /************************
 *       Axes
@@ -91,82 +86,118 @@ and open the template in the editor.
     stroke: lightblue;
     
 }
+=======
+>>>>>>> origin/gh-pages
 /***********************
         CARDS
 ***********************/
 
-.mrc-card{
+.mrc-card {
     border-radius: 0px !important;
-
     box-shadow: 2px 2px 5px #888888;
     margin: 0 0 10px 0 !important;
     border: None !important;
 }
-.mrc-card .panel-heading{
+.mrc-card .panel-heading {
     background: gold;
-
 }
-.mrc-card .panel-body{
+.mrc-card .panel-body {
     padding: 10px;
-
 }
-.mrc-card .panel-title{
+.mrc-card .panel-title {
     font-size: 1.5em;
-
     font-weight: bold;
 }
-.card-description,
-.card-notes{
-
-}
-.card-stats{
-
-}
-.card-stats table{
+.card-description, .card-notes {} .card-stats {} .card-stats table {
     width: 100%;
-
     text-align: center;
-    border-spacing: 6px;      border-collapse: separate;
+    border-spacing: 6px;
+    border-collapse: separate;
 }
-.card-item{
+.card-item {
     margin: 0 12%;
     padding: 0;
     border: 1px solid white;
     box-shadow: 1px 1px 5px #888;
 }
-.card-key{
+.card-key {
     background-color: gold;
-
     font-size: 1.5em;
     margin: 0%;
     width: 100%;
 }
-.card-value{
+.card-value {
     /* background-color: #eee; */
 
-    width: 100%;
+width: 100%;
     padding: 5px;
 }
-
-
-
 /**************************
 Spectrum Diagram
 *************************/
-.line-marker:hover,
-.spectrum-sqaure:hover{
-    opacity:.7;
+
+.line-marker:hover, .spectrum-sqaure:hover {
+    opacity: .7;
 }
-
-
-.spectrum-line{
+.spectrum-line {
     fill: none;
     stroke: steelblue;
     stroke-width: 1.5px;
 }
-.line-marker{
+.line-marker {} #pattern-fill {
+    fill: white;
+    /*stroke:inherit;*/
+}
+#pattern-stripe {
+    fill: white;
+    stroke: #eee;
+}
+#pattern-stripe-hover {
+    fill: pink;
+    stroke: rgba(255, 0, 0, .5);
+}
+/*#mask-stripe{
 
+}*/
+
+/*#mask-stripe rect{
+    fill: url(#pattern-stripe);
+ 
 }
-.mrc-chart .missing-bar{
-    fill: rgba(255, 0,0, .3);
+*/
+
+.mrc-chart .missing-bar {
+    /*mask: url(#mask-stripe);*/
+
+fill: url(#pattern-stripe);
+    /*fill: rgba(255, 0,0, .3);*/
+
+/*fill:#ddd;*/
+
+stroke: #eee;
 }
+.mrc-chart .missing-bar:hover {
+    fill: url(#pattern-stripe-hover);
+    /*fill: rgba(255, 0,0, .6);*/
+
+/*fill:#ddd;*/
+
+/*stroke:red;*/
+}
+.sort-dropdown {
+    float: left;
+    margin-right: 5px;
+    text-align: center;
+}
+.sort-dropdown ul {
+    width: auto;
+    min-width: 100%;
+}
+.sort-dropdown li {
+    padding: 2px;
+    cursor: pointer;
+}
+.sort-dropdown li:hover {
+    background-color: #eee;
+}
+.chart-title {}
