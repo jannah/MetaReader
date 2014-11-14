@@ -676,15 +676,11 @@ var MetaReaderCharts = function()
         return chart;
     };
 
-<<<<<<< HEAD
-    function getColorGradient(min, max, value, colors) {
-        if (_.isUndefined(value) || _.isNull(value) || value === '') {
-=======
     function getColorGradient(min, max, value, colors)
     {
         if (typeof(value) == 'undefined' || value == null || value === '')
         {
->>>>>>> origin/gh-pages
+
             //            console.log(value);
             return '#000';
         }
