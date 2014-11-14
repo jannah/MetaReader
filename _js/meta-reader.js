@@ -244,7 +244,7 @@ function MetaReader() {
                 result[0] = max.name;
 
         }
-        console.log(result)
+        // console.log(result)
         return result;
     }
     function checkDate(v)
@@ -548,7 +548,7 @@ function MetaReader() {
     }
     function process_columns(dataColumns)
     {
-        console.log(dataColumns);
+        // console.log(dataColumns);
         var columns = {};
         _.each(dataColumns, function(items, header) {
 

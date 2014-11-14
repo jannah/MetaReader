@@ -15,7 +15,8 @@ var TEXT_FILES = [
 //    'data/test.xlsx',
     'data/mindwave_data_dump.csv',
     'data/titanic_raw.csv',
-//    'data/fl-ballot-2000.csv',
+   'data/fl-ballot-2000.csv',
+   'data/fl2000_flat.csv',
 //    'data/faa-ontime-sept2001.csv',
     'data/oakland-budget.csv'
 //    'data/plane-crashes.ascii.csv'
@@ -141,6 +142,7 @@ function loadTemplates(templates, templatesURL)
     templatesURL = (templatesURL) ? templatesURL : '';
     for (var template in templates)
     {
+        // console.log(template);
         templates[template]['url'] = templatesURL + '/' + templates[template].filename;
         templates[template]['html'] = loadTemplate(templates[template].url);
         templates[template]['render'] = _.template(templates[template]['html']);
