@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -55,7 +55,7 @@ function MetaReader() {
 
         });
 
-        console.log(t);
+        // console.log(t);
         return t;
     }
 
@@ -68,7 +68,7 @@ function MetaReader() {
         self.columnName = title;
         self.metrics = metrics;
         self.id = escapeRegExp(self.columnName);
-        console.log(self.id);
+        // console.log(self.id);
         self.notes = '';
         self.description = '';
         self.questions = [];
@@ -173,6 +173,65 @@ function MetaReader() {
     var DateList = function(data, title, metrics) {
         var self = ObjectList(data, title, metrics);
         self.type = 'date';
+        asDate = _.each(self.cleanData, function(v,i,a){
+            a[i] = moment(v);
+        });
+        self.asDate = _.sortBy(asDate);
+        // formatted for Rickshaw js input
+        self.timeSeries = _.each(getFreqDist(self.asDate), function(v,i,a){
+            a[i] = {'x': v.key, 'y': v.values};
+        });
+        self.max = _.last(self.asDate);
+        self.min = _.first(self.asDate);
+        self.range = moment.duration(self.max - self.min);
+        // NOTE: call humanize() method to get self.range in plain English
+
+        // to determine intervals:
+        // check the range,
+        // and also make sure the diffs aren't all exactly the next largest interval
+        self.intervals = {
+            'year': self.max.diff(self.min, 'years') > 0,
+            'month': self.max.diff(self.min, 'months') > 0 && _.some(self.asDate,
+                function(v,i,a){
+                    if (a[i+1] != undefined){
+                        return v.diff(a[i+1], 'years', true) != v.diff(a[i+1], 'years');
+                    } else {
+                        return false;
+                    }
+            }),
+            'day': self.max.diff(self.min, 'day') > 0 && _.some(self.asDate,
+                function(v,i,a){
+                    if (a[i+1] != undefined){
+                        return v.diff(a[i+1], 'months', true) != v.diff(a[i+1], 'months');
+                    } else {
+                        return false;
+                    }
+            }),
+            'hour': self.max.diff(self.min, 'hours') > 0 && _.some(self.asDate,
+                function(v,i,a){
+                    if (a[i+1] != undefined){
+                        return v.diff(a[i+1], 'days', true) != v.diff(a[i+1], 'days');
+                    } else {
+                        return false;
+                    }
+            }),
+            'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(self.asDate,
+                function(v,i,a){
+                    if (a[i+1] != undefined){
+                        return v.diff(a[i+1], 'hours', true) != v.diff(a[i+1], 'hours');
+                    } else {
+                        return false;
+                    }
+            }),
+            'second': self.max.diff(self.min, 'seconds') > 0 && _.some(self.asDate,
+                function(v,i,a){
+                    if (a[i+1] != undefined){
+                        return v.diff(a[i+1], 'minutes', true) != v.diff(a[i+1], 'minutes');
+                    } else {
+                        return false;
+                    }
+            })
+        };
         return self;
     };
 
@@ -211,7 +270,6 @@ function MetaReader() {
             }
             if (item.length > 6)
             {
-
                 counts['date'] += (checkDate(item)) ? 1 : 0;
             }
             /*else
@@ -249,10 +307,10 @@ function MetaReader() {
     }
     function checkDate(v)
     {
-
-        var d = new Date(Date.parse(v));
-//                console.log(d+'\t'+ isNaN(d.valueOf()));
-        return !isNaN(d.valueOf())
+        // using moment.js library for date handling
+        var d = moment(v);
+        console.log(d)
+        return d.isValid();
     }
     function getFreqDist(data, precision)
     {
@@ -310,19 +368,23 @@ function MetaReader() {
     {
         var mode = [];
         var start = 0;
-        while (checkNull(sortedFD[start].key))
-        {
-            start++;
-        }
-        for (var i = start, j = sortedFD.length; i < j
-                && sortedFD[i].values === sortedFD[0].values;
-                i++)
-        {
-//        console.log(sortedFD[i])
-            if (!checkNull(sortedFD[i].key))
-                mode.push({key: sortedFD[i].key, frequency: sortedFD[i].values});
+        // debugger;
+        if (sortedFD[start] != undefined) {
+            while (checkNull(sortedFD[start].key))
+            {
+                start++;
+            }
+            for (var i = start, j = sortedFD.length; i < j
+                    && sortedFD[i].values === sortedFD[0].values;
+                    i++)
+            {
+    //        console.log(sortedFD[i])
+                if (!checkNull(sortedFD[i].key))
+                    mode.push({key: sortedFD[i].key, frequency: sortedFD[i].values});
+            }
         }
         return mode;
+
     }
 
     function getSequence(data)
@@ -348,7 +410,7 @@ function MetaReader() {
 
     function loadFromFile(filePath)
     {
-        console.log(filePath);
+        // console.log(filePath);
         if (filePath.slice(-3) === 'csv' || filePath.slice(-3) === 'txt')
             return loadCSVFile(filePath);
         else if (filePath.slice(-3) === 'xls')
@@ -367,7 +429,7 @@ function MetaReader() {
             async: false,
             dataType: "text",
             complete: function() {
-                // call a function on complete 
+                // call a function on complete
             }
         });
         var csvd = jqxhr.responseText;
@@ -381,20 +443,20 @@ function MetaReader() {
      oReq.open("GET", url, true);
      oReq.responseType = "arraybuffer";
      oReq.async = false;
-     
+
      oReq.onload = function(e) {
      console.log('runnng excel')
      var arraybuffer = oReq.response;
-     
-     
+
+
      var data = new Uint8Array(arraybuffer);
      var arr = new Array();
      for (var i = 0; i != data.length; ++i)
      arr[i] = String.fromCharCode(data[i]);
      var bstr = arr.join("");
-     
+
      var workbook
-     
+
      if (version === 'xls')
      workbook = XLS.read(bstr, {type: "binary"});
      else
@@ -409,11 +471,11 @@ function MetaReader() {
      * @param {type} excelFilePath
      * @param {type} version
      * @returns {unresolved}
-     * 
+     *
      */
     function loadExcelFile(excelFilePath, version)
     {
-        console.log('load from excel');
+        // console.log('load from excel');
         var oReq = new XMLHttpRequest();
 //        oReq.responseType = "arraybuffer";
         oReq.open("GET", excelFilePath, false);
@@ -422,14 +484,14 @@ function MetaReader() {
         oReq.send(null);
 //        console.log(oReq.responseText)
         var resp = oReq.response;
-        console.log(typeof (resp))
-        console.log('running excel')
+        // console.log(typeof (resp))
+        // console.log('running excel')
         var arraybuffer = s2ab(resp);
-        console.log(arraybuffer)
-        console.log(typeof (arraybuffer))
+        // console.log(arraybuffer)
+        // console.log(typeof (arraybuffer))
 
         var data = new Uint8Array(arraybuffer[0]);
-        console.log(data.length);
+        // console.log(data.length);
         var arr = new Array();
         for (var i = 0; i != data.length; ++i)
             arr[i] = String.fromCharCode(data[i]);
@@ -445,7 +507,7 @@ function MetaReader() {
             workbook = XLS.read(bstr, {type: "binary"});
         else
             workbook = XLSX.read(bstr, {type: "binary"});
-        console.log(workbook);
+        // console.log(workbook);
         return workbook;
 
         /*
@@ -485,7 +547,7 @@ function MetaReader() {
 
             /* convert data to binary string */
             var data = new Uint8Array(arraybuffer);
-            console.log(data.length);
+            // console.log(data.length);
             var arr = new Array();
             for (var i = 0; i != data.length; ++i)
                 arr[i] = String.fromCharCode(data[i]);
@@ -493,7 +555,7 @@ function MetaReader() {
 
             /* Call XLSX */
             var workbook = XLSX.read(bstr, {type: "binary"});
-            console.log(workbook);
+            // console.log(workbook);
 
             /* DO SOMETHING WITH workbook HERE */
         }
@@ -502,7 +564,7 @@ function MetaReader() {
     }
     function loadExcelFile3(excelFilePath, version)
     {
-        console.log('load from excel');
+        // console.log('load from excel');
 
         var jqxhr = $.ajax({
             url: excelFilePath,
@@ -512,17 +574,17 @@ function MetaReader() {
             async: false
         });
 
-        console.log(jqxhr.responseText);
+        // console.log(jqxhr.responseText);
         var arraybuffer = jqxhr.responseText;
 //        console.log(typeof(arraybuffer))
         /* convert data to binary string */
         var data = new Uint8Array(arraybuffer);
-        console.log(data);
+        // console.log(data);
         var arr = new Array();
         for (var i = 0; i != data.length; ++i)
             arr[i] = String.fromCharCode(data[i]);
         var bstr = arr.join("");
-        console.log(bstr);
+        // console.log(bstr);
         var workbook;
         /* Call XLS */
         if (version === 'xls')
@@ -530,7 +592,7 @@ function MetaReader() {
         else
             workbook = XLSX.read(arraybuffer, {type: "base64"});
         /* DO SOMETHING WITH workbook HERE */
-        console.log(workbook);
+        // console.log(workbook);
         return workbook;
     }
 
@@ -574,7 +636,7 @@ function MetaReader() {
 
     function checkNull(value, exclude_empty)
     {
-        return _.isUndefined(value) || _.isNaN(value) || _.isNull(value) || value === 'None' 
+        return _.isUndefined(value) || _.isNaN(value) || _.isNull(value) || value === 'None'
         || value === 'null' || (value==='' && exclude_empty);
     }
 
