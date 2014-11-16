@@ -179,7 +179,7 @@ function MetaReader() {
         self.asDate = _.sortBy(asDate);
         // formatted for Rickshaw js input
         self.timeSeries = _.each(getFreqDist(self.asDate), function(v,i,a){
-            a[i] = {'x': v.key, 'y': v.values};
+            a[i] = {'x': moment(+v.key).unix(), 'y': v.values};
         });
         self.max = _.last(self.asDate);
         self.min = _.first(self.asDate);
