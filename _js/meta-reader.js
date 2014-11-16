@@ -309,7 +309,6 @@ function MetaReader() {
     {
         // using moment.js library for date handling
         var d = moment(v);
-        console.log(d)
         return d.isValid();
     }
     function getFreqDist(data, precision)

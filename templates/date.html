@@ -1,0 +1,32 @@
+
+<%
+var MRC = new MetaReaderCharts();
+
+var stats = {
+    'Unique': data.countUnique,
+    'Range':data.range.humanize(),
+    'Start': data.min.format('lll'),
+    'End': data.max.format('lll')
+};
+var titles = {
+    'Unique':'Number of unique records',
+    'Start':'Start Date',
+    'End': 'End Date',
+    'Range':'Range of Values'
+};
+%>
+
+<div id="<%=data.title%>-stats" class="card-stats">
+
+    <table>
+        <tr>
+            <%_.each(stats, function(value, key){%>
+            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
+                            <label class="card-key"><%=key%></label>
+            <label class="card-value"><%=value%></label>
+            </td>
+
+            <%});%>
+        </tr>
+    </table>
+</div>
