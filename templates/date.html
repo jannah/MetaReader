@@ -7,14 +7,16 @@ var stats = {
     'Unique': data.countUnique,
     'Range':data.range.humanize(),
     'Start': data.min.format(data.format),
-    'End': data.max.format(data.format)
+    'End': data.max.format(data.format),
+    'Format': data.format
 };
 var titles = {
     'Total': 'Number of records',
     'Unique':'Number of unique records',
     'Start':'Start Date',
     'End': 'End Date',
-    'Range':'Range of Values'
+    'Range':'Range of Values',
+    'Format':'Date format in Dataset'
 };
 %>
 
