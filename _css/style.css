@@ -15,6 +15,10 @@ background-repeat: no-repeat;
 background-size: 100%;
 background-attachment: fixed;
 background-position: 0;
+font-family: Verdana, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica; 
+   
+font-weight: 400;
+ font: "Helvetica Neue";
 }
 #content{
     width: 820px;
@@ -34,13 +38,13 @@ background-position: 0;
 
 #navigation{
     position: fixed;
-    height: 80%;
-    max-width: 200px;
+    height: 100%;
+    width: 230px;
     z-index:100;
     float: left;
-    background-color: lightgoldenrodyellow;
+    background-color: #eee;
     padding: 10px;
-    top: 10%;
+    top: 0;
     left: 0;
     box-shadow: 2px 2px 5px #888888;
     overflow-y: auto;
@@ -61,6 +65,12 @@ background-position: 0;
     margin: 5px;
     padding: 5px;
 }
+
+li.navigation-item:hover {
+    background-color: yellow;
+}
+
+li.navigation-item {}
 
 .tooltip-caption{
     
@@ -88,4 +98,9 @@ background-position: 0;
     padding: 5px 5px;
     /* background-color: rgba(255,255,255, .2); */
     /* font-weight: bolder; */
+    border: 1px dotted;
+}
+
+.card-title-text:hover {
+    background-color: yellow;
 }
