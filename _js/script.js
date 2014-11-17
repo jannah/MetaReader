@@ -27,13 +27,14 @@ var TEMPLATES = {
     UPLOAD: {filename: 'templates/upload.html', target: '#upload'},
     NUMBERS: {filename: 'templates/numbers.html', target: ''},
     TEXT: {filename: 'templates/text.html', target: ''},
+    DATE: {filename: 'templates/date.html', target: ''},
     NAV_ITEM: {filename: 'templates/nav_item.html', target: '#navigation>ul'},
     QUESTIONS: {filename: 'templates/questions.html', target: ''}
 //    EXPERIMENT_INTRO: {filename: 'templtes.html', target: '#experiment-content'},
 //    EXPERIMENT_UPLOAD: {filename: 'experiment_upload_data.html', target: '#experiment-content'}
 
 };
-var TEMPLATES_MAP = {'integer': 'NUMBERS', 'float': 'NUMBERS', 'string': 'TEXT'};
+var TEMPLATES_MAP = {'integer': 'NUMBERS', 'float': 'NUMBERS', 'string': 'TEXT', 'date': 'DATE'};
 var data = [];
 function init() {
 
@@ -45,7 +46,7 @@ function init() {
 function load(filename)
 {
     data = loadFile(filename);
-    console.log(data);
+     console.log(data);
     showCards(data);
 }
 function loadFile(filename)

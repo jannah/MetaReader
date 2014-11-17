@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -166,7 +166,7 @@ var MetaReaderCharts = function()
     {
 
 
-        console.log(target)
+        // console.log(target)
         var chart = {};
         chart.options = loadOptions(options);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
@@ -255,7 +255,7 @@ var MetaReaderCharts = function()
                 height: function(d)
                 {
                     var v = ah - yScale(d.values);
-                    if (isNaN(v)) console.log(d);
+                    // if (isNaN(v)) console.log(d);
                     return v;
                 },
                 x: function(d, i)
@@ -293,9 +293,9 @@ var MetaReaderCharts = function()
             // console.log(d);
             var self = $(this),
                 order = self.attr('data-order');
-                console.log(self.attr('class'))
+                // console.log(self.attr('class'))
             $('#'+chart.options.id+'-btn .glyphicon').attr('class', self.attr('class'))
-            console.log(self);
+            // console.log(self);
             change(order);
             // var sortTimeout = setTimeout(function()
             // {
@@ -324,7 +324,7 @@ var MetaReaderCharts = function()
                 //     else if (order === 'n1') return d3.ascending(a.values, b.values);
                 //     else return d3.descending(a.values, b.values);
                 // })
-                console.log(data);
+                // console.log(data);
                 var transition = svg.transition().duration(500),
                     delay = function(d, i)
                     {
@@ -356,6 +356,8 @@ var MetaReaderCharts = function()
 
     MRC.spectrum = function(target, options, data, title)
     {
+//        var MRC = new MetaReader();
+        data = getSequence(data);
         var chart = {};
         chart.options = loadOptions(options);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
@@ -570,12 +572,12 @@ var MetaReaderCharts = function()
             }
         });
         if (currentList.length > 0) validValues.push(_.clone(currentList));
-        console.log(validValues);
+        // console.log(validValues);
         var missingValuesFlat = _.filter(dataMap, function(d)
         {
             return _.isNull(d.value) | _.isUndefined(d.value);
         });
-        console.log(missingValuesFlat);
+        // console.log(missingValuesFlat);
 
         missingValues = [];
         if (missingValuesFlat.length > 0)
@@ -602,7 +604,7 @@ var MetaReaderCharts = function()
                 start: startIndex,
                 run: currentIndex - startIndex
             });
-            console.log(missingValues);
+            // console.log(missingValues);
         }
 
 
@@ -676,6 +678,29 @@ var MetaReaderCharts = function()
         return chart;
     };
 
+    MRC.timeSeries = function(target, options, data, title){
+        var chart = new Rickshaw.Graph({
+            element: document.querySelector(target),
+            renderer: 'line',
+            series: [{
+                data: data,
+                color: 'steelblue',
+                name: 'Records'
+            }]
+        });
+
+        var axes = new Rickshaw.Graph.Axis.Time( { graph: chart } );
+
+        var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+            graph: chart,
+        } );
+
+        chart.render();
+
+        return chart;
+
+    };
+
     function getColorGradient(min, max, value, colors)
     {
         if (typeof(value) == 'undefined' || value == null || value === '')
@@ -705,7 +730,7 @@ var MetaReaderCharts = function()
     {
         // console.log(svg.select('defs'))
         var defs = (svg.select('defs').empty()) ? svg.append('defs') : svg.select('defs');
-        console.log(defs)
+        // console.log(defs)
         defs.append('pattern').attr(
         {
             id: 'pattern-stripe',
