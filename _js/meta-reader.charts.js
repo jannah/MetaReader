@@ -867,7 +867,7 @@ var MetaReaderCharts = function()
 
     function getSortButton(id)
     {
-        var b = '<div class="dropdown sort-dropdown" id="' + id + '">' +
+        var b = '<div class="dropdown sort-dropdown hidden-print" id="' + id + '">' +
                 '<button class="btn btn-default dropdown-toggle sort-button-dropdown" type="button" id="' + id + '-btn" data-toggle="dropdown" aria-expanded="true">' + '<span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>' + '<span class="caret"></span></button>'
         b += '<ul class="dropdown-menu" role="menu" aria-labelledby="' + id + '-btn">';
         b += '<li data-order="a1" role="presentation">' + '<span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></li>';

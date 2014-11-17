@@ -181,6 +181,7 @@ function MetaReader() {
         self.format = moment.parseFormat(self.max._i);
         self.min = _.first(self.asDate);
         self.range = moment.duration(self.max - self.min);
+        self.invalidValues = self.data.length - self.cleanData.length;
         // NOTE: call humanize() method to get self.range in plain English
 
         // to determine intervals:

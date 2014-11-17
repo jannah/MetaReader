@@ -8,7 +8,8 @@ var stats = {
     'Range':data.range.humanize(),
     'Start': data.min.format(data.format),
     'End': data.max.format(data.format),
-    'Format': data.format
+    'Format': data.format,
+    'Missing':data.invalidValues
 };
 var titles = {
     'Total': 'Number of records',
@@ -16,7 +17,8 @@ var titles = {
     'Start':'Start Date',
     'End': 'End Date',
     'Range':'Range of Values',
-    'Format':'Date format in Dataset'
+    'Format':'Date format in Dataset',
+     'Missing':'Missing or Invaliid numerical values:e.g. Null,None,NaN..etc.'
 };
 %>
 
