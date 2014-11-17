@@ -36,6 +36,7 @@ stroke-width: 1.5px;
 }
 .mrc-chart text {
     font-size: 1.5em;
+    font-family: Verdana;
 }
 .mrc-box .center {
     stroke-dasharray: 3, 3;
