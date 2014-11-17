@@ -64,6 +64,7 @@ stroke-width: 1.5px;
 .mrc-chart .axis text{
     fill:black;
     stroke: none;
+    font-size: 1.3em;
 }
 .mrc-chart .axis
 {
@@ -86,6 +87,10 @@ stroke-width: 1.5px;
     
 }
 
+.mrc-rickshaw{
+    padding: 10px;
+    
+}
 /***********************
         CARDS
 ***********************/
@@ -153,6 +158,10 @@ Spectrum Diagram
 #pattern-stripe-hover {
     fill: pink;
     stroke: rgba(255, 0, 0, .5);
+}
+
+.spectrum-legend{
+    font-size:.7em;
 }
 /*#mask-stripe{
 

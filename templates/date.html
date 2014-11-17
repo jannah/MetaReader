@@ -1,6 +1,6 @@
 <%
 var MRC = new MetaReaderCharts();
-var series = new MRC.timeSeries(target, {}, data.timeSeries, data.title);
+var series = new MRC.timeSeries(target, {height:300}, data.timeSeries, data.title);
 
 var stats = {
     'Total': data.count,
@@ -17,6 +17,7 @@ var titles = {
     'Range':'Range of Values'
 };
 %>
+
 <div id="<%=data.title%>-stats" class="card-stats">
 
     <table>
