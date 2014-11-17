@@ -711,6 +711,13 @@ var MetaReaderCharts = function()
                         return yScale(d);
                     },
                     r: 1,
+                    'class': 'marker line-marker mr-tooltip',
+                    'data-toggle': "tooltip",
+                    'data-placement': "top",
+                    'title': function(d, i)
+                    {
+                        return '<span class="chart-tooltip-value">' + d + '</span>';
+                    }
                 });
 
         var bh = aw / data.length;

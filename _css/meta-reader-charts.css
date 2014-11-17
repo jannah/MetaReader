@@ -31,7 +31,7 @@ stroke-width: 1.5px;
 }
 .mrc-chart .histogram:hover, .mrc-chart .highlight-bar {
     opacity: 1;
-    fill: red;
+    fill: orange;
     z-index: 100;
 }
 .mrc-chart text {
@@ -47,10 +47,11 @@ stroke-width: 1.5px;
 }
 .mrc-box .mean-line {
     stroke-dasharray: 3, 3;
-    stroke: orange;
+    stroke: #5cb85c;
+    stroke-width: 3;
 }
 .mrc-box .mean-label {
-    fill: blue;
+    fill: #5cb85c;
 }
 .mrc-box .outlier {
     fill: none;
@@ -140,7 +141,8 @@ Spectrum Diagram
 *************************/
 
 .line-marker:hover, .spectrum-sqaure:hover {
-    opacity: .7;
+    /*opacity: .7;*/
+    fill:orange !important;
 }
 .spectrum-line {
     fill: none;
@@ -156,8 +158,10 @@ Spectrum Diagram
     stroke: #eee;
 }
 #pattern-stripe-hover {
-    fill: pink;
-    stroke: rgba(255, 0, 0, .5);
+    fill: orange;
+    stroke:orange;
+    opacity:.5;
+    /*stroke: rgba(255, 0, 0, .5);*/
 }
 
 .spectrum-legend{
