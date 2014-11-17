@@ -215,4 +215,8 @@ stroke: #eee;
 .sort-dropdown li:hover {
     background-color: #eee;
 }
-.chart-title {}
+.chart-title {
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 35px;
+}

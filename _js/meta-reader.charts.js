@@ -861,7 +861,7 @@ var MetaReaderCharts = function()
 
     function addChartFrame(target, title, id)
     {
-        var frame = '<div id="' + id + '-frame" class="chart-frame"><div class="chart-title">' + title + '</div></div>'
+        var frame = '<div id="' + id + '-frame" class="chart-frame"><div class="chart-title" contenteditable="True">' + title + '</div></div>'
         $(target).append(frame)
     }
 
