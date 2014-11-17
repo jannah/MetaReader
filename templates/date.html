@@ -6,8 +6,8 @@ var stats = {
     'Total': data.count,
     'Unique': data.countUnique,
     'Range':data.range.humanize(),
-    'Start': data.min.format('lll'),
-    'End': data.max.format('lll')
+    'Start': data.min.format(data.format),
+    'End': data.max.format(data.format)
 };
 var titles = {
     'Total': 'Number of records',

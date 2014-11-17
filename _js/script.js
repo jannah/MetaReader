@@ -46,7 +46,7 @@ function init() {
 function load(filename)
 {
     data = loadFile(filename);
-    // console.log(data);
+     console.log(data);
     showCards(data);
 }
 function loadFile(filename)

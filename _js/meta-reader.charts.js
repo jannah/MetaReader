@@ -356,6 +356,8 @@ var MetaReaderCharts = function()
 
     MRC.spectrum = function(target, options, data, title)
     {
+//        var MRC = new MetaReader();
+        data = getSequence(data);
         var chart = {};
         chart.options = loadOptions(options);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
