@@ -21,8 +21,9 @@ font-weight: 400;
  font: "Helvetica Neue";
 }
 #content{
-    width: 820px;
-    margin:  0 auto;
+    width: 76%;
+    margin: 0 0 0 22%;
+    /* margin:  0 auto; */
 }
 #upload{
 
@@ -39,7 +40,7 @@ font-weight: 400;
 #navigation{
     position: fixed;
     height: 100%;
-    width: 230px;
+    width: 20%;
     z-index:100;
     float: left;
     background-color: #eee;
@@ -103,4 +104,53 @@ li.navigation-item {}
 
 .card-title-text:hover {
     background-color: yellow;
+}
+
+
+.card-tab-pane{
+    padding: 5px;
+    
+    border: 1px solid #dddddd;
+}
+.tab-pane{
+    
+}
+.tab-content{
+    
+}
+
+#processing-progress-bar{
+    
+}
+
+.label-as-badge{
+    border-radius: 1em;
+    text-align:  center;
+    font-size: 1em;
+}
+
+
+.suggestions{
+    /* float: left; */
+    
+    padding: 0;
+    margin: 0;
+}
+
+.suggestion{
+    list-style-type: none;
+    
+    border: 1px solid  #ddd;
+    background-color: lightgoldenrodyellow;
+    margin: 0 auto;
+    padding: 5px;
+    font-size: 1.25em;
+}
+
+.suggestion.tip{
+    background-color: lightcyan;
+    
+}
+.suggestion.warning{
+    
 }

@@ -15,8 +15,8 @@ var TEXT_FILES = [
 //    'data/test.xlsx',
     'data/mindwave_data_dump.csv',
     'data/titanic_raw.csv',
-   'data/fl-ballot-2000.csv',
-   'data/fl2000_flat.csv',
+    'data/fl-ballot-2000.csv',
+    'data/fl2000_flat.csv',
 //    'data/faa-ontime-sept2001.csv',
     'data/oakland-budget.csv'
 //    'data/plane-crashes.ascii.csv'
@@ -29,7 +29,8 @@ var TEMPLATES = {
     TEXT: {filename: 'templates/text.html', target: ''},
     DATE: {filename: 'templates/date.html', target: ''},
     NAV_ITEM: {filename: 'templates/nav_item.html', target: '#navigation>ul'},
-    QUESTIONS: {filename: 'templates/questions.html', target: ''}
+    QUESTIONS: {filename: 'templates/questions.html', target: ''},
+    SUGGESTIONS: {filename: 'templates/suggestions.html', target: ''}
 //    EXPERIMENT_INTRO: {filename: 'templtes.html', target: '#experiment-content'},
 //    EXPERIMENT_UPLOAD: {filename: 'experiment_upload_data.html', target: '#experiment-content'}
 
@@ -39,14 +40,14 @@ var data = [];
 function init() {
 
     TEAMPLATES = loadTemplates(TEMPLATES, '/MetaReader');
-    renderTemplate(TEMPLATES.UPLOAD, {files:TEXT_FILES})
+    renderTemplate(TEMPLATES.UPLOAD, {files: TEXT_FILES})
 //    load(TEXT_FILES[0]);
 
 }
 function load(filename)
 {
     data = loadFile(filename);
-     console.log(data);
+    console.log(data);
     showCards(data);
 }
 function loadFile(filename)
@@ -61,9 +62,13 @@ function loadFile(filename)
 
 function showCards(data)
 {
-    _.each(data.statistics, function(d) {
+    $('#processing-progress-bar').show().attr('aria-valuenow', 0).attr('aria-valuemax', data.length);
+    _.each(data.statistics, function(d, i) {
 //        console.log(d);
 //        d = data.statistics['attention']
+
+        $('#progress-name').text(d.name);
+        $('#processing-progress-bar').attr('aria-valuenow', i);
         renderTemplate(TEMPLATES.CARD, {data: d}, null, false, false);
         var target = '#card-' + d.id + ' .card-charts';
 //        console.log(target);
@@ -74,17 +79,28 @@ function showCards(data)
 //            console.log(template);
             renderTemplate(template, {target: target, data: d}, target, false, false);
             loadQuestions(d);
+//            loadSuggestions(d);
 
         }
 
     });
+    $('#progress-name').text('Completed');
+    $('#processing-progress-bar').attr('aria-valuenow', data.length).hide();
     refreshNavigation();
     activateTooltips();
 }
-
+function loadSuggestions(d)
+{
+//    console.log(d.suggestions)
+    console.log($('#' + d.id + '-suggestions').text())
+    renderTemplate(TEMPLATES.SUGGESTIONS, {suggestions: d.suggestions}, +'#' + d.id + '-suggestions', true, false);
+}
 function loadQuestions(d)
 {
     renderTemplate(TEMPLATES.QUESTIONS, {data: d}, '#' + d.id + '-questions', true, false);
+    var badge = '#' + d.id + '-tabs>.questions-tab>a>.label-as-badge';
+//    console.log($(badge));
+    $(badge).text(d.questions.length);
     $('#' + d.id + '-questions .mr-tooltip').tooltip('hide');
     activateTooltips();
 }
@@ -146,7 +162,7 @@ function loadTemplates(templates, templatesURL)
         // console.log(template);
         templates[template]['url'] = templatesURL + '/' + templates[template].filename;
         templates[template]['html'] = loadTemplate(templates[template].url);
-        templates[template]['render'] = _.template(templates[template]['html']);
+        templates[template]['render'] =   _.template(templates[template]['html']);
     }
     return templates;
 }
@@ -196,10 +212,10 @@ function renderTemplate(template, args, target, replaceContent, replaceParent)
 
 function renameColumn(id, column)
 {
- var title = $('#'+id).text();
- data.statistics[column].title = title;
+    var title = $('#' + id).text();
+    data.statistics[column].title = title;
 // console.log(data.statistics[column].title);
- refreshNavigation()
+    refreshNavigation()
 }
 function activateTooltips()
 {

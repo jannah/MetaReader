@@ -19,10 +19,10 @@ and open the template in the editor.
 .mrc-chart rect, .mrc-chart .area, .mrc-chart circle {
     /*fill: #ddd;*/
 
-/*stroke: #fff;*/
+    /*stroke: #fff;*/
 
-stroke-width: 1.5px;
-    fill: steelblue;
+    stroke-width: 1.5px;
+    fill: #3182bd;
     shape-rendering: crispEdges;
 }
 .mrc-chart .hidden-bars {
@@ -57,20 +57,22 @@ stroke-width: 1.5px;
     fill: none;
     stroke: #ccc;
 }
+
+
 /************************
 *       Axes
 *******************/
 
 
 .mrc-chart .axis text{
-    fill:black;
+    /* fill: #777; */
     stroke: none;
     font-size: 1.3em;
 }
 .mrc-chart .axis
 {
-    stroke-width: .5px;
-    stroke: lightblue;
+    stroke-width: 1.5px;
+    stroke: #666;
     fill:none;
 }
 .mrc-chart .y.axis{
@@ -81,15 +83,34 @@ stroke-width: 1.5px;
 }
 
 .mrc-chart .tick.major{
-    
+    fill:#666
+
 }
 .mrc-chart .tick.major line{
-    stroke: lightblue;
-    
+    fill: #666;
+
+    stroke: #666 !important;
+    /* fill: #555; */
 }
 
 .mrc-rickshaw{
     padding: 10px;
+
+}
+
+.mrc-chart .lollipop{
+    
+}
+.mrc-chart .lollipop:hover{
+    fill:orange;
+    stroke:orange;
+    
+}
+.mrc-chart .lollipop.line{
+    stroke-width:2px;
+    stroke: #777;
+}
+.mrc-chart .lollipop.circle{
     
 }
 /***********************
@@ -136,7 +157,7 @@ stroke-width: 1.5px;
 .card-value {
     /* background-color: #eee; */
 
-width: 100%;
+    width: 100%;
     padding: 5px;
     vertical-align: middle;
 }
@@ -184,20 +205,20 @@ Spectrum Diagram
 .mrc-chart .missing-bar {
     /*mask: url(#mask-stripe);*/
 
-fill: url(#pattern-stripe);
+    fill: url(#pattern-stripe);
     /*fill: rgba(255, 0,0, .3);*/
 
-/*fill:#ddd;*/
+    /*fill:#ddd;*/
 
-stroke: #eee;
+    stroke: #eee;
 }
 .mrc-chart .missing-bar:hover {
     fill: url(#pattern-stripe-hover);
     /*fill: rgba(255, 0,0, .6);*/
 
-/*fill:#ddd;*/
+    /*fill:#ddd;*/
 
-/*stroke:red;*/
+    /*stroke:red;*/
 }
 .sort-dropdown {
     float: left;
@@ -220,3 +241,5 @@ stroke: #eee;
     font-size: 1.3em;
     line-height: 35px;
 }
+
+

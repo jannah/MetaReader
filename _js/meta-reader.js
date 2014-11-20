@@ -78,7 +78,7 @@ function MetaReader() {
                 return !checkNull(d);
             });
             self.median = d3.median(sortedData);
-            self.count = data.length;
+            self.count = self.data.length;
             self.frequencyDistribution = getFreqDist(self.cleanData);
 //            self.spectrum = getSequence(self.data);
         };
@@ -135,12 +135,13 @@ function MetaReader() {
     var IntList = function(data, title, metrics) {
         var self = NumberList(data, title, metrics, 0);
         self.type = 'integer';
+        self.suggestions = getSuggestions(self);
         return self;
     };
     var FloatList = function(data, title, metrics, precision) {
         var self = NumberList(data, title, metrics, precision);
         self.type = 'float';
-
+        self.suggestions = getSuggestions(self);
         return self;
     };
     var StringList = function(data, title, metrics) {
@@ -158,7 +159,7 @@ function MetaReader() {
         self.average_word_length = d3.sum(self.data, function(d) {
             return (!checkNull(d)) ? d.replace(' ', '').length : 0;
         });
-
+        self.suggestions = getSuggestions(self);
         return self;
     };
     var DateList = function(data, title, metrics, userFormat) {
@@ -230,6 +231,7 @@ function MetaReader() {
                         }
                     })
         };
+        self.suggestions = getSuggestions(self);
         return self;
     };
 
