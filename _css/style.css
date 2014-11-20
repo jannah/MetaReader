@@ -82,7 +82,9 @@ li.navigation-item {}
     color: red;
     font-weight: bold;
 }
-
+.card-charts{
+    text-align: center;
+}
 .card-question {
     margin: 7px 0;
 }
@@ -92,7 +94,13 @@ li.navigation-item {}
 .btn-remove-question{
     cursor: pointer;
 }
-
+.btn-add-question
+{
+    /* margin: 0; */
+    
+    /* font-size: 12px; */
+    /* padding: 5px; */
+}
 .card-title-text{
     margin: 0 5px;
     
@@ -127,6 +135,7 @@ li.navigation-item {}
     border-radius: 1em;
     text-align:  center;
     font-size: 1em;
+    margin: 2px;
 }
 
 
@@ -152,5 +161,21 @@ li.navigation-item {}
     
 }
 .suggestion.warning{
+    
+}
+
+.card-tabs{
+    
+}
+.card-tabs li{
+    /* line-height: 1.5; */
+    
+}
+.questions-tab{
+    /* margin-bottom: -3px !important; */
+    
+}
+
+.questions-text{
     
 }

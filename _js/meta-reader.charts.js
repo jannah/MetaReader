@@ -6,10 +6,11 @@
 var MetaReaderCharts = function()
 {
     var MRC = {};
+    var TOOLTIP_LIMIT = 1500;
     MRC.options = function()
     {
         return {
-            width: $('#content').width(),
+            width: $('#content').width()-60,
             height: 200,
             margin:
                     {
@@ -44,10 +45,11 @@ var MetaReaderCharts = function()
                 iqr = quartiles[3] - quartiles[1];
         //        console.log(target);
         chart.options = loadOptions(options);
+        addChartFrame(target, chart.options.title, chart.options.id);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - chart.options.axisHeight,
-                ch = ah - 4 * chart.options.axisHeight;
+                ch = ah - 2.5 * chart.options.axisHeight;
         //        console.log(w+'\t'+h)
         var svg = d3.select(target).append('svg').attr(
                 {
@@ -56,14 +58,14 @@ var MetaReaderCharts = function()
                     width: chart.options.width,
                     height: chart.options.height
                 }).append('g').attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-        var chartTitle = svg.append('text').text(chart.options.title).attr(
+       /* var chartTitle = svg.append('text').text(chart.options.title).attr(
                 {
                     class: 'box-title',
                     'text-anchor': 'middle',
                     x: w / 2,
                     y: 0,
                     dy: '1em'
-                });
+                });*/
         var range = max - min,
                 min_chart = min - range / 10,
                 //                min_chart = (min_chart <= 0 && min >= 0) ? 0 : min_chart,
@@ -79,7 +81,7 @@ var MetaReaderCharts = function()
         var plot = svg.append("g").attr(
                 {
                     'class': 'plot',
-                    "transform": "translate(0," + (2 * chart.options.axisHeight) + ")"
+                    "transform": "translate(0," + (chart.options.axisHeight) + ")"
                 });
         var center = plot.append("line", "rect").attr(
                 {
@@ -254,7 +256,7 @@ var MetaReaderCharts = function()
             lolli.append('line')
                     .attr(
                             {
-                                class: 'lollipop line mr-tooltip',
+                                class: 'lollipop line',
                                 width: function()
                                 {
                                     return xScale.rangeBand();
@@ -287,17 +289,11 @@ var MetaReaderCharts = function()
                                 'data-value': function(d)
                                 {
                                     return d.values;
-                                },
-                                'data-toggle': "tooltip",
-                                'data-placement': "top",
-                                'title': function(d, i)
-                                {
-                                    return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
                                 }
                             })
             lolli.append('circle')
                     .attr({
-                        class: 'lollipop circle mr-tooltip',
+                        class: 'lollipop circle',
                         cx: function(d, i)
                         {
                             return xScale(d.key) + xScale.rangeBand() / 2;
@@ -314,14 +310,31 @@ var MetaReaderCharts = function()
                         'data-value': function(d)
                         {
                             return d.values;
-                        },
-                        'data-toggle': "tooltip",
-                        'data-placement': "top",
-                        'title': function(d, i)
-                        {
-                            return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
                         }
                     });
+            if (data.length < TOOLTIP_LIMIT)
+            {
+                lolli.selectAll('.lollipop.line')
+                        .classed('svg-tooltip', true)
+                        .attr({
+                            'data-toggle': "tooltip",
+                            'data-placement': "top",
+                            'title': function(d, i)
+                            {
+                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                            }
+                        })
+                lolli.selectAll('.lollipop.circle')
+                        .classed('svg-tooltip', true)
+                        .attr({
+                            'data-toggle': "tooltip",
+                            'data-placement': "top",
+                            'title': function(d, i)
+                            {
+                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                            }
+                        })
+            }
 
         }
         else
@@ -331,7 +344,7 @@ var MetaReaderCharts = function()
                     .data(data).enter().append('rect')
                     .attr(
                             {
-                                class: 'bar histogram mr-tooltip',
+                                class: 'bar histogram svg-tooltip',
                                 width: function()
                                 {
                                     return xScale.rangeBand();
@@ -356,14 +369,20 @@ var MetaReaderCharts = function()
                                 'data-value': function(d)
                                 {
                                     return d.values;
-                                },
-                                'data-toggle': "tooltip",
-                                'data-placement': "top",
-                                'title': function(d, i)
-                                {
-                                    return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
                                 }
                             });
+            if (data.length < TOOLTIP_LIMIT)
+            {
+                bars.classed('svg-tooltip', true)
+                        .attr({
+                            'data-toggle': "tooltip",
+                            'data-placement': "top",
+                            'title': function(d, i)
+                            {
+                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                            }
+                        });
+            }
         }
         svg.select('.x.axis g').selectAll('.tick.major').style('display', function(d, i)
         {
@@ -524,7 +543,7 @@ var MetaReaderCharts = function()
                     height: chart.options.axisHeight
                 }).append("g").attr("transform", "translate(" + chart.options.axisWidth + "," + (ah + chart.options.axisHeight) + ")").call(xAxis).append('text').attr(
                 {
-                    class: 'x axis-title mr-tooltip',
+                    class: 'x axis-title svg-tooltip',
                     'text-anchor': 'middle',
                     x: w / 2,
                     y: 35,
@@ -538,7 +557,7 @@ var MetaReaderCharts = function()
         //        console.log(ch);
         var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")").selectAll('bars').data(data).enter().append('rect').attr(
                 {
-                    class: 'bar spectrum-sqaure mr-tooltip',
+                    class: 'bar spectrum-sqaure svg-tooltip',
                     width: function(d)
                     {
                         return xScale(d.frequency);
@@ -657,7 +676,7 @@ var MetaReaderCharts = function()
                     height: chart.options.axisHeight
                 }).append("g").attr("transform", "translate(" + chart.options.axisWidth + "," + (ah + chart.options.axisHeight) + ")").call(xAxis).append('text').attr(
                 {
-                    class: 'x axis-title mr-tooltip',
+                    class: 'x axis-title svg-tooltip',
                     'text-anchor': 'middle',
                     x: w / 2,
                     y: 35,
@@ -717,7 +736,7 @@ var MetaReaderCharts = function()
         var missingValues = [];
         if (missingValuesFlat.length > 0)
         {
-            currentIndex = startIndex = missingValuesFlat[0].index;
+            var currentIndex = startIndex = missingValuesFlat[0].index;
             _.forEach(missingValuesFlat, function(d, i)
             {
                 if (i > 0 && (d.index - currentIndex) > 1)
@@ -773,8 +792,13 @@ var MetaReaderCharts = function()
                     {
                         return yScale(d);
                     },
-                    r: 1,
-                    'class': 'marker line-marker mr-tooltip',
+                    r: function(d, i)
+                    {
+                        max = data.length / aw;
+                        max = (max > 2) ? max : 2;
+                        return (20 > max) ? max : 20;
+                    },
+                    'class': 'marker line-marker svg-tooltip',
                     'data-toggle': "tooltip",
                     'data-placement': "top",
                     'title': function(d, i)
@@ -787,7 +811,7 @@ var MetaReaderCharts = function()
                 .data(missingValues).enter().append('rect')
                 .attr(
                         {
-                            class: 'bar missing-bar mr-tooltip',
+                            class: 'bar missing-bar svg-tooltip',
                             x: function(d)
                             {
                                 return xScale(d.start);

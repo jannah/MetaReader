@@ -63,10 +63,10 @@ function getGeneralSuggestions(d)
 //        console.log(s);
     }
 
-    if (d.count === d.uniqueCount)
+    if (d.count === (d.countUnique+d.invalidValues))
     {
         var s = new Suggestion();
-        s.text = 'All values  in theis column are unique. This column could be the primary key.';
+        s.text = 'All values  in this column are unique. This column could be the primary key.';
         s.importance = 2;
         s.scope = 'General';
         s.class = 'tip';
@@ -75,7 +75,16 @@ function getGeneralSuggestions(d)
 //        console.log(s);
 
     }
-
+    if(d.countUnique===2)
+    {
+         var s = new Suggestion();
+        s.text = 'The data contains only 2 unique values. It might be refereing to boolean values.';
+        s.importance = 2;
+        s.scope = 'General';
+        s.class = 'tip';
+        s.category = 'boolean-values';
+        suggestions.push(s);
+    }
     return suggestions;
 
 }
@@ -96,7 +105,17 @@ function getNumberSuggestions(d)
         suggestions.push(s);
 //        console.log(s);
     }
-
+    if (d.outliers.length>0)
+    {
+        var s = new Suggestion();
+        s.text = 'The data contains ' + d.outliers.length + ' statistical outliers (+-1.5 * InnerQuartileRange).';
+        s.importance = 2;
+        s.scope = 'Number';
+        s.class = 'tip';
+        s.category = 'outliers';
+        suggestions.push(s);
+//        console.log(s);
+    }
     return suggestions;
 }
 

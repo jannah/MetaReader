@@ -1,3 +1,10 @@
+jQuery.fn.redraw = function() {
+    return this.hide(0, function() {
+        $(this).show();
+    });
+};
+
+
 $(document).on('ready', function() {
     init();
     activateTooltips();
@@ -102,7 +109,7 @@ function loadQuestions(d)
 //    console.log($(badge));
     $(badge).text(d.questions.length);
     $('#' + d.id + '-questions .mr-tooltip').tooltip('hide');
-    activateTooltips();
+//    activateTooltips();
 }
 
 
@@ -162,7 +169,7 @@ function loadTemplates(templates, templatesURL)
         // console.log(template);
         templates[template]['url'] = templatesURL + '/' + templates[template].filename;
         templates[template]['html'] = loadTemplate(templates[template].url);
-        templates[template]['render'] =   _.template(templates[template]['html']);
+        templates[template]['render'] = _.template(templates[template]['html']);
     }
     return templates;
 }
@@ -205,8 +212,20 @@ function renderTemplate(template, args, target, replaceContent, replaceParent)
     }
     else
     {
-        $(target).append(template.render(args));
+        $(target).append(template.render(args)).redraw();
+        /*$(target).queue(function() {
+            $(this).append(template.render(args));
+            $(this).dequeue();
+        })*/
     }
+//    console.log($(document.body).find(target));
+    /*    while($(document.body).find(target).length===0)
+     {
+     continue;
+     }
+     */
+//    while(!($(document.body).find(target)[0]))
+//    $(target).flush();
 //    $(target).trigger(BODY_CHANGE_EVENT);
 }
 
@@ -221,6 +240,10 @@ function activateTooltips()
 {
 
     $('.mr-tooltip').tooltip({html: true,
+        'container': 'body',
+        'placement': 'top'});
+    
+    $('.svg-tooltip').tooltip({html: true,
         'container': 'body',
         'placement': 'top'});
 }

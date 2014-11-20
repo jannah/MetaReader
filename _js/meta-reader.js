@@ -129,6 +129,7 @@ function MetaReader() {
         });
         self.frequencyDistributionSorted.reverse();
         self.mode = getMode(self.frequencyDistributionSorted);
+        self.outliers = getOutliers(self);
 
         return self;
     };
@@ -387,7 +388,19 @@ function MetaReader() {
     }
 
 
+    function getOutliers(data)
+    {
+        var outliers = _.filter(data.cleanData, function(d, i) {
+            var lower_inner = d <= (data.quartiles[1] - data.interQuartileRange * 1.5);
+            var upper_inner = d >= (data.quartiles[2] + data.interQuartileRange * 1.5);
+            var lower_outer = d <= (data.quartiles[1] - data.interQuartileRange * 3);
+            var upper_outer = d >= (data.quartiles[2] + data.interQuartileRange * 3);
+            return lower_inner || upper_inner || lower_outer || upper_outer;
+        });
 
+        return outliers;
+
+    }
 
     function loadFromFile(filePath)
     {

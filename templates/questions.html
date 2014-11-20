@@ -2,7 +2,6 @@
 
 
 <%_.each(data.questions, function(q, i){
-console.log(q)
 
 %>
 <div id='<%=data.id%>-question-<%=i%>' 
@@ -17,17 +16,5 @@ console.log(q)
             <span class="glyphicon glyphicon-minus"></span>
         </span>
   
-        
-
-    </span>
-
-
 </div>
 <%})%>
-
-<button type='button' class='btn btn-success btn-add-question mr-tooltip hidden-print' 
-        data-id='<%=data.id%>' data-title='<%=data.title%>' data-toggle='tooltip' data-placement="top"
-        onclick='addQuestion("<%= data.title %>")'
-        title='Add a question'>
-    <span class="glyphicon glyphicon-plus"></span>
-</button>

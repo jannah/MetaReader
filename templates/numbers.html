@@ -1,7 +1,7 @@
 
 <%
 var MRC = new MetaReaderCharts();
-var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.id+'-box'}, data.quartiles, data.mean)
+var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.id+'-box', height:180}, data.quartiles, data.mean, data.title+ ' Box Plot', data.outliers)
 var fd = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution sorted by Value','id':data.id+'-fd1'}, data.frequencyDistribution, data.title)
 var fd2 = new MRC.lollipop(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.id+'-fd2'}, data.frequencyDistribution, data.title + '(Lollipop)')
 var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.id+'-fd3'}, data.frequencyDistributionBins, data.title + '(Bins)')
