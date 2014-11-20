@@ -65,7 +65,7 @@ and open the template in the editor.
 
 
 .mrc-chart .axis text{
-    /* fill: #777; */
+    fill: #777;
     stroke: none;
     font-size: 1.3em;
 }
