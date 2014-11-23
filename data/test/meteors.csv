@@ -1,0 +1,55 @@
+Reference: http://www.fourmilab.ch/homeplanet/homeplanet.html
+;
+;   Meteor showers
+;
+Name,Maximum,Limits,Hourly rate,Radiant...,Right ascension,Declination,From comet,Remarks
+;
+Quadrantids,4-Jan,January 1-5,100,,15h 28m,50°,,Average speeds
+Chi Cygnids,17-Jan,,,,19h 40m,53°,,"Slow, evanescent trails"
+Alpha Aurigids,5-Feb,,,,5h 00m,41°,,"Very slow, fireballs"
+Delta Leonids,5-Feb,,,,,,,Average speeds
+Zeta Bootids,10-Mar,,,,14h 32m,12°,,"Fast, persistent trails"
+Sigma Leonids,21-Mar,,,,,,,Average speeds
+April Lyrids,22-Apr,April 19-24,14,,18h 16m,34°,Thatcher,"Fast, bright, persistent trails"
+Eta Aquarids,5-May,May 1-8,18,,22h 25m,0°,Halley,
+Gamma Aquarids,5-May,,,,22h 24m,0°,,"Very fast, long trails"
+Zeta Herculids,11-May,,,,16h 28m,28°,,Fast; white
+Tau Herculids,19-May,,,,,,,Slow
+Eta Pegasids,30-May,,,,22h 12m,27°,,"Very fast, persistent trails"
+Gamma Draconids,1-Jun,,,,17h 56m,48°,,"Slow, evanescent trails"
+Alpha Scorpiids,2-Jun,,,,16h 52m,-22°,,"Very slow, fireballs"
+June Lyrids,16-Jun,June 10-21,10,,18h 32m,35°,,"Blue, persistent trails"
+Ophiuchids,20-Jun,June 17-26,15,,17h 20m,-20°,,
+Iota Draconids,27-Jun,,,,15h 12m,57°,,Very slow
+Beta Taurids,30-Jun,,,,5h 41m,19°,Encke,
+Alpha Cygnids,1-Jul,,,,21h 00m,48°,,"Fast, long trails"
+Alpha/Beta Perseids,23-Jul,,,,3h 12m,43°,Swift-Tuttle,Very fast
+Capricornids,25-Jul,July 10-August 5,15,,21h 0m,-15°,,
+S.Delta Aquarids,29-Jul,July 15-August 15,36/2,,22h 36m,-17°,,"Slow, double radiant"
+N.Delta Aquarids,29-Jul,July 15-August 15,36/2,,22h 36m,0°,,"Slow, double radiant"
+Alpha Capricornids,1-Aug,July 15-August 25,10,,20h 16m,-12°,,Yellow fireballs
+Lacertids,1-Aug,,,,22h 08m,49°,,"Average speeds, short"
+S.Iota Aquarids,5-Aug,July 15-August 25,13/2,,22h 32m,-15°,,Double radiant
+N.Iota Aquarids,5-Aug,July 15-August 25,13/2,,22h 04m,-6°,,Double radiant
+Kappa Cygnids,20-Aug,August 18-22,10,,19h 29m,55°,,"Bright, exploding fireballs"
+Chi Cygnids,10-Aug,,,,19h 20m,54°,,"Average speeds, bright"
+Perseids,12-Aug,July 25-August 18,70,,3h 04m,58°,,Very fast
+Alpha Aurigids,12-Aug,,,,4h 56m,42°,,"Very fast, persistent trails"
+Kappa Cygnids,20-Aug,August 18-22,10,,19h 20m,55°,,"Bright, exploding fireballs"
+Omicron Draconids,21-Aug,,,,19h 24m,60°,,"Very slow, max. in 1879"
+Zeta Draconids,21-Aug,,,,17h 32m,62°,,"Rather slow, bright"
+S. Piscids,31-Aug,,,,,,,Average speeds
+Epsilon Perseids,7-Sep,,,,4h 04m,35°,,"Fast, persistent trails"
+N. Taurids,19-Sep,,,,,,,Average speeds
+N. Piscids,25-Sep,,,,,,,Average speeds
+Annual Andromedids,25-Sep,,,,,,,Slow
+Epsilon Arietids,12-Oct,,,,2h 48m,21°,,"Very slow, fireballs"
+Orionids,21-Oct,October 16-27,35,,6h 20m,15°,Halley,Fast
+Epsilon Taurids,30-Oct,,,,4h 16m,22°,,"Slow, fireballs"
+E Taurids,1-Nov,October 10-December 5,16,,3h 32m,14°,Encke,"Slow, bright"
+Andromedids,17-Nov,,,,1h 40m,43°,,Very slow
+Leonids,18-Nov,November 14-20,,,10h 08m,22°,Tempel-Tuttle,Very fast
+Phoenicids,5-Dec,5-Dec,25,,01h 00m,-55°,,
+Coma Berenicids,12-Dec,,,,,,,Extremely fast
+Geminids,14-Dec,December 7-15,,,7h 32m,32°,,Average speeds
+Ursids,23-Dec,December 17-24,18,,14h 28m,76°,Tuttle,Average speeds

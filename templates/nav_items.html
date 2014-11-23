@@ -1,0 +1,15 @@
+<li id="nav-items">
+<a href="javascript:;" data-toggle="collapse" data-target="#navigation"><i class="fa fa-fw fa-arrows-v"></i> Elements <i class="fa fa-fw fa-caret-down"></i></a>
+<ul id="navigation" class="expand">
+<% _.each(cards, function(card) {
+        var id = $(card).attr('id')
+        var title = $('#' + id + ' .card-title-text').text().trim()
+        var target = '#' + id
+%>
+<li class="sidebar-brand">
+    <a href="<%=target%>"><%=title%></a>
+</li>
+<%});  %>
+                                
+                            </ul>
+<li>

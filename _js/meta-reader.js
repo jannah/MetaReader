@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 
-
+String.prototype.endsWith = function(suffix) {
+    return this.indexOf(suffix, this.length - suffix.length) !== -1;
+};
 
 function MetaReader() {
 
@@ -13,10 +15,26 @@ function MetaReader() {
     mr.columns = {};
     mr.statistics = {};
     mr.filename = '';
-    mr.loadFile = function(csvFilePath)
+    mr.title = '';
+    mr.description = '';
+    mr.loadFile = function(file)
     {
-        mr.filename = csvFilePath;
-        var csv = loadFromFile(csvFilePath);
+        var csv
+        if (_.isObject(file))
+        {
+//            console.log(file);
+//            console.log('procssing from uplaod')
+            mr.filename = file.name;
+            csv = parseCSVFile(file)
+        }
+        else
+        {
+            csv = loadFromFile(file);
+            mr.filename = file;
+        }
+        
+        mr.title=mr.filename;
+
 //        console.log(csv);
         mr.columns = csvToColumns(csv);
         mr.statistics = process_columns(mr.columns);
@@ -416,6 +434,12 @@ function MetaReader() {
             return loadExcelFile(filePath, 'xlsx');
         }
     }
+    function parseCSVFile(file)
+    {
+         var data = $.csv.toObjects(file.contents);
+//        console.log(data);
+        return data;
+    }
     function loadCSVFile(csvFilePath)
     {
         var jqxhr = $.ajax({
@@ -431,35 +455,32 @@ function MetaReader() {
 //        console.log(data);
         return data;
     }
-    /*console.log('load from excel');
-     var url = "test_files/formula_stress_test_ajax.xlsx";
-     var oReq = new XMLHttpRequest();
-     oReq.open("GET", url, true);
-     oReq.responseType = "arraybuffer";
-     oReq.async = false;
-     
-     oReq.onload = function(e) {
-     console.log('runnng excel')
-     var arraybuffer = oReq.response;
-     
-     
-     var data = new Uint8Array(arraybuffer);
-     var arr = new Array();
-     for (var i = 0; i != data.length; ++i)
-     arr[i] = String.fromCharCode(data[i]);
-     var bstr = arr.join("");
-     
-     var workbook
-     
-     if (version === 'xls')
-     workbook = XLS.read(bstr, {type: "binary"});
-     else
-     workbook = XLSX.read(bstr, {type: "binary"});
-     console.log(workbook);
-     return workbook;
-     };
-     var workbook = oReq.send();*/
+    /*
+    var workerScript = "self.addEventListener('message',function(c){var b=c.data;try{var a=new FileReaderSync();postMessage({result:a.readAsText(b)})}catch(c){postMessage({result:'error'})}},false);"
+    function makeWorker(script) {
+        var URL = window.URL || window.webkitURL;
+        var Blob = window.Blob;
+        var Worker = window.Worker;
 
+        if (!URL || !Blob || !Worker || !script) {
+            return null;
+        }
+
+        var blob = new Blob([script]);
+        var worker = new Worker(URL.createObjectURL(blob));
+        return worker;
+    }
+
+    function processFiles(file, cb) {
+        var syncWorker = makeWorker(workerScript);
+        syncWorker.onmessage = function(e) {
+            cb(e.data.result);
+        };
+
+        syncWorker.postMessage(file);
+
+    }
+*/
 
     /*
      * @param {type} excelFilePath
@@ -664,3 +685,4 @@ function getSequence(data)
     spectrum.push(_.clone(currentItem));
     return spectrum;
 }
+

@@ -31,11 +31,12 @@ var TEXT_FILES = [
 ];
 var TEMPLATES = {
     CARD: {filename: 'templates/card.html', target: '#cards'},
-    UPLOAD: {filename: 'templates/upload.html', target: '#upload'},
+    SAMPLES: {filename: 'templates/samples.html', target: '#side-menu>ul'},
     NUMBERS: {filename: 'templates/numbers.html', target: ''},
     TEXT: {filename: 'templates/text.html', target: ''},
     DATE: {filename: 'templates/date.html', target: ''},
-    NAV_ITEM: {filename: 'templates/nav_item.html', target: '#navigation>ul'},
+    NAV_ITEMS: {filename: 'templates/nav_items.html', target: '#side-menu>ul'},
+    NAV_ITEM: {filename: 'templates/nav_item.html', target: '#navigation'},
     QUESTIONS: {filename: 'templates/questions.html', target: ''},
     SUGGESTIONS: {filename: 'templates/suggestions.html', target: ''}
 //    EXPERIMENT_INTRO: {filename: 'templtes.html', target: '#experiment-content'},
@@ -44,32 +45,106 @@ var TEMPLATES = {
 };
 var TEMPLATES_MAP = {'integer': 'NUMBERS', 'float': 'NUMBERS', 'string': 'TEXT', 'date': 'DATE'};
 var data = [];
+
 function init() {
 
     TEAMPLATES = loadTemplates(TEMPLATES, '/MetaReader');
-    renderTemplate(TEMPLATES.UPLOAD, {files: TEXT_FILES})
+    loadUploadForm();
+    loadSamples();
 //    load(TEXT_FILES[0]);
 
 }
-function load(filename)
+
+function loadUploadForm()
+{
+
+
+    $('.btn-file :file').on('fileselect', function(event, file, numFiles, label) {
+        /*    console.log(file);
+         console.log(numFiles);
+         console.log(label);*/
+//        console.log(file.getAsText('utf-8'))
+        if (label.endsWith('.csv'))
+        {
+            var fs = loadFileStream(file, loadFromUpload);
+        }
+    });
+    $(document).on('change', '.btn-file :file', function() {
+        var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
+                file = input.get(0).files[0];
+
+        input.trigger('fileselect', [file, numFiles, label]);
+    });
+
+}
+
+function loadSamples()
+{
+    renderTemplate(TEMPLATES.SAMPLES, {files: TEXT_FILES});
+    $('#samples').siblings('a').collapse();
+}
+function loadFileStream(file, cb)
+{
+//    var reader = new FileReader();
+    console.log('reading file ' + file.name);
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        var contents = event.target.result;
+        file['contents'] = contents;
+//        console.log(file);
+        cb(file);
+
+    };
+
+    reader.onerror = function(event) {
+        console.error("File could not be read! Code " + event.target.error.code);
+    };
+
+    reader.readAsText(file);
+
+}
+function loadSample(filename)
 {
     data = loadFile(filename);
+      $('#samples').collapse();
     console.log(data);
-    showCards(data);
+    render(data);
 }
-function loadFile(filename)
+function loadFromUpload(file)
 {
+    data = loadFile(file);
+    render(data);
+}
+function loadFile(file)
+{
+    
+    resetPage();
 
     var reader = new MetaReader();
-    reader.loadFile(filename);
-
+    reader.loadFile(file);
     return reader;
 }
+function resetPage()
+{
+    $('#cards').empty();
+    data = {};
+}
+function render(data)
+{
+    showCards(data);
 
-
+}
 function showCards(data)
 {
     $('#processing-progress-bar').show().attr('aria-valuenow', 0).attr('aria-valuemax', data.length);
+    
+    $('#page-title').text(data.title);
+    $('#page-description').text(data.description);
+    
+    
+    $('#header').show();
     _.each(data.statistics, function(d, i) {
 //        console.log(d);
 //        d = data.statistics['attention']
@@ -147,15 +222,10 @@ function refreshNavigation()
 {
 //    console.log('refreshing');
     var cards = $('.mrc-card');
-    $('#navigation>ul').empty();
+    $('#nav-items').remove();
+    renderTemplate(TEMPLATES.NAV_ITEMS, {cards:cards}, TEMPLATES.NAV_ITEMS.target, false, false)
 //    var nav = $('#navigation ul');
-    _.each(cards, function(card) {
-        var id = $(card).attr('id');
-        var title = $('#' + id + ' .card-title-text').text().trim();
-
-        renderTemplate(TEMPLATES.NAV_ITEM, {target: '#' + id, title: title}, null, false, false);
-
-    });
+    
 }
 
 
@@ -214,9 +284,9 @@ function renderTemplate(template, args, target, replaceContent, replaceParent)
     {
         $(target).append(template.render(args)).redraw();
         /*$(target).queue(function() {
-            $(this).append(template.render(args));
-            $(this).dequeue();
-        })*/
+         $(this).append(template.render(args));
+         $(this).dequeue();
+         })*/
     }
 //    console.log($(document.body).find(target));
     /*    while($(document.body).find(target).length===0)
@@ -242,7 +312,7 @@ function activateTooltips()
     $('.mr-tooltip').tooltip({html: true,
         'container': 'body',
         'placement': 'top'});
-    
+
     $('.svg-tooltip').tooltip({html: true,
         'container': 'body',
         'placement': 'top'});
