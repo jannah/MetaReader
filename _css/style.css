@@ -21,8 +21,8 @@ font-weight: 400;
  font: "Helvetica Neue";
 }
 #content{
-    width: 76%;
-    margin: 0 0 0 22%;
+    width: 84%;
+    margin: 0 0 0 12%;
     /* margin:  0 auto; */
 }
 #upload{
@@ -37,8 +37,9 @@ font-weight: 400;
 
 }
 
-#navigation{
-    position: fixed;
+#side-menu{
+    /* width: 48%; */
+/*    position: fixed;
     height: 100%;
     width: 20%;
     z-index:100;
@@ -49,9 +50,22 @@ font-weight: 400;
     left: 0;
     box-shadow: 2px 2px 5px #888888;
     overflow-y: auto;
-    overflow: auto;
+    overflow: auto;*/
 }
-
+#side-menu .side-nav{
+    width: 20%;
+    
+    height: 100%;
+}
+#upload{
+    
+}
+#upload ul{
+    
+}
+#upload li{
+    
+}
 #navigation ul{
     list-style: none;
     
@@ -59,12 +73,12 @@ font-weight: 400;
     padding: 0;
 }
 #navigation li{
-    font-size: 1.5em;
+    /* font-size: 1.5em; */
     
     color: black;
     /* background-color:  white; */
-    margin: 5px;
-    padding: 5px;
+    /* margin: 5px; */
+    /* padding: 5px; */
 }
 
 li.navigation-item:hover {
@@ -178,4 +192,27 @@ li.navigation-item {}
 
 .questions-text{
     
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    font-size: 1.5em;
+    margin: 5%;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
 }
