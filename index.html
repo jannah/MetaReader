@@ -184,8 +184,8 @@ and open the template in the editor.
                     <div class="row">
                         <div id="header" style='display:none'>
 
-                            <h1 ><span id='page-title' contenteditable="true">Page Title Here <span></h1>
-                                        <textarea placeholder="Descrption" id='page-description' class='form-control'></textarea>
+                            <h1 ><span id='page-title' contenteditable="true" oninput="renameDocument()">Page Title Here <span></h1>
+                                        <textarea placeholder="Descrption" id='page-description' class='form-control' onchange="updateDescription()"></textarea>
                                         <br>
                         </div>
 

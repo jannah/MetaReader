@@ -216,6 +216,33 @@ function updateQuestion(column, index)
 //    console.log(question);
     data.statistics[column].questions[index] = question;
 }
+function renameDocument()
+{
+    var title = $('#page-title').text();
+//    console.log(title);
+    data.title = title;
+}
+function updateDescription()
+{
+    var desc = $('#page-description').val();
+//    console.log(desc);
+    data.description = desc;
+}
+
+function updateField(element, field, id)
+{
+//    console.log($(this
+//    console.log(element)
+    var val = $(element).val();
+//    console.log(val);
+    data.statistics[id][field] = val;
+}
+function hideSuggestion(column, id, i)
+{
+    $(id).hide();
+    console.log(column)
+    data.statistics[column].suggestions[i].show = false;
+}
 
 function saveAsMarkdown()
 {
