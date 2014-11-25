@@ -85,6 +85,9 @@ function getGeneralSuggestions(d)
         s.category = 'boolean-values';
         suggestions.push(s);
     }
+    
+//    is sorted
+// contiguous values
     return suggestions;
 
 }

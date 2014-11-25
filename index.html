@@ -26,7 +26,7 @@ and open the template in the editor.
         <script src="_js/mete-reader.suggestions.js" type="text/javascript"></script>
         <script src="_js/meta-reader.js" type="text/javascript"></script>
         <script src="_js/meta-reader.charts.js" type="text/javascript"></script>
-
+        <script src="_js/vendor/FileSaver.min.js" type="text/javascript"></script>
         <script src="_js/script.js" type="text/javascript"></script>
         <link href="_js/vendor/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <!--<link href="_js/vendor/twitter-bootstrap/css/simple-sidebar.css" rel="stylesheet" type="text/css"/>-->
@@ -54,10 +54,12 @@ and open the template in the editor.
                 </div>
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
+                    
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-print"></i> <b class="caret"></b></a>
                         <ul class="dropdown-menu message-dropdown">
-                            <li class="message-preview">
+                            <li> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
+<!--                            <li class="message-preview">
                                 <a href="#">
                                     <div class="media">
                                         <span class="pull-left">
@@ -101,10 +103,10 @@ and open the template in the editor.
                                         </div>
                                     </div>
                                 </a>
-                            </li>
-                            <li class="message-footer">
+                            </li>-->
+<!--                            <li class="message-footer">
                                 <a href="#">Read All New Messages</a>
-                            </li>
+                            </li>-->
                         </ul>
                     </li>
                     <li class="dropdown">

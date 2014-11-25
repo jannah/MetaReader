@@ -17,6 +17,18 @@ function MetaReader() {
     mr.filename = '';
     mr.title = '';
     mr.description = '';
+    mr.toMarkdown = function()
+    {
+        var result = ''
+        result += '# ' + mr.title + '\n------\n';
+        result += mr.filename + '\n\n';
+        result += mr.description + '\n\n';
+        _.forEach(mr.statistics, function(col, i) {
+            result += col.toMarkdown();
+        });
+
+        return result;
+    }
     mr.loadFile = function(file)
     {
         var csv
@@ -32,8 +44,8 @@ function MetaReader() {
             csv = loadFromFile(file);
             mr.filename = file;
         }
-        
-        mr.title=mr.filename;
+
+        mr.title = mr.filename;
 
 //        console.log(csv);
         mr.columns = csvToColumns(csv);
@@ -85,9 +97,36 @@ function MetaReader() {
         self.countUnique = self.uniqueValues.length;
 
         self.count = data.length;
+        
 
+        self.toMarkdown = function(index)
+        {
 
+            var result = '## ' + (index ? index + '. ' : '') + self.title
+                    + ' [' + self.columnName + ' (' + self.type + ')]\n------\n';
+            if (self.description.length > 0)
+                result += '### Description:\n' + self.description + '\n';
+            if (self.notes.length > 0)
+                result += '### Notes:\n' + self.Notes + '\n';
+            if (self.questions.length > 0)
+            {
+                result += '### Questions:\n';
+                _.forEach(self.questions, function(q, i) {
+                    result += '    ' + (i + 1) + '. ' + q + '\n';
+                });
+            }
+            if (self.suggestions.length > 0)
+            {
+                result += '### Suggestions:\n';
+                _.forEach(self.suggestions, function(s, i) {
+                    if (s.show)
+                        result += '    ' + (i + 1) + '. (' + s.class + ') ' + s.text + '\n';
+                });
+            }
+            result+='\n';
+            return result;
 
+        };
         self.prepData = function() {
 //            self.sortedData = _.clone(self.data).sort(d3.ascending);
             var sortedData = _.clone(self.data).sort(d3.ascending);
@@ -436,7 +475,7 @@ function MetaReader() {
     }
     function parseCSVFile(file)
     {
-         var data = $.csv.toObjects(file.contents);
+        var data = $.csv.toObjects(file.contents);
 //        console.log(data);
         return data;
     }
@@ -456,31 +495,31 @@ function MetaReader() {
         return data;
     }
     /*
-    var workerScript = "self.addEventListener('message',function(c){var b=c.data;try{var a=new FileReaderSync();postMessage({result:a.readAsText(b)})}catch(c){postMessage({result:'error'})}},false);"
-    function makeWorker(script) {
-        var URL = window.URL || window.webkitURL;
-        var Blob = window.Blob;
-        var Worker = window.Worker;
-
-        if (!URL || !Blob || !Worker || !script) {
-            return null;
-        }
-
-        var blob = new Blob([script]);
-        var worker = new Worker(URL.createObjectURL(blob));
-        return worker;
-    }
-
-    function processFiles(file, cb) {
-        var syncWorker = makeWorker(workerScript);
-        syncWorker.onmessage = function(e) {
-            cb(e.data.result);
-        };
-
-        syncWorker.postMessage(file);
-
-    }
-*/
+     var workerScript = "self.addEventListener('message',function(c){var b=c.data;try{var a=new FileReaderSync();postMessage({result:a.readAsText(b)})}catch(c){postMessage({result:'error'})}},false);"
+     function makeWorker(script) {
+     var URL = window.URL || window.webkitURL;
+     var Blob = window.Blob;
+     var Worker = window.Worker;
+     
+     if (!URL || !Blob || !Worker || !script) {
+     return null;
+     }
+     
+     var blob = new Blob([script]);
+     var worker = new Worker(URL.createObjectURL(blob));
+     return worker;
+     }
+     
+     function processFiles(file, cb) {
+     var syncWorker = makeWorker(workerScript);
+     syncWorker.onmessage = function(e) {
+     cb(e.data.result);
+     };
+     
+     syncWorker.postMessage(file);
+     
+     }
+     */
 
     /*
      * @param {type} excelFilePath
