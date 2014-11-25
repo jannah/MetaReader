@@ -108,7 +108,7 @@ function loadFileStream(file, cb)
 function loadSample(filename)
 {
     data = loadFile(filename);
-      $('#samples').collapse();
+    $('#samples').collapse();
     console.log(data);
     render(data);
 }
@@ -119,7 +119,7 @@ function loadFromUpload(file)
 }
 function loadFile(file)
 {
-    
+
     resetPage();
 
     var reader = new MetaReader();
@@ -139,11 +139,11 @@ function render(data)
 function showCards(data)
 {
     $('#processing-progress-bar').show().attr('aria-valuenow', 0).attr('aria-valuemax', data.length);
-    
+
     $('#page-title').text(data.title);
     $('#page-description').text(data.description);
-    
-    
+
+
     $('#header').show();
     _.each(data.statistics, function(d, i) {
 //        console.log(d);
@@ -217,15 +217,22 @@ function updateQuestion(column, index)
     data.statistics[column].questions[index] = question;
 }
 
+function saveAsMarkdown()
+{
+    var md = data.toMarkdown();
+    var blob = new Blob([md], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, data.filename + "README.md");
+}
+
 
 function refreshNavigation()
 {
 //    console.log('refreshing');
     var cards = $('.mrc-card');
     $('#nav-items').remove();
-    renderTemplate(TEMPLATES.NAV_ITEMS, {cards:cards}, TEMPLATES.NAV_ITEMS.target, false, false)
+    renderTemplate(TEMPLATES.NAV_ITEMS, {cards: cards}, TEMPLATES.NAV_ITEMS.target, false, false)
 //    var nav = $('#navigation ul');
-    
+
 }
 
 
