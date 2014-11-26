@@ -224,6 +224,9 @@ Spectrum Diagram
     float: left;
     margin-right: 5px;
     text-align: center;
+    display: block;
+    z-index: 1;
+    position: absolute;
 }
 .sort-dropdown ul {
     width: auto;
@@ -237,9 +240,11 @@ Spectrum Diagram
     background-color: #eee;
 }
 .chart-title {
+    z-index: 5;
     text-align: center;
     font-size: 1.3em;
     line-height: 35px;
+    float: none;
 }
 
 

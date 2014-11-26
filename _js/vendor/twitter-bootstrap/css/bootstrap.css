@@ -129,7 +129,7 @@ img {
 }
 
 svg:not(:root) {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 figure {

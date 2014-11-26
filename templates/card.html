@@ -16,7 +16,38 @@
 
 
             </div>
-
+            <div class='card-print-tabs'>
+                <div class='card-print-tab'>
+                    <h2>Description</h2>
+                    <input type='text' id='<%=data.id%>-description-print' placeholder='None' value='<%=data.description%>'/>
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Notes</h2>
+                    <input type='text' id='<%=data.id%>-notes-print' placeholder='None' value='<%=data.notes%>'/>
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Suggestions</h2>
+                    <ul>
+                    <% _.forEach(data.suggestions, function(s,i){
+                    
+                    if(s.show){
+                     var c = (s.class==='tip')? 'success':'warning'%>
+                                 <li id='<%=data.id%>-suggestion-<%=i%>'><span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
+                                <%=s.text%></li>
+                    <%}})%>
+                    <ul>
+                    
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Questions</h2>
+                    <ul>
+                        <%_.forEach(data.questions, function(q,i){%>
+                        <li id='<%=data.id%>-question-<%=i%>'>q</li>
+                        <%})%>
+                        
+                    </ul>
+                </div>
+            </div>
 
             <div role="tabpanel" class='card-tabs'>
 
@@ -50,10 +81,10 @@
                         <div id='<%=data.id%>-suggestions'>
                          <ul class='suggestions'>
                         <% _.forEach(data.suggestions, function(s, i){%>
-                            <li class='suggestion <%=s.class%> suggestion-importance-<%=s.importance%>' id="<%=data.columnName%>-suggestion-<%=i%>">
-                                <button class="btn btn-xs btn-error" 
+                            <li class='suggestion <%=s.class%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
+                                <button class="btn btn-xs btn-danger mr-tooltip"  data-toggle='tooltip' title='Hide this suggestion'
                                        onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.columnName%>-suggestion-<%=i%>', <%=i%>)">
-                                <i class="glyphicon glyphicon-remove-circle"></i></button>
+                                <i class="glyphicon glyphicon-remove"></i></button>
                                 <%
                                 var c = (s.class==='tip')? 'success':'warning'
                                 %>
@@ -68,14 +99,14 @@
                     <div role="tabpanel" class="tab-pane card-tab-pane" id="<%=data.id%>-description-pane">
                         <textarea class="form-control card-description-text" 
                                   data-col="description"
-                                  onchange="updateField('#<%=data.id%>-description-pane textarea', 'description','<%=data.columnName%>')"
+                                  onchange="updateDescription('#<%=data.id%>-description-pane textarea', 'description','<%=data.columnName%>', '#<%=data.id%>-description-print')"
                                   rows="3" id="<%=data.id%>-description" 
                                   placeholder='Enter description'><%=data.description%></textarea>
                     </div>
                     <div role="tabpanel" class="tab-pane card-tab-pane" id="<%=data.id%>-notes-pane">
                         <textarea class="form-control card-notes-text editable-text" 
                                   data-col="notes" rows="3"
-                                  onchange="updateField('#<%=data.id%>-notes-pane textarea','notes','<%=data.columnName%>')"
+                                  onchange="updateNotes('#<%=data.id%>-notes-pane textarea','notes','<%=data.columnName%>', '#<%=data.id%>-notes-print')"
                                   id="<%=data.id%>-notes" placeholder='Enter notes'><%=data.notes%></textarea>
                     </div>
                     <div role="tabpanel" class="tab-pane card-tab-pane" 

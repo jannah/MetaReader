@@ -222,25 +222,40 @@ function renameDocument()
 //    console.log(title);
     data.title = title;
 }
-function updateDescription()
+function updatePageDescription()
 {
     var desc = $('#page-description').val();
 //    console.log(desc);
+    $('#page-description-print').text(desc);
     data.description = desc;
 }
 
 function updateField(element, field, id)
 {
-//    console.log($(this
-//    console.log(element)
     var val = $(element).val();
-//    console.log(val);
     data.statistics[id][field] = val;
 }
-function hideSuggestion(column, id, i)
+
+function updateNotes(element, field, id, otherId)
+{
+    var val = $(element).val();
+    data.statistics[id][field] = val;
+    $(otherId).val(val);
+}
+
+function updateDescription(element, field, id, otherId)
+{
+
+    var val = $(element).val();
+
+    data.statistics[id][field] = val;
+    $(otherId).val(val);
+}
+function hideSuggestion(column, id, i, otherId)
 {
     $(id).hide();
-    console.log(column)
+    $(otherId).hide();
+//    console.log(column)
     data.statistics[column].suggestions[i].show = false;
 }
 
@@ -251,6 +266,67 @@ function saveAsMarkdown()
     saveAs(blob, data.filename + "README.md");
 }
 
+
+function saveAsPDF()
+{
+    var cards = $('.mrc-card');
+    _.forEach(cards, function(card, i)
+    {
+        var chartFrames = $(card).find('.chart-frame')
+        console.log(chartFrames);
+        var images = _.forEach(chartFrames, function(frame, i) {
+//            console.log(frame);
+            var chart = $(frame).children('svg')[0];
+            if (chart)
+            {
+
+//                   console.log($(chart).select('*'))
+//                saveSvgAsPng(chart, 'chart.png', 1)
+//                console.log(chart);
+                var chart2 = $(chart).clone()[0];
+//                console.log(chart2)
+                var titles = $(chart2).find('*[title]').each(function(d) {
+                    $(this).attr('titie', '');
+                    $(this).attr('data-original-title', '');
+//                    console.log($(this))
+                })
+//                console.log(chart2)
+//                console.log(titles);
+//                var chart2 = encodeURIComponent(chart)
+//                var src = 'data:image/svg+xml;base64,' + window.btoa(chart);
+
+//                console.log(src);
+                svgAsDataUri(chart2, 1, function(uri) {
+                    d3.select('#print-page').append('img').attr('src', uri);
+                });
+//                    console.log(uri);
+//                    
+//                    
+//                    var canvas = document.querySelector("canvas"),
+//                            context = canvas.getContext("2d");
+                /*
+                 var image = new Image;
+                 image.src = uri;
+                 image.onload = function() {
+                 context.drawImage(image, 0, 0);
+                 
+                 //                        var a = document.createElement("a");
+                 //                        a.download = "fallback.png";
+                 //                        a.href = canvas.toDataURL("image/png");
+                 //                        a.click();
+                 };
+                 });*/
+            }
+//            console.log(chart);
+//            canvag('canvas', chart);
+//            var canvas = document.getElementById('canvas');
+//            var ctx = canvas.getContext('2d');
+//            ctx.drawSvg(chart);
+//            canvas.toDataURL('image/png');
+        })
+//       console.log(card)
+    })
+}
 
 function refreshNavigation()
 {
