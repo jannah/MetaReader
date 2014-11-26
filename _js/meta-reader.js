@@ -23,8 +23,10 @@ function MetaReader() {
         result += '# ' + mr.title + '\n------\n';
         result += mr.filename + '\n\n';
         result += mr.description + '\n\n';
+        var index = 1
         _.forEach(mr.statistics, function(col, i) {
-            result += col.toMarkdown();
+//            console.log(i+'\t'+col)
+            result += col.toMarkdown(index++);
         });
 
         return result;
@@ -107,12 +109,12 @@ function MetaReader() {
             if (self.description.length > 0)
                 result += '### Description:\n' + self.description + '\n';
             if (self.notes.length > 0)
-                result += '### Notes:\n' + self.Notes + '\n';
+                result += '### Notes:\n' + self.notes + '\n';
             if (self.questions.length > 0)
             {
                 result += '### Questions:\n';
                 _.forEach(self.questions, function(q, i) {
-                    result += '    ' + (i + 1) + '. ' + q + '\n';
+                    result += '  ' + (i + 1) + '. ' + q + '\n';
                 });
             }
             if (self.suggestions.length > 0)
@@ -120,7 +122,7 @@ function MetaReader() {
                 result += '### Suggestions:\n';
                 _.forEach(self.suggestions, function(s, i) {
                     if (s.show)
-                        result += '    ' + (i + 1) + '. (' + s.class + ') ' + s.text + '\n';
+                        result += '  ' + (i + 1) + '. (' + s.class + ') ' + s.text + '\n';
                 });
             }
             result+='\n';

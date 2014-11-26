@@ -10,7 +10,7 @@ var MetaReaderCharts = function()
     MRC.options = function()
     {
         return {
-            width: $('#content').width()-60,
+            width: $('#content').width() - 60,
             height: 200,
             margin:
                     {
@@ -46,26 +46,27 @@ var MetaReaderCharts = function()
         //        console.log(target);
         chart.options = loadOptions(options);
         addChartFrame(target, chart.options.title, chart.options.id);
+        var new_target = '#' + chart.options.id + '-frame';
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - chart.options.axisHeight,
                 ch = ah - 2.5 * chart.options.axisHeight;
         //        console.log(w+'\t'+h)
-        var svg = d3.select(target).append('svg').attr(
+        var svg = d3.select(new_target).append('svg').attr(
                 {
                     id: chart.options.id,
                     class: 'mrc-chart mrc-box',
                     width: chart.options.width,
                     height: chart.options.height
                 }).append('g').attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-       /* var chartTitle = svg.append('text').text(chart.options.title).attr(
-                {
-                    class: 'box-title',
-                    'text-anchor': 'middle',
-                    x: w / 2,
-                    y: 0,
-                    dy: '1em'
-                });*/
+        /* var chartTitle = svg.append('text').text(chart.options.title).attr(
+         {
+         class: 'box-title',
+         'text-anchor': 'middle',
+         x: w / 2,
+         y: 0,
+         dy: '1em'
+         });*/
         var range = max - min,
                 min_chart = min - range / 10,
                 //                min_chart = (min_chart <= 0 && min >= 0) ? 0 : min_chart,
@@ -162,6 +163,7 @@ var MetaReaderCharts = function()
                     dy: "2em",
                     'text-anchor': 'middle'
                 });
+        addImage(new_target);
         return chart;
         ;
     };
@@ -183,6 +185,7 @@ var MetaReaderCharts = function()
                 ch = ah,
                 cw = aw;
         addChartFrame(target, title, chart.options.id);
+        var new_target = '#' + chart.options.id + '-frame';
         var max = d3.max(data, function(d)
         {
             //            console.log(d);
@@ -194,7 +197,7 @@ var MetaReaderCharts = function()
         });
         min = (min < 0) ? min : 0;
         //        console.log(min + '\t' + max)
-        var svg = d3.select(target).append('svg').attr(
+        var svg = d3.select(new_target).append('svg').attr(
                 {
                     id: chart.options.id,
                     class: 'mrc-chart mrc-histogram',
@@ -321,7 +324,7 @@ var MetaReaderCharts = function()
                             'data-placement': "top",
                             'title': function(d, i)
                             {
-                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         })
                 lolli.selectAll('.lollipop.circle')
@@ -331,7 +334,7 @@ var MetaReaderCharts = function()
                             'data-placement': "top",
                             'title': function(d, i)
                             {
-                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         })
             }
@@ -379,7 +382,7 @@ var MetaReaderCharts = function()
                             'data-placement': "top",
                             'title': function(d, i)
                             {
-                                return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>';
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         });
             }
@@ -479,6 +482,7 @@ var MetaReaderCharts = function()
             }
 
         });
+        addImage(new_target);
         return chart;
     };
     MRC.spectrum = function(target, options, data, title)
@@ -487,6 +491,8 @@ var MetaReaderCharts = function()
         data = getSequence(data);
         var chart = {};
         chart.options = loadOptions(options);
+        addChartFrame(target, title, chart.options.id);
+        var new_target = '#' + chart.options.id + '-frame';
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - 2 * chart.options.axisHeight,
@@ -511,21 +517,21 @@ var MetaReaderCharts = function()
             return d.value;
         });
         //        console.log(min + '\t' + max)
-        var svg = d3.select(target).append('svg').attr(
+        var svg = d3.select(new_target).append('svg').attr(
                 {
                     id: chart.options.id,
                     class: 'mrc-chart mrc-spectrum',
                     width: chart.options.width,
                     height: chart.options.height
                 }).append('g').attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-        var chartTitle = svg.append('text').text(chart.options.title).attr(
-                {
-                    class: 'chart-title',
-                    'text-anchor': 'middle',
-                    x: w / 2,
-                    y: 0,
-                    dy: '1em'
-                });
+        /* var chartTitle = svg.append('text').text(chart.options.title).attr(
+         {
+         class: 'chart-title',
+         'text-anchor': 'middle',
+         x: w / 2,
+         y: 0,
+         dy: '1em'
+         });*/
         var xScale = d3.scale.linear().domain([min, max]).range([0, cw]);
         var colors = d3.scale.category20();
         //        var yScale = d3.scale.linear().domain([0, max]).range([ch, 0]);
@@ -551,7 +557,7 @@ var MetaReaderCharts = function()
                     'data-placement': "top",
                     'title': function(d, i)
                     {
-                        return '<span class="chart-tooltip-value">Original order of elements in dataset</span>';
+                        return ('<span class="chart-tooltip-value">Original order of elements in dataset</span>');
                     }
                 }).text('index');
         //        console.log(ch);
@@ -586,7 +592,7 @@ var MetaReaderCharts = function()
                     'data-placement': "top",
                     'title': function(d, i)
                     {
-                        return '<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.value + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.frequency + '</span>';
+                        return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.value + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.frequency + '</span>');
                     }
                 })
                 .style(
@@ -622,6 +628,7 @@ var MetaReaderCharts = function()
                 });
         legend.append('text').text(min_value).attr({x: 8, y: 5, 'text-anchor': 'end'});
         legend.append('text').text(max_value).attr({x: lw - 8, y: 5});
+        addImage(new_target);
         return chart;
     };
     MRC.spectrumLine = function(target, options, data, title, drawLine)
@@ -634,6 +641,8 @@ var MetaReaderCharts = function()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
+        addChartFrame(target, title, chart.options.id);
+        var new_target = '#' + chart.options.id + '-frame';
         var max = d3.max(data, function(d)
         {
             //            console.log(d);
@@ -644,7 +653,7 @@ var MetaReaderCharts = function()
             return d;
         });
         min = (min < 0) ? min : 0;
-        var svg = d3.select(target).append('svg').attr(
+        var svg = d3.select(new_target).append('svg').attr(
                 {
                     id: chart.options.id,
                     class: 'mrc-chart mrc-spectrum',
@@ -652,14 +661,14 @@ var MetaReaderCharts = function()
                     height: chart.options.height
                 }).append('g').attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
         var pattern = addColorPattern(svg);
-        var chartTitle = svg.append('text').text(chart.options.title).attr(
-                {
-                    class: 'chart-title',
-                    'text-anchor': 'middle',
-                    x: w / 2,
-                    y: 0,
-                    dy: '1em'
-                });
+        /*var chartTitle = svg.append('text').text(chart.options.title).attr(
+         {
+         class: 'chart-title',
+         'text-anchor': 'middle',
+         x: w / 2,
+         y: 0,
+         dy: '1em'
+         });*/
         var xScale = d3.scale.linear().domain([0, data.length]).range([0, cw]);
         var colors = d3.scale.category20();
         var yScale = d3.scale.linear().domain([min, max]).range([ch, 0]);
@@ -684,7 +693,7 @@ var MetaReaderCharts = function()
                     'data-placement': "top",
                     'title': function(d, i)
                     {
-                        return '<span class="chart-tooltip-value">Original order of elements in dataset</span>';
+                        return ('<span class="chart-tooltip-value">Original order of elements in dataset</span>');
                     }
                 }).text('index');
         //        console.log(ch);
@@ -803,7 +812,7 @@ var MetaReaderCharts = function()
                     'data-placement': "top",
                     'title': function(d, i)
                     {
-                        return '<span class="chart-tooltip-value">' + d + '</span>';
+                        return ('<span class="chart-tooltip-value">' + d + '</span>');
                     }
                 });
         var bh = aw / data.length;
@@ -827,9 +836,10 @@ var MetaReaderCharts = function()
                             'data-placement': "top",
                             'title': function(d, i)
                             {
-                                return '<span class="chart-tooltip-value">' + 'Missing' + '</span>';
+                                return ('<span class="chart-tooltip-value">' + 'Missing' + '</span>');
                             },
                         });
+        addImage(new_target);
         return chart;
     };
     MRC.timeSeries = function(target, options, data, title) {
@@ -839,7 +849,7 @@ var MetaReaderCharts = function()
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom;
         addChartFrame(target, title, chart.options.id);
-        var new_target = target + ' .chart-frame';
+        var new_target = '#' + chart.options.id + '-frame';
         $(new_target).addClass('mrc-rickshaw')
 //                .width(chart.options.width).height(chart.options.height);
         var rschart = new Rickshaw.Graph({
@@ -858,6 +868,7 @@ var MetaReaderCharts = function()
             graph: rschart,
         });
         rschart.render();
+        addImage(new_target);
         return chart;
     };
     function getColorGradient(min, max, value, colors)
@@ -952,6 +963,19 @@ var MetaReaderCharts = function()
         b += '<li data-order="n2" role="presentation">' + '<span class="glyphicon glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span></li>';
         b += '</ul></div>';
         return b;
+    }
+    function addImage(target)
+    {
+        var svg = $(target).children('svg')[0];
+        var chart = $(svg).clone()[0];
+        var titles = $(chart).find('*[title]').each(function(d) {
+            $(this).attr('title', '');
+            $(this).attr('data-original-title', '');
+//                    console.log($(this))
+        });
+        svgAsDataUri(chart, 1, function(uri) {
+            d3.select(target).append('img').attr({'src': uri, class: 'print-image'});
+        })
     }
     return MRC;
 };

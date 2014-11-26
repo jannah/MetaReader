@@ -7,18 +7,19 @@ and open the template in the editor.
     Created on : Oct 28, 2014, 9:33:44 PM
     Author     : Hassan
 */
+
 body{
-/* margin: 0 auto; */
-background-image: url('../images/bg3.png');
-background-color: #EFF2F8;
-background-repeat: no-repeat;
-background-size: 100%;
-background-attachment: fixed;
-background-position: 0;
-font-family: Verdana, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica; 
-   
-font-weight: 400;
- font: "Helvetica Neue";
+    /* margin: 0 auto; */
+    background-image: url('../images/bg3.png');
+    background-color: #EFF2F8;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: 0;
+    font-family: Verdana, "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue",Helvetica; 
+
+    font-weight: 400;
+    font: "Helvetica Neue";
 }
 #content{
     width: 84%;
@@ -36,45 +37,47 @@ font-weight: 400;
     border-radius: 0px !important;
 
 }
-
+.chart-frame{
+    margin: 0 5%;
+}
 #side-menu{
     /* width: 48%; */
-/*    position: fixed;
-    height: 100%;
-    width: 20%;
-    z-index:100;
-    float: left;
-    background-color: #eee;
-    padding: 10px;
-    top: 0;
-    left: 0;
-    box-shadow: 2px 2px 5px #888888;
-    overflow-y: auto;
-    overflow: auto;*/
+    /*    position: fixed;
+        height: 100%;
+        width: 20%;
+        z-index:100;
+        float: left;
+        background-color: #eee;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        box-shadow: 2px 2px 5px #888888;
+        overflow-y: auto;
+        overflow: auto;*/
 }
 #side-menu .side-nav{
     width: 20%;
-    
+
     height: 100%;
 }
 #upload{
-    
+
 }
 #upload ul{
-    
+
 }
 #upload li{
-    
+
 }
 #navigation ul{
     list-style: none;
-    
+
     margin: 0;
     padding: 0;
 }
 #navigation li{
     /* font-size: 1.5em; */
-    
+
     color: black;
     /* background-color:  white; */
     /* margin: 5px; */
@@ -88,7 +91,7 @@ li.navigation-item:hover {
 li.navigation-item {}
 
 .tooltip-caption{
-    
+
 }
 
 .tooltip-value{
@@ -111,13 +114,13 @@ li.navigation-item {}
 .btn-add-question
 {
     /* margin: 0; */
-    
+
     /* font-size: 12px; */
     /* padding: 5px; */
 }
 .card-title-text{
     margin: 0 5px;
-    
+
     padding: 5px 5px;
     /* background-color: rgba(255,255,255, .2); */
     /* font-weight: bolder; */
@@ -131,18 +134,18 @@ li.navigation-item {}
 
 .card-tab-pane{
     padding: 5px;
-    
+
     border: 1px solid #dddddd;
 }
 .tab-pane{
-    
+
 }
 .tab-content{
-    
+
 }
 
 #processing-progress-bar{
-    
+
 }
 
 .label-as-badge{
@@ -155,14 +158,14 @@ li.navigation-item {}
 
 .suggestions{
     /* float: left; */
-    
+
     padding: 0;
     margin: 0;
 }
 
 .suggestion{
     list-style-type: none;
-    
+
     border: 1px solid  #ddd;
     background-color: lightgoldenrodyellow;
     margin: 0 auto;
@@ -172,26 +175,26 @@ li.navigation-item {}
 
 .suggestion.tip{
     background-color: lightcyan;
-    
+
 }
 .suggestion.warning{
-    
+
 }
 
 .card-tabs{
-    
+
 }
 .card-tabs li{
     /* line-height: 1.5; */
-    
+
 }
 .questions-tab{
     /* margin-bottom: -3px !important; */
-    
+
 }
 
 .questions-text{
-    
+
 }
 
 .btn-file {
@@ -215,4 +218,110 @@ li.navigation-item {}
     background: white;
     cursor: inherit;
     display: block;
+}
+#print-page{
+    /* width:8.5in; */
+}
+#print-page img{
+    width: 100%;
+
+}
+.card-print-tabs{
+    display:none;
+}
+.print-image{
+    display:none;
+}
+#page-description{ 
+    /*display:none;*/ 
+}
+#page-description-print{display:none;}
+/*.card-print-tabs label, .card-print-tabs input[type=text]{
+    font-size:12pt;
+    font-weight: normal;
+    border:none;
+
+}*/
+
+@media print{
+    img {
+        /*page-break-before: auto;  'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        /*page-break-after: auto;  'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        page-break-inside: avoid; /* or 'auto' */
+    }
+    svg{
+        display: none;
+    }
+    .card{
+
+    }
+    @page {
+        /*margin: 1cm;*/
+    }
+    /*    svg{
+            scale:.5;
+        }*/
+    /*    .card-tab-pane{
+            display: block !important; opacity: 1 !important;
+            width:100%;
+        }*/
+    .card-tabs{
+        display:none;
+    }
+
+
+    #page-description{ 
+        display:none; 
+    }
+    .card-print-tabs{
+        display:block;
+    }
+    .card-print-tabs h2{
+        font-size:12pt;
+        font-weight: bold;
+    }
+    #page-description-print,
+    .card-print-tabs label, 
+    .card-print-tabs input[type=text]{
+        display:block;
+        font-size:12pt;
+        font-weight: normal;
+        border:none !important;
+        width: 100%;
+    }
+
+    .tooltip{
+        display:none;
+    }
+    .print-image{
+        display:block;
+        width:100%
+    }
+    .card{
+        page-break-before:always;
+        margin-left:0;
+        margin-right:0;
+    }
+    .card-charts{
+        margin-left:0;
+        margine-right:0;
+    }
+    .chart-frame{
+        margin:0;
+
+    }
+
+    .chart-frame,
+    .card-print-tab, .card-print-tab h2, .card-print-tab input{
+        /*page-break-before: auto;  'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        /*page-break-after: auto;  'always,' 'avoid,' 'left,' 'inherit,' or 'right' */
+        page-break-inside: avoid; 
+    }
+    #content{
+        width:100%;
+        margin:1cm;
+    }
+    #cards{
+
+    }
 }
