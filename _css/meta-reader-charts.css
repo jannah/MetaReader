@@ -58,6 +58,9 @@ and open the template in the editor.
     stroke: #ccc;
 }
 
+.mrc-box .outlier-text{
+    fill:red;
+}
 
 /************************
 *       Axes

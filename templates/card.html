@@ -6,6 +6,8 @@
             <a class='mr-tooltip' data-title='[Column name] (Data Type)<br><br>Click to collapse/expand' data-toggle="collapse" data-parent="#cards" href="#card-<%=data.id%>-collapse" aria-expanded="true" aria-controls="#card-<%=data.id%>-collapse">
                 [ <%=data.columnName%> ] (<%=data.type%>)
             </a>
+            <button class='show-data-btn btn btn-default mr-tooltip'  title='Show raw data'
+                    data-toggle="modal" data-target="#data-modal" data-column="<%=data.columnName%>"><i class='glyphicon glyphicon-eye-open'></i></button>
         </h2>
 
     </div>
@@ -81,7 +83,8 @@
                         <div id='<%=data.id%>-suggestions'>
                          <ul class='suggestions'>
                         <% _.forEach(data.suggestions, function(s, i){%>
-                            <li class='suggestion <%=s.class%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
+                        <% var alert = 'alert ' + ((s.class=='tip')? 'alert-success':'alert-warning') %>
+                            <li class='suggestion <%=s.class%> <%=alert%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
                                 <button class="btn btn-xs btn-danger mr-tooltip"  data-toggle='tooltip' title='Hide this suggestion'
                                        onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.columnName%>-suggestion-<%=i%>', <%=i%>)">
                                 <i class="glyphicon glyphicon-remove"></i></button>

@@ -1,9 +1,8 @@
- 
-<li><a href="javascript:;" data-toggle="collapse" data-target="#samples-items   "><i class="fa fa-fw fa-arrows-v"></i> Samples <b class="caret"></b></i></a>
-    <ul id="samples-items" class="collapse">
-
+   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-caret"></i> Samples<b class="caret"></b></a>
+                       <ul class="dropdown-menu message-dropdown" >
         <% _.each(files, function(d){%>
-        <li><a href='#' onclick='loadSample("<%=d%>")'><%=d%></a></li>
+        <% var names = d.split('/')
+        name = names[names.length-1]%>
+        <li><a href='#' onclick='loadSample("<%=d%>")'><%=name%></a></li>
         <%})%>
-    </ul>
-</li>
+</ul>

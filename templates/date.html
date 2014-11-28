@@ -1,6 +1,6 @@
 <%
 var MRC = new MetaReaderCharts();
-var series = new MRC.timeSeries(target, {height:300}, data.timeSeries, data.title);
+var series = new MRC.timeSeries(target, {id:data.id,height:300}, data.timeSeries, data.title);
 
 var stats = {
     'Total': data.count,

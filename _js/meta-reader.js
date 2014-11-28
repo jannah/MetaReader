@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-String.prototype.endsWith = function(suffix) {
+String.prototype.endsWith = function (suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
@@ -17,24 +17,33 @@ function MetaReader() {
     mr.filename = '';
     mr.title = '';
     mr.description = '';
-    mr.toMarkdown = function()
+    mr.toMarkdown = function ()
     {
         var result = ''
         result += '# ' + mr.title + '\n------\n';
         result += mr.filename + '\n\n';
+        result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)';
         result += mr.description + '\n\n';
         var index = 1
-        _.forEach(mr.statistics, function(col, i) {
+        _.forEach(mr.statistics, function (col, i) {
 //            console.log(i+'\t'+col)
             result += col.toMarkdown(index++);
         });
 
         return result;
     }
-    mr.loadFile = function(file)
+    mr.loadFile = function (file, results)
     {
-        var csv
-        if (_.isObject(file))
+        var csv;
+        console.log('loading file');
+//        alert('loading file')
+        if(results)
+        {
+            mr.filename = file.name;
+            csv = results.data;
+            
+        }
+        else if (_.isObject(file))
         {
 //            console.log(file);
 //            console.log('procssing from uplaod')
@@ -44,17 +53,23 @@ function MetaReader() {
         else
         {
             csv = loadFromFile(file);
-            mr.filename = file;
+            mr.filename = _.last(file.split('/'));
         }
 
         mr.title = mr.filename;
 
 //        console.log(csv);
+//        alert('converting to columns')
+        console.log('converting csv to columns');
         mr.columns = csvToColumns(csv);
+//        alert('processing columns')
+        console.log('processing columns')
         mr.statistics = process_columns(mr.columns);
+//        alert('processing completed')
+        console.log('processing completed')
     };
 
-    mr.sort = {ascending: function(a, b) {
+    mr.sort = {ascending: function (a, b) {
             var n1 = Number(a), n2 = Number(b);
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
             if (checkNull(n1) || checkNull(n2))
@@ -63,7 +78,7 @@ function MetaReader() {
                 return d3.ascending(a, b);
             } else
                 return n1 - n2;
-        }, descending: function(a, b) {
+        }, descending: function (a, b) {
             var n1 = Number(a), n2 = Number(b);
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
             if (checkNull(n1) || checkNull(n2))
@@ -71,7 +86,7 @@ function MetaReader() {
             else
                 return n2 - n1;
         }};
-    mr.reload = function(previous)
+    mr.reload = function (previous)
     {
         mr.columns = previous.columns;
         mr.statistics = previous.statistics;
@@ -80,7 +95,7 @@ function MetaReader() {
     function escapeRegExp(string) {
         return string.replace(/([.*+?^=!:${}()|\[\]\/\\\s])/g, "-");
     }
-    var ObjectList = function(data, title, metrics) {
+    var ObjectList = function (data, title, metrics) {
         var self = {};
         self.title = title;
         self.columnName = title;
@@ -99,13 +114,13 @@ function MetaReader() {
         self.countUnique = self.uniqueValues.length;
 
         self.count = data.length;
-        
 
-        self.toMarkdown = function(index)
+
+        self.toMarkdown = function (index)
         {
 
             var result = '## ' + (index ? index + '. ' : '') + self.title
-                    + ' [' + self.columnName + ' (' + self.type + ')]\n------\n';
+                    + ' [' + self.columnName + '] (' + self.type + ')\n------\n';
             if (self.description.length > 0)
                 result += '### Description:\n' + self.description + '\n';
             if (self.notes.length > 0)
@@ -113,27 +128,27 @@ function MetaReader() {
             if (self.questions.length > 0)
             {
                 result += '### Questions:\n';
-                _.forEach(self.questions, function(q, i) {
+                _.forEach(self.questions, function (q, i) {
                     result += '  ' + (i + 1) + '. ' + q + '\n';
                 });
             }
             if (self.suggestions.length > 0)
             {
                 result += '### Suggestions:\n';
-                _.forEach(self.suggestions, function(s, i) {
+                _.forEach(self.suggestions, function (s, i) {
                     if (s.show)
                         result += '  ' + (i + 1) + '. (' + s.class + ') ' + s.text + '\n';
                 });
             }
-            result+='\n';
+            result += '\n';
             return result;
 
         };
-        self.prepData = function() {
+        self.prepData = function () {
 //            self.sortedData = _.clone(self.data).sort(d3.ascending);
             var sortedData = _.clone(self.data).sort(d3.ascending);
 
-            self.cleanData = _.filter(sortedData, function(d) {
+            self.cleanData = _.filter(sortedData, function (d) {
                 return !checkNull(d);
             });
             self.median = d3.median(sortedData);
@@ -145,11 +160,11 @@ function MetaReader() {
         return self;
     };
     var BIN_LIMIT = 10;
-    var NumberList = function(data, title, metrics, precision) {
+    var NumberList = function (data, title, metrics, precision) {
         precision = (_.isUndefined(precision)) ? DEFAULT_PRECISION : precision;
 //        console.log('precision = ' + precision)
         var self = ObjectList(data, title, metrics);
-        _.each(self.data, function(d, i) {
+        _.each(self.data, function (d, i) {
             var n = (d === '') ? null : Number(d);
             self.data[i] = (checkNull(n, true)) ? null : round(n, precision);
         });
@@ -179,11 +194,11 @@ function MetaReader() {
         self.bins += 1;
         self.frequencyDistribution = getFreqDist(self.cleanData);
         self.frequencyDistributionBins = getFreqDistBins(self.cleanData, self.bins, self.min, self.range);
-        self.zeros = d3.sum(self.cleanData, function(item) {
+        self.zeros = d3.sum(self.cleanData, function (item) {
             return (item === 0) ? 1 : 0;
         });
         self.invalidValues = self.data.length - self.cleanData.length;
-        self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function(d) {
+        self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function (d) {
             return d.values;
         });
         self.frequencyDistributionSorted.reverse();
@@ -192,48 +207,48 @@ function MetaReader() {
 
         return self;
     };
-    var IntList = function(data, title, metrics) {
+    var IntList = function (data, title, metrics) {
         var self = NumberList(data, title, metrics, 0);
         self.type = 'integer';
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var FloatList = function(data, title, metrics, precision) {
+    var FloatList = function (data, title, metrics, precision) {
         var self = NumberList(data, title, metrics, precision);
         self.type = 'float';
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var StringList = function(data, title, metrics) {
+    var StringList = function (data, title, metrics) {
         var self = {};
         var self = ObjectList(data, title, metrics);
         self.type = 'string';
-        self.tokens = $.map(self.data, function(d) {
+        self.tokens = $.map(self.data, function (d) {
             return (!checkNull(d)) ? d.split(' ') : '';
         });
-        self.word_count = d3.sum(self.tokens, function(d) {
+        self.word_count = d3.sum(self.tokens, function (d) {
             return (!checkNull(d)) ? d.length : 0;
         });
 
         self.average_word_count = self.word_count / self.count;
-        self.average_word_length = d3.sum(self.data, function(d) {
+        self.average_word_length = d3.sum(self.data, function (d) {
             return (!checkNull(d)) ? d.replace(' ', '').length : 0;
         });
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var DateList = function(data, title, metrics, userFormat) {
+    var DateList = function (data, title, metrics, userFormat) {
         var self = ObjectList(data, title, metrics);
 
         self.type = 'date';
-        asDate = _.each(self.cleanData, function(v, i, a) {
+        asDate = _.each(self.cleanData, function (v, i, a) {
             a[i] = moment(v);
         });
 //        self.format = moment.parseFormat()
         self.prepData();
         self.asDate = _.sortBy(asDate);
         // formatted for Rickshaw js input
-        self.timeSeries = _.each(getFreqDist(self.asDate), function(v, i, a) {
+        self.timeSeries = _.each(getFreqDist(self.asDate), function (v, i, a) {
             a[i] = {'x': moment(+v.key).unix(), 'y': v.values};
         });
         self.max = _.last(self.asDate);
@@ -251,7 +266,7 @@ function MetaReader() {
         self.intervals = {
             'year': self.max.diff(self.min, 'years') > 0,
             'month': self.max.diff(self.min, 'months') > 0 && _.some(self.asDate,
-                    function(v, i, a) {
+                    function (v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'years', true) != v.diff(a[i + 1], 'years');
                         } else {
@@ -259,7 +274,7 @@ function MetaReader() {
                         }
                     }),
             'day': self.max.diff(self.min, 'day') > 0 && _.some(self.asDate,
-                    function(v, i, a) {
+                    function (v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'months', true) != v.diff(a[i + 1], 'months');
                         } else {
@@ -267,7 +282,7 @@ function MetaReader() {
                         }
                     }),
             'hour': self.max.diff(self.min, 'hours') > 0 && _.some(self.asDate,
-                    function(v, i, a) {
+                    function (v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'days', true) != v.diff(a[i + 1], 'days');
                         } else {
@@ -275,7 +290,7 @@ function MetaReader() {
                         }
                     }),
             'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(self.asDate,
-                    function(v, i, a) {
+                    function (v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'hours', true) != v.diff(a[i + 1], 'hours');
                         } else {
@@ -283,7 +298,7 @@ function MetaReader() {
                         }
                     }),
             'second': self.max.diff(self.min, 'seconds') > 0 && _.some(self.asDate,
-                    function(v, i, a) {
+                    function (v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'minutes', true) != v.diff(a[i + 1], 'minutes');
                         } else {
@@ -291,6 +306,7 @@ function MetaReader() {
                         }
                     })
         };
+//        self.asDate = null
         self.suggestions = getSuggestions(self);
         return self;
     };
@@ -301,13 +317,13 @@ function MetaReader() {
     function detectDataType(items)
     {
 //        var sample_limit = items;
-        var new_items = _.filter(items, function(item, index) {
+        var new_items = _.filter(items, function (item, index) {
             return !checkNull(item);
         });
         var sample_limit = new_items.length;
         var sample = _.sample(new_items, sample_limit);
         var counts = {integer: 0, float: 0, date: 0, number: 0, string: 0};
-        _.each(new_items, function(item)
+        _.each(new_items, function (item)
         {
             var chars = _.clone(item).toLowerCase().match(/[a-z$^{[(|)*+?\\]/i);
             if (chars !== null)
@@ -340,10 +356,10 @@ function MetaReader() {
              }*/
         });
 
-        var metrics = _.map(counts, function(value, key) {
+        var metrics = _.map(counts, function (value, key) {
             return {name: key, value: value};
         });
-        var max = _.max(metrics, function(metric) {
+        var max = _.max(metrics, function (metric) {
             return metric.value;
         });
 //        console.log(metrics);
@@ -376,13 +392,13 @@ function MetaReader() {
         precision = (precision) ? precision : DEFAULT_PRECISION;
 
         return d3.nest()
-                .key(function(d) {
+                .key(function (d) {
                     if (isNaN(Number(d)))
                         return d;
                     else
                         return round(Number(d), precision);
                 }).sortKeys(mr.sort.ascending)
-                .rollup(function(leaves) {
+                .rollup(function (leaves) {
                     return leaves.length;
                 })
                 .entries(data);
@@ -396,14 +412,14 @@ function MetaReader() {
         range = (range) ? range : Number(d3.max(sortedData)) - min;
         var binSize = range / bins;
         return d3.nest()
-                .key(function(d) {
+                .key(function (d) {
                     var key = parseInt((d - min) / binSize),
                             start = (min + key * binSize),
                             end = (min + (key + 1) * binSize);
 
                     return round(start, precision);
                 }).sortKeys(mr.sort.ascending)
-                .rollup(function(leaves) {
+                .rollup(function (leaves) {
                     return leaves.length;
                 })
                 .entries(sortedData);
@@ -415,7 +431,7 @@ function MetaReader() {
         r.count = a.length;
         r.sum = d3.sum(a);
         r.mean = r.sum / r.count;
-        r.variance = d3.sum(a, function(d) {
+        r.variance = d3.sum(a, function (d) {
             return Math.pow(d - r.mean, 2);
         }) / r.count;
 
@@ -449,7 +465,7 @@ function MetaReader() {
 
     function getOutliers(data)
     {
-        var outliers = _.filter(data.cleanData, function(d, i) {
+        var outliers = _.filter(data.cleanData, function (d, i) {
             var lower_inner = d <= (data.quartiles[1] - data.interQuartileRange * 1.5);
             var upper_inner = d >= (data.quartiles[2] + data.interQuartileRange * 1.5);
             var lower_outer = d <= (data.quartiles[1] - data.interQuartileRange * 3);
@@ -481,20 +497,44 @@ function MetaReader() {
 //        console.log(data);
         return data;
     }
+    function loadCSVFile2(csvFilePath)
+    {
+        
+console.log('downloadin '+ csvFilePath)
+
+        var data = Papa.parse(csvFilePath, {
+            download:true,
+            delimiter: ",",
+            header: true
+//            dynamicTyping: true
+        });
+        
+//        var data = $.csv.toObjects(csvd);
+        console.log(data);
+        return data.data;
+    }
     function loadCSVFile(csvFilePath)
     {
+
         var jqxhr = $.ajax({
             url: csvFilePath,
             async: false,
             dataType: "text",
-            complete: function() {
+            complete: function () {
                 // call a function on complete
             }
         });
+
         var csvd = jqxhr.responseText;
-        var data = $.csv.toObjects(csvd);
+
+        var data = Papa.parse(csvd, {
+            delimiter: ",",
+            header: true
+//            dynamicTyping: true
+        });
+//        var data = $.csv.toObjects(csvd);
 //        console.log(data);
-        return data;
+        return data.data;
     }
     /*
      var workerScript = "self.addEventListener('message',function(c){var b=c.data;try{var a=new FileReaderSync();postMessage({result:a.readAsText(b)})}catch(c){postMessage({result:'error'})}},false);"
@@ -598,7 +638,7 @@ function MetaReader() {
         oReq.open("GET", url, true);
         oReq.responseType = "arraybuffer";
 
-        oReq.onload = function(e) {
+        oReq.onload = function (e) {
             var arraybuffer = oReq.response;
 
             /* convert data to binary string */
@@ -657,7 +697,7 @@ function MetaReader() {
         var columns = {};
         for (var header in csv[0])
         {
-            columns[header] = $.map(csv, function(item) {
+            columns[header] = $.map(csv, function (item) {
                 return item[header];
             });
         }
@@ -668,7 +708,7 @@ function MetaReader() {
     {
         // console.log(dataColumns);
         var columns = {};
-        _.each(dataColumns, function(items, header) {
+        _.each(dataColumns, function (items, header) {
 
             var dataType = detectDataType(items);
 
@@ -683,7 +723,7 @@ function MetaReader() {
 
     function cleanData(data)
     {
-        _.each(data, function(d, i) {
+        _.each(data, function (d, i) {
             var x;
             data[i] = (!checkNull(d)) ? d : x;
         });
@@ -711,7 +751,7 @@ function getSequence(data)
 {
     var spectrum = [];
     var currentItem = {start: 0, end: 0, frequency: 0, value: data[0]};
-    _.each(data, function(d, i) {
+    _.each(data, function (d, i) {
         if (d !== currentItem.value)
         {
             currentItem.end = i;
