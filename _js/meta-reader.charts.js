@@ -36,7 +36,7 @@ var MetaReaderCharts = function ()
         //        console.log(opts);
         return opts;
     }
-    MRC.box = function (target, options, quartiles, mean, title, outliers)
+    MRC.box = function (target, options, quartiles, mean, outliers)
     {
         var chart = {};
         var min = quartiles[0],
@@ -170,7 +170,7 @@ var MetaReaderCharts = function ()
                     dy: "2em",
                     'text-anchor': 'middle'
                 });
-        var outlierText = svg.append('g');
+        var outlierText = plot.append('g');
         if (lowerOutliers.length > 0)
             outlierText.append('text')
                     .attr({
@@ -178,7 +178,7 @@ var MetaReaderCharts = function ()
                         x: 0, y: ch,
                         dy: "2em",
                         'text-anchor': 'start'
-                    }).text(lowerOutliers.length + ' outliers')
+                    }).text('<<<' + lowerOutliers.length + ' outlier' +((lowerOutliers.length>1)?'s':''))
         if (higherOutliers.length > 0)
             outlierText.append('text')
                     .attr({
@@ -186,17 +186,17 @@ var MetaReaderCharts = function ()
                         x: w, y: ch,
                         dy: "2em",
                         'text-anchor': 'end'
-                    }).text(higherOutliers.length + ' outliers')
+                    }).text(higherOutliers.length + ' outlier' +((higherOutliers.length>1)?'s':'')+' >>>')
 
         addImage(new_target);
         return chart;
         ;
     };
-    MRC.lollipop = function (target, options, data, title)
+    MRC.lollipop = function (target, options, data)
     {
-        return MRC.histogram(target, options, data, title, true);
+        return MRC.histogram(target, options, data, true);
     }
-    MRC.histogram = function (target, options, data, title, use_lollipop)
+    MRC.histogram = function (target, options, data, use_lollipop)
     {
 
 
@@ -209,7 +209,7 @@ var MetaReaderCharts = function ()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        addChartFrame(target, title, chart.options.id);
+        addChartFrame(target, chart.options.title, chart.options.id);
         var new_target = '#' + chart.options.id + '-frame';
         var max = d3.max(data, function (d)
         {
@@ -349,7 +349,7 @@ var MetaReaderCharts = function ()
                             'data-placement': "top",
                             'title': function (d, i)
                             {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         })
                 lolli.selectAll('.lollipop.circle')
@@ -359,7 +359,7 @@ var MetaReaderCharts = function ()
                             'data-placement': "top",
                             'title': function (d, i)
                             {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         })
             }
@@ -407,7 +407,7 @@ var MetaReaderCharts = function ()
                             'data-placement': "top",
                             'title': function (d, i)
                             {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
+                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                             }
                         });
             }
@@ -510,13 +510,13 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrum = function (target, options, data, title)
+    MRC.spectrum = function (target, options, data)
     {
         //        var MRC = new MetaReader();
         data = getSequence(data);
         var chart = {};
         chart.options = loadOptions(options);
-        addChartFrame(target, title, chart.options.id);
+        addChartFrame(target, chart.options.title, chart.options.id);
         var new_target = '#' + chart.options.id + '-frame';
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
@@ -617,7 +617,7 @@ var MetaReaderCharts = function ()
                     'data-placement': "top",
                     'title': function (d, i)
                     {
-                        return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + title + '</span>' + '<span class="tooltip-value"> ' + d.value + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.frequency + '</span>');
+                        return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.value + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.frequency + '</span>');
                     }
                 })
                 .style(
@@ -656,7 +656,7 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrumLine = function (target, options, data, title, drawLine)
+    MRC.spectrumLine = function (target, options, data, drawLine)
     {
         var chart = {};
         chart.options = loadOptions(options);
@@ -666,7 +666,7 @@ var MetaReaderCharts = function ()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        addChartFrame(target, title, chart.options.id);
+        addChartFrame(target, chart.options.title, chart.options.id);
         var new_target = '#' + chart.options.id + '-frame';
         var max = d3.max(data, function (d)
         {
@@ -867,13 +867,13 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.timeSeries = function (target, options, data, title) {
-
+    MRC.timeSeries = function (target, options, data) {
+//        console.log('draing timeseries')
         var chart = {};
         chart.options = loadOptions(options);
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom;
-        addChartFrame(target, title, chart.options.id);
+        addChartFrame(target, chart.options.title, chart.options.id);
         var new_target = '#' + chart.options.id + '-frame';
         $(new_target).addClass('mrc-rickshaw')
 //                .width(chart.options.width).height(chart.options.height);
@@ -889,12 +889,12 @@ var MetaReaderCharts = function ()
                 }]
         });
         var axes = new Rickshaw.Graph.Axis.Time({graph: rschart});
-       /* var y_axis = new Rickshaw.Graph.Axis.Y({
-            graph: rschart,
-            orientation: 'left',
-            tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
-            element: document.getElementById('y_axis'),
-        });*/
+         var y_axis = new Rickshaw.Graph.Axis.Y({
+         graph: rschart,
+         orientation: 'left',
+         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+         element: document.getElementById('y_axis'),
+         });
         var hoverDetail = new Rickshaw.Graph.HoverDetail({
             graph: rschart,
         });

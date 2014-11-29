@@ -121,6 +121,13 @@ function MetaReader() {
 
             var result = '## ' + (index ? index + '. ' : '') + self.title
                     + ' [' + self.columnName + '] (' + self.type + ')\n------\n';
+            
+            
+            if(self.type==='date')
+            {
+                result+= 'Date Format: '+ self.format + '\n';
+            }
+            
             if (self.description.length > 0)
                 result += '### Description:\n' + self.description + '\n';
             if (self.notes.length > 0)
@@ -148,7 +155,10 @@ function MetaReader() {
 //            self.sortedData = _.clone(self.data).sort(d3.ascending);
             var sortedData = _.clone(self.data).sort(d3.ascending);
 
-            self.cleanData = _.filter(sortedData, function (d) {
+            self.cleanData = _.filter(self.data, function (d) {
+                return !checkNull(d);
+            });
+            self.cleanDataSorted = _.filter(sortedData, function (d) {
                 return !checkNull(d);
             });
             self.median = d3.median(sortedData);
@@ -168,12 +178,12 @@ function MetaReader() {
             var n = (d === '') ? null : Number(d);
             self.data[i] = (checkNull(n, true)) ? null : round(n, precision);
         });
-
+        var cleanDataSorted = self.cleanDataSorted;
         self.prepData();
         self.type = 'integer';
         self.precision = precision;
         var statPrecision = precision + 2;
-        var stats = getStats(self.cleanData);
+        var stats = getStats(cleanDataSorted);
         self.sum = round(stats.sum, precision);
         self.mean = round(stats.mean, statPrecision);
         self.variance = round(stats.variance, statPrecision);
@@ -185,19 +195,19 @@ function MetaReader() {
         self.range = round(self.max - self.min, precision);
         self.quantiles = [];
         for (var i = 0, j = 1; i <= j; i += .1)
-            self.quantiles.push(round(d3.quantile(self.cleanData, i), statPrecision));
+            self.quantiles.push(round(d3.quantile(cleanDataSorted, i), statPrecision));
         self.quartiles = [];
         for (var i = 0, j = 1; i <= j; i += .25)
-            self.quartiles.push(round(d3.quantile(self.cleanData, i), statPrecision));
+            self.quartiles.push(round(d3.quantile(cleanDataSorted, i), statPrecision));
         self.interQuartileRange = self.quartiles[3] - self.quartiles[1];
         self.bins = (self.countUnique > BIN_LIMIT) ? BIN_LIMIT : self.countUnique;
         self.bins += 1;
-        self.frequencyDistribution = getFreqDist(self.cleanData);
-        self.frequencyDistributionBins = getFreqDistBins(self.cleanData, self.bins, self.min, self.range);
-        self.zeros = d3.sum(self.cleanData, function (item) {
+        self.frequencyDistribution = getFreqDist(cleanDataSorted);
+        self.frequencyDistributionBins = getFreqDistBins(cleanDataSorted, self.bins, self.min, self.range);
+        self.zeros = d3.sum(cleanDataSorted, function (item) {
             return (item === 0) ? 1 : 0;
         });
-        self.invalidValues = self.data.length - self.cleanData.length;
+        self.invalidValues = self.data.length - cleanDataSorted.length;
         self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function (d) {
             return d.values;
         });
@@ -241,9 +251,10 @@ function MetaReader() {
         var self = ObjectList(data, title, metrics);
 
         self.type = 'date';
-        asDate = _.each(self.cleanData, function (v, i, a) {
+        var asDate = _.each(self.cleanData, function (v, i, a) {
             a[i] = moment(v);
         });
+        self.data = asDate;
 //        self.format = moment.parseFormat()
         self.prepData();
         self.asDate = _.sortBy(asDate);

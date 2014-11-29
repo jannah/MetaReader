@@ -38,7 +38,8 @@ var TEMPLATES = {
     NAV_ITEMS: {filename: 'templates/nav_items.html', target: '#affix-nav'},
     NAV_ITEM: {filename: 'templates/nav_item.html', target: '#navigation'},
     QUESTIONS: {filename: 'templates/questions.html', target: ''},
-    SUGGESTIONS: {filename: 'templates/suggestions.html', target: ''}
+    SUGGESTIONS: {filename: 'templates/suggestions.html', target: ''},
+    INTRO: {filename: 'templates/intro.html', target: '#intro'}
 //    EXPERIMENT_INTRO: {filename: 'templtes.html', target: '#experiment-content'},
 //    EXPERIMENT_UPLOAD: {filename: 'experiment_upload_data.html', target: '#experiment-content'}
 
@@ -51,10 +52,18 @@ function init() {
     TEAMPLATES = loadTemplates(TEMPLATES, '/MetaReader');
     loadUploadForm();
     loadSamples();
+    loadIntro();
 //    load(TEXT_FILES[0]);
 
 }
-
+function loadIntro()
+{
+    renderTemplate(TEAMPLATES.INTRO,{})
+}
+function hideIntro()
+{
+    $('#intro').hide();
+}
 function loadUploadForm()
 {
 
@@ -158,6 +167,7 @@ function loadFile(file, results)
 {
 
     resetPage();
+    hideIntro();
     var reader = new MetaReader();
     reader.loadFile(file, results);
     return reader;
