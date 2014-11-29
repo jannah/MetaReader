@@ -3,6 +3,53 @@
 var MRC = new MetaReaderCharts();
 var fd = new MRC.histogram(target, {'title':data.title + ' frequency distribution','id':data.id+'-fd1'}, data.frequencyDistribution)
 var fd3 = new MRC.lollipop(target, {'title':data.title + ' frequency distribution (Lollipop)','id':data.id+'-fd3'}, data.frequencyDistribution)
-var spectrum = new MRC.spectrum(target, {'title':data.title + ' Spectrum','id':data.id+'-spectrum', height:100}, data.data, data.title)
-<!--var fd2 = new MRC.histogram(target, {'title':data.title, 'id':data.id+'-fd2'}, data.frequencyDistributionBins)-->
+var spectrum = new MRC.spectrum(target, {'title':data.title + ' Value Spectrum','id':data.id+'-spectrum', height:100}, data.data, data.title)
+if(data.countUnique>20)
+{
+    var wordLengths = _.map(data.data, function(d,i){return d?d.length:0})
+    var wordCount = _.map(data.data, function(d,i){
+        if(d)
+        {
+            var split = d.split(' ')
+
+            return _.isArray(split)?split.length:1
+        }
+        return 0
+    })
+    var spectrumWL = new MRC.spectrum(target, {'title':data.title + ' Character Count Spectrum','id':data.id+'-spectrum-wl', height:100,
+            colorRange: ["rgb(229, 168, 137)", "rgb(226, 105, 45)", "rgb(229, 76, 0)"]}, wordLengths, data.title)
+    var spectrumWC = new MRC.spectrum(target, {'title':data.title + ' Word Count Spectrum','id':data.id+'-spectrum-wc', height:100,
+            colorRange: ["rgb(160, 206, 229)", "rgb(160, 206, 229)", "rgb(40, 149, 204)"]}, wordCount, data.title)
+}
+
+var stats = {
+    'Total': data.count,
+    'Unique': data.countUnique,
+    'Avg Word Count':data.average_word_count,
+    'Avg Char Count':data.average_char_count,
+    'Missing':data.invalidValues
+    
+};
+var titles = {
+    'Total': 'Number of records',
+    'Unique':'Number of unique records',
+     'Avg Word Count':'Average # of words per entry',
+    'Avg Char Count':'Average # of characters per entry',
+     'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.'
+};
 %>
+
+<div id="<%=data.title%>-stats" class="card-stats">
+
+    <table>
+        <tr>
+            <%_.each(stats, function(value, key){%>
+            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
+                            <label class="card-key"><%=key%></label>
+            <label class="card-value"><%=value%></label>
+            </td>
+
+            <%});%>
+        </tr>
+    </table>
+</div>

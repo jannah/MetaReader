@@ -37,7 +37,13 @@ body{
 #console{
     padding:5%;
 }
-
+#row-counter{
+    line-height: 2em;
+    
+    font-size: 1.5em;
+    color: grey;
+    display: none;
+}
 #cards{
     border-radius: 0px !important;
 
@@ -45,6 +51,7 @@ body{
 .show-data-btn{
     float:right;
 }
+
 .modal-body{
     overflow-y: auto;
 

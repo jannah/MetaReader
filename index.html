@@ -65,7 +65,9 @@ and open the template in the editor.
                                           </span>
                 
                                 </div>-->
-                <ul class="nav navbar-right top-nav">
+                <ul class="nav navbar-right top-nav">   
+                    <li><label id='row-counter'></label></li>
+
                     <li class="btn-file ">
                         <a href="javascript:triggerInputFile()">  
                             <i class="glyphicon glyphicon-open text-success "></i> Open (.CSV only) <input style="display:none" type="file" name='file' accept="text/plain, .csv" value='Open CSV file'/>  
@@ -86,13 +88,12 @@ and open the template in the editor.
                     <li class='dropdown' id="samples-items" >
 
                     </li>
-                    <li><label id='row-counter'></label></li>
                     <li> <a href='javascript:window.print();' onclick><i class="glyphicon glyphicon-print"></i> Print</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='glyphicon glyphicon-save'></i> Save <b class="caret"></b></a>
                         <ul class="dropdown-menu message-dropdown">
                             <li> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
-                            
+
                         </ul>
                     </li>
                     <li><a href='mailto:hassan.jannah@gmail.com' target='_blank'><i class='glyphicon glyphicon-envelope'></i> Email me</a></li>
@@ -134,7 +135,7 @@ and open the template in the editor.
                 <div id='content' class="container-fluid">
                     <div id='intro' class='row'></div>
                     <div class="row">
-                        
+
                         <div id="header" style='display:none'>
 
                             <h1 ><span id='page-title' contenteditable="true" oninput="renameDocument()" class='mr-tooltip' title='Type to rename document'>Page Title Here </span></h1>

@@ -37,11 +37,11 @@ function MetaReader() {
         var csv;
         console.log('loading file');
 //        alert('loading file')
-        if(results)
+        if (results)
         {
             mr.filename = file.name;
             csv = results.data;
-            
+
         }
         else if (_.isObject(file))
         {
@@ -121,13 +121,13 @@ function MetaReader() {
 
             var result = '## ' + (index ? index + '. ' : '') + self.title
                     + ' [' + self.columnName + '] (' + self.type + ')\n------\n';
-            
-            
-            if(self.type==='date')
+
+
+            if (self.type === 'date')
             {
-                result+= 'Date Format: '+ self.format + '\n';
+                result += 'Date Format: ' + self.format + '\n';
             }
-            
+
             if (self.description.length > 0)
                 result += '### Description:\n' + self.description + '\n';
             if (self.notes.length > 0)
@@ -158,6 +158,8 @@ function MetaReader() {
             self.cleanData = _.filter(self.data, function (d) {
                 return !checkNull(d);
             });
+            self.invalidValues = self.data.length - self.cleanData.length;
+
             self.cleanDataSorted = _.filter(sortedData, function (d) {
                 return !checkNull(d);
             });
@@ -166,7 +168,7 @@ function MetaReader() {
             self.frequencyDistribution = getFreqDist(self.cleanData);
 //            self.spectrum = getSequence(self.data);
         };
-        self.prepData();
+
         return self;
     };
     var BIN_LIMIT = 10;
@@ -178,8 +180,9 @@ function MetaReader() {
             var n = (d === '') ? null : Number(d);
             self.data[i] = (checkNull(n, true)) ? null : round(n, precision);
         });
-        var cleanDataSorted = self.cleanDataSorted;
         self.prepData();
+        var cleanDataSorted = self.cleanDataSorted;
+        
         self.type = 'integer';
         self.precision = precision;
         var statPrecision = precision + 2;
@@ -207,7 +210,6 @@ function MetaReader() {
         self.zeros = d3.sum(cleanDataSorted, function (item) {
             return (item === 0) ? 1 : 0;
         });
-        self.invalidValues = self.data.length - cleanDataSorted.length;
         self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function (d) {
             return d.values;
         });
@@ -233,17 +235,23 @@ function MetaReader() {
         var self = {};
         var self = ObjectList(data, title, metrics);
         self.type = 'string';
+        self.prepData();
         self.tokens = $.map(self.data, function (d) {
-            return (!checkNull(d)) ? d.split(' ') : '';
+            return (!checkNull(d)) ? d.split(' ') : [];
         });
-        self.word_count = d3.sum(self.tokens, function (d) {
+        self.word_count = d3.sum(self.data, function (d) {
+            return (!checkNull(d)) ? d.split(' ').length : 0;
+        });
+        self.char_count = d3.sum(self.data, function (d) {
             return (!checkNull(d)) ? d.length : 0;
-        });
+        })
 
-        self.average_word_count = self.word_count / self.count;
+        self.average_word_count = round(self.word_count / self.count, 2);
         self.average_word_length = d3.sum(self.data, function (d) {
             return (!checkNull(d)) ? d.replace(' ', '').length : 0;
         });
+        self.average_char_count = round(self.char_count / self.count, 2);
+
         self.suggestions = getSuggestions(self);
         return self;
     };
@@ -251,8 +259,9 @@ function MetaReader() {
         var self = ObjectList(data, title, metrics);
 
         self.type = 'date';
-        var asDate = _.each(self.cleanData, function (v, i, a) {
-            a[i] = moment(v);
+        var asDate = _.each(self.data, function (v, i, a) {
+            if (!checkNull(v))
+                a[i] = moment(v);
         });
         self.data = asDate;
 //        self.format = moment.parseFormat()
@@ -268,7 +277,6 @@ function MetaReader() {
         self.format = moment.parseFormat(self.max._i);
         self.min = _.first(self.asDate);
         self.range = moment.duration(self.max - self.min);
-        self.invalidValues = self.data.length - self.cleanData.length;
         // NOTE: call humanize() method to get self.range in plain English
 
         // to determine intervals:
@@ -510,16 +518,16 @@ function MetaReader() {
     }
     function loadCSVFile2(csvFilePath)
     {
-        
-console.log('downloadin '+ csvFilePath)
+
+        console.log('downloadin ' + csvFilePath)
 
         var data = Papa.parse(csvFilePath, {
-            download:true,
+            download: true,
             delimiter: ",",
             header: true
 //            dynamicTyping: true
         });
-        
+
 //        var data = $.csv.toObjects(csvd);
         console.log(data);
         return data.data;

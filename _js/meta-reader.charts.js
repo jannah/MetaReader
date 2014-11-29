@@ -178,7 +178,7 @@ var MetaReaderCharts = function ()
                         x: 0, y: ch,
                         dy: "2em",
                         'text-anchor': 'start'
-                    }).text('<<<' + lowerOutliers.length + ' outlier' +((lowerOutliers.length>1)?'s':''))
+                    }).text('<<<' + lowerOutliers.length + ' outlier' + ((lowerOutliers.length > 1) ? 's' : ''))
         if (higherOutliers.length > 0)
             outlierText.append('text')
                     .attr({
@@ -186,7 +186,7 @@ var MetaReaderCharts = function ()
                         x: w, y: ch,
                         dy: "2em",
                         'text-anchor': 'end'
-                    }).text(higherOutliers.length + ' outlier' +((higherOutliers.length>1)?'s':'')+' >>>')
+                    }).text(higherOutliers.length + ' outlier' + ((higherOutliers.length > 1) ? 's' : '') + ' >>>')
 
         addImage(new_target);
         return chart;
@@ -624,7 +624,7 @@ var MetaReaderCharts = function ()
                         {
                             fill: function (d, i)
                             {
-                                return getColorGradient(min_value, max_value, d.value, colors);
+                                return getColorGradient(min_value, max_value, d.value, colors, chart.options.colorRange);
                                 //                        return color;
                             }
                         });
@@ -889,12 +889,12 @@ var MetaReaderCharts = function ()
                 }]
         });
         var axes = new Rickshaw.Graph.Axis.Time({graph: rschart});
-         var y_axis = new Rickshaw.Graph.Axis.Y({
-         graph: rschart,
-         orientation: 'left',
-         tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
-         element: document.getElementById('y_axis'),
-         });
+        var y_axis = new Rickshaw.Graph.Axis.Y({
+            graph: rschart,
+            orientation: 'left',
+            tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+            element: document.getElementById('y_axis'),
+        });
         var hoverDetail = new Rickshaw.Graph.HoverDetail({
             graph: rschart,
         });
@@ -902,7 +902,7 @@ var MetaReaderCharts = function ()
 //        addImage(new_target);
         return chart;
     };
-    function getColorGradient(min, max, value, colors)
+    function getColorGradient(min, max, value, colors, colorRange)
     {
         if (typeof (value) == 'undefined' || value == null || value === '')
         {
@@ -918,9 +918,11 @@ var MetaReaderCharts = function ()
         else
         {
             value = Number(value);
+            if (!colorRange)
+                colorRange = ["rgb(201,222,150)", "rgb(138,182,107)", "rgb(46,127,50)"]
             var inner_scale = d3.scale.linear().domain([min, max]).range([0, 1]);
             // var outer_scale = d3.scale.linear().domain([0, 0.5, 1]).interpolate(d3.interpolateRgb).range(["red", "yellow", "green"]);
-            var outer_scale = d3.scale.linear().domain([0, .44, 1]).interpolate(d3.interpolateRgb).range(["rgb(201,222,150)", "rgb(138,182,107)", "rgb(46,127,50)"]);
+            var outer_scale = d3.scale.linear().domain([0, .44, 1]).interpolate(d3.interpolateRgb).range(colorRange);
             var color = outer_scale(inner_scale(value));
             //            console.log(min + '\t' + max + '\t' + value + '\t' + color);
             return color;
@@ -960,20 +962,6 @@ var MetaReaderCharts = function ()
                     height: 6,
                     transform: "translate(0,0)"
                 });
-        /*  defs.append('mask')
-         .attr(
-         {
-         id: 'mask-stripe',
-         })
-         .append('rect')
-         .attr(
-         {
-         x: 0,
-         y: 0,
-         width: '100%',
-         height: '100%'
-         })*/
-        // var mask = '<mask id="mask-stripe"><rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" /></mask>';
         return 'url(#mask-stripe)';
     }
 
