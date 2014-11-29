@@ -648,7 +648,7 @@ var MetaReaderCharts = function ()
                 })
                 .style({
                     fill: function (d, i) {
-                        return getColorGradient(0, legend_count, i);
+                        return getColorGradient(0, legend_count, i, colors, chart.options.colorRange);
                     }
                 });
         legend.append('text').text(min_value).attr({x: 8, y: 5, 'text-anchor': 'end'});
