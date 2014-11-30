@@ -124,7 +124,7 @@ function getNumberSuggestions(d)
         suggestions.push(s);
 //        console.log(s);
     }
-    if (d.outliers.length > 0)
+    if (d.outliers.length > 0 && d.countUnique>3)
     {
         var s = new Suggestion();
         s.text = 'The data contains ' + d.outliers.length + ' statistical outlier' + ((d.outliers.length > 1) ? 's' : '') + ' (&plusmn;1.5 * InterQuartileRange).';
@@ -151,7 +151,7 @@ function getIntegerSuggestions(d)
 function getFloatSuggestions(d)
 {
     var suggestions = getNumberSuggestions(d);
-    if (d.metrics.integer > 0)
+    if (d.metrics.integer/d.count >=.2)
     {
         var s = new Suggestion();
         s.text = 'The data contains ' + (d.metrics.integer / d.count * 100).toPrecision(3) + '% integer values. Investigate whether the column should be treated as an integer';

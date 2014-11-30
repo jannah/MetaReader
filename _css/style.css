@@ -39,7 +39,7 @@ body{
 }
 #row-counter{
     line-height: 2em;
-    
+
     font-size: 1.5em;
     color: grey;
     display: none;
@@ -57,9 +57,7 @@ body{
 
     max-height: 500px;
 }
-.chart-frame{
-    margin: 0 5%;
-}
+
 #side-menu{
     /* width: 48%; */
     /*    position: fixed;
@@ -430,10 +428,8 @@ ul.affix-bottom {
         margin-left:0;
         margine-right:0;
     }
-    .chart-frame{
-        margin:0;
 
-    }
+ 
 
     .chart-frame,
     .card-print-tab, .card-print-tab h2, .card-print-tab input{

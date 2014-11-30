@@ -377,11 +377,11 @@ function refreshNavigation()
 {
 //    console.log('refreshing');
     var cards = $('.mrc-card');
-    $('#nav-items').remove();
+    $('#navigation').remove();
     renderTemplate(TEMPLATES.NAV_ITEMS, {cards: cards}, TEMPLATES.NAV_ITEMS.target, false, false)
-    $("#navigation").on('affixed.bs.affix', function () {
-        alert("The navigation menu has been affixed. Now it doesn't scroll with the page.");
-    });
+//    $("#navigation").on('affixed.bs.affix', function () {
+//        alert("The navigation menu has been affixed. Now it doesn't scroll with the page.");
+//    });
     $('body').scrollspy({target: '#affix-nav'});
     $("#navigation").affix({
         offset: {

@@ -102,19 +102,19 @@ and open the template in the editor.
 }
 
 .mrc-chart .lollipop{
-    
+
 }
 .mrc-chart .lollipop:hover{
-    fill:orange;
-    stroke:orange;
-    
+    fill:orange !important;
+    stroke:orange !important;
+
 }
 .mrc-chart .lollipop.line{
     stroke-width:2px;
     stroke: #777;
 }
 .mrc-chart .lollipop.circle{
-    
+
 }
 /***********************
         CARDS
@@ -177,10 +177,17 @@ Spectrum Diagram
     stroke: steelblue;
     stroke-width: 1.5px;
 }
-.line-marker {} #pattern-fill {
+.line-marker {} 
+#pattern-fill {
     fill: white;
     /*stroke:inherit;*/
 }
+.marker.outlier,
+.outlier,
+.marker .outlier{
+    fill:red;
+}
+
 #pattern-stripe {
     fill: white;
     stroke: #eee;
@@ -251,3 +258,30 @@ Spectrum Diagram
 }
 
 
+.chart-frame{
+    /* margin: 0 5%; */
+    float: left;
+}
+.chart-frame-histogram{
+    width: 50%;
+
+}
+.chart-frame-lollipop{
+    width: 100%;
+
+}
+.chart-frame-timeseries{
+    width: 100%;
+
+}
+.chart-frame-box{
+    width:50%;
+
+}
+.chart-frame-spectrum{
+    width:50%
+
+}
+.chart-frame-scatter{
+    width:50%;
+}

@@ -12,6 +12,7 @@ var MetaReaderCharts = function ()
         return {
             width: $('#content').width() - 60,
             height: 200,
+            type: '',
             margin:
                     {
                         top: 10,
@@ -23,17 +24,23 @@ var MetaReaderCharts = function ()
             axisWidth: 30,
             title: '',
             id: '',
-            xAxisLimit: 40
+            xAxisLimit: 40,
+            colors: d3.scale.category20()
         };
     };
-    function loadOptions(options)
+    function loadOptions(options, type, target)
     {
         var opts = new MRC.options();
         _.each(options, function (value, key)
         {
             opts[key] = value
         });
+        if (type)
+            opts['type'] = type;
         //        console.log(opts);
+        addChartFrame(target, opts)
+        opts['width'] = $('#' + opts.id + '-frame').width();
+        opts['target'] = '#' + opts.id + '-frame';
         return opts;
     }
     MRC.box = function (target, options, quartiles, mean, outliers)
@@ -51,9 +58,9 @@ var MetaReaderCharts = function ()
                     return +d < quartiles[3];
                 });
         //        console.log(target);
-        chart.options = loadOptions(options);
-        addChartFrame(target, chart.options.title, chart.options.id);
-        var new_target = '#' + chart.options.id + '-frame';
+        chart.options = loadOptions(options, 'box', target);
+//        addChartFrame(target, chart.options);
+        var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - chart.options.axisHeight,
@@ -192,25 +199,27 @@ var MetaReaderCharts = function ()
         return chart;
         ;
     };
-    MRC.lollipop = function (target, options, data)
+    MRC.lollipop = function (target, options, data, dataType)
     {
-        return MRC.histogram(target, options, data, true);
+        return MRC.histogram(target, options, data, dataType, true);
     }
-    MRC.histogram = function (target, options, data, use_lollipop)
+    MRC.histogram = function (target, options, data, dataType, use_lollipop)
     {
 
 
         // console.log(target)
         var chart = {};
-        chart.options = loadOptions(options);
+        chart.options = loadOptions(options, use_lollipop ? 'lollipop' : 'histogram', target);
+//        addChartFrame(target, chart.options);
+        var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - 2 * chart.options.axisHeight,
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        addChartFrame(target, chart.options.title, chart.options.id);
-        var new_target = '#' + chart.options.id + '-frame';
+
+
         var max = d3.max(data, function (d)
         {
             //            console.log(d);
@@ -276,6 +285,14 @@ var MetaReaderCharts = function ()
         ;
         var bw = aw / data.length;
         var spacing = (bw > 10) ? 2 : 0;
+        var histoColor = function (d)
+        {
+
+            if (dataType && dataType === 'string')
+                return chart.options.colors(d.key);
+            else
+                return chart.options.colors(0);
+        }
         if (use_lollipop)
         {
             var lolli = svg.append("g")
@@ -319,6 +336,9 @@ var MetaReaderCharts = function ()
                                     return d.values;
                                 }
                             })
+                    .style({
+                        stroke: histoColor
+                    });
             lolli.append('circle')
                     .attr({
                         class: 'lollipop circle',
@@ -339,6 +359,9 @@ var MetaReaderCharts = function ()
                         {
                             return d.values;
                         }
+                    })
+                    .style({
+                        fill: histoColor
                     });
             if (data.length < TOOLTIP_LIMIT)
             {
@@ -398,7 +421,10 @@ var MetaReaderCharts = function ()
                                 {
                                     return d.values;
                                 }
-                            });
+                            })
+                    .style({
+                        fill: histoColor
+                    });
             if (data.length < TOOLTIP_LIMIT)
             {
                 bars.classed('svg-tooltip', true)
@@ -510,14 +536,14 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrum = function (target, options, data)
+    MRC.spectrum = function (target, options, data, outliers)
     {
         //        var MRC = new MetaReader();
         data = getSequence(data);
         var chart = {};
-        chart.options = loadOptions(options);
-        addChartFrame(target, chart.options.title, chart.options.id);
-        var new_target = '#' + chart.options.id + '-frame';
+        chart.options = loadOptions(options, 'spectrum', target);
+//        addChartFrame(target, chart.options);
+        var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - 2 * chart.options.axisHeight,
@@ -558,7 +584,8 @@ var MetaReaderCharts = function ()
          dy: '1em'
          });*/
         var xScale = d3.scale.linear().domain([min, max]).range([0, cw]);
-        var colors = d3.scale.category20();
+        ;
+//        
         //        var yScale = d3.scale.linear().domain([0, max]).range([ch, 0]);
         var xLabels = _.map(data, function (d)
         {
@@ -624,7 +651,7 @@ var MetaReaderCharts = function ()
                         {
                             fill: function (d, i)
                             {
-                                return getColorGradient(min_value, max_value, d.value, colors, chart.options.colorRange);
+                                return getColorGradient(min_value, max_value, d.value, chart.options.colors, chart.options.colorRange);
                                 //                        return color;
                             }
                         });
@@ -648,7 +675,7 @@ var MetaReaderCharts = function ()
                 })
                 .style({
                     fill: function (d, i) {
-                        return getColorGradient(0, legend_count, i, colors, chart.options.colorRange);
+                        return getColorGradient(0, legend_count, i, chart.options.colors, chart.options.colorRange);
                     }
                 });
         legend.append('text').text(min_value).attr({x: 8, y: 5, 'text-anchor': 'end'});
@@ -656,18 +683,19 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrumLine = function (target, options, data, drawLine)
+    MRC.spectrumLine = function (target, options, data, drawLine, outliers)
     {
         var chart = {};
-        chart.options = loadOptions(options);
+        chart.options = loadOptions(options, 'scatter', target);
+//        addChartFrame(target, chart.options);
+        var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
                 ah = h - 2 * chart.options.axisHeight,
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        addChartFrame(target, chart.options.title, chart.options.id);
-        var new_target = '#' + chart.options.id + '-frame';
+        
         var max = d3.max(data, function (d)
         {
             //            console.log(d);
@@ -695,7 +723,7 @@ var MetaReaderCharts = function ()
          dy: '1em'
          });*/
         var xScale = d3.scale.linear().domain([0, data.length]).range([0, cw]);
-        var colors = d3.scale.category20();
+
         var yScale = d3.scale.linear().domain([min, max]).range([ch, 0]);
         //        var xLabels = _.map(data, function(d) {
         //            return d;
@@ -837,8 +865,16 @@ var MetaReaderCharts = function ()
                     'data-placement': "top",
                     'title': function (d, i)
                     {
-                        return ('<span class="chart-tooltip-value">' + d + '</span>');
+                        var t = '<span class="chart-tooltip-value">' + d + '</span>' +
+                                ((outliers && outliers.indexOf(d) !== -1) ? '<span class="chart-tooltip-key"> outlier</span>' : '');
+                        return t;
                     }
+                })
+                .classed('outlier', function (d) {
+                    if (outliers)
+                        return outliers.indexOf(d) !== -1;
+                    else
+                        return false;
                 });
         var bh = aw / data.length;
         var missing = dataLine.append('g').attr('class', 'missing-values').selectAll('.missing-bar')
@@ -870,13 +906,14 @@ var MetaReaderCharts = function ()
     MRC.timeSeries = function (target, options, data) {
 //        console.log('draing timeseries')
         var chart = {};
-        chart.options = loadOptions(options);
+        chart.options = loadOptions(options,'timeseries', target);
+//             addChartFrame(target, chart.options);
+        var new_target = chart.options.target;
+        $(new_target).addClass('mrc-rickshaw')
+// 
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom;
-        addChartFrame(target, chart.options.title, chart.options.id);
-        var new_target = '#' + chart.options.id + '-frame';
-        $(new_target).addClass('mrc-rickshaw')
-//                .width(chart.options.width).height(chart.options.height);
+          
         var rschart = new Rickshaw.Graph({
             element: document.querySelector(new_target),
             renderer: 'line',
@@ -965,10 +1002,14 @@ var MetaReaderCharts = function ()
         return 'url(#mask-stripe)';
     }
 
-    function addChartFrame(target, title, id)
+    function addChartFrame(target, options)
     {
-        var frame = '<div id="' + id + '-frame" class="chart-frame"><div class="chart-title" contenteditable="True">' + title + '</div></div>'
+
+        var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-'+options.type+'">'
+                + '<div class="chart-title" contenteditable="True">' + options.title + '</div></div>'
         $(target).append(frame)
+
+
     }
 
     function getSortButton(id)
