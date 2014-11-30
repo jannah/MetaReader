@@ -233,7 +233,7 @@ function compare(v1, v2)
 
 function checkInterval(data)
 {
-    console.log('checking intervals')
+//    console.log('checking intervals')
     var interval, equalInterval, isContiguous;
     var suggestions = []
     if (data.type === 'date')
@@ -242,7 +242,7 @@ function checkInterval(data)
     }
     else if (data.type === 'integer' || data.type === 'float')
     {
-        console.log('checking number intervals')
+//        console.log('checking number intervals')
         var cleanData = data.cleanData;
         if (cleanData.length > 1) {
             interval = cleanData[1] - cleanData[0];
@@ -253,7 +253,7 @@ function checkInterval(data)
             isContiguous = interval === 1;
         }
     }
-    console.log(interval)
+//    console.log(interval)
     if (equalInterval)
     {
         var s = new Suggestion();
@@ -274,6 +274,6 @@ function checkInterval(data)
         s.category = 'contiguous values';
         suggestions.push(s);
     }
-    console.log(suggestions)
+//    console.log(suggestions)
     return suggestions
 }

@@ -1,5 +1,6 @@
 <%
 var MRC = new MetaReaderCharts();
+MRC.imageMode = imageMode
 var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300}, data.timeSeries);
 
 var stats = {

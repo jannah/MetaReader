@@ -17,6 +17,9 @@ function MetaReader() {
     mr.filename = '';
     mr.title = '';
     mr.description = '';
+    mr.columnLength = 0;
+    mr.columnCount = 0;
+
     mr.toMarkdown = function ()
     {
         var result = ''
@@ -62,9 +65,12 @@ function MetaReader() {
 //        alert('converting to columns')
         console.log('converting csv to columns');
         mr.columns = csvToColumns(csv);
+       
+
 //        alert('processing columns')
         console.log('processing columns')
         mr.statistics = process_columns(mr.columns);
+        mr.columns = null;
 //        alert('processing completed')
         console.log('processing completed')
     };
@@ -182,7 +188,7 @@ function MetaReader() {
         });
         self.prepData();
         var cleanDataSorted = self.cleanDataSorted;
-        
+
         self.type = 'integer';
         self.precision = precision;
         var statPrecision = precision + 2;
@@ -728,7 +734,9 @@ function MetaReader() {
         // console.log(dataColumns);
         var columns = {};
         _.each(dataColumns, function (items, header) {
-
+             mr.columnCount++;
+            if (mr.columnLength === 0)
+                mr.columnLength = items.length;
             var dataType = detectDataType(items);
 
             var listType = DATA_TYPES[dataType[0]];

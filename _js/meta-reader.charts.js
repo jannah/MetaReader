@@ -7,6 +7,7 @@ var MetaReaderCharts = function ()
 {
     var MRC = {};
     var TOOLTIP_LIMIT = 1500;
+    MRC.imageMode = false;
     MRC.options = function ()
     {
         return {
@@ -293,246 +294,269 @@ var MetaReaderCharts = function ()
             else
                 return chart.options.colors(0);
         }
-        if (use_lollipop)
-        {
-            var lolli = svg.append("g")
-                    .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('lollipop')
-                    .data(data).enter().append('g')
-            lolli.append('line')
-                    .attr(
-                            {
-                                class: 'lollipop line',
-                                width: function ()
-                                {
-                                    return xScale.rangeBand();
-                                },
-                                height: function (d)
-                                {
-                                    var v = ah - yScale(d.values);
-                                    return v;
-                                },
-                                x1: function (d, i)
-                                {
-                                    return xScale(d.key) + xScale.rangeBand() / 2;
-                                },
-                                x2: function (d, i)
-                                {
-                                    return xScale(d.key) + xScale.rangeBand() / 2;
-                                },
-                                y1: function (d, i)
-                                {
-                                    return yScale(d.values);
-                                },
-                                y2: function (d, i)
-                                {
-                                    return ah;
-                                },
-                                'data-key': function (d)
-                                {
-                                    return d.key;
-                                },
-                                'data-value': function (d)
-                                {
-                                    return d.values;
-                                }
-                            })
-                    .style({
-                        stroke: histoColor
-                    });
-            lolli.append('circle')
-                    .attr({
-                        class: 'lollipop circle',
-                        cx: function (d, i)
-                        {
-                            return xScale(d.key) + xScale.rangeBand() / 2;
-                        },
-                        cy: function (d, i)
-                        {
-                            return yScale(d.values);
-                        },
-                        r: (xScale.rangeBand() / 2 < 10) ? xScale.rangeBand() / 2 : 10,
-                        'data-key': function (d)
-                        {
-                            return d.key;
-                        },
-                        'data-value': function (d)
-                        {
-                            return d.values;
-                        }
-                    })
-                    .style({
-                        fill: histoColor
-                    });
-            if (data.length < TOOLTIP_LIMIT)
-            {
-                lolli.selectAll('.lollipop.line')
-                        .classed('svg-tooltip', true)
-                        .attr({
-                            'data-toggle': "tooltip",
-                            'data-placement': "top",
-                            'title': function (d, i)
-                            {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
-                            }
-                        })
-                lolli.selectAll('.lollipop.circle')
-                        .classed('svg-tooltip', true)
-                        .attr({
-                            'data-toggle': "tooltip",
-                            'data-placement': "top",
-                            'title': function (d, i)
-                            {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
-                            }
-                        })
-            }
-
-        }
-        else
-        {
-            var bars = svg.append('g')
-                    .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('bars')
-                    .data(data).enter().append('rect')
-                    .attr(
-                            {
-                                class: 'bar histogram svg-tooltip',
-                                width: function ()
-                                {
-                                    return xScale.rangeBand();
-                                },
-                                height: function (d)
-                                {
-                                    var v = ah - yScale(d.values);
-                                    return v;
-                                },
-                                x: function (d, i)
-                                {
-                                    return xScale(d.key);
-                                },
-                                y: function (d, i)
-                                {
-                                    return yScale(d.values);
-                                },
-                                'data-key': function (d)
-                                {
-                                    return d.key;
-                                },
-                                'data-value': function (d)
-                                {
-                                    return d.values;
-                                }
-                            })
-                    .style({
-                        fill: histoColor
-                    });
-            if (data.length < TOOLTIP_LIMIT)
-            {
-                bars.classed('svg-tooltip', true)
-                        .attr({
-                            'data-toggle': "tooltip",
-                            'data-placement': "top",
-                            'title': function (d, i)
-                            {
-                                return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
-                            }
-                        });
-            }
-        }
         svg.select('.x.axis g').selectAll('.tick.major').style('display', function (d, i)
         {
 //             console.log(d);
             return (data.length < chart.options.xAxisLimit) ? 'block' : (i % Math.ceil(data.length / chart.options.xAxisLimit) === 0) ? 'block' : 'None';
         });
-        /* Sorting actions        */
-        var frame = $('#' + chart.options.id + '-frame');
-        frame.prepend(getSortButton(chart.options.id + '-sort'));
-        $('#' + chart.options.id + '-sort li').on('click', function (d)
+        if (data.length > cw)
+
         {
-
-            // console.log(d);
-            var self = $(this),
-                    order = self.attr('data-order');
-            // console.log(self.attr('class'))
-            $('#' + chart.options.id + '-btn .glyphicon').attr('class', self.attr('class'))
-            // console.log(self);
-            change(order);
-            // var sortTimeout = setTimeout(function()
-            // {
-            //     d3.select("input").property("checked", true).each(change);
-            // }, 2000);
-
-            function change(order)
+            console.log('switching to area mode')
+            var area = d3.svg.area()
+                    .x(function (d) {
+                        return xScale(d.key);
+                    })
+                    .y0(ch)
+                    .y1(function (d) {
+                        return yScale(d.values);
+                    });
+            var area_g = svg.append('g')
+                    .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")");
+            area_g.append("path")
+                    .datum(data)
+                    .attr("class", "area")
+                    .attr("d", area);
+        }
+        else
+        {
+            if (use_lollipop)
             {
-                // clearTimeout(sortTimeout);
-
-                // Copy-on-write since tweens are evaluated after a delay.
-                data = data.sort(function (a, b)
+                var lolli = svg.append("g")
+                        .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('lollipop')
+                        .data(data).enter().append('g')
+                lolli.append('line')
+                        .attr(
+                                {
+                                    class: 'lollipop line',
+                                    width: function ()
+                                    {
+                                        return xScale.rangeBand();
+                                    },
+                                    height: function (d)
+                                    {
+                                        var v = ah - yScale(d.values);
+                                        return v;
+                                    },
+                                    x1: function (d, i)
+                                    {
+                                        return xScale(d.key) + xScale.rangeBand() / 2;
+                                    },
+                                    x2: function (d, i)
+                                    {
+                                        return xScale(d.key) + xScale.rangeBand() / 2;
+                                    },
+                                    y1: function (d, i)
+                                    {
+                                        return yScale(d.values);
+                                    },
+                                    y2: function (d, i)
+                                    {
+                                        return ah;
+                                    },
+                                    'data-key': function (d)
+                                    {
+                                        return d.key;
+                                    },
+                                    'data-value': function (d)
+                                    {
+                                        return d.values;
+                                    }
+                                })
+                        .style({
+                            stroke: histoColor
+                        });
+                lolli.append('circle')
+                        .attr({
+                            class: 'lollipop circle',
+                            cx: function (d, i)
+                            {
+                                return xScale(d.key) + xScale.rangeBand() / 2;
+                            },
+                            cy: function (d, i)
+                            {
+                                return yScale(d.values);
+                            },
+                            r: (xScale.rangeBand() / 2 < 10) ? xScale.rangeBand() / 2 : 10,
+                            'data-key': function (d)
+                            {
+                                return d.key;
+                            },
+                            'data-value': function (d)
+                            {
+                                return d.values;
+                            }
+                        })
+                        .style({
+                            fill: histoColor
+                        });
+                if (data.length < TOOLTIP_LIMIT)
                 {
-                    if (order === 'a1')
-                        return d3.ascending(a.key, b.key);
-                    else if (order === 'a2')
-                        return d3.descending(a.key, b.key);
-                    else if (order === 'n1')
-                        return d3.ascending(a.values, b.values);
-                    else
-                        return d3.descending(a.values, b.values);
-                });
-                var x0 = xScale.domain(data.map(function (d) {
-                    return d.key;
-                }))
-                        .copy();
-//                xAxis.tickValues(xLabels);
-                var transition = svg.transition().duration(500),
-                        delay = function (d, i)
-                        {
-                            return i * 10;
-                        };
-                if (use_lollipop)
-                {
-                    transition.selectAll(".lollipop.line").delay(delay)
+                    lolli.selectAll('.lollipop.line')
+                            .classed('svg-tooltip', true)
                             .attr({
-                                x1: function (d) {
-                                    return xScale(d.key) + xScale.rangeBand() / 2;
-                                },
-                                x2: function (d) {
-                                    return xScale(d.key) + xScale.rangeBand() / 2;
+                                'data-toggle': "tooltip",
+                                'data-placement': "top",
+                                'title': function (d, i)
+                                {
+                                    return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
+                                }
+                            })
+                    lolli.selectAll('.lollipop.circle')
+                            .classed('svg-tooltip', true)
+                            .attr({
+                                'data-toggle': "tooltip",
+                                'data-placement': "top",
+                                'title': function (d, i)
+                                {
+                                    return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
+                                }
+                            })
+                }
+
+            }
+            else
+            {
+                var bars = svg.append('g')
+                        .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('bars')
+                        .data(data).enter().append('rect')
+                        .attr(
+                                {
+                                    class: 'bar histogram svg-tooltip',
+                                    width: function ()
+                                    {
+                                        return xScale.rangeBand();
+                                    },
+                                    height: function (d)
+                                    {
+                                        var v = ah - yScale(d.values);
+                                        return v;
+                                    },
+                                    x: function (d, i)
+                                    {
+                                        return xScale(d.key);
+                                    },
+                                    y: function (d, i)
+                                    {
+                                        return yScale(d.values);
+                                    },
+                                    'data-key': function (d)
+                                    {
+                                        return d.key;
+                                    },
+                                    'data-value': function (d)
+                                    {
+                                        return d.values;
+                                    }
+                                })
+                        .style({
+                            fill: histoColor
+                        });
+                if (data.length < TOOLTIP_LIMIT)
+                {
+                    bars.classed('svg-tooltip', true)
+                            .attr({
+                                'data-toggle': "tooltip",
+                                'data-placement': "top",
+                                'title': function (d, i)
+                                {
+                                    return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                                 }
                             });
-                    transition.selectAll('.lollipop.circle').delay(delay)
-                            .attr('cx', function (d) {
-                                return xScale(d.key) + xScale.rangeBand() / 2;
-                            });
                 }
-                else
-                {
-                    transition.selectAll(".bar")
-                            .delay(delay)
-                            .attr("x", function (d)
-                            {
-                                // if (order === 'a1' || order === 'a2')
-                                return x0(d.key);
-                                // else return x0(d.values);
-                            });
-                }
-
-                transition.select(".x.axis")
-                        .call(xAxis)
-                        .selectAll("g")
-                        .delay(delay);
-                var displayValues = {}
-                _.forEach(data, function (d, i) {
-                    var val = (data.length < chart.options.xAxisLimit) ? 'block' : (i % Math.ceil(data.length / chart.options.xAxisLimit) === 0) ? 'block' : 'None';
-                    displayValues[d.key] = val;
-                })
-//            console.log(displayValues);
-                transition.select('.x.axis g').selectAll('.tick.major').style('display', function (d, i)
-                {
-                    return displayValues[d];
-                }).delay(delay);
-                ;
             }
 
-        });
+            /* Sorting actions        */
+            var frame = $('#' + chart.options.id + '-frame');
+            frame.prepend(getSortButton(chart.options.id + '-sort'));
+            $('#' + chart.options.id + '-sort li').on('click', function (d)
+            {
+
+                // console.log(d);
+                var self = $(this),
+                        order = self.attr('data-order');
+                // console.log(self.attr('class'))
+                $('#' + chart.options.id + '-btn .glyphicon').attr('class', self.attr('class'))
+                // console.log(self);
+                change(order);
+                // var sortTimeout = setTimeout(function()
+                // {
+                //     d3.select("input").property("checked", true).each(change);
+                // }, 2000);
+
+                function change(order)
+                {
+                    // clearTimeout(sortTimeout);
+
+                    // Copy-on-write since tweens are evaluated after a delay.
+                    data = data.sort(function (a, b)
+                    {
+                        if (order === 'a1')
+                            return d3.ascending(a.key, b.key);
+                        else if (order === 'a2')
+                            return d3.descending(a.key, b.key);
+                        else if (order === 'n1')
+                            return d3.ascending(a.values, b.values);
+                        else
+                            return d3.descending(a.values, b.values);
+                    });
+                    var x0 = xScale.domain(data.map(function (d) {
+                        return d.key;
+                    }))
+                            .copy();
+//                xAxis.tickValues(xLabels);
+                    var transition = svg.transition().duration(500),
+                            delay = function (d, i)
+                            {
+                                return i * 10;
+                            };
+                    if (use_lollipop)
+                    {
+                        transition.selectAll(".lollipop.line").delay(delay)
+                                .attr({
+                                    x1: function (d) {
+                                        return xScale(d.key) + xScale.rangeBand() / 2;
+                                    },
+                                    x2: function (d) {
+                                        return xScale(d.key) + xScale.rangeBand() / 2;
+                                    }
+                                });
+                        transition.selectAll('.lollipop.circle').delay(delay)
+                                .attr('cx', function (d) {
+                                    return xScale(d.key) + xScale.rangeBand() / 2;
+                                });
+                    }
+                    else
+                    {
+                        transition.selectAll(".bar")
+                                .delay(delay)
+                                .attr("x", function (d)
+                                {
+                                    // if (order === 'a1' || order === 'a2')
+                                    return x0(d.key);
+                                    // else return x0(d.values);
+                                });
+                    }
+
+                    transition.select(".x.axis")
+                            .call(xAxis)
+                            .selectAll("g")
+                            .delay(delay);
+                    var displayValues = {}
+                    _.forEach(data, function (d, i) {
+                        var val = (data.length < chart.options.xAxisLimit) ? 'block' : (i % Math.ceil(data.length / chart.options.xAxisLimit) === 0) ? 'block' : 'None';
+                        displayValues[d.key] = val;
+                    })
+//            console.log(displayValues);
+                    transition.select('.x.axis g').selectAll('.tick.major').style('display', function (d, i)
+                    {
+                        return displayValues[d];
+                    }).delay(delay);
+                    ;
+                }
+
+            });
+        }
         addImage(new_target);
         return chart;
     };
@@ -695,7 +719,7 @@ var MetaReaderCharts = function ()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        
+
         var max = d3.max(data, function (d)
         {
             //            console.log(d);
@@ -843,6 +867,11 @@ var MetaReaderCharts = function ()
                         });
             });
         }
+        var max_r = max = (data.length / aw) / 2;
+//        console.log('max r = ' + max_r)
+
+        max_r = (max_r < 2) ? 2 : max_r < 20 ? max_r : 20;
+//        console.log('max r = ' + max_r)
 
         var markers = dataLine.append('g').attr('class', 'markers').selectAll('.line-markers').data(data).enter().append('circle').attr(
                 {
@@ -854,12 +883,7 @@ var MetaReaderCharts = function ()
                     {
                         return yScale(d);
                     },
-                    r: function (d, i)
-                    {
-                        max = data.length / aw;
-                        max = (max > 2) ? max : 2;
-                        return (20 > max) ? max : 20;
-                    },
+                    r: max_r,
                     'class': 'marker line-marker svg-tooltip',
                     'data-toggle': "tooltip",
                     'data-placement': "top",
@@ -906,14 +930,14 @@ var MetaReaderCharts = function ()
     MRC.timeSeries = function (target, options, data) {
 //        console.log('draing timeseries')
         var chart = {};
-        chart.options = loadOptions(options,'timeseries', target);
+        chart.options = loadOptions(options, 'timeseries', target);
 //             addChartFrame(target, chart.options);
         var new_target = chart.options.target;
         $(new_target).addClass('mrc-rickshaw')
 // 
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom;
-          
+
         var rschart = new Rickshaw.Graph({
             element: document.querySelector(new_target),
             renderer: 'line',
@@ -936,7 +960,7 @@ var MetaReaderCharts = function ()
             graph: rschart,
         });
         rschart.render();
-//        addImage(new_target);
+        addImage(new_target);
         return chart;
     };
     function getColorGradient(min, max, value, colors, colorRange)
@@ -1005,7 +1029,7 @@ var MetaReaderCharts = function ()
     function addChartFrame(target, options)
     {
 
-        var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-'+options.type+'">'
+        var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-' + options.type + '">'
                 + '<div class="chart-title" contenteditable="True">' + options.title + '</div></div>'
         $(target).append(frame)
 
@@ -1034,8 +1058,15 @@ var MetaReaderCharts = function ()
 //                    console.log($(this))
         });
         svgAsDataUri(chart, 1, function (uri) {
+
             d3.select(target).append('img').attr({'src': uri, class: 'print-image'});
+            if (MRC.imageMode) {
+                console.log('removing svg from ' + target)
+                $(target).children('svg').remove();
+                $(target).children('img').show();
+            }
         })
+
     }
     return MRC;
 }

@@ -2,6 +2,7 @@
 <%
 var categorical = data.countUnique<=20;
 var MRC = new MetaReaderCharts();
+MRC.imageMode = imageMode
 var fd = new MRC.histogram(target, {'title':data.title + ' frequency distribution','id':data.id+'-fd1'}, data.frequencyDistribution, categorical?data.type:null)
 var fd3 = new MRC.lollipop(target, {'title':data.title + ' frequency distribution (Lollipop)','id':data.id+'-fd3'}, data.frequencyDistribution, categorical?data.type:null)
 if(categorical)

@@ -1,6 +1,7 @@
 
 <%
 var MRC = new MetaReaderCharts();
+MRC.imageMode = imageMode
 if(data.countUnique>3)
 var box = new MRC.box(target, {'title':data.title+ ' Box Plot', 'id':data.id+'-box', height:180}, data.quartiles, data.mean, data.outliers)
 var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution with Bins', 'id':data.id+'-fd3'}, data.frequencyDistributionBins)

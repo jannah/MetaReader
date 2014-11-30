@@ -58,7 +58,7 @@ function init() {
 }
 function loadIntro()
 {
-    renderTemplate(TEAMPLATES.INTRO,{})
+    renderTemplate(TEAMPLATES.INTRO, {})
 }
 function hideIntro()
 {
@@ -183,17 +183,24 @@ function render(data)
 }
 function showCards(data)
 {
+    var objectLimit = 100000;
     $('#processing-progress-bar').show().attr('aria-valuenow', 0).attr('aria-valuemax', data.length);
     $('#page-title').text(data.title);
     $('#page-description').text(data.description);
     $('#header').show();
-    _.each(data.statistics, function (d, i) {
-//        console.log(d);
+    var imageMode = data.columnCount * data.columnLength > objectLimit;
+    console.log('est. object count =' + data.columnCount + ' *' + data.columnLength
+            + '=' + data.columnCount * data.columnLength)
+    if (imageMode)
+        alert('using image mode because there are too many objects')
+    var i=1
+    _.forEach(data.statistics, function (d) {
+        console.log('rendering ' + d.title + '(' + (i++) + '/' + data.columnCount + ')');
 //        d = data.statistics['attention']
 
-        $('#progress-name').text(d.name);
+        $('#progress-name').text(d.title);
         $('#processing-progress-bar').attr('aria-valuenow', i);
-        renderTemplate(TEMPLATES.CARD, {data: d}, null, false, false);
+        renderTemplate(TEMPLATES.CARD, {data: d, imageMode: imageMode}, null, false, false);
         var target = '#card-' + d.id + ' .card-charts';
 //        console.log(target);
         if (TEMPLATES_MAP[d.type])
@@ -201,7 +208,7 @@ function showCards(data)
 
             var template = TEMPLATES[TEMPLATES_MAP[d.type]];
 //            console.log(template);
-            renderTemplate(template, {target: target, data: d}, target, false, false);
+            renderTemplate(template, {target: target, data: d, imageMode:imageMode}, target, false, false);
             loadQuestions(d);
 //            loadSuggestions(d);
 
