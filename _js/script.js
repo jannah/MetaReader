@@ -305,10 +305,20 @@ function updateDescription(element, field, id, otherId)
 }
 function hideSuggestion(column, id, i, otherId)
 {
+    
     $(id).hide();
     $(otherId).hide();
-//    console.log(column)
+    console.log('hiding suggestion ' + id)
     data.statistics[column].suggestions[i].show = false;
+    var suggestionCount = _.filter(data.statistics[column].suggestions, function(d){
+        return d.show
+    }).length;
+    console.log(suggestionCount)
+    $('#'+data.statistics[column].id+'-nav-suggestion-count').text(suggestionCount)
+    $('#'+data.statistics[column].id+'-suggestion-count').text(suggestionCount)
+    
+    
+    
 }
 
 function saveAsMarkdown()

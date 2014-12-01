@@ -18,8 +18,8 @@ var MetaReaderCharts = function ()
                     {
                         top: 10,
                         bottom: 10,
-                        left: 20,
-                        right: 20
+                        left: 10,
+                        right: 10
                     },
             axisHeight: 30,
             axisWidth: 30,
@@ -570,7 +570,7 @@ var MetaReaderCharts = function ()
         var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
-                ah = h - 2 * chart.options.axisHeight,
+                ah = h - 1 * chart.options.axisHeight,
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
@@ -623,7 +623,7 @@ var MetaReaderCharts = function ()
                     class: "x axis",
                     width: w,
                     height: chart.options.axisHeight
-                }).append("g").attr("transform", "translate(" + chart.options.axisWidth + "," + (ah + chart.options.axisHeight) + ")").call(xAxis).append('text').attr(
+                }).append("g").attr("transform", "translate(" + chart.options.axisWidth + "," + (ah) + ")").call(xAxis).append('text').attr(
                 {
                     class: 'x axis-title svg-tooltip',
                     'text-anchor': 'middle',
@@ -637,7 +637,7 @@ var MetaReaderCharts = function ()
                     }
                 }).text('index');
         //        console.log(ch);
-        var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")").selectAll('bars').data(data).enter().append('rect').attr(
+        var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + 0+ ")").selectAll('bars').data(data).enter().append('rect').attr(
                 {
                     class: 'bar spectrum-sqaure svg-tooltip',
                     width: function (d)

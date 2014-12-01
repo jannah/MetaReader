@@ -1,5 +1,5 @@
 
-<div id="card-<%=data.id%>" role="tab" data-title="<%=data.title%>" class="mrc-card panel panel-default" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+<div id="card-<%=data.id%>" role="tab" data-column='<%=data.columnName%>' data-id='<%=data.id%>' data-title="<%=data.title%>" class="mrc-card panel panel-default" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
     <div class="panel-heading" role='tab' id="card-<%=data.id%>-heading">
         <h2 class='panel-title'>
             <label id='<%=data.id%>-title-text' class='card-title-text mr-tooltip' title='Type to rename' contenteditable="true" oninput='renameColumn("<%=data.id%>-title-text", "<%=data.title%>")'><%=data.title%></label>
@@ -34,7 +34,7 @@
                     
                     if(s.show){
                      var c = (s.class==='tip')? 'success':'warning'%>
-                                 <li id='<%=data.id%>-suggestion-<%=i%>'><span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
+                                 <li id='<%=data.id%>-suggestion-print-<%=i%>'><span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
                                 <%=s.text%></li>
                     <%}})%>
                     <ul>
@@ -57,7 +57,7 @@
                 <ul class="nav nav-tabs" role="tablist" id="<%=data.id%>-tabs">
                     <li role="presentation" class="suggestions-tab active mr-tooltip" data-toggle="tooltip" title="Suggestions based on observation of the data in the column">
                         <a href="#<%=data.id%>-suggestions-pane" aria-controls="<%=data.id%>-suggestions-pane" role="tab" data-toggle="tab">
-                            Suggestions <span class='label label-primary label-as-badge'><%=data.suggestions.length%></span></a></li>
+                            Suggestions <span id='<%=data.id%>-suggestion-count' class='label label-primary label-as-badge'><%=data.suggestions.length%></span></a></li>
                     <li role="presentation" class="description-tab mr-tooltip" data-toggle="tooltip"  title="Please enter a description for this column">
                         <a href="#<%=data.id%>-description-pane" aria-controls="<%=data.id%>-description-pane" role="tab" data-toggle="tab">
                             Description</a></li>
@@ -86,7 +86,7 @@
                         <% var alert = 'alert ' + ((s.class=='tip')? 'alert-success':'alert-warning') %>
                             <li class='suggestion <%=s.class%> <%=alert%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
                                 <button class="btn btn-xs btn-danger mr-tooltip"  data-toggle='tooltip' title='Hide this suggestion'
-                                       onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.columnName%>-suggestion-<%=i%>', <%=i%>)">
+                                       onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.id%>-suggestion-<%=i%>', <%=i%>, '#<%=data.id%>-suggestion-print-<%=i%>') ">
                                 <i class="glyphicon glyphicon-remove"></i></button>
                                 <%
                                 var c = (s.class==='tip')? 'success':'warning'

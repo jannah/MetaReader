@@ -8,11 +8,12 @@ var fd3 = new MRC.histogram(target, {'title':data.title+ ' Frequency Distributio
 
 //var fd = new MRC.histogram(target, {'title':data.title+ ' Frequency Distribution','id':data.id+'-fd1'}, data.frequencyDistribution)
 var fd2 = new MRC.lollipop(target, {'title':data.title+ ' Frequency Distribution (Lollipop)', 'id':data.id+'-fd2'}, data.frequencyDistribution)
-if(data.countUnique>20)
+//if(data.countUnique>20)
 
 
-var spectrum = new MRC.spectrum(target, {'title':data.title + ' Color Spectrum Chart','id':data.id+'-spectrum', height:100}, data.data)
 var spectrumLine = new MRC.spectrumLine(target, {'title':data.title + ' Scatter Chart','id':data.id+'-spectrum-dots'}, data.data, false, (data.countUnique>3)?data.outliers:null)
+var spectrum = new MRC.spectrum(target, {'title':data.title + ' Color Spectrum Chart','id':data.id+'-spectrum', height:75}, data.data)
+
 var stats = {'Count':data.count, 'Unique':data.countUnique, 'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros, 'Missing':data.invalidValues}
 var titles = {'Count':'Number of Records', 
     'Unique':'Number of unique records', 
@@ -20,7 +21,7 @@ var titles = {'Count':'Number of Records',
     'Mean':'Average value for all valid records', 
     'Range':'Range of Values',
     'Zeros': 'Number of records with value 0',
-    'Missing':'Missing or Invaliid numerical values:e.g. Null,None,NaN..etc.'}
+    'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.'}
 %>
 
 <div id="<%=data.title%>-stats" class="card-stats">
