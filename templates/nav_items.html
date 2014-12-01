@@ -1,15 +1,20 @@
-<li id="nav-items">
-<a href="javascript:;" data-toggle="collapse" data-target="#navigation"><b class="caret"></b></i> Elements <i class="fa fa-fw fa-caret-down"></i></a>
-<ul id="navigation" class="expand">
-<% _.each(cards, function(card) {
-        var id = $(card).attr('id')
-        var title = $('#' + id + ' .card-title-text').text().trim()
-        var target = '#' + id
-%>
-<li class="sidebar-brand">
-    <a href="<%=target%>"><%=title%></a>
-</li>
-<%});  %>
-                                
-                            </ul>
-<li>
+<ul  id="navigation" class="nav sidenav affix" data-spy='affix'>
+    <% _.each(cards, function(card) {
+    var id = $(card).attr('id')
+    var colId = $(card).attr('data-id')
+    var title = $('#' + id + ' .card-title-text').text().trim()
+    var target = '#' + id
+    var suggestions = $('#'+id+' .suggestions-tab a .label-as-badge').text()
+    %>
+    <li >
+        <a href="<%=target%>"><%=title%></a> 
+        <span id='<%=colId%>-nav-suggestion-count' class="label label-as-badge label-primary mr-tooltip" title='Number of suggestions'><%=suggestions%></span>
+    </li>
+    <%})%>
+</ul>
+<script>
+        $('#navigation li:first').addClass('active');
+  
+</script>
+<!--</div>-->  
+<!--</li>-->

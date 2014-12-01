@@ -8,5 +8,6 @@ images/Thumbs.db
 images/~$Presentation1.pptx
 *.sublime-project
 *.sublime-workspace
-/data/arafah
-/data/dataset
+data/arafah/
+data/dataset
+

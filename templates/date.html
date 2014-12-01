@@ -1,6 +1,7 @@
 <%
 var MRC = new MetaReaderCharts();
-var series = new MRC.timeSeries(target, {height:300}, data.timeSeries, data.title);
+MRC.imageMode = imageMode
+var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300}, data.timeSeries);
 
 var stats = {
     'Total': data.count,
@@ -18,7 +19,7 @@ var titles = {
     'End': 'End Date',
     'Range':'Range of Values',
     'Format':'Date format in Dataset',
-     'Missing':'Missing or Invaliid numerical values:e.g. Null,None,NaN..etc.'
+     'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.'
 };
 %>
 
