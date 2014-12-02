@@ -285,3 +285,32 @@ Spectrum Diagram
 .chart-frame-scatter{
     width:50%;
 }
+
+
+.rschart{
+    position: relative;
+    /* left: 40px; */
+}
+.rickshaw_graph .y_ticks {
+    left: 0;
+}
+.rsy_axis{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+.line1-color{
+    stroke:steelblue;
+   
+}
+.area1-color{
+    fill:lightgrey;
+}
+path.main-line{
+     stroke-width: 2px;
+}
+path.main-area{
+    
+}

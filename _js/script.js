@@ -6,7 +6,7 @@ jQuery.fn.redraw = function () {
 
 
 $(document).on('ready', function () {
-    init();
+    initMetaReader();
     activateTooltips();
 });
 
@@ -47,7 +47,7 @@ var TEMPLATES = {
 var TEMPLATES_MAP = {'integer': 'NUMBERS', 'float': 'NUMBERS', 'string': 'TEXT', 'date': 'DATE'};
 var data = [];
 
-function init() {
+function initMetaReader() {
 
     TEAMPLATES = loadTemplates(TEMPLATES, '/MetaReader');
     loadUploadForm();
@@ -496,10 +496,11 @@ function activateModal()
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
+        console.log(column)
         modal.find('.modal-title').text('Showing raw data for [' + column + ']');
         var content = '<table class="table table-striped">' +
                 '<tr><td>#</td><td>' + column + '</td></tr>' +
-                _.map(data.columns[column], function (d, i) {
+                _.map(data.statistics[column].data, function (d, i) {
                     return '<tr><td>' + (i + 1) + '</td><td>' + d + '</td></tr>';
                 }).join('') + '</table>'
         modal.find('.modal-body').html(content)

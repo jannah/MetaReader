@@ -118,7 +118,7 @@ function MetaReader() {
         self.uniqueValues = d3.set(self.data).values();
 //    console.log(self.uniqueValues);
         self.countUnique = self.uniqueValues.length;
-
+       
         self.count = data.length;
 
 
@@ -265,19 +265,27 @@ function MetaReader() {
         var self = ObjectList(data, title, metrics);
 
         self.type = 'date';
-        var asDate = _.each(self.data, function (v, i, a) {
+        var asDate = _.map(self.data, function (v, i, a) {
             if (!checkNull(v))
-                a[i] = moment(v);
+                return moment(v);
+            return null;
         });
-        self.data = asDate;
+//        self.data = asDate;
 //        self.format = moment.parseFormat()
         self.prepData();
         self.asDate = _.sortBy(asDate);
         // formatted for Rickshaw js input
-        self.timeSeries = _.each(getFreqDist(self.asDate), function (v, i, a) {
-            a[i] = {'x': moment(+v.key).unix(), 'y': v.values};
+        self.timeSeries = _.map(getFreqDist(self.asDate), function (v, i, a) {
+            return {'x': moment(+v.key).unix(), 'y': v.values};
         });
+        self.timeSeries2 = _.map(getFreqDist(self.asDate), function (v, i, a) {
+            return {'date': new Date(moment(+v.key).format()), 'value': v.values};
+//            console.log(a[i])
+        });
+//        console.log(self.asDate);
+        
         self.max = _.last(self.asDate);
+//        console.log(self.max) 
 //        for(var x in self.max)
 //            console.log(self.max._i);
         self.format = moment.parseFormat(self.max._i);

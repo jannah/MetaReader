@@ -7,14 +7,22 @@
     var suggestions = $('#'+id+' .suggestions-tab a .label-as-badge').text()
     %>
     <li >
-        <a href="<%=target%>"><%=title%></a> 
+        <a href="<%=target%>" class='goto'><%=title%></a> 
         <span id='<%=colId%>-nav-suggestion-count' class="label label-as-badge label-primary mr-tooltip" title='Number of suggestions'><%=suggestions%></span>
     </li>
     <%})%>
 </ul>
 <script>
         $('#navigation li:first').addClass('active');
-  
+
+        $(".goto").click(function() {
+          var target = $(this).attr("href")
+//          target = target.substring(1,target.length);
+//          console.log(target)
+          $(window).scrollTop($(target).offset().top - 50); 
+          return false; 
+        });
+
 </script>
 <!--</div>-->  
 <!--</li>-->

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var MetaReaderCharts = function ()
+var MetaReaderCharts = function()
 {
     var MRC = {};
     var TOOLTIP_LIMIT = 1500;
     MRC.imageMode = false;
-    MRC.options = function ()
+    MRC.options = function()
     {
         return {
             width: $('#content').width() - 60,
@@ -32,7 +32,7 @@ var MetaReaderCharts = function ()
     function loadOptions(options, type, target)
     {
         var opts = new MRC.options();
-        _.each(options, function (value, key)
+        _.each(options, function(value, key)
         {
             opts[key] = value
         });
@@ -41,10 +41,10 @@ var MetaReaderCharts = function ()
         //        console.log(opts);
         addChartFrame(target, opts)
         opts['width'] = $('#' + opts.id + '-frame').width();
-        opts['target'] = '#' + opts.id + '-frame';
+        opts['target'] = '#' + opts.id + '-frame-chart';
         return opts;
     }
-    MRC.box = function (target, options, quartiles, mean, outliers)
+    MRC.box = function(target, options, quartiles, mean, outliers)
     {
         var chart = {};
         var min = quartiles[0],
@@ -52,10 +52,10 @@ var MetaReaderCharts = function ()
                 median = quartiles[2],
                 iqr = quartiles[3] - quartiles[1]
                 ,
-                lowerOutliers = _.filter(outliers, function (d, i) {
+                lowerOutliers = _.filter(outliers, function(d, i) {
                     return +d > quartiles[3];
                 }),
-                higherOutliers = _.filter(outliers, function (d, i) {
+                higherOutliers = _.filter(outliers, function(d, i) {
                     return +d < quartiles[3];
                 });
         //        console.log(target);
@@ -110,13 +110,13 @@ var MetaReaderCharts = function ()
         var whiskers = plot.selectAll('.whisker').data([min, max]).enter().append("line").attr(
                 {
                     class: "whisker",
-                    x1: function (d)
+                    x1: function(d)
                     {
                         //                        console.log(xScale(d));
                         return xScale(d);
                     },
                     y1: 0,
-                    x2: function (d)
+                    x2: function(d)
                     {
                         return xScale(d);
                     },
@@ -147,26 +147,26 @@ var MetaReaderCharts = function ()
                     y2: ch
                 });
         //        format =  d3.format("04d"   )
-        var labels = plot.selectAll('text').data([min, quartiles[1], median, quartiles[3], max]).enter().append('text').text(function (d, i)
+        var labels = plot.selectAll('text').data([min, quartiles[1], median, quartiles[3], max]).enter().append('text').text(function(d, i)
         {
             return d;
         }).attr(
                 {
                     class: 'chart-label',
                     'text-anchor': 'middle',
-                    x: function (d)
+                    x: function(d)
                     {
                         return xScale(d);
                     },
-                    y: function (d, i)
+                    y: function(d, i)
                     {
                         return i % 2 * ch;
                     },
-                    dy: function (d, i)
+                    dy: function(d, i)
                     {
                         return ((i % 2 === 0) ? -1 : 1) + 'em';
                     }
-                }).classed('mean-label', function (d, i)
+                }).classed('mean-label', function(d, i)
         {
             return i == 5;
         });
@@ -200,11 +200,11 @@ var MetaReaderCharts = function ()
         return chart;
         ;
     };
-    MRC.lollipop = function (target, options, data, dataType)
+    MRC.lollipop = function(target, options, data, dataType)
     {
         return MRC.histogram(target, options, data, dataType, true);
     }
-    MRC.histogram = function (target, options, data, dataType, use_lollipop)
+    MRC.histogram = function(target, options, data, dataType, use_lollipop)
     {
 
 
@@ -221,12 +221,12 @@ var MetaReaderCharts = function ()
                 cw = aw;
 
 
-        var max = d3.max(data, function (d)
+        var max = d3.max(data, function(d)
         {
             //            console.log(d);
             return d.values;
         });
-        var min = d3.min(data, function (d)
+        var min = d3.min(data, function(d)
         {
             return d.values;
         });
@@ -239,17 +239,17 @@ var MetaReaderCharts = function ()
                     width: chart.options.width,
                     height: chart.options.height
                 }).append('g').attr("transform", "translate(" + chart.options.margin.left + "," + chart.options.margin.top + ")");
-        var averageKeyLength = d3.sum(data, function (d, i) {
+        var averageKeyLength = d3.sum(data, function(d, i) {
 //                console.log(d.key);
             return (d.key + '').length;
         }) / data.length;
         var xScale = d3.scale.ordinal().rangeBands([0, cw], .1, 1)
-                .domain(data.map(function (d)
+                .domain(data.map(function(d)
                 {
                     return d.key;
                 }));
         var yScale = d3.scale.linear().domain([min, max]).range([ch, 0]);
-        var xLabels = _.map(data, function (d, i)
+        var xLabels = _.map(data, function(d, i)
         {
             return d.key;
         });
@@ -266,7 +266,7 @@ var MetaReaderCharts = function ()
                 .style("text-anchor", "start")
                 .attr("dx", ".5em")
                 .attr("dy", ".15em")
-                .attr("transform", function (d) {
+                .attr("transform", function(d) {
                     return "rotate(45)";
                 });
         xAxisGroup.append('text').attr(
@@ -286,7 +286,7 @@ var MetaReaderCharts = function ()
         ;
         var bw = aw / data.length;
         var spacing = (bw > 10) ? 2 : 0;
-        var histoColor = function (d)
+        var histoColor = function(d)
         {
 
             if (dataType && dataType === 'string')
@@ -294,7 +294,7 @@ var MetaReaderCharts = function ()
             else
                 return chart.options.colors(0);
         }
-        svg.select('.x.axis g').selectAll('.tick.major').style('display', function (d, i)
+        svg.select('.x.axis g').selectAll('.tick.major').style('display', function(d, i)
         {
 //             console.log(d);
             return (data.length < chart.options.xAxisLimit) ? 'block' : (i % Math.ceil(data.length / chart.options.xAxisLimit) === 0) ? 'block' : 'None';
@@ -304,11 +304,11 @@ var MetaReaderCharts = function ()
         {
             console.log('switching to area mode')
             var area = d3.svg.area()
-                    .x(function (d) {
+                    .x(function(d) {
                         return xScale(d.key);
                     })
                     .y0(ch)
-                    .y1(function (d) {
+                    .y1(function(d) {
                         return yScale(d.values);
                     });
             var area_g = svg.append('g')
@@ -329,36 +329,36 @@ var MetaReaderCharts = function ()
                         .attr(
                                 {
                                     class: 'lollipop line',
-                                    width: function ()
+                                    width: function()
                                     {
                                         return xScale.rangeBand();
                                     },
-                                    height: function (d)
+                                    height: function(d)
                                     {
                                         var v = ah - yScale(d.values);
                                         return v;
                                     },
-                                    x1: function (d, i)
+                                    x1: function(d, i)
                                     {
                                         return xScale(d.key) + xScale.rangeBand() / 2;
                                     },
-                                    x2: function (d, i)
+                                    x2: function(d, i)
                                     {
                                         return xScale(d.key) + xScale.rangeBand() / 2;
                                     },
-                                    y1: function (d, i)
+                                    y1: function(d, i)
                                     {
                                         return yScale(d.values);
                                     },
-                                    y2: function (d, i)
+                                    y2: function(d, i)
                                     {
                                         return ah;
                                     },
-                                    'data-key': function (d)
+                                    'data-key': function(d)
                                     {
                                         return d.key;
                                     },
-                                    'data-value': function (d)
+                                    'data-value': function(d)
                                     {
                                         return d.values;
                                     }
@@ -369,20 +369,20 @@ var MetaReaderCharts = function ()
                 lolli.append('circle')
                         .attr({
                             class: 'lollipop circle',
-                            cx: function (d, i)
+                            cx: function(d, i)
                             {
                                 return xScale(d.key) + xScale.rangeBand() / 2;
                             },
-                            cy: function (d, i)
+                            cy: function(d, i)
                             {
                                 return yScale(d.values);
                             },
                             r: (xScale.rangeBand() / 2 < 10) ? xScale.rangeBand() / 2 : 10,
-                            'data-key': function (d)
+                            'data-key': function(d)
                             {
                                 return d.key;
                             },
-                            'data-value': function (d)
+                            'data-value': function(d)
                             {
                                 return d.values;
                             }
@@ -397,7 +397,7 @@ var MetaReaderCharts = function ()
                             .attr({
                                 'data-toggle': "tooltip",
                                 'data-placement': "top",
-                                'title': function (d, i)
+                                'title': function(d, i)
                                 {
                                     return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                                 }
@@ -407,7 +407,7 @@ var MetaReaderCharts = function ()
                             .attr({
                                 'data-toggle': "tooltip",
                                 'data-placement': "top",
-                                'title': function (d, i)
+                                'title': function(d, i)
                                 {
                                     return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                                 }
@@ -423,28 +423,28 @@ var MetaReaderCharts = function ()
                         .attr(
                                 {
                                     class: 'bar histogram svg-tooltip',
-                                    width: function ()
+                                    width: function()
                                     {
                                         return xScale.rangeBand();
                                     },
-                                    height: function (d)
+                                    height: function(d)
                                     {
                                         var v = ah - yScale(d.values);
                                         return v;
                                     },
-                                    x: function (d, i)
+                                    x: function(d, i)
                                     {
                                         return xScale(d.key);
                                     },
-                                    y: function (d, i)
+                                    y: function(d, i)
                                     {
                                         return yScale(d.values);
                                     },
-                                    'data-key': function (d)
+                                    'data-key': function(d)
                                     {
                                         return d.key;
                                     },
-                                    'data-value': function (d)
+                                    'data-value': function(d)
                                     {
                                         return d.values;
                                     }
@@ -458,7 +458,7 @@ var MetaReaderCharts = function ()
                             .attr({
                                 'data-toggle': "tooltip",
                                 'data-placement': "top",
-                                'title': function (d, i)
+                                'title': function(d, i)
                                 {
                                     return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.key + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.values + '</span>');
                                 }
@@ -469,7 +469,7 @@ var MetaReaderCharts = function ()
             /* Sorting actions        */
             var frame = $('#' + chart.options.id + '-frame');
             frame.prepend(getSortButton(chart.options.id + '-sort'));
-            $('#' + chart.options.id + '-sort li').on('click', function (d)
+            $('#' + chart.options.id + '-sort li').on('click', function(d)
             {
 
                 // console.log(d);
@@ -489,7 +489,7 @@ var MetaReaderCharts = function ()
                     // clearTimeout(sortTimeout);
 
                     // Copy-on-write since tweens are evaluated after a delay.
-                    data = data.sort(function (a, b)
+                    data = data.sort(function(a, b)
                     {
                         if (order === 'a1')
                             return d3.ascending(a.key, b.key);
@@ -500,13 +500,13 @@ var MetaReaderCharts = function ()
                         else
                             return d3.descending(a.values, b.values);
                     });
-                    var x0 = xScale.domain(data.map(function (d) {
+                    var x0 = xScale.domain(data.map(function(d) {
                         return d.key;
                     }))
                             .copy();
 //                xAxis.tickValues(xLabels);
                     var transition = svg.transition().duration(500),
-                            delay = function (d, i)
+                            delay = function(d, i)
                             {
                                 return i * 10;
                             };
@@ -514,15 +514,15 @@ var MetaReaderCharts = function ()
                     {
                         transition.selectAll(".lollipop.line").delay(delay)
                                 .attr({
-                                    x1: function (d) {
+                                    x1: function(d) {
                                         return xScale(d.key) + xScale.rangeBand() / 2;
                                     },
-                                    x2: function (d) {
+                                    x2: function(d) {
                                         return xScale(d.key) + xScale.rangeBand() / 2;
                                     }
                                 });
                         transition.selectAll('.lollipop.circle').delay(delay)
-                                .attr('cx', function (d) {
+                                .attr('cx', function(d) {
                                     return xScale(d.key) + xScale.rangeBand() / 2;
                                 });
                     }
@@ -530,7 +530,7 @@ var MetaReaderCharts = function ()
                     {
                         transition.selectAll(".bar")
                                 .delay(delay)
-                                .attr("x", function (d)
+                                .attr("x", function(d)
                                 {
                                     // if (order === 'a1' || order === 'a2')
                                     return x0(d.key);
@@ -543,12 +543,12 @@ var MetaReaderCharts = function ()
                             .selectAll("g")
                             .delay(delay);
                     var displayValues = {}
-                    _.forEach(data, function (d, i) {
+                    _.forEach(data, function(d, i) {
                         var val = (data.length < chart.options.xAxisLimit) ? 'block' : (i % Math.ceil(data.length / chart.options.xAxisLimit) === 0) ? 'block' : 'None';
                         displayValues[d.key] = val;
                     })
 //            console.log(displayValues);
-                    transition.select('.x.axis g').selectAll('.tick.major').style('display', function (d, i)
+                    transition.select('.x.axis g').selectAll('.tick.major').style('display', function(d, i)
                     {
                         return displayValues[d];
                     }).delay(delay);
@@ -560,7 +560,7 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrum = function (target, options, data, outliers)
+    MRC.spectrum = function(target, options, data, outliers)
     {
         //        var MRC = new MetaReader();
         data = getSequence(data);
@@ -574,20 +574,20 @@ var MetaReaderCharts = function ()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-        var max = d3.max(data, function (d)
+        var max = d3.max(data, function(d)
         {
             //            console.log(d);
             return d.end;
         });
-        var min = d3.min(data, function (d)
+        var min = d3.min(data, function(d)
         {
             return d.start;
         });
-        var min_value = d3.min(data, function (d)
+        var min_value = d3.min(data, function(d)
         {
             return d.value;
         });
-        var max_value = d3.max(data, function (d)
+        var max_value = d3.max(data, function(d)
         {
             return d.value;
         });
@@ -611,7 +611,7 @@ var MetaReaderCharts = function ()
         ;
 //        
         //        var yScale = d3.scale.linear().domain([0, max]).range([ch, 0]);
-        var xLabels = _.map(data, function (d)
+        var xLabels = _.map(data, function(d)
         {
             return d.start;
         });
@@ -631,49 +631,49 @@ var MetaReaderCharts = function ()
                     y: 35,
                     'data-toggle': "tooltip",
                     'data-placement': "top",
-                    'title': function (d, i)
+                    'title': function(d, i)
                     {
                         return ('<span class="chart-tooltip-value">Original order of elements in dataset</span>');
                     }
                 }).text('index');
         //        console.log(ch);
-        var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + 0+ ")").selectAll('bars').data(data).enter().append('rect').attr(
+        var rects = svg.append('g').attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('bars').data(data).enter().append('rect').attr(
                 {
                     class: 'bar spectrum-sqaure svg-tooltip',
-                    width: function (d)
+                    width: function(d)
                     {
                         return xScale(d.frequency);
                     },
-                    height: function (d)
+                    height: function(d)
                     {
                         return ah;
                     },
-                    x: function (d, i)
+                    x: function(d, i)
                     {
                         return xScale(d.start);
                     },
-                    y: function (d, i)
+                    y: function(d, i)
                     {
                         return 0;
                     },
-                    'data-key': function (d)
+                    'data-key': function(d)
                     {
                         return d.value;
                     },
-                    'data-value': function (d)
+                    'data-value': function(d)
                     {
                         return d.frequency;
                     },
                     'data-toggle': "tooltip",
                     'data-placement': "top",
-                    'title': function (d, i)
+                    'title': function(d, i)
                     {
                         return ('<span class="chart-tooltip-key"><span class="tooltip-caption">' + chart.options.title + '</span>' + '<span class="tooltip-value"> ' + d.value + '</span><br>' + '<span class="tooltip-caption">Frequency</span>' + '<span class="tooltip-value"> ' + d.frequency + '</span>');
                     }
                 })
                 .style(
                         {
-                            fill: function (d, i)
+                            fill: function(d, i)
                             {
                                 return getColorGradient(min_value, max_value, d.value, chart.options.colors, chart.options.colorRange);
                                 //                        return color;
@@ -693,12 +693,12 @@ var MetaReaderCharts = function ()
                 .append('rect')
                 .attr({
                     class: 'legend-rect',
-                    x: function (d, i) {
+                    x: function(d, i) {
                         return 10 + (lw - 20) * i / legend_count;
                     }, y: 0, height: ah / 5, width: lw / legend_count
                 })
                 .style({
-                    fill: function (d, i) {
+                    fill: function(d, i) {
                         return getColorGradient(0, legend_count, i, chart.options.colors, chart.options.colorRange);
                     }
                 });
@@ -707,7 +707,7 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrumLine = function (target, options, data, drawLine, outliers)
+    MRC.spectrumLine = function(target, options, data, drawLine, outliers)
     {
         var chart = {};
         chart.options = loadOptions(options, 'scatter', target);
@@ -720,12 +720,12 @@ var MetaReaderCharts = function ()
                 ch = ah,
                 cw = aw;
 
-        var max = d3.max(data, function (d)
+        var max = d3.max(data, function(d)
         {
             //            console.log(d);
             return d;
         });
-        var min = d3.min(data, function (d)
+        var min = d3.min(data, function(d)
         {
             return d;
         });
@@ -768,7 +768,7 @@ var MetaReaderCharts = function ()
                     y: 35,
                     'data-toggle': "tooltip",
                     'data-placement': "top",
-                    'title': function (d, i)
+                    'title': function(d, i)
                     {
                         return ('<span class="chart-tooltip-value">Original order of elements in dataset</span>');
                     }
@@ -787,7 +787,7 @@ var MetaReaderCharts = function ()
                     y: -10,
                     'text-anchor': 'middle'
                 }).text('value');
-        var dataMap = _.map(data, function (d, i)
+        var dataMap = _.map(data, function(d, i)
         {
             return {
                 index: i,
@@ -797,7 +797,7 @@ var MetaReaderCharts = function ()
         //        console.log(dataMap)
         var validValues = [],
                 currentList = [];
-        _.forEach(dataMap, function (d)
+        _.forEach(dataMap, function(d)
         {
             if (_.isNull(d.value) || _.isUndefined(d.value))
             {
@@ -813,7 +813,7 @@ var MetaReaderCharts = function ()
         if (currentList.length > 0)
             validValues.push(_.clone(currentList));
         // console.log(validValues);
-        var missingValuesFlat = _.filter(dataMap, function (d)
+        var missingValuesFlat = _.filter(dataMap, function(d)
         {
             return _.isNull(d.value) | _.isUndefined(d.value);
         });
@@ -823,7 +823,7 @@ var MetaReaderCharts = function ()
         if (missingValuesFlat.length > 0)
         {
             var currentIndex = startIndex = missingValuesFlat[0].index;
-            _.forEach(missingValuesFlat, function (d, i)
+            _.forEach(missingValuesFlat, function(d, i)
             {
                 if (i > 0 && (d.index - currentIndex) > 1)
                 {
@@ -847,10 +847,10 @@ var MetaReaderCharts = function ()
         }
 
 
-        var line = d3.svg.line().x(function (d, i)
+        var line = d3.svg.line().x(function(d, i)
         {
             return xScale(d.index);
-        }).y(function (d, i)
+        }).y(function(d, i)
         {
             return yScale(d.value);
         });
@@ -858,7 +858,7 @@ var MetaReaderCharts = function ()
                 .attr("transform", "translate(" + chart.options.axisWidth + "," + (chart.options.axisHeight) + ")");
         if (drawLine)
         {
-            _.forEach(validValues, function (d, i)
+            _.forEach(validValues, function(d, i)
             {
                 dataLine.append("path").datum(d).attr(
                         {
@@ -875,11 +875,11 @@ var MetaReaderCharts = function ()
 
         var markers = dataLine.append('g').attr('class', 'markers').selectAll('.line-markers').data(data).enter().append('circle').attr(
                 {
-                    cx: function (d, i)
+                    cx: function(d, i)
                     {
                         return xScale(i);
                     },
-                    cy: function (d, i)
+                    cy: function(d, i)
                     {
                         return yScale(d);
                     },
@@ -887,14 +887,14 @@ var MetaReaderCharts = function ()
                     'class': 'marker line-marker svg-tooltip',
                     'data-toggle': "tooltip",
                     'data-placement': "top",
-                    'title': function (d, i)
+                    'title': function(d, i)
                     {
                         var t = '<span class="chart-tooltip-value">' + d + '</span>' +
                                 ((outliers && outliers.indexOf(d) !== -1) ? '<span class="chart-tooltip-key"> outlier</span>' : '');
                         return t;
                     }
                 })
-                .classed('outlier', function (d) {
+                .classed('outlier', function(d) {
                     if (outliers)
                         return outliers.indexOf(d) !== -1;
                     else
@@ -906,20 +906,20 @@ var MetaReaderCharts = function ()
                 .attr(
                         {
                             class: 'bar missing-bar svg-tooltip',
-                            x: function (d)
+                            x: function(d)
                             {
                                 return xScale(d.start);
                             },
                             y: 0,
                             height: ah,
-                            width: function (d)
+                            width: function(d)
                             {
                                 return d.run * bh
                             },
                             fill: pattern,
                             'data-toggle': "tooltip",
                             'data-placement': "top",
-                            'title': function (d, i)
+                            'title': function(d, i)
                             {
                                 return ('<span class="chart-tooltip-value">' + 'Missing' + '</span>');
                             },
@@ -927,26 +927,62 @@ var MetaReaderCharts = function ()
         addImage(new_target);
         return chart;
     };
-    MRC.timeSeries = function (target, options, data) {
-//        console.log('draing timeseries')
+    MRC.timeSeries2 = function(target, options, data) {
+        var chart = {};
+//        console.log(data);
+        chart.options = loadOptions(options, 'timeseries', target);
+        var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
+                h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
+                ah = h - 2 * chart.options.axisHeight,
+                aw = w - chart.options.axisWidth,
+                ch = ah,
+                cw = aw;
+//        console.log(chart.options.target);
+        var data2 = [{date:0,value:1},{date:1,value:10}]
+//        d3.select(chart.options.target).append()
+var cd = {
+//            title: chart.options.title,
+//            description: "This graphic shows a time-series of downloads.",
+            'data': data,
+            width: w,
+            height: ah,
+            'target': chart.options.target,
+            x_accessor: 'date',
+            y_accessor: 'value',
+        }
+//        console.log(cd);
+        data_graphic(cd)
+//        return chart;
+    }
+    MRC.timeSeries = function(target, options, data) {
+        console.log(data)
         var chart = {};
         chart.options = loadOptions(options, 'timeseries', target);
 //             addChartFrame(target, chart.options);
         var new_target = chart.options.target;
         $(new_target).addClass('mrc-rickshaw')
+
+        d3.select(new_target).append('div').attr({
+            class: 'rsy_axis'
+        })
+        d3.select(new_target).append('div').attr({
+            class: 'rschart'
+        })
 // 
+        console.log(document.querySelector(new_target))
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom;
 
         var rschart = new Rickshaw.Graph({
-            element: document.querySelector(new_target),
+//            element: document.getElementById(new_target).getElementByClassName('rschart'),
+            element: document.querySelector(new_target + ' .rschart'),
             renderer: 'line',
             width: w,
             height: h,
             series: [{
                     data: data,
                     color: 'steelblue',
-                    name: 'Records'
+                    name: chart.options.columnName
                 }]
         });
         var axes = new Rickshaw.Graph.Axis.Time({graph: rschart});
@@ -954,12 +990,21 @@ var MetaReaderCharts = function ()
             graph: rschart,
             orientation: 'left',
             tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
-            element: document.getElementById('y_axis'),
+            element: document.querySelector(new_target + ' .rsy_axis')
         });
         var hoverDetail = new Rickshaw.Graph.HoverDetail({
             graph: rschart,
         });
         rschart.render();
+        console.log(y_axis)
+        var y_axis_html = $(new_target + ' .rsy_axis g').clone().appendTo(new_target + ' .rschart')
+        d3.select(new_target + ' .rschart').select('.y_grid')
+                .attr({
+                    transform: 'translate(' + 0 + ',' + 0 + ')'
+                });
+//        var y_axis_svg = d3.select(new_target).select('.rsy_axis').select('g')
+//        console.log(y_axis_svg)
+        $(new_target + ' .rsy_axis').remove()
         addImage(new_target);
         return chart;
     };
@@ -1030,7 +1075,9 @@ var MetaReaderCharts = function ()
     {
 
         var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-' + options.type + '">'
-                + '<div class="chart-title" contenteditable="True">' + options.title + '</div></div>'
+                + '<div class="chart-title" contenteditable="True">' + options.title + '</div>'
+                +'<div id="'+options.id+'-frame-chart">'
+                +'</div></div>'
         $(target).append(frame)
 
 
@@ -1052,12 +1099,12 @@ var MetaReaderCharts = function ()
     {
         var svg = $(target).children('svg')[0];
         var chart = $(svg).clone()[0];
-        var titles = $(chart).find('*[title]').each(function (d) {
+        var titles = $(chart).find('*[title]').each(function(d) {
             $(this).attr('title', '');
             $(this).attr('data-original-title', '');
 //                    console.log($(this))
         });
-        svgAsDataUri(chart, 1, function (uri) {
+        svgAsDataUri(chart, 1, function(uri) {
 
             d3.select(target).append('img').attr({'src': uri, class: 'print-image'});
             if (MRC.imageMode) {
