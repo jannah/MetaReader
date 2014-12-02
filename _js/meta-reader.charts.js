@@ -937,10 +937,8 @@ var MetaReaderCharts = function()
                 aw = w - chart.options.axisWidth,
                 ch = ah,
                 cw = aw;
-//        console.log(chart.options.target);
-        var data2 = [{date:0,value:1},{date:1,value:10}]
-//        d3.select(chart.options.target).append()
-var cd = {
+        $(chart.options.target).addClass('timeseries-chart')
+        data_graphic({
 //            title: chart.options.title,
 //            description: "This graphic shows a time-series of downloads.",
             'data': data,
@@ -949,9 +947,8 @@ var cd = {
             'target': chart.options.target,
             x_accessor: 'date',
             y_accessor: 'value',
-        }
-//        console.log(cd);
-        data_graphic(cd)
+        })
+         addImage(chart.options.target);
 //        return chart;
     }
     MRC.timeSeries = function(target, options, data) {
@@ -1076,8 +1073,8 @@ var cd = {
 
         var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-' + options.type + '">'
                 + '<div class="chart-title" contenteditable="True">' + options.title + '</div>'
-                +'<div id="'+options.id+'-frame-chart">'
-                +'</div></div>'
+                + '<div id="' + options.id + '-frame-chart">'
+                + '</div></div>'
         $(target).append(frame)
 
 

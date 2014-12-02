@@ -304,7 +304,7 @@ text {
 .histogram .axis text {
     fill: black;
     font-size: 0.9rem;
-    opacity: 0.5;
+    opacity: .5;
 }
 
 .x-axis .label,

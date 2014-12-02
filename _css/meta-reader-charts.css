@@ -303,14 +303,22 @@ Spectrum Diagram
 
 .line1-color{
     stroke:steelblue;
-   
+
 }
 .area1-color{
     fill:lightgrey;
 }
 path.main-line{
-     stroke-width: 2px;
+    stroke-width: 2px;
 }
 path.main-area{
-    
+}
+
+
+.x-axis text, .y-axis text, .histogram .axis text{
+    /*display:block;*/
+    opacity:1 ;
+}  
+.timeseries-chart text{
+    opacity:1 !important;
 }

@@ -432,7 +432,7 @@ ul.affix-bottom {
         margine-right:0;
     }
 
- 
+
 
     .chart-frame,
     .card-print-tab, .card-print-tab h2, .card-print-tab input{
@@ -455,4 +455,8 @@ ul.affix-bottom {
         padding:0 2pt;
         border:1pt solid black;
     }
+    .x-axis text, .y-axis text, .histogram .axis text{
+        /*display:block;*/
+        opacity:1 !important;
+    }  
 }
