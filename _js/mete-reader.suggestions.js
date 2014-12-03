@@ -216,7 +216,7 @@ function isSorted(d)
         return index === 0 || c <= 0;
     });
 
-    var result = ascending ? 1 : descending ? -1 : 0;
+    var result = ascending && descending ? 0 : ascending ? 1 : descending ? -1 : 0;
 //    console.log(ascending + '\t' + descending + '\t' + result);
     return result;
 }
@@ -264,7 +264,7 @@ function checkInterval(data)
 //            console.log(v.toString())
 //            console.log();
             var diff = v.diff(a[i - 1]);
-            return i === 0 || diff === duration || 
+            return i === 0 || diff === duration ||
                     diff === duration + 3600000 || diff === duration - 3600000;
 
         });
@@ -358,10 +358,13 @@ function checkSemantics(data)
             })
         }
         var validName = false;
+//         console.log(semantic)
         if (semantic.names.length > 0)
         {
+
             validName = _.any(semantic.names, function(name)
             {
+//                console.log(name);
 //               console.log(data.columnName.toLowerCase())
                 return name.toLowerCase() === data.columnName.toLowerCase();
             })
