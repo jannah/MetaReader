@@ -124,8 +124,8 @@ and open the template in the editor.
     border-radius: 0px !important;
     box-shadow: 2px 2px 5px #888888;
     margin: 0 0 10px 0 !important;
-    border: None !important;
-    page-break-after: always;
+    border: None;
+    /* page-break-after: always; */
 }
 .mrc-card .panel-heading {
     background: gold;
@@ -161,8 +161,14 @@ and open the template in the editor.
     /* background-color: #eee; */
 
     width: 100%;
-    padding: 5px;
+    padding: 5px;s
     vertical-align: middle;
+}
+
+.mrc-card .panel-body 
+    .card-tabs .nav-tabs 
+    li{
+    margin-left:-15px !important;
 }
 /**************************
 Spectrum Diagram

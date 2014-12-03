@@ -3803,6 +3803,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   position: relative;
   display: block;
   margin-left: 10px;
+  padding-left: 15px;
 }
 
 .nav > li > a {

@@ -1,11 +1,11 @@
-jQuery.fn.redraw = function () {
-    return this.hide(0, function () {
+jQuery.fn.redraw = function() {
+    return this.hide(0, function() {
         $(this).show();
     });
 };
 
 
-$(document).on('ready', function () {
+$(document).on('ready', function() {
     initMetaReader();
     activateTooltips();
 });
@@ -69,7 +69,7 @@ function loadUploadForm()
 
     var counter = 0;
     var data = [];
-    $('.btn-file :file').on('fileselect', function (event, file, numFiles, label) {
+    $('.btn-file :file').on('fileselect', function(event, file, numFiles, label) {
 //           console.log(file);
 //         console.log(numFiles);
 //         console.log(label);
@@ -78,7 +78,7 @@ function loadUploadForm()
         Papa.parse(file, {
             // base config to use for each file
             header: true,
-            step: function (results, handle) {
+            step: function(results, handle) {
                 counter++;
                 $('#row-counter').text(counter);
 //                if(counter<10) console.log(results);
@@ -91,14 +91,14 @@ function loadUploadForm()
 
             }
             ,
-            error: function (err, file, inputElem, reason)
+            error: function(err, file, inputElem, reason)
             {
                 console.log('upload error')
                 // executed if an error occurs while loading the file,
                 // or if before callback aborted for some reason
             }
             ,
-            complete: function (results, f)
+            complete: function(results, f)
             {
                 counter = 0;
                 results.data = data;
@@ -110,7 +110,7 @@ function loadUploadForm()
          var fs = loadFileStream(file, loadFromUpload);
          */
     });
-    $(document).on('change', '.btn-file :file', function () {
+    $(document).on('change', '.btn-file :file', function() {
         var input = $(this),
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
                 label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
@@ -140,13 +140,13 @@ function loadFileStream(file, cb)
 //    var reader = new FileReader();
     console.log('reading file ' + file.name);
     var reader = new FileReader();
-    reader.onload = function (event) {
+    reader.onload = function(event) {
         var contents = event.target.result;
         file['contents'] = contents;
 //        console.log(file);
         cb(file);
     };
-    reader.onerror = function (event) {
+    reader.onerror = function(event) {
         console.error("File could not be read! Code " + event.target.error.code);
     };
     reader.readAsText(file);
@@ -193,8 +193,8 @@ function showCards(data)
             + '=' + data.columnCount * data.columnLength)
     if (imageMode)
         alert('using image mode because there are too many objects')
-    var i=1
-    _.forEach(data.statistics, function (d) {
+    var i = 1
+    _.forEach(data.statistics, function(d) {
         console.log('rendering ' + d.title + '(' + (i++) + '/' + data.columnCount + ')');
 //        d = data.statistics['attention']
 
@@ -208,7 +208,7 @@ function showCards(data)
 
             var template = TEMPLATES[TEMPLATES_MAP[d.type]];
 //            console.log(template);
-            renderTemplate(template, {target: target, data: d, imageMode:imageMode}, target, false, false);
+            renderTemplate(template, {target: target, data: d, imageMode: imageMode}, target, false, false);
             loadQuestions(d);
 //            loadSuggestions(d);
 
@@ -246,6 +246,8 @@ function addQuestion(column)
     data.statistics[column].questions.push('');
 //    console.log(data.statistics[column])
     loadQuestions(data.statistics[column]);
+    refreshPrintQuestions(column);
+
 }
 
 function removeQuestion(column, index)
@@ -255,15 +257,30 @@ function removeQuestion(column, index)
     data.statistics[column].questions.splice(index, 1);
 //    console.log(data.statistics[column].questions)
     loadQuestions(data.statistics[column]);
+    refreshPrintQuestions(column);
+
 }
 
 function updateQuestion(column, index)
 {
-    var id = '#' + column + '-question-' + index + ' .question-text'
+
+    var id = '#' + data.statistics[column].id + '-question-' + index + ' .question-text'
 //    console.log($(id));
     var question = $(id).val();
 //    console.log(question);
     data.statistics[column].questions[index] = question;
+    refreshPrintQuestions(column);
+}
+function refreshPrintQuestions(column)
+{
+    var id = '#' + data.statistics[column].id + '-questions-print';
+    var qlist = $(id);
+    qlist.empty();
+    _.forEach(data.statistics[column].questions, function(q) {
+        var qli = '<li class="print-question">' + q + '</li>'
+        qlist.append(qli);
+
+    })
 }
 function showData(columnName)
 {
@@ -305,20 +322,20 @@ function updateDescription(element, field, id, otherId)
 }
 function hideSuggestion(column, id, i, otherId)
 {
-    
+
     $(id).hide();
     $(otherId).hide();
     console.log('hiding suggestion ' + id)
     data.statistics[column].suggestions[i].show = false;
-    var suggestionCount = _.filter(data.statistics[column].suggestions, function(d){
+    var suggestionCount = _.filter(data.statistics[column].suggestions, function(d) {
         return d.show
     }).length;
     console.log(suggestionCount)
-    $('#'+data.statistics[column].id+'-nav-suggestion-count').text(suggestionCount)
-    $('#'+data.statistics[column].id+'-suggestion-count').text(suggestionCount)
-    
-    
-    
+    $('#' + data.statistics[column].id + '-nav-suggestion-count').text(suggestionCount)
+    $('#' + data.statistics[column].id + '-suggestion-count').text(suggestionCount)
+
+
+
 }
 
 function saveAsMarkdown()
@@ -332,11 +349,11 @@ function saveAsMarkdown()
 function saveAsPDF()
 {
     var cards = $('.mrc-card');
-    _.forEach(cards, function (card, i)
+    _.forEach(cards, function(card, i)
     {
         var chartFrames = $(card).find('.chart-frame')
         console.log(chartFrames);
-        var images = _.forEach(chartFrames, function (frame, i) {
+        var images = _.forEach(chartFrames, function(frame, i) {
 //            console.log(frame);
             var chart = $(frame).children('svg')[0];
             if (chart)
@@ -347,7 +364,7 @@ function saveAsPDF()
 //                console.log(chart);
                 var chart2 = $(chart).clone()[0];
 //                console.log(chart2)
-                var titles = $(chart2).find('*[title]').each(function (d) {
+                var titles = $(chart2).find('*[title]').each(function(d) {
                     $(this).attr('titie', '');
                     $(this).attr('data-original-title', '');
 //                    console.log($(this))
@@ -358,7 +375,7 @@ function saveAsPDF()
 //                var src = 'data:image/svg+xml;base64,' + window.btoa(chart);
 
 //                console.log(src);
-                svgAsDataUri(chart2, 1, function (uri) {
+                svgAsDataUri(chart2, 1, function(uri) {
                     d3.select('#print-page').append('img').attr('src', uri);
                 });
 //                    console.log(uri);
@@ -399,12 +416,15 @@ function refreshNavigation()
 //    $("#navigation").on('affixed.bs.affix', function () {
 //        alert("The navigation menu has been affixed. Now it doesn't scroll with the page.");
 //    });
-    $('body').scrollspy({target: '#affix-nav'});
+    var offset = $('#header-navigation').height() + 100;
+//    console.log(offset);
+    $('body').scrollspy({target: '#affix-nav', offset: offset});
+//    $(window).off('.affix')
     $("#navigation").affix({
         offset: {
-            top: 290
-        }
-    });
+            top: offset,
+            bottom: 0
+        }});
 
 
 //    var nav = $('#navigation ul');
@@ -490,7 +510,7 @@ function renameColumn(id, column)
 }
 function activateModal()
 {
-    $('#data-modal').on('show.bs.modal', function (event) {
+    $('#data-modal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget) // Button that triggered the modal
         var column = button.data('column') // Extract info from data-* attributes
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
@@ -500,7 +520,7 @@ function activateModal()
         modal.find('.modal-title').text('Showing raw data for [' + column + ']');
         var content = '<table class="table table-striped">' +
                 '<tr><td>#</td><td>' + column + '</td></tr>' +
-                _.map(data.statistics[column].data, function (d, i) {
+                _.map(data.statistics[column].data, function(d, i) {
                     return '<tr><td>' + (i + 1) + '</td><td>' + d + '</td></tr>';
                 }).join('') + '</table>'
         modal.find('.modal-body').html(content)

@@ -5,7 +5,7 @@
 
 %>
 <div id='<%=data.id%>-question-<%=i%>' 
-     class='<%=data.columnName%>-question card-question input-group'>
+     class='<%=data.id%>-question card-question input-group'>
     <span class='input-group-addon'>Q</span>
     <textarea rows='2' class='form-control question-text'
            onchange='updateQuestion("<%= data.columnName %>", <%= i %> )'><%=q%></textarea>

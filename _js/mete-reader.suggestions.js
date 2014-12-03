@@ -4,7 +4,13 @@
  * and open the template in the editor.
  */
 
-
+var semantics = {};
+$(document).on('ready', function() {
+    $.getJSON("config/semantics.json", function(data) {
+        console.log(data);
+        semantics = data;
+    });
+});
 function Suggestion()
 {
     var suggestion = {};
@@ -102,6 +108,7 @@ function getGeneralSuggestions(d)
         suggestions.push(s);
         suggestions = suggestions.concat(checkInterval(d))
     }
+    suggestions = suggestions.concat(checkSemantics(d))
 
 // contiguous values
     return suggestions;
@@ -124,10 +131,10 @@ function getNumberSuggestions(d)
         suggestions.push(s);
 //        console.log(s);
     }
-    if (d.outliers.length > 0 && d.countUnique>3)
+    if (d.outliers.length > 0 && d.countUnique > 3)
     {
         var s = new Suggestion();
-        s.text = 'The data contains ' + d.outliers.length + ' statistical outlier' + ((d.outliers.length > 1) ? 's' : '') + ' (&plusmn;1.5 * InterQuartileRange).';
+        s.text = 'The data contains ' + d.outliers.length + ' ('+(d.outliers.length/d.count*100).toPrecision(3)+'%)' +' statistical outlier' + ((d.outliers.length > 1) ? 's' : '') + ' (&plusmn;1.5 * InterQuartileRange).';
         s.importance = 2;
         s.scope = 'Number';
         s.class = 'tip';
@@ -151,10 +158,10 @@ function getIntegerSuggestions(d)
 function getFloatSuggestions(d)
 {
     var suggestions = getNumberSuggestions(d);
-    if (d.metrics.integer/d.count >=.2)
+    if (d.metrics.integer / d.count >= .2)
     {
         var s = new Suggestion();
-        s.text = 'The data contains ' + (d.metrics.integer / d.count * 100).toPrecision(3) + '% integer values. Investigate whether the column should be treated as an integer';
+        s.text = 'The data contains '+d.metrics.integer +' (' + (d.metrics.integer / d.count * 100).toPrecision(3) + '%) integer values. Investigate whether the column should be treated as an integer';
         s.importance = 2;
         s.scope = 'Float';
         s.class = 'tip';
@@ -190,13 +197,13 @@ function getStringSuggestions(d)
 function isSorted(data)
 {
 //    console.log(data);
-    var ascending = _.every(data, function (value, index, array) {
+    var ascending = _.every(data, function(value, index, array) {
 
         var c = compare(array[index - 1], value);
 
         return index === 0 || c >= 0;
     });
-    var descending = _.every(data, function (value, index, array) {
+    var descending = _.every(data, function(value, index, array) {
         var c = compare(array[index - 1], value);
         return index === 0 || c <= 0;
     });
@@ -246,7 +253,7 @@ function checkInterval(data)
         var cleanData = data.cleanData;
         if (cleanData.length > 1) {
             interval = cleanData[1] - cleanData[0];
-            equalInterval = _.every(cleanData, function (v, i, a) {
+            equalInterval = _.every(cleanData, function(v, i, a) {
                 return i === 0 || (v - a[i - 1] === interval);
 
             });
@@ -276,4 +283,61 @@ function checkInterval(data)
     }
 //    console.log(suggestions)
     return suggestions
+}
+
+function checkSemantics(data)
+{
+    var suggestions = [];
+    var cleanData = data.cleanData;
+    _.forEach(semantics, function(semantic, name) {
+//        console.log(semantic);
+//        console.log(name);
+        var validCount = 0;
+        if (semantic.regex.length > 0)
+        {
+            var re = new RegExp(semantic.regex)
+
+            _.forEach(cleanData, function(d)
+            {
+                var value = re.exec(d);
+
+                if (value)
+                {
+                    value = _.filter(value, function(v) {
+                        return !_.isUndefined(v)
+                    });
+                    if (value.length > 0)
+                    {
+//                        console.log(value);
+                        validCount++;
+                    }
+                }
+
+            })
+        }
+        var validName=false;
+        if(semantic.names.length>0)
+        {
+           validName =  _.any(semantic.names, function(name)
+           {
+//               console.log(data.columnName.toLowerCase())
+               return name.toLowerCase()=== data.columnName.toLowerCase();
+           })
+        }
+        if (validCount > .25 * cleanData.length || validName)
+        {
+            var s = new Suggestion()
+            s.text = semantic.text;
+            s.importance = semantic.importance;
+            s.scope = "Semantic";
+            s.class = semantic.class;
+            s.category = semantic.category;
+            suggestions.push(s);
+        }
+
+    });
+    if (suggestions.length > 0)
+        console.log(suggestions);
+    return suggestions;
+
 }
