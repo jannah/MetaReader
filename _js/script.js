@@ -184,7 +184,7 @@ function render(data)
 }
 function showCards(data)
 {
-    var objectLimit = 100000;
+    var objectLimit = 200000;
     $('#processing-progress-bar').show().attr('aria-valuenow', 0).attr('aria-valuemax', data.length);
     $('#page-title').text(data.title);
     $('#page-description').text(data.description);
