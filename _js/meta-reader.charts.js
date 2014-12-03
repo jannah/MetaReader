@@ -548,11 +548,15 @@ var MetaReaderCharts = function()
                         displayValues[d.key] = val;
                     })
 //            console.log(displayValues);
-                    transition.select('.x.axis g').selectAll('.tick.major').style('display', function(d, i)
-                    {
-                        return displayValues[d];
-                    }).delay(delay);
-                    ;
+                    transition.select('.x.axis g').selectAll('.tick.major').style(
+                            {'display': function(d, i) {
+                                    return displayValues[d];
+                                }
+                            }).delay(delay);
+                    transition.select('.x.axis g').selectAll('.tick.major text')
+                            .style({
+                                'text-anchor': 'start'
+                            }).delay(delay);
                 }
 
             });
@@ -949,14 +953,14 @@ var MetaReaderCharts = function()
             x_accessor: 'date',
             y_accessor: 'value',
         })
-        
+
         var svg = d3.select(chart.options.target).select('svg')
         svg.select('.active_datapoint').attr({
-            dy:10,
-            x:w/2,
-            'text-anchor':'middle'
+            dy: 10,
+            x: w / 2,
+            'text-anchor': 'middle'
         });
-         addImage(chart.options.target);
+        addImage(chart.options.target);
 //        return chart;
     }
     MRC.timeSeries = function(target, options, data) {

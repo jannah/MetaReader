@@ -381,8 +381,8 @@ function checkSemantics(data)
         }
 
     });
-    if (suggestions.length > 0)
-        console.log(suggestions);
+//    if (suggestions.length > 0)
+//        console.log(suggestions);
     return suggestions;
 
 }
