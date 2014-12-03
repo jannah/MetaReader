@@ -73,6 +73,7 @@ function MetaReader() {
         mr.columns = null;
 //        alert('processing completed')
         console.log('processing completed')
+        console.log(mr);
     };
 
     mr.sort = {ascending: function(a, b) {
@@ -264,7 +265,7 @@ function MetaReader() {
     var DateList = function(data, title, metrics, userFormat) {
         var self = ObjectList(data, title, metrics);
 
-        self.type = 'date';
+
         var asDate = _.map(self.data, function(v, i, a) {
             if (!checkNull(v))
                 return moment(v);
@@ -273,24 +274,26 @@ function MetaReader() {
 //        self.data = asDate;
 //        self.format = moment.parseFormat()
         self.prepData();
-        self.asDate = _.sortBy(asDate);
+        var sortedAsDate = _.sortBy(asDate);
+        self.asDate = asDate;
+        self.asDateSorted = function(){return _.sortBy(self.asDate)};
         // formatted for Rickshaw js input
-        self.timeSeries = _.map(getFreqDist(self.asDate), function(v, i, a) {
+        self.timeSeries = _.map(getFreqDist(sortedAsDate), function(v, i, a) {
             return {'x': moment(+v.key).unix(), 'y': v.values};
         });
-        self.timeSeries2 = _.map(getFreqDist(self.asDate), function(v, i, a) {
+        self.timeSeries2 = _.map(getFreqDist(sortedAsDate), function(v, i, a) {
             return {'date': new Date(moment(+v.key).format()), 'value': v.values};
 //            console.log(a[i])
         });
 //        console.log(self.asDate);
 
-        self.max = _.last(self.asDate);
+        self.max = _.last(sortedAsDate);
 //        console.log(self.max) 
 //        for(var x in self.max)
 //            console.log(self.max._i);
         self.format = moment.parseFormat(self.max._i);
-        self.min = _.first(self.asDate);
-        self.range = moment.duration(self.max - self.min);
+        self.min = _.first(sortedAsDate);
+        self.range = moment.preciseDiff(self.max, self.min);
         // NOTE: call humanize() method to get self.range in plain English
 
         // to determine intervals:
@@ -298,7 +301,7 @@ function MetaReader() {
         // and also make sure the diffs aren't all exactly the next largest interval
         self.intervals = {
             'year': self.max.diff(self.min, 'years') > 0,
-            'month': self.max.diff(self.min, 'months') > 0 && _.some(self.asDate,
+            'month': self.max.diff(self.min, 'months') > 0 && _.some(sortedAsDate,
                     function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'years', true) != v.diff(a[i + 1], 'years');
@@ -306,7 +309,7 @@ function MetaReader() {
                             return false;
                         }
                     }),
-            'day': self.max.diff(self.min, 'day') > 0 && _.some(self.asDate,
+            'day': self.max.diff(self.min, 'day') > 0 && _.some(sortedAsDate,
                     function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'months', true) != v.diff(a[i + 1], 'months');
@@ -314,7 +317,7 @@ function MetaReader() {
                             return false;
                         }
                     }),
-            'hour': self.max.diff(self.min, 'hours') > 0 && _.some(self.asDate,
+            'hour': self.max.diff(self.min, 'hours') > 0 && _.some(sortedAsDate,
                     function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'days', true) != v.diff(a[i + 1], 'days');
@@ -322,7 +325,7 @@ function MetaReader() {
                             return false;
                         }
                     }),
-            'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(self.asDate,
+            'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(sortedAsDate,
                     function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'hours', true) != v.diff(a[i + 1], 'hours');
@@ -330,7 +333,7 @@ function MetaReader() {
                             return false;
                         }
                     }),
-            'second': self.max.diff(self.min, 'seconds') > 0 && _.some(self.asDate,
+            'second': self.max.diff(self.min, 'seconds') > 0 && _.some(sortedAsDate,
                     function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'minutes', true) != v.diff(a[i + 1], 'minutes');
@@ -340,6 +343,7 @@ function MetaReader() {
                     })
         };
 //        self.asDate = null
+        self.type = 'date';
         self.suggestions = getSuggestions(self);
         return self;
     };
@@ -728,27 +732,27 @@ function MetaReader() {
     function csvToColumns(csv)
     {
         var columns = {};
-        console.log(_.last(csv))
+//        console.log(_.last(csv))
         var last = _.last(csv)
         var objCount = 0;
         for (var _obj in last)
             objCount++;
 //        console.log(objCount);
-        
-        if (objCount===1 )
+
+        if (objCount === 1)
         {
 //            console.log(last);
-            _.forEach(last, function(v,k){
+            _.forEach(last, function(v, k) {
 //                console.log(v);
-                if(v==="")
+                if (v === "")
                 {
-                     alert('Removing last empty line');
-                     csv.pop()
+                    alert('Removing last empty line');
+                    csv.pop()
 //                     console.log(_.last(csv))
                 }
             })
 //            console.log()
-           
+
 
         }
         for (var header in csv[0])

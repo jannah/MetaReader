@@ -7,7 +7,7 @@
 var semantics = {};
 $(document).on('ready', function() {
     $.getJSON("config/semantics.json", function(data) {
-        console.log(data);
+//        console.log(data);
         semantics = data;
     });
 });
@@ -25,6 +25,7 @@ function Suggestion()
 
 function getSuggestions(d)
 {
+//    console.log('porcessing suggestions for ' + d.title)
     var suggestions = [];
     suggestions = suggestions.concat(getGeneralSuggestions(d));
     if (d.type === 'string')
@@ -93,7 +94,7 @@ function getGeneralSuggestions(d)
     }
 
 //    is sorted
-    var sorted = isSorted(d.data);
+    var sorted = isSorted(d);
     if (sorted !== 0)
     {
         var msg = 'The data is sorted ' + ((sorted === 1) ? 'ascendingly' : 'descendingly')
@@ -134,7 +135,7 @@ function getNumberSuggestions(d)
     if (d.outliers.length > 0 && d.countUnique > 3)
     {
         var s = new Suggestion();
-        s.text = 'The data contains ' + d.outliers.length + ' ('+(d.outliers.length/d.count*100).toPrecision(3)+'%)' +' statistical outlier' + ((d.outliers.length > 1) ? 's' : '') + ' (&plusmn;1.5 * InterQuartileRange).';
+        s.text = 'The data contains ' + d.outliers.length + ' (' + (d.outliers.length / d.count * 100).toPrecision(3) + '%)' + ' statistical outlier' + ((d.outliers.length > 1) ? 's' : '') + ' (&plusmn;1.5 * InterQuartileRange).';
         s.importance = 2;
         s.scope = 'Number';
         s.class = 'tip';
@@ -161,7 +162,7 @@ function getFloatSuggestions(d)
     if (d.metrics.integer / d.count >= .2)
     {
         var s = new Suggestion();
-        s.text = 'The data contains '+d.metrics.integer +' (' + (d.metrics.integer / d.count * 100).toPrecision(3) + '%) integer values. Investigate whether the column should be treated as an integer';
+        s.text = 'The data contains ' + d.metrics.integer + ' (' + (d.metrics.integer / d.count * 100).toPrecision(3) + '%) integer values. Investigate whether the column should be treated as an integer';
         s.importance = 2;
         s.scope = 'Float';
         s.class = 'tip';
@@ -194,9 +195,16 @@ function getStringSuggestions(d)
     return suggestions;
 }
 
-function isSorted(data)
+function isSorted(d)
 {
-//    console.log(data);
+//    console.log('checking is sorted');
+    var data = d.data;
+//    console.log(d.type);
+    if (d.type === 'date') {
+//         console.log('checking sorted date');
+        data = d.asDate;
+
+    }
     var ascending = _.every(data, function(value, index, array) {
 
         var c = compare(array[index - 1], value);
@@ -228,11 +236,12 @@ function compare(v1, v2)
     else if (typeof (v2) === 'string' && typeof (v1) === 'string')
         c = String(v1).localeCompare(String(v2));
     else if (moment.isMoment(v2) && moment.isMoment(v1))
+    {
+//        console.log('comparing moment objects')
         c = v2.isAfter(v1) ? 1 : v2.isBefore(v1) ? -1 : 0;
+    }
     else {
-//        console.log(typeof (v1));
-//        console.log(v1);
-        c = 0;
+        c = 0
 
     }
     return c;
@@ -242,9 +251,42 @@ function checkInterval(data)
 {
 //    console.log('checking intervals')
     var interval, equalInterval, isContiguous;
-    var suggestions = []
-    if (data.type === 'date')
+    var suggestions = [];
+//    console.log(data.type);
+    if (data.type === 'date' && data.asDate.length > 1)
     {
+//        console.log(data.asDate[0])
+//        console.log(data.asDate[1])
+
+        var duration = data.asDate[1].diff(data.asDate[0])
+//        console.log(duration);
+        equalInterval = _.every(data.asDate, function(v, i, a) {
+//            console.log(v.toString())
+//            console.log();
+            var diff = v.diff(a[i - 1]);
+            return i === 0 || diff === duration || 
+                    diff === duration + 3600000 || diff === duration - 3600000;
+
+        });
+        if (equalInterval === true) {
+            var intervalObj = moment.duration(duration)
+
+            interval = moment.preciseDiff(data.asDate[1], data.asDate[0])
+
+            var interval1 = []
+            _.forEach(intervalObj._data, function(v, k) {
+//            console.log(k)
+
+                if (v === 1)
+                    interval1.push(k);
+            })
+//        console.log(intervalObj);
+//        console.log(interval1);
+//        console.log(intervalObj._data);
+//            console.log(data.title + '\t' + interval)
+            isContiguous = equalInterval && interval1.length === 1;
+
+        }
 
     }
     else if (data.type === 'integer' || data.type === 'float')
@@ -257,11 +299,11 @@ function checkInterval(data)
                 return i === 0 || (v - a[i - 1] === interval);
 
             });
-            isContiguous = interval === 1;
+            isContiguous = equalInterval && interval === 1;
         }
     }
 //    console.log(interval)
-    if (equalInterval)
+    if (equalInterval === true)
     {
         var s = new Suggestion();
         s.text = 'The data values change in equal intervals of ' + interval + '.';
@@ -271,7 +313,7 @@ function checkInterval(data)
         s.category = 'equal-intervals';
         suggestions.push(s);
     }
-    if (isContiguous)
+    if (isContiguous === true)
     {
         var s = new Suggestion();
         s.text = 'The data values are contiguous.';
@@ -315,14 +357,14 @@ function checkSemantics(data)
 
             })
         }
-        var validName=false;
-        if(semantic.names.length>0)
+        var validName = false;
+        if (semantic.names.length > 0)
         {
-           validName =  _.any(semantic.names, function(name)
-           {
+            validName = _.any(semantic.names, function(name)
+            {
 //               console.log(data.columnName.toLowerCase())
-               return name.toLowerCase()=== data.columnName.toLowerCase();
-           })
+                return name.toLowerCase() === data.columnName.toLowerCase();
+            })
         }
         if (validCount > .25 * cleanData.length || validName)
         {

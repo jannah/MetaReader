@@ -129,7 +129,7 @@ function loadFileData(results, file)
 {
 
     console.log('upload completed')
-    console.log(results)
+//    console.log(results)
 //    console.log(file)
     data = loadFile(file, results);
     render(data);
@@ -155,12 +155,13 @@ function loadSample(filename)
 {
     data = loadFile(filename);
     $('#samples').collapse();
-    console.log(data);
+   
     render(data);
 }
 function loadFromUpload(file)
 {
     data = loadFile(file);
+
     render(data);
 }
 function loadFile(file, results)

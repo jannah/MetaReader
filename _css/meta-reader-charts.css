@@ -29,7 +29,7 @@ and open the template in the editor.
     opacity: 0;
     z-index: 100;
 }
-.mrc-chart .histogram:hover, .mrc-chart .highlight-bar {
+.mrc-chart .histogram:hover, .mrc-chart .highlight-bar, .line1-color:hover {
     opacity: 1;
     fill: orange;
     z-index: 100;
@@ -311,6 +311,10 @@ Spectrum Diagram
     stroke:steelblue;
 
 }
+
+rect.line1-color:hover {
+    stroke:none;
+}
 .area1-color{
     fill:lightgrey;
 }
@@ -327,4 +331,13 @@ path.main-area{
 }  
 .timeseries-chart text{
     opacity:1 !important;
+}
+
+.active_datapoint{
+    font-size: 1.2em;
+    
+
+}
+.year-marker text{
+    font-size: .7em;
 }

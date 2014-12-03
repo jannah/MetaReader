@@ -941,6 +941,7 @@ var MetaReaderCharts = function()
         data_graphic({
 //            title: chart.options.title,
 //            description: "This graphic shows a time-series of downloads.",
+//            top:40,
             'data': data,
             width: w,
             height: ah,
@@ -948,6 +949,13 @@ var MetaReaderCharts = function()
             x_accessor: 'date',
             y_accessor: 'value',
         })
+        
+        var svg = d3.select(chart.options.target).select('svg')
+        svg.select('.active_datapoint').attr({
+            dy:10,
+            x:w/2,
+            'text-anchor':'middle'
+        });
          addImage(chart.options.target);
 //        return chart;
     }
