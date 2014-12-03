@@ -25,7 +25,7 @@ var MetaReaderCharts = function()
             axisWidth: 30,
             title: '',
             id: '',
-            xAxisLimit: 40,
+            xAxisLimit: 30,
             colors: d3.scale.category20()
         };
     };
