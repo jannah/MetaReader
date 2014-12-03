@@ -746,7 +746,7 @@ function MetaReader() {
 //                console.log(v);
                 if (v === "")
                 {
-                    alert('Removing last empty line');
+                    console.log('Removing last empty line');
                     csv.pop()
 //                     console.log(_.last(csv))
                 }
