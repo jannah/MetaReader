@@ -24,7 +24,7 @@ function MetaReader() {
     {
         var result = ''
         result += '# ' + mr.title + '\n------\n';
-        result += mr.filename + '\n\n';
+        result += 'filename: ' + mr.filename + '\n\n';
         result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)\n\n';
         result += mr.description + '\n\n';
         var index = 1
@@ -170,12 +170,14 @@ function MetaReader() {
         {
 
             var result = '## ' + (index ? index + '. ' : '') + self.title
-                    + ' [' + self.columnName + '] (' + self.type + ')\n------\n';
+                    + '\n------\n';
+            result += '### Column Name:\n' + self.columnName + '\n';
+            result += '### Data Type:\n' + self.type + '\n';
 
 
             if (self.type === 'date')
             {
-                result += 'Date Format: ' + self.format + '\n';
+                result += '### Date Format:\n' + self.format + '\n';
             }
 
             if (self.description.length > 0)
@@ -776,7 +778,7 @@ function MetaReader() {
 
     function csvToColumns(csv)
     {
-        
+
         var columns = {};
 //        console.log(_.last(csv))
         var last = _.last(csv)
