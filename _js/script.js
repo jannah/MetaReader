@@ -40,9 +40,9 @@ function initMetaReader() {
 //    load(TEXT_FILES[0]);
 
 }
-function loadSpinner(){
-    var spinner = new Spinner().spin();
-$('#loading').append(spinner.el);
+function loadSpinner() {
+    var spinner = new Spinner({color: 'white'}).spin();
+    $('#loading').append(spinner.el);
 }
 function loadIntro()
 {
@@ -104,7 +104,7 @@ function loadUploadForm()
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
                 label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
                 file = input.get(0).files[0];
-        showLoading()
+        showLoading('Loading ' + file.name)
         window.setTimeout(function() {
             input.trigger('fileselect', [file, numFiles, label]);
         }, TIMEWAIT);
@@ -123,21 +123,20 @@ function pausecomp(millis)
     while (curDate - date < millis);
     console.log('resuming')
 }
-function showLoading()
+function showLoading(text)
 {
-
-    renderLoadingDialogue();
-
-//wait
-//    $('#loading').css('display', 'block').show();
-//    console.log('showing loading');
-//    pausecomp(10000);
-}
-
-function renderLoadingDialogue()
-{
-    console.log('SHOW INDICATOR')
+//console.log('SHOW INDICATOR')
+    changeLoadingText(text)
     $('#loading').show();
+
+}
+function changeLoadingText(text)
+{
+    $('#loading label').text(text);
+}
+function hideLoading()
+{
+    $('#loading').slideUp(1000);
 }
 function loadSamples()
 {
@@ -178,7 +177,7 @@ function loadFileStream(file, cb)
 }
 function loadSample(filename, configFileName)
 {
-    showLoading()
+    showLoading('Loading Sample')
 
     window.setTimeout(function() {
         var config = loadJSONFile(configFileName)
@@ -226,7 +225,11 @@ function resetPage()
 }
 function render(data)
 {
-    showCards(data);
+    changeLoadingText('Rendering')
+    window.setTimeout(function(){
+        showCards(data);
+    }, 100)
+    
 }
 function showCards(data)
 {
@@ -267,7 +270,7 @@ function showCards(data)
     refreshNavigation();
     activateModal();
     activateTooltips();
-    $('#loading').hide();
+    hideLoading();
 
 }
 function loadSuggestions(d)
