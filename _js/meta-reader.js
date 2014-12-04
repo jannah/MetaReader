@@ -35,7 +35,48 @@ function MetaReader() {
 
         return result;
     }
-    mr.loadFile = function(file, results)
+    mr.toJSON = function()
+    {
+        var result = {
+            title: mr.title,
+            description: mr.description,
+            columns: {}
+        };
+        _.forEach(mr.statistics, function(values, key) {
+            result.columns[key] = {
+                title: values.title,
+                description: values.description,
+                suggestions: values.suggestions,
+                notes: values.notes,
+                questions: values.questions
+            }
+        });
+
+        return result;
+
+    }
+    loadConfigFile = function(config)
+    {
+        console.log('loading config file')
+//        console.log(config);
+        if (!_.isUndefined(config)) {
+            var headers = ['title', 'description'],
+                    col_headers = ['title', 'description', 'suggestions', 'notes', 'questions']
+            _.forEach(headers, function(h) {
+                mr[h] = (config[h] && config[h].length > 0) ? config[h] : mr[h];
+            })
+            _.forEach(config.columns, function(column, key) {
+                _.forEach(col_headers, function(h) {
+//                   console.log(key)
+                    mr.statistics[key][h] =
+                            (column[h] && column[h].length > 0) ?
+                            column[h] : mr.statistics[key][h];
+                });
+            });
+
+        }
+    }
+    mr.loadFile = function(file, results, config)
     {
         var csv;
         console.log('loading file');
@@ -70,6 +111,8 @@ function MetaReader() {
 //        alert('processing columns')
         console.log('processing columns')
         mr.statistics = process_columns(mr.columns);
+
+        loadConfigFile(config);
         mr.columns = null;
 //        alert('processing completed')
         console.log('processing completed')
@@ -276,7 +319,9 @@ function MetaReader() {
         self.prepData();
         var sortedAsDate = _.sortBy(asDate);
         self.asDate = asDate;
-        self.asDateSorted = function(){return _.sortBy(self.asDate)};
+        self.asDateSorted = function() {
+            return _.sortBy(self.asDate)
+        };
         // formatted for Rickshaw js input
         self.timeSeries = _.map(getFreqDist(sortedAsDate), function(v, i, a) {
             return {'x': moment(+v.key).unix(), 'y': v.values};

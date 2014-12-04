@@ -1,8 +1,7 @@
    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-tint"></i> Samples<b class="caret"></b></a>
                        <ul class="dropdown-menu message-dropdown" >
         <% _.each(files, function(d){%>
-        <% var names = d.split('/')
-        name = names[names.length-1]%>
-        <li><a href='#' onclick='loadSample("<%=d%>")'><%=name%></a></li>
+
+        <li><a href='#' onclick='loadSample("<%=d.FILENAME%>", "<%=d.CONFIG%>")'><%=d.TITLE%></a></li>
         <%})%>
 </ul>

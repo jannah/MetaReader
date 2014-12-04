@@ -9,26 +9,8 @@ $(document).on('ready', function() {
     initMetaReader();
     activateTooltips();
 });
-
-var TEXT_FILES = [
-    document.URL.replace('index.html', '').replace('#', '') + 'data/test.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/NC-EST2013-AGESEX-RES.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/SCPRC-EST2013-18+POP-RES.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/calories.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/dma.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/elements.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/fortune500.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/migraine_i290_8.csv',
-//    document.URL.replace('index.html','').replace('#', '')+'data/test.xlsx',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/mindwave_data_dump.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/titanic_raw.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/fl-ballot-2000.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/fl2000_flat.csv',
-//    document.URL.replace('index.html','').replace('#', '')+'data/faa-ontime-sept2001.csv',
-    document.URL.replace('index.html', '').replace('#', '') + 'data/oakland-budget.csv'
-//    document.URL.replace('index.html','').replace('#', '')+'data/plane-crashes.ascii.csv'
-//    document.URL.replace('index.html','').replace('#', '')+'data/ufo-sightings.csv'
-];
+var ROOT = document.URL.replace('index.html', '').replace('#', '');
+var TEXT_FILES = {};
 var TEMPLATES = {
     CARD: {filename: 'templates/card.html', target: '#cards'},
     SAMPLES: {filename: 'templates/samples.html', target: '#samples-items'},
@@ -56,6 +38,7 @@ function initMetaReader() {
 //    load(TEXT_FILES[0]);
 
 }
+
 function loadIntro()
 {
     renderTemplate(TEAMPLATES.INTRO, {})
@@ -121,14 +104,19 @@ function loadUploadForm()
 
 function loadSamples()
 {
-    renderTemplate(TEMPLATES.SAMPLES, {files: TEXT_FILES});
+    $.getJSON("config/samples.json", function(data) {
+//        console.log(data);
+        TEXT_FILES = data;
+        renderTemplate(TEMPLATES.SAMPLES, {files: TEXT_FILES});
+    });
+
 //    $('#samples').siblings('a').collapse();
 //    $('.dropdown-toggle').dropdown();
 }
 function loadFileData(results, file)
 {
 
-    console.log('upload completed')
+    console.log('upload completed');
 //    console.log(results)
 //    console.log(file)
     data = loadFile(file, results);
@@ -151,11 +139,13 @@ function loadFileStream(file, cb)
     };
     reader.readAsText(file);
 }
-function loadSample(filename)
+function loadSample(filename, configFileName)
 {
-    data = loadFile(filename);
+    var config = loadJSONFile(configFileName)
+    data = loadFile(filename,null,  config);
+
     $('#samples').collapse();
-   
+
     render(data);
 }
 function loadFromUpload(file)
@@ -164,13 +154,27 @@ function loadFromUpload(file)
 
     render(data);
 }
-function loadFile(file, results)
+function loadJSONFile(filename)
+{
+
+    var jqxhr = $.ajax({
+        url: filename,
+        type: 'get',
+        dataType: 'json',
+//        cache: false,
+        async: false
+    });
+//    console.log(jqxhr);
+//    console.log(jqxhr.responseJSON);
+    return jqxhr.responseJSON;
+}
+function loadFile(file, results, config)
 {
 
     resetPage();
     hideIntro();
     var reader = new MetaReader();
-    reader.loadFile(file, results);
+    reader.loadFile(file, results, config);
     return reader;
 }
 function resetPage()
@@ -346,7 +350,13 @@ function saveAsMarkdown()
     saveAs(blob, data.filename + "README.md");
 }
 
-
+function saveConfigFile()
+{
+    var j = data.toJSON();
+    console.log(j);
+    var blob = new Blob([JSON.stringify(j)], {type: "text/plain;charset=utf-8"});
+    saveAs(blob, data.filename + "_MRSESSION.json");
+}
 function saveAsPDF()
 {
     var cards = $('.mrc-card');

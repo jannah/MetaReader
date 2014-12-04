@@ -1,0 +1,61 @@
+[{
+        "FILENAME": "data/test.csv",
+        "CONFIG": "data/test.csv_MRSESSION.json",
+        "TITLE": "DEMO"
+    },
+    {
+        "FILENAME": "data/NC-EST2013-AGESEX-RES.csv",
+        "CONFIG": "data/NC-EST2013-AGESEX-RES.csv_MRSESSION.json",
+        "TITLE": "NC-EST2013-AGESEX-RES.csv"
+    },
+    {
+        "FILENAME": "data/SCPRC-EST2013-18+POP-RES.csv",
+        "CONFIG": "data/SCPRC-EST2013-18+POP-RES.csv_MRSESSION.json",
+        "TITLE": "SCPRC-EST2013-18+POP-RES.csv"
+    },
+    {
+        "FILENAME": "data/calories.csv",
+        "CONFIG": "data/calories.csv_MRSESSION.json",
+        "TITLE": "Calories (Mixed Text Values)"
+    },
+    {
+        "FILENAME": "data/dma.csv",
+        "CONFIG": "data/dma.csv_MRSESSION.json",
+        "TITLE": "dma.csv"
+    },
+    {
+        "FILENAME": "data/elements.csv",
+        "CONFIG": "data/elements.csv_MRSESSION.json",
+        "TITLE": "Elements"
+    },
+    {
+        "FILENAME": "data/fortune500.csv",
+        "CONFIG": "data/fortune500.csv_MRSESSION.json",
+        "TITLE": "Fortune 500"
+    },
+    {
+        "FILENAME": "data/migraine_i290_8.csv",
+        "CONFIG": "data/migraine_i290_8.csv_MRSESSION.json",
+        "TITLE": "migraine_i290_8.csv"
+    },
+    {
+        "FILENAME": "data/titanic_raw.csv",
+        "CONFIG": "data/titanic_raw.csv_MRSESSION.json",
+        "TITLE": "titanic_raw.csv"
+    },
+    {
+        "FILENAME": "data/fl-ballot-2000.csv",
+        "CONFIG": "data/fl-ballot-2000.csv_MRSESSION.json",
+        "TITLE": "Florida Ballot"
+    },
+    {
+        "FILENAME": "data/fl2000_flat.csv",
+        "CONFIG": "data/fl2000_flat.csv_MRSESSION.json",
+        "TITLE": "fl2000_flat.csv"
+    },
+    {
+        "FILENAME": "data/oakland-budget.csv",
+        "CONFIG": "data/oakland-budget.csv_MRSESSION.json",
+        "TITLE": "oakland-budget.csv"
+    }
+]
