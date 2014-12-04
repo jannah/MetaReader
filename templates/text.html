@@ -6,7 +6,7 @@ MRC.imageMode = imageMode
 var fd = new MRC.histogram(target, {'title':data.title + ' frequency distribution','id':data.id+'-fd1'}, data.frequencyDistribution, categorical?data.type:null)
 var fd3 = new MRC.lollipop(target, {'title':data.title + ' frequency distribution (Lollipop)','id':data.id+'-fd3'}, data.frequencyDistribution, categorical?data.type:null)
 if(categorical || data.metrics.number>data.count*.1)
-    var spectrum = new MRC.spectrum(target, {'title':data.title + ' Value Spectrum','id':data.id+'-spectrum', height:75}, data.data, data.title)
+    var spectrum = new MRC.spectrum(target, {'title':data.title + ' Value Spectrum','id':data.id+'-spectrum', height:75}, data.data, data.title, true)
 if(!categorical)
 {
     var wordLengths = _.map(data.data, function(d,i){return d?d.length:0})
@@ -19,18 +19,18 @@ if(!categorical)
         }
         return 0
     })
-    var spectrumWL = new MRC.spectrum(target, {'title':data.title + ' Character Count Spectrum','id':data.id+'-spectrum-wl', height:75,
+    var spectrumWL = new MRC.spectrum(target, {'title':data.title + ' - Character Count Spectrum','id':data.id+'-spectrum-wl', height:75,
             colorRange: ["rgb(229, 168, 137)", "rgb(226, 105, 45)", "rgb(229, 76, 0)"]}, wordLengths, data.title)
-    var spectrumWC = new MRC.spectrum(target, {'title':data.title + ' Word Count Spectrum','id':data.id+'-spectrum-wc', height:75,
+    var spectrumWC = new MRC.spectrum(target, {'title':data.title + ' - Word Count Spectrum','id':data.id+'-spectrum-wc', height:75,
             colorRange: ["rgb(160, 206, 229)", "rgb(160, 206, 229)", "rgb(40, 149, 204)"]}, wordCount, data.title)
 }
 
 var stats = {
     'Total': data.count,
     'Unique': data.countUnique,
+    'Missing':data.invalidValues,
     'Avg Word Count':data.average_word_count,
-    'Avg Char Count':data.average_char_count,
-    'Missing':data.invalidValues
+    'Avg Char Count':data.average_char_count
     
 };
 var titles = {

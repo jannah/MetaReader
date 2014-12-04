@@ -776,6 +776,7 @@ function MetaReader() {
 
     function csvToColumns(csv)
     {
+        
         var columns = {};
 //        console.log(_.last(csv))
         var last = _.last(csv)
@@ -800,9 +801,11 @@ function MetaReader() {
 
 
         }
+//        var used_headers = [];
         for (var header in csv[0])
         {
-            columns[header] = $.map(csv, function(item) {
+            var colHeader = header;
+            columns[colHeader] = $.map(csv, function(item) {
                 return item[header];
             });
         }

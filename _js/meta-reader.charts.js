@@ -564,7 +564,7 @@ var MetaReaderCharts = function()
         addImage(new_target);
         return chart;
     };
-    MRC.spectrum = function(target, options, data, outliers)
+    MRC.spectrum = function(target, options, data, outliers, hideLegend)
     {
         //        var MRC = new MetaReader();
         data = getSequence(data);
@@ -683,30 +683,33 @@ var MetaReaderCharts = function()
                             }
                         });
         var lw = aw * .25;
-        var legend_count = 20;
-        var legend_data = [];
-        for (var i = 0; i < legend_count; i++)
-            legend_data.push(i);
-        var legend = svg.append('g').attr(
-                {
-                    class: 'spectrum-legend',
-                    transform: "translate(" + (chart.options.margin.left + aw * .75) + "," + (h) + ")"
-                });
-        legend.selectAll('rect').data(legend_data).enter()
-                .append('rect')
-                .attr({
-                    class: 'legend-rect',
-                    x: function(d, i) {
-                        return 10 + (lw - 20) * i / legend_count;
-                    }, y: 0, height: ah / 5, width: lw / legend_count
-                })
-                .style({
-                    fill: function(d, i) {
-                        return getColorGradient(0, legend_count, i, chart.options.colors, chart.options.colorRange);
-                    }
-                });
-        legend.append('text').text(min_value).attr({x: 8, y: 5, 'text-anchor': 'end'});
-        legend.append('text').text(max_value).attr({x: lw - 8, y: 5});
+        if (!hideLegend)
+        {
+            var legend_count = 20;
+            var legend_data = [];
+            for (var i = 0; i < legend_count; i++)
+                legend_data.push(i);
+            var legend = svg.append('g').attr(
+                    {
+                        class: 'spectrum-legend',
+                        transform: "translate(" + (chart.options.margin.left + aw * .75) + "," + (h) + ")"
+                    });
+            legend.selectAll('rect').data(legend_data).enter()
+                    .append('rect')
+                    .attr({
+                        class: 'legend-rect',
+                        x: function(d, i) {
+                            return 10 + (lw - 20) * i / legend_count;
+                        }, y: 0, height: ah / 5, width: lw / legend_count
+                    })
+                    .style({
+                        fill: function(d, i) {
+                            return getColorGradient(0, legend_count, i, chart.options.colors, chart.options.colorRange);
+                        }
+                    });
+            legend.append('text').text(min_value).attr({x: 8, y: 5, 'text-anchor': 'end'});
+            legend.append('text').text(max_value).attr({x: lw - 8, y: 5});
+        }
         addImage(new_target);
         return chart;
     };

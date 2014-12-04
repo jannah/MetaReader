@@ -45,6 +45,9 @@ body{
 #console{
     padding:5%;
 }
+#samples-menu{
+    min-width:200px;
+}
 #row-counter{
     line-height: 2em;
 
@@ -94,6 +97,15 @@ body{
 }
 #upload li{
 
+}
+#loading{
+    display:none;
+    font-size:3em;
+    background: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 #navigation ul{
     list-style: none;

@@ -11,6 +11,7 @@ $(document).on('ready', function() {
 });
 var ROOT = document.URL.replace('index.html', '').replace('#', '');
 var TEXT_FILES = {};
+var TIMEWAIT = 100;
 var TEMPLATES = {
     CARD: {filename: 'templates/card.html', target: '#cards'},
     SAMPLES: {filename: 'templates/samples.html', target: '#samples-items'},
@@ -35,10 +36,14 @@ function initMetaReader() {
     loadUploadForm();
     loadSamples();
     loadIntro();
+    loadSpinner();
 //    load(TEXT_FILES[0]);
 
 }
-
+function loadSpinner(){
+    var spinner = new Spinner().spin();
+$('#loading').append(spinner.el);
+}
 function loadIntro()
 {
     renderTemplate(TEAMPLATES.INTRO, {})
@@ -85,6 +90,7 @@ function loadUploadForm()
             {
                 counter = 0;
                 results.data = data;
+//                console.log(data);
                 loadFileData(results, file)
             }
         });
@@ -98,10 +104,41 @@ function loadUploadForm()
                 numFiles = input.get(0).files ? input.get(0).files.length : 1,
                 label = input.val().replace(/\\/g, '/').replace(/.*\//, ''),
                 file = input.get(0).files[0];
-        input.trigger('fileselect', [file, numFiles, label]);
+        showLoading()
+        window.setTimeout(function() {
+            input.trigger('fileselect', [file, numFiles, label]);
+        }, TIMEWAIT);
+
     });
 }
+function pausecomp(millis)
+{
+    console.log('pausing')
+    var date = new Date();
+    var curDate = null;
 
+    do {
+        curDate = new Date();
+    }
+    while (curDate - date < millis);
+    console.log('resuming')
+}
+function showLoading()
+{
+
+    renderLoadingDialogue();
+
+//wait
+//    $('#loading').css('display', 'block').show();
+//    console.log('showing loading');
+//    pausecomp(10000);
+}
+
+function renderLoadingDialogue()
+{
+    console.log('SHOW INDICATOR')
+    $('#loading').show();
+}
 function loadSamples()
 {
     $.getJSON("config/samples.json", function(data) {
@@ -141,12 +178,17 @@ function loadFileStream(file, cb)
 }
 function loadSample(filename, configFileName)
 {
-    var config = loadJSONFile(configFileName)
-    data = loadFile(filename,null,  config);
+    showLoading()
 
-    $('#samples').collapse();
+    window.setTimeout(function() {
+        var config = loadJSONFile(configFileName)
+        data = loadFile(filename, null, config);
 
-    render(data);
+        $('#samples').collapse();
+
+        render(data);
+    }, TIMEWAIT);
+
 }
 function loadFromUpload(file)
 {
@@ -225,6 +267,7 @@ function showCards(data)
     refreshNavigation();
     activateModal();
     activateTooltips();
+    $('#loading').hide();
 
 }
 function loadSuggestions(d)
