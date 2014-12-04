@@ -468,7 +468,7 @@ var MetaReaderCharts = function()
 
             /* Sorting actions        */
             var frame = $('#' + chart.options.id + '-frame');
-            frame.prepend(getSortButton(chart.options.id + '-sort'));
+            frame.children('.chart-title').prepend(getSortButton(chart.options.id + '-sort'));
             $('#' + chart.options.id + '-sort li').on('click', function(d)
             {
 
@@ -570,7 +570,6 @@ var MetaReaderCharts = function()
         data = getSequence(data);
         var chart = {};
         chart.options = loadOptions(options, 'spectrum', target);
-//        addChartFrame(target, chart.options);
         var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
@@ -715,7 +714,6 @@ var MetaReaderCharts = function()
     {
         var chart = {};
         chart.options = loadOptions(options, 'scatter', target);
-//        addChartFrame(target, chart.options);
         var new_target = chart.options.target;
         var w = chart.options.width - chart.options.margin.left - chart.options.margin.right,
                 h = chart.options.height - chart.options.margin.top - chart.options.margin.bottom,
@@ -967,7 +965,6 @@ var MetaReaderCharts = function()
         console.log(data)
         var chart = {};
         chart.options = loadOptions(options, 'timeseries', target);
-//             addChartFrame(target, chart.options);
         var new_target = chart.options.target;
         $(new_target).addClass('mrc-rickshaw')
 
@@ -1084,10 +1081,12 @@ var MetaReaderCharts = function()
     {
 
         var frame = '<div id="' + options.id + '-frame" class="chart-frame chart-frame-' + options.type + '">'
-                + '<div class="chart-title" contenteditable="True">' + options.title + '</div>'
+                + '<div class="chart-title"><label contenteditable="True">' + options.title + '</label>'
+                + '<div class="save-image-div"></div></div>'
                 + '<div id="' + options.id + '-frame-chart">'
                 + '</div></div>'
         $(target).append(frame)
+        addSaveImageButton('#' + options.id + '-frame .save-image-div');
 
 
     }
@@ -1104,6 +1103,44 @@ var MetaReaderCharts = function()
         b += '</ul></div>';
         return b;
     }
+    function addSaveImageButton(target)
+    {
+        var btn = '<button class="save-image-btn btn btn-default mr-tooltip hidden-print" + title="Save the chart as an image">'
+                + '<span class="glyphicon glyphicon-floppy-disk"></span>'
+                + '</button>';
+        $(target).append(btn);
+        $(target + ' .save-image-btn').on('click', function()
+        {
+
+            var svg = $(target).closest('.chart-frame').find('svg')[0];
+            var chart = $(svg).clone()[0];
+            var titles = $(chart).find('*[title]').each(function(d) {
+                $(this).attr('title', '');
+                $(this).attr('data-original-title', '');
+//                    console.log($(this))
+            });
+            console.log('saving image ' + target)
+            console.log(chart);
+            saveSvgAsPng(chart, "chart.png", 3);
+
+            /*
+             //            console.log(this)
+             var frame = $(this).closest('.chart-frame')
+             //            console.log(frame);
+             var link = frame.find('.print-image-link')
+             //            console.log(link);
+             console.log(link.attr('href'))
+             var img = frame.find('.print-image')
+             //            link.trigger('click');
+             console.log(img);
+             var src = img.attr('src')
+             src = src.replace('data:image/svg+xml', 'data:image/png')
+             var a = document.createElement("a");
+             a.download = "chart.png";
+             a.href = src;
+             a.click();*/
+        })
+    }
     function addImage(target)
     {
         var svg = $(target).children('svg')[0];
@@ -1115,7 +1152,12 @@ var MetaReaderCharts = function()
         });
         svgAsDataUri(chart, 1, function(uri) {
 
-            d3.select(target).append('img').attr({'src': uri, class: 'print-image'});
+            d3.select(target)
+//                    .append('a')
+//                    .attr({'href': uri, 'download': 'chart.png', 'class': 'print-image-link'})
+                    .append('img')
+                    .attr({'src': uri, class: 'print-image'});
+
             if (MRC.imageMode) {
                 console.log('removing svg from ' + target)
                 $(target).children('svg').remove();

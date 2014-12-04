@@ -238,11 +238,11 @@ Spectrum Diagram
 }
 .sort-dropdown {
     float: left;
-    margin-right: 5px;
+    margin: 0 5px;
     text-align: center;
     display: block;
     z-index: 1;
-    position: absolute;
+    /* position: absolute; */
 }
 .sort-dropdown ul {
     width: auto;
@@ -266,7 +266,8 @@ Spectrum Diagram
 
 .chart-frame{
     /* margin: 0 5%; */
-    float: left;
+    /* float: left; */
+    display: inline-block;
 }
 .chart-frame-histogram{
     width: 50%;
@@ -283,6 +284,7 @@ Spectrum Diagram
 .chart-frame-box{
     width:50%;
 
+    text-align: center;
 }
 .chart-frame-spectrum{
     width:50%
@@ -340,4 +342,15 @@ path.main-area{
 }
 .year-marker text{
     font-size: .7em;
+}
+
+.save-image-btn{
+    
+}
+.save-image-div{
+    float:right;
+    /* position: fixed; */
+    /* display: block; */
+    z-index: 100;
+    left: 57%;
 }
