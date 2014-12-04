@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-String.prototype.endsWith = function (suffix) {
+String.prototype.endsWith = function(suffix) {
     return this.indexOf(suffix, this.length - suffix.length) !== -1;
 };
 
@@ -20,22 +20,63 @@ function MetaReader() {
     mr.columnLength = 0;
     mr.columnCount = 0;
 
-    mr.toMarkdown = function ()
+    mr.toMarkdown = function()
     {
         var result = ''
         result += '# ' + mr.title + '\n------\n';
-        result += mr.filename + '\n\n';
-        result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)';
+        result += 'filename: ' + mr.filename + '\n\n';
+        result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)\n\n';
         result += mr.description + '\n\n';
         var index = 1
-        _.forEach(mr.statistics, function (col, i) {
+        _.forEach(mr.statistics, function(col, i) {
 //            console.log(i+'\t'+col)
             result += col.toMarkdown(index++);
         });
 
         return result;
     }
-    mr.loadFile = function (file, results)
+    mr.toJSON = function()
+    {
+        var result = {
+            title: mr.title,
+            description: mr.description,
+            columns: {}
+        };
+        _.forEach(mr.statistics, function(values, key) {
+            result.columns[key] = {
+                title: values.title,
+                description: values.description,
+                suggestions: values.suggestions,
+                notes: values.notes,
+                questions: values.questions
+            }
+        });
+
+        return result;
+
+    }
+    loadConfigFile = function(config)
+    {
+        console.log('loading config file')
+//        console.log(config);
+        if (!_.isUndefined(config)) {
+            var headers = ['title', 'description'],
+                    col_headers = ['title', 'description', 'suggestions', 'notes', 'questions']
+            _.forEach(headers, function(h) {
+                mr[h] = (config[h] && config[h].length > 0) ? config[h] : mr[h];
+            })
+            _.forEach(config.columns, function(column, key) {
+                _.forEach(col_headers, function(h) {
+//                   console.log(key)
+                    mr.statistics[key][h] =
+                            (column[h] && column[h].length > 0) ?
+                            column[h] : mr.statistics[key][h];
+                });
+            });
+
+        }
+    }
+    mr.loadFile = function(file, results, config)
     {
         var csv;
         console.log('loading file');
@@ -65,17 +106,20 @@ function MetaReader() {
 //        alert('converting to columns')
         console.log('converting csv to columns');
         mr.columns = csvToColumns(csv);
-       
+
 
 //        alert('processing columns')
         console.log('processing columns')
         mr.statistics = process_columns(mr.columns);
+
+        loadConfigFile(config);
         mr.columns = null;
 //        alert('processing completed')
         console.log('processing completed')
+        console.log(mr);
     };
 
-    mr.sort = {ascending: function (a, b) {
+    mr.sort = {ascending: function(a, b) {
             var n1 = Number(a), n2 = Number(b);
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
             if (checkNull(n1) || checkNull(n2))
@@ -84,7 +128,7 @@ function MetaReader() {
                 return d3.ascending(a, b);
             } else
                 return n1 - n2;
-        }, descending: function (a, b) {
+        }, descending: function(a, b) {
             var n1 = Number(a), n2 = Number(b);
 //            console.log(a + '\t' + n1 + '\t' + b + '\t' + n2)
             if (checkNull(n1) || checkNull(n2))
@@ -92,7 +136,7 @@ function MetaReader() {
             else
                 return n2 - n1;
         }};
-    mr.reload = function (previous)
+    mr.reload = function(previous)
     {
         mr.columns = previous.columns;
         mr.statistics = previous.statistics;
@@ -101,7 +145,7 @@ function MetaReader() {
     function escapeRegExp(string) {
         return string.replace(/([.*+?^=!:${}()|\[\]\/\\\s])/g, "-");
     }
-    var ObjectList = function (data, title, metrics) {
+    var ObjectList = function(data, title, metrics) {
         var self = {};
         self.title = title;
         self.columnName = title;
@@ -122,16 +166,18 @@ function MetaReader() {
         self.count = data.length;
 
 
-        self.toMarkdown = function (index)
+        self.toMarkdown = function(index)
         {
 
             var result = '## ' + (index ? index + '. ' : '') + self.title
-                    + ' [' + self.columnName + '] (' + self.type + ')\n------\n';
+                    + '\n------\n';
+            result += '### Column Name:\n' + self.columnName + '\n';
+            result += '### Data Type:\n' + self.type + '\n';
 
 
             if (self.type === 'date')
             {
-                result += 'Date Format: ' + self.format + '\n';
+                result += '### Date Format:\n' + self.format + '\n';
             }
 
             if (self.description.length > 0)
@@ -141,14 +187,14 @@ function MetaReader() {
             if (self.questions.length > 0)
             {
                 result += '### Questions:\n';
-                _.forEach(self.questions, function (q, i) {
+                _.forEach(self.questions, function(q, i) {
                     result += '  ' + (i + 1) + '. ' + q + '\n';
                 });
             }
             if (self.suggestions.length > 0)
             {
                 result += '### Suggestions:\n';
-                _.forEach(self.suggestions, function (s, i) {
+                _.forEach(self.suggestions, function(s, i) {
                     if (s.show)
                         result += '  ' + (i + 1) + '. (' + s.class + ') ' + s.text + '\n';
                 });
@@ -157,16 +203,16 @@ function MetaReader() {
             return result;
 
         };
-        self.prepData = function () {
+        self.prepData = function() {
 //            self.sortedData = _.clone(self.data).sort(d3.ascending);
             var sortedData = _.clone(self.data).sort(d3.ascending);
 
-            self.cleanData = _.filter(self.data, function (d) {
+            self.cleanData = _.filter(self.data, function(d) {
                 return !checkNull(d);
             });
             self.invalidValues = self.data.length - self.cleanData.length;
 
-            self.cleanDataSorted = _.filter(sortedData, function (d) {
+            self.cleanDataSorted = _.filter(sortedData, function(d) {
                 return !checkNull(d);
             });
             self.median = d3.median(sortedData);
@@ -178,11 +224,11 @@ function MetaReader() {
         return self;
     };
     var BIN_LIMIT = 10;
-    var NumberList = function (data, title, metrics, precision) {
+    var NumberList = function(data, title, metrics, precision) {
         precision = (_.isUndefined(precision)) ? DEFAULT_PRECISION : precision;
 //        console.log('precision = ' + precision)
         var self = ObjectList(data, title, metrics);
-        _.each(self.data, function (d, i) {
+        _.each(self.data, function(d, i) {
             var n = (d === '') ? null : Number(d);
             self.data[i] = (checkNull(n, true)) ? null : round(n, precision);
         });
@@ -213,10 +259,10 @@ function MetaReader() {
         self.bins += 1;
         self.frequencyDistribution = getFreqDist(cleanDataSorted);
         self.frequencyDistributionBins = getFreqDistBins(cleanDataSorted, self.bins, self.min, self.range);
-        self.zeros = d3.sum(cleanDataSorted, function (item) {
+        self.zeros = d3.sum(cleanDataSorted, function(item) {
             return (item === 0) ? 1 : 0;
         });
-        self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function (d) {
+        self.frequencyDistributionSorted = _.sortBy(self.frequencyDistribution, function(d) {
             return d.values;
         });
         self.frequencyDistributionSorted.reverse();
@@ -225,35 +271,35 @@ function MetaReader() {
 
         return self;
     };
-    var IntList = function (data, title, metrics) {
+    var IntList = function(data, title, metrics) {
         var self = NumberList(data, title, metrics, 0);
         self.type = 'integer';
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var FloatList = function (data, title, metrics, precision) {
+    var FloatList = function(data, title, metrics, precision) {
         var self = NumberList(data, title, metrics, precision);
         self.type = 'float';
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var StringList = function (data, title, metrics) {
+    var StringList = function(data, title, metrics) {
         var self = {};
         var self = ObjectList(data, title, metrics);
         self.type = 'string';
         self.prepData();
-        self.tokens = $.map(self.data, function (d) {
+        self.tokens = $.map(self.data, function(d) {
             return (!checkNull(d)) ? d.split(' ') : [];
         });
-        self.word_count = d3.sum(self.data, function (d) {
+        self.word_count = d3.sum(self.data, function(d) {
             return (!checkNull(d)) ? d.split(' ').length : 0;
         });
-        self.char_count = d3.sum(self.data, function (d) {
+        self.char_count = d3.sum(self.data, function(d) {
             return (!checkNull(d)) ? d.length : 0;
         })
 
         self.average_word_count = round(self.word_count / self.count, 2);
-        self.average_word_length = d3.sum(self.data, function (d) {
+        self.average_word_length = d3.sum(self.data, function(d) {
             return (!checkNull(d)) ? d.replace(' ', '').length : 0;
         });
         self.average_char_count = round(self.char_count / self.count, 2);
@@ -261,28 +307,40 @@ function MetaReader() {
         self.suggestions = getSuggestions(self);
         return self;
     };
-    var DateList = function (data, title, metrics, userFormat) {
+    var DateList = function(data, title, metrics, userFormat) {
         var self = ObjectList(data, title, metrics);
 
-        self.type = 'date';
-        var asDate = _.each(self.data, function (v, i, a) {
+
+        var asDate = _.map(self.data, function(v, i, a) {
             if (!checkNull(v))
-                a[i] = moment(v);
+                return moment(v);
+            return null;
         });
-        self.data = asDate;
+//        self.data = asDate;
 //        self.format = moment.parseFormat()
         self.prepData();
-        self.asDate = _.sortBy(asDate);
+        var sortedAsDate = _.sortBy(asDate);
+        self.asDate = asDate;
+        self.asDateSorted = function() {
+            return _.sortBy(self.asDate)
+        };
         // formatted for Rickshaw js input
-        self.timeSeries = _.each(getFreqDist(self.asDate), function (v, i, a) {
-            a[i] = {'x': moment(+v.key).unix(), 'y': v.values};
+        self.timeSeries = _.map(getFreqDist(sortedAsDate), function(v, i, a) {
+            return {'x': moment(+v.key).unix(), 'y': v.values};
         });
-        self.max = _.last(self.asDate);
+        self.timeSeries2 = _.map(getFreqDist(sortedAsDate), function(v, i, a) {
+            return {'date': new Date(moment(+v.key).format()), 'value': v.values};
+//            console.log(a[i])
+        });
+//        console.log(self.asDate);
+
+        self.max = _.last(sortedAsDate);
+//        console.log(self.max) 
 //        for(var x in self.max)
 //            console.log(self.max._i);
         self.format = moment.parseFormat(self.max._i);
-        self.min = _.first(self.asDate);
-        self.range = moment.duration(self.max - self.min);
+        self.min = _.first(sortedAsDate);
+        self.range = moment.preciseDiff(self.max, self.min);
         // NOTE: call humanize() method to get self.range in plain English
 
         // to determine intervals:
@@ -290,40 +348,40 @@ function MetaReader() {
         // and also make sure the diffs aren't all exactly the next largest interval
         self.intervals = {
             'year': self.max.diff(self.min, 'years') > 0,
-            'month': self.max.diff(self.min, 'months') > 0 && _.some(self.asDate,
-                    function (v, i, a) {
+            'month': self.max.diff(self.min, 'months') > 0 && _.some(sortedAsDate,
+                    function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'years', true) != v.diff(a[i + 1], 'years');
                         } else {
                             return false;
                         }
                     }),
-            'day': self.max.diff(self.min, 'day') > 0 && _.some(self.asDate,
-                    function (v, i, a) {
+            'day': self.max.diff(self.min, 'day') > 0 && _.some(sortedAsDate,
+                    function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'months', true) != v.diff(a[i + 1], 'months');
                         } else {
                             return false;
                         }
                     }),
-            'hour': self.max.diff(self.min, 'hours') > 0 && _.some(self.asDate,
-                    function (v, i, a) {
+            'hour': self.max.diff(self.min, 'hours') > 0 && _.some(sortedAsDate,
+                    function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'days', true) != v.diff(a[i + 1], 'days');
                         } else {
                             return false;
                         }
                     }),
-            'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(self.asDate,
-                    function (v, i, a) {
+            'minute': self.max.diff(self.min, 'minutes') > 0 && _.some(sortedAsDate,
+                    function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'hours', true) != v.diff(a[i + 1], 'hours');
                         } else {
                             return false;
                         }
                     }),
-            'second': self.max.diff(self.min, 'seconds') > 0 && _.some(self.asDate,
-                    function (v, i, a) {
+            'second': self.max.diff(self.min, 'seconds') > 0 && _.some(sortedAsDate,
+                    function(v, i, a) {
                         if (a[i + 1] != undefined) {
                             return v.diff(a[i + 1], 'minutes', true) != v.diff(a[i + 1], 'minutes');
                         } else {
@@ -332,6 +390,7 @@ function MetaReader() {
                     })
         };
 //        self.asDate = null
+        self.type = 'date';
         self.suggestions = getSuggestions(self);
         return self;
     };
@@ -342,13 +401,13 @@ function MetaReader() {
     function detectDataType(items)
     {
 //        var sample_limit = items;
-        var new_items = _.filter(items, function (item, index) {
+        var new_items = _.filter(items, function(item, index) {
             return !checkNull(item);
         });
         var sample_limit = new_items.length;
         var sample = _.sample(new_items, sample_limit);
         var counts = {integer: 0, float: 0, date: 0, number: 0, string: 0};
-        _.each(new_items, function (item)
+        _.each(new_items, function(item)
         {
             var chars = _.clone(item).toLowerCase().match(/[a-z$^{[(|)*+?\\]/i);
             if (chars !== null)
@@ -381,10 +440,10 @@ function MetaReader() {
              }*/
         });
 
-        var metrics = _.map(counts, function (value, key) {
+        var metrics = _.map(counts, function(value, key) {
             return {name: key, value: value};
         });
-        var max = _.max(metrics, function (metric) {
+        var max = _.max(metrics, function(metric) {
             return metric.value;
         });
 //        console.log(metrics);
@@ -417,13 +476,13 @@ function MetaReader() {
         precision = (precision) ? precision : DEFAULT_PRECISION;
 
         return d3.nest()
-                .key(function (d) {
+                .key(function(d) {
                     if (isNaN(Number(d)))
                         return d;
                     else
                         return round(Number(d), precision);
                 }).sortKeys(mr.sort.ascending)
-                .rollup(function (leaves) {
+                .rollup(function(leaves) {
                     return leaves.length;
                 })
                 .entries(data);
@@ -437,14 +496,14 @@ function MetaReader() {
         range = (range) ? range : Number(d3.max(sortedData)) - min;
         var binSize = range / bins;
         return d3.nest()
-                .key(function (d) {
+                .key(function(d) {
                     var key = parseInt((d - min) / binSize),
                             start = (min + key * binSize),
                             end = (min + (key + 1) * binSize);
 
                     return round(start, precision);
                 }).sortKeys(mr.sort.ascending)
-                .rollup(function (leaves) {
+                .rollup(function(leaves) {
                     return leaves.length;
                 })
                 .entries(sortedData);
@@ -456,7 +515,7 @@ function MetaReader() {
         r.count = a.length;
         r.sum = d3.sum(a);
         r.mean = r.sum / r.count;
-        r.variance = d3.sum(a, function (d) {
+        r.variance = d3.sum(a, function(d) {
             return Math.pow(d - r.mean, 2);
         }) / r.count;
 
@@ -490,7 +549,7 @@ function MetaReader() {
 
     function getOutliers(data)
     {
-        var outliers = _.filter(data.cleanData, function (d, i) {
+        var outliers = _.filter(data.cleanData, function(d, i) {
             var lower_inner = d <= (data.quartiles[1] - data.interQuartileRange * 1.5);
             var upper_inner = d >= (data.quartiles[2] + data.interQuartileRange * 1.5);
             var lower_outer = d <= (data.quartiles[1] - data.interQuartileRange * 3);
@@ -545,7 +604,7 @@ function MetaReader() {
             url: csvFilePath,
             async: false,
             dataType: "text",
-            complete: function () {
+            complete: function() {
                 // call a function on complete
             }
         });
@@ -663,7 +722,7 @@ function MetaReader() {
         oReq.open("GET", url, true);
         oReq.responseType = "arraybuffer";
 
-        oReq.onload = function (e) {
+        oReq.onload = function(e) {
             var arraybuffer = oReq.response;
 
             /* convert data to binary string */
@@ -719,10 +778,36 @@ function MetaReader() {
 
     function csvToColumns(csv)
     {
+
         var columns = {};
+//        console.log(_.last(csv))
+        var last = _.last(csv)
+        var objCount = 0;
+        for (var _obj in last)
+            objCount++;
+//        console.log(objCount);
+
+        if (objCount === 1)
+        {
+//            console.log(last);
+            _.forEach(last, function(v, k) {
+//                console.log(v);
+                if (v === "")
+                {
+                    console.log('Removing last empty line');
+                    csv.pop()
+//                     console.log(_.last(csv))
+                }
+            })
+//            console.log()
+
+
+        }
+//        var used_headers = [];
         for (var header in csv[0])
         {
-            columns[header] = $.map(csv, function (item) {
+            var colHeader = header;
+            columns[colHeader] = $.map(csv, function(item) {
                 return item[header];
             });
         }
@@ -733,8 +818,8 @@ function MetaReader() {
     {
         // console.log(dataColumns);
         var columns = {};
-        _.each(dataColumns, function (items, header) {
-             mr.columnCount++;
+        _.each(dataColumns, function(items, header) {
+            mr.columnCount++;
             if (mr.columnLength === 0)
                 mr.columnLength = items.length;
             var dataType = detectDataType(items);
@@ -750,7 +835,7 @@ function MetaReader() {
 
     function cleanData(data)
     {
-        _.each(data, function (d, i) {
+        _.each(data, function(d, i) {
             var x;
             data[i] = (!checkNull(d)) ? d : x;
         });
@@ -778,7 +863,7 @@ function getSequence(data)
 {
     var spectrum = [];
     var currentItem = {start: 0, end: 0, frequency: 0, value: data[0]};
-    _.each(data, function (d, i) {
+    _.each(data, function(d, i) {
         if (d !== currentItem.value)
         {
             currentItem.end = i;

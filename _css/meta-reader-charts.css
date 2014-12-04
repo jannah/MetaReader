@@ -29,7 +29,7 @@ and open the template in the editor.
     opacity: 0;
     z-index: 100;
 }
-.mrc-chart .histogram:hover, .mrc-chart .highlight-bar {
+.mrc-chart .histogram:hover, .mrc-chart .highlight-bar, .line1-color:hover {
     opacity: 1;
     fill: orange;
     z-index: 100;
@@ -124,8 +124,8 @@ and open the template in the editor.
     border-radius: 0px !important;
     box-shadow: 2px 2px 5px #888888;
     margin: 0 0 10px 0 !important;
-    border: None !important;
-    page-break-after: always;
+    border: None;
+    /* page-break-after: always; */
 }
 .mrc-card .panel-heading {
     background: gold;
@@ -161,8 +161,14 @@ and open the template in the editor.
     /* background-color: #eee; */
 
     width: 100%;
-    padding: 5px;
+    padding: 5px;s
     vertical-align: middle;
+}
+
+.mrc-card .panel-body 
+    .card-tabs .nav-tabs 
+    li{
+    margin-left:-15px !important;
 }
 /**************************
 Spectrum Diagram
@@ -232,11 +238,11 @@ Spectrum Diagram
 }
 .sort-dropdown {
     float: left;
-    margin-right: 5px;
+    margin: 0 5px;
     text-align: center;
     display: block;
     z-index: 1;
-    position: absolute;
+    /* position: absolute; */
 }
 .sort-dropdown ul {
     width: auto;
@@ -260,7 +266,8 @@ Spectrum Diagram
 
 .chart-frame{
     /* margin: 0 5%; */
-    float: left;
+    /* float: left; */
+    display: inline-block;
 }
 .chart-frame-histogram{
     width: 50%;
@@ -277,6 +284,7 @@ Spectrum Diagram
 .chart-frame-box{
     width:50%;
 
+    text-align: center;
 }
 .chart-frame-spectrum{
     width:50%
@@ -284,4 +292,65 @@ Spectrum Diagram
 }
 .chart-frame-scatter{
     width:50%;
+}
+
+
+.rschart{
+    position: relative;
+    /* left: 40px; */
+}
+.rickshaw_graph .y_ticks {
+    left: 0;
+}
+.rsy_axis{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+.line1-color{
+    stroke:steelblue;
+
+}
+
+rect.line1-color:hover {
+    stroke:none;
+}
+.area1-color{
+    fill:lightgrey;
+}
+path.main-line{
+    stroke-width: 2px;
+}
+path.main-area{
+}
+
+
+.x-axis text, .y-axis text, .histogram .axis text{
+    /*display:block;*/
+    opacity:1 ;
+}  
+.timeseries-chart text{
+    opacity:1 !important;
+}
+
+.active_datapoint{
+    font-size: 1.2em;
+    
+
+}
+.year-marker text{
+    font-size: .7em;
+}
+
+.save-image-btn{
+    
+}
+.save-image-div{
+    float:right;
+    /* position: fixed; */
+    /* display: block; */
+    z-index: 100;
+    left: 57%;
 }

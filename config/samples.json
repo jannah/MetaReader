@@ -1,0 +1,61 @@
+[{
+        "FILENAME": "data/test.csv",
+        "CONFIG": "data/test.csv_MRSESSION.json",
+        "TITLE": "DEMO"
+    },
+    {
+        "FILENAME": "data/zipcodes_sample.csv",
+        "CONFIG": "data/zipcodes_sample.csv_MRSESSION.json",
+        "TITLE": "Zip Codes"
+    },
+    {
+        "FILENAME": "data/calories.csv",
+        "CONFIG": "data/calories.csv_MRSESSION.json",
+        "TITLE": "Calories (Mixed Text Values)"
+    },
+    {
+        "FILENAME": "data/elements.csv",
+        "CONFIG": "data/elements.csv_MRSESSION.json",
+        "TITLE": "Elements"
+    },
+    {
+        "FILENAME": "data/Schooling.csv",
+        "CONFIG": "data/Schooling.csv_MRSESSION.json",
+        "TITLE": "Schooling"
+    },
+    {
+        "FILENAME": "data/Computers.csv",
+        "CONFIG": "data/Computers.csv_MRSESSION.json",
+        "TITLE": "Computers"
+    },
+    {
+        "FILENAME": "data/fl-ballot-2000.csv",
+        "CONFIG": "data/fl-ballot-2000.csv_MRSESSION.json",
+        "TITLE": "Florida Ballot (By Candidate)"
+    },
+    {
+        "FILENAME": "data/fl2000_flat.csv",
+        "CONFIG": "data/fl2000_flat.csv_MRSESSION.json",
+        "TITLE": "Florida Ballot (Unfolded)"
+    },
+    {
+        "FILENAME": "data/Ketchup.csv",
+        "CONFIG": "data/Ketchup.csv_MRSESSION.json",
+        "TITLE": "Ketchup"
+    },
+    {
+        "FILENAME": "data/fortune500.csv",
+        "CONFIG": "data/fortune500.csv_MRSESSION.json",
+        "TITLE": "Fortune 500"
+    },
+    {
+        "FILENAME": "data/titanic_raw.csv",
+        "CONFIG": "data/titanic_raw.csv_MRSESSION.json",
+        "TITLE": "Titanic Passengers"
+    },
+    {
+        "FILENAME": "data/dma.csv",
+        "CONFIG": "data/dma.csv_MRSESSION.json",
+        "TITLE": "DMA Codes"
+    }
+]

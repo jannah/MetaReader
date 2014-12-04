@@ -1,5 +1,5 @@
 
-<div id="card-<%=data.id%>" role="tab" data-column='<%=data.columnName%>' data-id='<%=data.id%>' data-title="<%=data.title%>" class="mrc-card panel panel-default" data-spy="affix" data-offset-top="60" data-offset-bottom="200">
+<div id="card-<%=data.id%>" role="tab" data-column='<%=data.columnName%>' data-id='<%=data.id%>' data-type='<%=data.type%>' data-title="<%=data.title%>" class="card mrc-card panel panel-default" >
     <div class="panel-heading" role='tab' id="card-<%=data.id%>-heading">
         <h2 class='panel-title'>
             <label id='<%=data.id%>-title-text' class='card-title-text mr-tooltip' title='Type to rename' contenteditable="true" oninput='renameColumn("<%=data.id%>-title-text", "<%=data.title%>")'><%=data.title%></label>
@@ -42,12 +42,12 @@
                 </div>
                 <div class='card-print-tab'>
                     <h2>Questions</h2>
-                    <ul>
+                    <ol id='<%=data.id%>-questions-print'>
                         <%_.forEach(data.questions, function(q,i){%>
                         <li id='<%=data.id%>-question-<%=i%>'>q</li>
                         <%})%>
                         
-                    </ul>
+                    </ol>
                 </div>
             </div>
 

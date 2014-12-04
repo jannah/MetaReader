@@ -1,16 +1,17 @@
 <%
 var MRC = new MetaReaderCharts();
 MRC.imageMode = imageMode
-var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300}, data.timeSeries);
+<!--var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries);-->
+var series = new MRC.timeSeries2(target, {title: data.title+ ' - frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries2);
 
 var stats = {
     'Total': data.count,
     'Unique': data.countUnique,
-    'Range':data.range.humanize(),
+    'Missing':data.invalidValues,
+    'Range':data.range,
     'Start': data.min.format(data.format),
     'End': data.max.format(data.format),
-    'Format': data.format,
-    'Missing':data.invalidValues
+    'Format': data.format
 };
 var titles = {
     'Total': 'Number of records',

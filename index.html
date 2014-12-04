@@ -18,7 +18,12 @@
         <script src="_js/vendor/xls/xls.js" type="text/javascript"></script>
         <script src="_js/vendor/moment.js"></script>
         <script src="_js/vendor/moment.parseFormat.js" type="text/javascript"></script>
-        <script src="_js/vendor/rickshaw.min.js"></script>
+        <script src="_js/vendor/readable-range.js" type="text/javascript"></script>
+        <!--<script src="_js/vendor/rickshaw.min.js"></script>-->
+        <!--<script src="_js/vendor/metricsgraphics/metricsgraphics.min.js" type="text/javascript"></script>-->
+        <script src="_js/vendor/metricsgraphics/metricsgraphics.min.js" type="text/javascript"></script>
+        <script src="_js/vendor/spin.min.js" type="text/javascript"></script>
+        
         <script src="_js/mete-reader.suggestions.js" type="text/javascript"></script>
         <script src="_js/meta-reader.js" type="text/javascript"></script>
         <script src="_js/meta-reader.charts.js" type="text/javascript"></script>
@@ -33,8 +38,10 @@
         <link href="_js/vendor/twitter-bootstrap/css/sb-admin.css" rel="stylesheet" type="text/css"/>
         <link href="_css/style.css" rel="stylesheet" type="text/css"/>
         <!--<link href="_js/vendor/dc.js/dc.css" rel="stylesheet" type="text/css"/>-->
+        <link href="_js/vendor/metricsgraphics/metricsgraphics.css" rel="stylesheet" type="text/css"/>
         <link href="_css/meta-reader-charts.css" rel="stylesheet" type="text/css"/>
-        <link href="_css/rickshaw.min.css" rel="stylesheet" type="text/css"/>
+        <!--<link href="_css/rickshaw.min.css" rel="stylesheet" type="text/css"/>-->
+        
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -47,10 +54,22 @@
 </script>
     </head>
     <body>
-
-
+        <script>
+          var $loading = $('#loading').hide();
+$(document)
+  .ajaxStart(function () {
+    $loading.show();
+  })
+  .ajaxStop(function () {
+    $loading.hide();
+  });
+;
+            </script>
+        <div id="loading">
+            <label>Loading</label>
+        </div>
         <div id="wrapper">
-            <nav class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
+            <nav id='header-navigation' class="navbar navbar-inverse navbar-fixed-top hidden-print" role="navigation">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -72,7 +91,7 @@
                 <ul class="nav navbar-right top-nav">   
                     <li><label id='row-counter'></label></li>
 
-                    <li class="btn-file ">
+                    <li class="btn-file mr-tooltip-np" data-placement='bottom' title='Open your own file'>
                         <a href="javascript:triggerInputFile()">  
                             <i class="glyphicon glyphicon-open text-success "></i> Open (.CSV only) <input style="display:none" type="file" name='file' accept="text/plain, .csv" value='Open CSV file'/>  
                         </a>
@@ -89,14 +108,17 @@
                                                 <i class="glyphicon glyphicon-upload"></i> Open (.CSV only) <input type="file" name='file' accept="text/plain, .csv" value='Open CSV file'/> 
                                             </span>
                                         </li>-->
-                    <li class='dropdown' id="samples-items" >
+                    <li id="samples-items" class="dropdown" data-placement="bottom" title="Check out some sample datasets" >
 
                     </li>
-                    <li> <a href='javascript:window.print();' onclick><i class="glyphicon glyphicon-print"></i> Print</a></li>
-                    <li class="dropdown">
+                    <li class="mr-tooltip-np" data-placement="bottom" title="Print your work (including graphics)"> <a href='javascript:window.print();' onclick><i class="glyphicon glyphicon-print"></i> Print</a></li>
+                    <li class="dropdown " data-placement="bottom" title="Save your work">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='glyphicon glyphicon-save'></i> Save <b class="caret"></b></a>
                         <ul class="dropdown-menu message-dropdown">
-                            <li> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
+                            <li class='mr-tooltip-np' data-placement="left" title='Save your work in Markdown format to share as a Readme file'> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
+                            <li class='divider'></li>
+                            <li class='mr-tooltip-np' data-placement="left" title='Save your input in JSON to resume your work later (Not fully supported yet)'> 
+                                <a href='javascript:saveConfigFile();' onclick>Save Session File</a></li>
 
                         </ul>
                     </li>
