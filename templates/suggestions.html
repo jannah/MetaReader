@@ -1,0 +1,14 @@
+<ul class='suggestions'>
+ <% _.forEach(data.suggestions, function(s, i){%>
+                            <li class='suggestion <%=s.class%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
+                                <button class="btn btn-xs btn-danger mr-tooltip"  data-toggle='tooltip' title='Hide this suggestion'
+                                       onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.id%>-suggestion-<%=i%>', <%=i%>)">
+                                <i class="glyphicon glyphicon-remove"></i></button>
+                                <%
+                                var c = (s.class==='tip')? 'success':'warning'
+                                %>
+                                <span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
+                                <%=s.text%></li>
+                        <%})%>
+
+</ul>

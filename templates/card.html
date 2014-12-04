@@ -1,11 +1,13 @@
 
-<div id="card-<%=data.id%>" role="tab" data-title="<%=data.title%>" class="mrc-card panel panel-default">
+<div id="card-<%=data.id%>" role="tab" data-column='<%=data.columnName%>' data-id='<%=data.id%>' data-type='<%=data.type%>' data-title="<%=data.title%>" class="card mrc-card panel panel-default" >
     <div class="panel-heading" role='tab' id="card-<%=data.id%>-heading">
         <h2 class='panel-title'>
             <label id='<%=data.id%>-title-text' class='card-title-text mr-tooltip' title='Type to rename' contenteditable="true" oninput='renameColumn("<%=data.id%>-title-text", "<%=data.title%>")'><%=data.title%></label>
             <a class='mr-tooltip' data-title='[Column name] (Data Type)<br><br>Click to collapse/expand' data-toggle="collapse" data-parent="#cards" href="#card-<%=data.id%>-collapse" aria-expanded="true" aria-controls="#card-<%=data.id%>-collapse">
-               [ <%=data.columnName%> ] (<%=data.type%>)
+                [ <%=data.columnName%> ] (<%=data.type%>)
             </a>
+            <button class='show-data-btn btn btn-default mr-tooltip'  title='Show raw data'
+                    data-toggle="modal" data-target="#data-modal" data-column="<%=data.columnName%>"><i class='glyphicon glyphicon-eye-open'></i></button>
         </h2>
 
     </div>
@@ -16,24 +18,134 @@
 
 
             </div>
-
-
-            <div class="form-group card-suggestions">
-                <label for="<%=data.id%>-suggestions">Suggestions</label>
-                <textarea class="form-control card-suggestion-text" rows="3" id="<%=data.id%>-description"><%=data.description%></textarea>
+            <div class='card-print-tabs'>
+                <div class='card-print-tab'>
+                    <h2>Description</h2>
+                    <input type='text' id='<%=data.id%>-description-print' placeholder='None' value='<%=data.description%>'/>
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Notes</h2>
+                    <input type='text' id='<%=data.id%>-notes-print' placeholder='None' value='<%=data.notes%>'/>
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Suggestions</h2>
+                    <ul>
+                    <% _.forEach(data.suggestions, function(s,i){
+                    
+                    if(s.show){
+                     var c = (s.class==='tip')? 'success':'warning'%>
+                                 <li id='<%=data.id%>-suggestion-print-<%=i%>'><span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
+                                <%=s.text%></li>
+                    <%}})%>
+                    <ul>
+                    
+                </div>
+                <div class='card-print-tab'>
+                    <h2>Questions</h2>
+                    <ol id='<%=data.id%>-questions-print'>
+                        <%_.forEach(data.questions, function(q,i){%>
+                        <li id='<%=data.id%>-question-<%=i%>'>q</li>
+                        <%})%>
+                        
+                    </ol>
+                </div>
             </div>
-            <div class="form-group card-description">
-                <label for="<%=data.id%>-description">Description</label>
-                <textarea class="form-control card-description-text" rows="3" id="<%=data.id%>-description"><%=data.description%></textarea>
-            </div>
-            <div class="form-group card-notes">
-                <label for="<%=data.id%>-notes">Notes:</label>
-                <textarea class="form-control card-notes-text" rows="3" id="<%=data.id%>-notes"><%=data.notes%></textarea>
+
+            <div role="tabpanel" class='card-tabs'>
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist" id="<%=data.id%>-tabs">
+                    <li role="presentation" class="suggestions-tab active mr-tooltip" data-toggle="tooltip" title="Suggestions based on observation of the data in the column">
+                        <a href="#<%=data.id%>-suggestions-pane" aria-controls="<%=data.id%>-suggestions-pane" role="tab" data-toggle="tab">
+                            Suggestions <span id='<%=data.id%>-suggestion-count' class='label label-primary label-as-badge'><%=data.suggestions.length%></span></a></li>
+                    <li role="presentation" class="description-tab mr-tooltip" data-toggle="tooltip"  title="Please enter a description for this column">
+                        <a href="#<%=data.id%>-description-pane" aria-controls="<%=data.id%>-description-pane" role="tab" data-toggle="tab">
+                            Description</a></li>
+                    <li role="presentation" class="notes-tab mr-tooltip" data-toggle="tooltip"  title="Add notes about how to explore or anlayze this data">
+                        <a href="#<%=data.id%>-notes-pane" aria-controls="<%=data.id%>-notes-pane" role="tab" data-toggle="tab">
+                            Notes</a></li>
+                    <li role="presentation" class="questions-tab mr-tooltip" data-toggle="tooltip" title="Add EDA related questions or hypothesis about this column">
+ <a href="#<%=data.id%>-questions-pane" aria-controls="<%=data.id%>-questions-pane" role="tab" data-toggle="tab">
+                       <button type='button' class='btn btn-success btn-xs btn-add-question mr-tooltip hidden-print' 
+                                data-id='<%=data.id%>' data-title='<%=data.title%>' data-toggle='tooltip' data-placement="top"
+                                onclick='addQuestion("<%= data.title %>")'
+                                title='Add a question'>
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                            Questions <span class='label label-primary label-as-badge'><%=data.questions.length%></span>  
+                        </a></li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane card-tab-pane active" id="<%=data.id%>-suggestions-pane">
+                        <div id='<%=data.id%>-suggestions'>
+                         <ul class='suggestions'>
+                        <% _.forEach(data.suggestions, function(s, i){%>
+                        <% var alert = 'alert ' + ((s.class=='tip')? 'alert-success':'alert-warning') %>
+                            <li class='suggestion <%=s.class%> <%=alert%> suggestion-importance-<%=s.importance%>' id="<%=data.id%>-suggestion-<%=i%>">
+                                <button class="btn btn-xs btn-danger mr-tooltip"  data-toggle='tooltip' title='Hide this suggestion'
+                                       onclick="hideSuggestion('<%=data.columnName%>', '#<%=data.id%>-suggestion-<%=i%>', <%=i%>, '#<%=data.id%>-suggestion-print-<%=i%>') ">
+                                <i class="glyphicon glyphicon-remove"></i></button>
+                                <%
+                                var c = (s.class==='tip')? 'success':'warning'
+                                %>
+                                <span class='label-as-badge label label-<%=c%>'><%=s.class%></span>
+                                <%=s.text%></li>
+                        <%})%>
+
+</ul>
+                        </div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane card-tab-pane" id="<%=data.id%>-description-pane">
+                        <textarea class="form-control card-description-text" 
+                                  data-col="description"
+                                  onchange="updateDescription('#<%=data.id%>-description-pane textarea', 'description','<%=data.columnName%>', '#<%=data.id%>-description-print')"
+                                  rows="3" id="<%=data.id%>-description" 
+                                  placeholder='Enter description'><%=data.description%></textarea>
+                    </div>
+                    <div role="tabpanel" class="tab-pane card-tab-pane" id="<%=data.id%>-notes-pane">
+                        <textarea class="form-control card-notes-text editable-text" 
+                                  data-col="notes" rows="3"
+                                  onchange="updateNotes('#<%=data.id%>-notes-pane textarea','notes','<%=data.columnName%>', '#<%=data.id%>-notes-print')"
+                                  id="<%=data.id%>-notes" placeholder='Enter notes'><%=data.notes%></textarea>
+                    </div>
+                    <div role="tabpanel" class="tab-pane card-tab-pane" 
+                         id="<%=data.id%>-questions-pane">
+                        <div id='<%=data.id%>-questions' class='form-group card-questions '>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-            <div id='<%=data.id%>-questions' class='form-group card-questions'>
-
-            </div>
+            <script>
+                $('#<%=data.id%>-tabs li a').click(function(e) {
+                    e.preventDefault()
+                    $(this).tab('show')
+                })
+            </script>
+            <!--
+            
+                        <div class="form-group card-suggestions">
+                            <label for="<%=data.id%>-suggestions">Suggestions</label>
+                            <textarea class="form-control card-suggestion-text" rows="3" id="<%=data.id%>-description"><%=data.description%></textarea>
+                        </div>
+                        <div class="form-group card-description">
+                            <label for="<%=data.id%>-description">Description</label>
+                            <textarea class="form-control card-description-text" rows="3" id="<%=data.id%>-description"><%=data.description%></textarea>
+                        </div>
+                        <div class="form-group card-notes">
+                            <label for="<%=data.id%>-notes">Notes:</label>
+                            <textarea class="form-control card-notes-text" rows="3" id="<%=data.id%>-notes"><%=data.notes%></textarea>
+                        </div>
+            
+                        <div id='<%=data.id%>-questions' class='form-group card-questions '>
+            
+                        </div>-->
         </div>
     </div>
 </div>

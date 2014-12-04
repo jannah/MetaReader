@@ -1,0 +1,35 @@
+<ul  id="navigation" class="nav sidenav affix" >
+    <% _.each(cards, function(card) {
+    var id = $(card).attr('id')
+    var colId = $(card).attr('data-id')
+    var title = $('#' + id + ' .card-title-text').text().trim()
+    var target = '#' + id
+    var suggestions = $('#'+id+' .suggestions-tab a .label-as-badge').text()
+    var dataType = $(card).data('type')
+    var dataTypeDispay = dataType.charAt(0).toUpperCase()
+    %>
+    <li >
+
+        <span id='<%=colId%>-nav-data-type' class="label label-as-badge label-default mr-tooltip" title='<%=dataType%>'><%=dataTypeDispay%></span>
+
+        <span id='<%=colId%>-nav-suggestion-count' class="label label-as-badge label-primary mr-tooltip" title='Number of suggestions'><%=suggestions%></span>
+        <a href="<%=target%>" class='goto'><%=title%></a> 
+    </li>
+    <%})%>
+</ul>
+<script>
+    $('#navigation li:first').addClass('active');
+
+    $(".goto").click(function() {
+        var target = $(this).attr("href")
+//          target = target.substring(1,target.length);
+//          console.log(target)
+var offset = 45;
+        $(window).scrollTop($(target).offset().top);
+        scrollBy(0, -offset);
+        return false;
+    });
+
+</script>
+<!--</div>-->  
+<!--</li>-->

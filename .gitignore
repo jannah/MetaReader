@@ -9,6 +9,6 @@ images/~$Presentation1.pptx
 *.sublime-project
 *.sublime-workspace
 data/arafah/
-data/dataset
+data/datasets/
 data/test/
 ~$MetaReader.pptx
