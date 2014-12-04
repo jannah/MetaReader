@@ -543,6 +543,8 @@ function activateTooltips()
     $('.mr-tooltip').tooltip({html: true,
         'container': 'body',
         'placement': 'top'});
+    $('.mr-tooltip-np').tooltip({html: true,
+        'container': 'body'});
     $('.svg-tooltip').tooltip({html: true,
         'container': 'body',
         'placement': 'top'});

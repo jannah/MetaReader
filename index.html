@@ -77,7 +77,7 @@
                 <ul class="nav navbar-right top-nav">   
                     <li><label id='row-counter'></label></li>
 
-                    <li class="btn-file ">
+                    <li class="btn-file mr-tooltip-np" data-placement='bottom' title='Open your own file'>
                         <a href="javascript:triggerInputFile()">  
                             <i class="glyphicon glyphicon-open text-success "></i> Open (.CSV only) <input style="display:none" type="file" name='file' accept="text/plain, .csv" value='Open CSV file'/>  
                         </a>
@@ -94,15 +94,16 @@
                                                 <i class="glyphicon glyphicon-upload"></i> Open (.CSV only) <input type="file" name='file' accept="text/plain, .csv" value='Open CSV file'/> 
                                             </span>
                                         </li>-->
-                    <li class='dropdown' id="samples-items" >
+                    <li id="samples-items" class="dropdown" data-placement="bottom" title="Check out some sample datasets" >
 
                     </li>
-                    <li> <a href='javascript:window.print();' onclick><i class="glyphicon glyphicon-print"></i> Print</a></li>
-                    <li class="dropdown">
+                    <li class="mr-tooltip-np" data-placement="bottom" title="Print your work (including graphics)"> <a href='javascript:window.print();' onclick><i class="glyphicon glyphicon-print"></i> Print</a></li>
+                    <li class="dropdown " data-placement="bottom" title="Save your work">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class='glyphicon glyphicon-save'></i> Save <b class="caret"></b></a>
                         <ul class="dropdown-menu message-dropdown">
-                            <li> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
-                            <li> <a href='javascript:saveConfigFile();' onclick>Save Session File</a></li>
+                            <li class='mr-tooltip-np' data-placement="left" title='Save your work in Markdown format to share as a Readme file'> <a href='javascript:saveAsMarkdown();' onclick>Save as Markdown</a></li>
+                            <li class='mr-tooltip-np' data-placement="left" title='Save your input in JSON to resume your work later (Not fully supported yet)'> 
+                                <a href='javascript:saveConfigFile();' onclick>Save Session File</a></li>
 
                         </ul>
                     </li>
