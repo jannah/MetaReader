@@ -129,7 +129,7 @@ img {
 }
 
 svg:not(:root) {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 figure {
@@ -3802,6 +3802,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li {
   position: relative;
   display: block;
+  margin-left: 10px;
+  padding-left: 15px;
 }
 
 .nav > li > a {

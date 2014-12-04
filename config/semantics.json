@@ -1,0 +1,62 @@
+{
+    "ZIPCODE":
+            {
+                "names": [],
+                "regex": "(^\\d{5}(-\\d{4})?$)|(^[ABCEGHJKLMNPRSTVXY]{1}\\d{1}[A-Z]{1} *\\d{1}[A-Z]{1}\\d{1}$)",
+                "values": [],
+                "text": "The values contain valid US zip codes.",
+                "category": "value-zipcode",
+                "class": "tip",
+                "importance":2
+            },
+    "PHONENUMBER":
+            {
+                "names": [],
+                "regex": "^\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$",
+                "values": [],
+                "text": "The values are valid phone numbers.",
+                "category": "value-phonenumber",
+                "class": "tip",
+                "importance":2
+            },
+    "YEAR":
+            {
+                "names": ["year", "years", "yr", "yrs"],
+                "regex": "",
+                "values": [],
+                "text": "Based on the column name, the values could be years.",
+                "category": "value-years",
+                "class": "tip",
+                "importance":2
+            },
+    "MONTH":
+            {
+                "names": ["month", "months", "mo", "mos"],
+                "regex": "",
+                "values": [],
+                "text": "Based on the column name, the values could be months.",
+                "category": "value-years",
+                "class": "tip",
+                "importance":2
+            },
+    "LOCATION":
+             {
+                "names": ["country", "country code", "city", "state", "county", "region"],
+                "regex": "",
+                "values": [],
+                "text": "Based on the column name, the values could be a geographical location.",
+                "category": "value-location",
+                "class": "tip",
+                "importance":2
+            },
+    "COORDINATIONS":
+             {
+                "names": ["latitude","lat", "longitude", "lon", "latlon","latlong",  "lat_lon" ],
+                "regex": "",
+                "values": [],
+                "text": "Based on the column name, the values could be geographical coordinates.",
+                "category": "value-location",
+                "class": "tip",
+                "importance":2
+            }
+}

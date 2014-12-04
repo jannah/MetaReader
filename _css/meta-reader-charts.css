@@ -19,23 +19,24 @@ and open the template in the editor.
 .mrc-chart rect, .mrc-chart .area, .mrc-chart circle {
     /*fill: #ddd;*/
 
-/*stroke: #fff;*/
+    /*stroke: #fff;*/
 
-stroke-width: 1.5px;
-    fill: steelblue;
+    stroke-width: 1.5px;
+    fill: #3182bd;
     shape-rendering: crispEdges;
 }
 .mrc-chart .hidden-bars {
     opacity: 0;
     z-index: 100;
 }
-.mrc-chart .histogram:hover, .mrc-chart .highlight-bar {
+.mrc-chart .histogram:hover, .mrc-chart .highlight-bar, .line1-color:hover {
     opacity: 1;
-    fill: red;
+    fill: orange;
     z-index: 100;
 }
 .mrc-chart text {
     font-size: 1.5em;
+    font-family: Verdana;
 }
 .mrc-box .center {
     stroke-dasharray: 3, 3;
@@ -46,28 +47,35 @@ stroke-width: 1.5px;
 }
 .mrc-box .mean-line {
     stroke-dasharray: 3, 3;
-    stroke: orange;
+    stroke: #5cb85c;
+    stroke-width: 3;
 }
 .mrc-box .mean-label {
-    fill: blue;
+    fill: #5cb85c;
 }
 .mrc-box .outlier {
     fill: none;
     stroke: #ccc;
 }
+
+.mrc-box .outlier-text{
+    fill:red;
+}
+
 /************************
 *       Axes
 *******************/
 
 
 .mrc-chart .axis text{
-    fill:black;
+    fill: #777;
     stroke: none;
+    font-size: 1.3em;
 }
 .mrc-chart .axis
 {
-    stroke-width: .5px;
-    stroke: lightblue;
+    stroke-width: 1.5px;
+    stroke: #666;
     fill:none;
 }
 .mrc-chart .y.axis{
@@ -78,13 +86,36 @@ stroke-width: 1.5px;
 }
 
 .mrc-chart .tick.major{
-    
+    fill:#666
+
 }
 .mrc-chart .tick.major line{
-    stroke: lightblue;
-    
+    fill: #666;
+
+    stroke: #666 !important;
+    /* fill: #555; */
 }
 
+.mrc-rickshaw{
+    padding: 10px;
+
+}
+
+.mrc-chart .lollipop{
+
+}
+.mrc-chart .lollipop:hover{
+    fill:orange !important;
+    stroke:orange !important;
+
+}
+.mrc-chart .lollipop.line{
+    stroke-width:2px;
+    stroke: #777;
+}
+.mrc-chart .lollipop.circle{
+
+}
 /***********************
         CARDS
 ***********************/
@@ -93,7 +124,8 @@ stroke-width: 1.5px;
     border-radius: 0px !important;
     box-shadow: 2px 2px 5px #888888;
     margin: 0 0 10px 0 !important;
-    border: None !important;
+    border: None;
+    /* page-break-after: always; */
 }
 .mrc-card .panel-heading {
     background: gold;
@@ -116,42 +148,65 @@ stroke-width: 1.5px;
     padding: 0;
     border: 1px solid white;
     box-shadow: 1px 1px 5px #888;
+    vertical-align: top;
 }
 .card-key {
     background-color: gold;
     font-size: 1.5em;
     margin: 0%;
     width: 100%;
+    vertical-align: top;
 }
 .card-value {
     /* background-color: #eee; */
 
-width: 100%;
-    padding: 5px;
+    width: 100%;
+    padding: 5px;s
+    vertical-align: middle;
+}
+
+.mrc-card .panel-body 
+    .card-tabs .nav-tabs 
+    li{
+    margin-left:-15px !important;
 }
 /**************************
 Spectrum Diagram
 *************************/
 
 .line-marker:hover, .spectrum-sqaure:hover {
-    opacity: .7;
+    /*opacity: .7;*/
+    fill:orange !important;
 }
 .spectrum-line {
     fill: none;
     stroke: steelblue;
     stroke-width: 1.5px;
 }
-.line-marker {} #pattern-fill {
+.line-marker {} 
+#pattern-fill {
     fill: white;
     /*stroke:inherit;*/
 }
+.marker.outlier,
+.outlier,
+.marker .outlier{
+    fill:red;
+}
+
 #pattern-stripe {
     fill: white;
     stroke: #eee;
 }
 #pattern-stripe-hover {
-    fill: pink;
-    stroke: rgba(255, 0, 0, .5);
+    fill: orange;
+    stroke:orange;
+    opacity:.5;
+    /*stroke: rgba(255, 0, 0, .5);*/
+}
+
+.spectrum-legend{
+    font-size:.7em;
 }
 /*#mask-stripe{
 
@@ -166,25 +221,28 @@ Spectrum Diagram
 .mrc-chart .missing-bar {
     /*mask: url(#mask-stripe);*/
 
-fill: url(#pattern-stripe);
+    fill: url(#pattern-stripe);
     /*fill: rgba(255, 0,0, .3);*/
 
-/*fill:#ddd;*/
+    /*fill:#ddd;*/
 
-stroke: #eee;
+    stroke: #eee;
 }
 .mrc-chart .missing-bar:hover {
     fill: url(#pattern-stripe-hover);
     /*fill: rgba(255, 0,0, .6);*/
 
-/*fill:#ddd;*/
+    /*fill:#ddd;*/
 
-/*stroke:red;*/
+    /*stroke:red;*/
 }
 .sort-dropdown {
     float: left;
-    margin-right: 5px;
+    margin: 0 5px;
     text-align: center;
+    display: block;
+    z-index: 1;
+    /* position: absolute; */
 }
 .sort-dropdown ul {
     width: auto;
@@ -197,4 +255,102 @@ stroke: #eee;
 .sort-dropdown li:hover {
     background-color: #eee;
 }
-.chart-title {}
+.chart-title {
+    z-index: 5;
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 35px;
+    float: none;
+}
+
+
+.chart-frame{
+    /* margin: 0 5%; */
+    /* float: left; */
+    display: inline-block;
+}
+.chart-frame-histogram{
+    width: 50%;
+
+}
+.chart-frame-lollipop{
+    width: 50%;
+
+}
+.chart-frame-timeseries{
+    width: 100%;
+
+}
+.chart-frame-box{
+    width:50%;
+
+    text-align: center;
+}
+.chart-frame-spectrum{
+    width:50%
+
+}
+.chart-frame-scatter{
+    width:50%;
+}
+
+
+.rschart{
+    position: relative;
+    /* left: 40px; */
+}
+.rickshaw_graph .y_ticks {
+    left: 0;
+}
+.rsy_axis{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+}
+
+.line1-color{
+    stroke:steelblue;
+
+}
+
+rect.line1-color:hover {
+    stroke:none;
+}
+.area1-color{
+    fill:lightgrey;
+}
+path.main-line{
+    stroke-width: 2px;
+}
+path.main-area{
+}
+
+
+.x-axis text, .y-axis text, .histogram .axis text{
+    /*display:block;*/
+    opacity:1 ;
+}  
+.timeseries-chart text{
+    opacity:1 !important;
+}
+
+.active_datapoint{
+    font-size: 1.2em;
+    
+
+}
+.year-marker text{
+    font-size: .7em;
+}
+
+.save-image-btn{
+    
+}
+.save-image-div{
+    float:right;
+    /* position: fixed; */
+    /* display: block; */
+    z-index: 100;
+    left: 57%;
+}

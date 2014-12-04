@@ -8,6 +8,7 @@ images/Thumbs.db
 images/~$Presentation1.pptx
 *.sublime-project
 *.sublime-workspace
-/data/arafah
-/data/dataset
-/data/test
+data/arafah/
+data/dataset
+data/test/
+~$MetaReader.pptx
