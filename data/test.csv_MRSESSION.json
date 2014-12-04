@@ -1,1 +1,360 @@
-{"title":"MetaReader Demo","description":"This is  demo file for the different features of MetaReader","columns":{"id":{"title":"ID","description":"ID column for each row","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"},{"show":true,"text":"The data is sorted ascendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"},{"show":true,"text":"The data values change in equal intervals of 1.","importance":2,"scope":"General","class":"tip","category":"equal-intervals"},{"show":true,"text":"The data values are contiguous.","importance":2,"scope":"General","class":"tip","category":"contiguous values"}],"notes":"","questions":["Test Question"]},"text":{"title":"Categorical Text","description":"","suggestions":[{"show":true,"text":"The data contains 5 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"}],"notes":"","questions":[]},"date1 sorted":{"title":"Sorted Date (US)","description":"","suggestions":[{"show":true,"text":"The data is sorted descendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"}],"notes":"","questions":[]},"date2":{"title":"Date (D-MMM-YY)","description":"","suggestions":[],"notes":"","questions":[]},"date3":{"title":"Date Long Text","description":"","suggestions":[],"notes":"","questions":[]},"date5 sorted":{"title":"Sorted Date (US)","description":"","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"},{"show":true,"text":"The data is sorted ascendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"},{"show":true,"text":"The data values change in equal intervals of 1 day.","importance":2,"scope":"General","class":"tip","category":"equal-intervals"},{"show":true,"text":"The data values are contiguous.","importance":2,"scope":"General","class":"tip","category":"contiguous values"}],"notes":"","questions":[]},"date4":{"title":"Date Time","description":"","suggestions":[{"show":true,"text":"The data contains 25 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"},{"show":true,"text":"The data is sorted descendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"}],"notes":"","questions":[]},"date by hours":{"title":"Date by hours","description":"","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"},{"show":true,"text":"The data is sorted ascendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"},{"show":true,"text":"The data values change in equal intervals of 1 hour.","importance":2,"scope":"General","class":"tip","category":"equal-intervals"},{"show":true,"text":"The data values are contiguous.","importance":2,"scope":"General","class":"tip","category":"contiguous values"}],"notes":"","questions":[]},"date by minutes":{"title":"Date by minutes","description":"","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"},{"show":true,"text":"The data is sorted ascendingly.","importance":2,"scope":"General","class":"tip","category":"sorted-values"},{"show":true,"text":"The data values change in equal intervals of 1 minute.","importance":2,"scope":"General","class":"tip","category":"equal-intervals"},{"show":true,"text":"The data values are contiguous.","importance":2,"scope":"General","class":"tip","category":"contiguous values"}],"notes":"","questions":[]},"number1":{"title":"Random Numbers 1","description":"","suggestions":[{"show":true,"text":"The data contains 51 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"}],"notes":"","questions":[]},"number2":{"title":"Random Floats","description":"","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"}],"notes":"","questions":[]},"number3":{"title":"Random Floats 2","description":"","suggestions":[{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"}],"notes":"","questions":[]},"text2":{"title":"Open Text","description":"","suggestions":[{"show":true,"text":"The data contains 25 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"}],"notes":"","questions":[]},"index":{"title":"Index with Missing","description":"","suggestions":[{"show":true,"text":"The data contains 5.30% missing or invalid values (Null, NaN, None, empty..etc).","importance":2,"scope":"General","class":"warning","category":"missing-values"},{"show":true,"text":"All values  in this column are unique. This column could be the primary key.","importance":2,"scope":"General","class":"tip","category":"primary-key"},{"show":true,"text":"The data is sorted ascendingly(Excluding invalid vlaues).","importance":2,"scope":"General","class":"tip","category":"sorted-values"}],"notes":"","questions":[]},"group":{"title":"Column Groups","description":"","suggestions":[{"show":true,"text":"The data contains 22.9% missing or invalid values (Null, NaN, None, empty..etc).","importance":2,"scope":"General","class":"warning","category":"missing-values"},{"show":true,"text":"The data contains 11 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"},{"show":true,"text":"The data is sorted ascendingly(Excluding invalid vlaues).","importance":2,"scope":"General","class":"tip","category":"sorted-values"}],"notes":"Too many missing data","questions":[]},"group_index":{"title":"Column Groups in Numbers","description":"","suggestions":[{"show":true,"text":"The data contains 22.5% missing or invalid values (Null, NaN, None, empty..etc).","importance":2,"scope":"General","class":"warning","category":"missing-values"},{"show":true,"text":"The data contains 101 unique values out of 1000. This column might contain categorical data.","importance":2,"scope":"General","class":"tip","category":"categorical-values"}],"notes":"","questions":["Why is there missing data?"]}}}
+{
+	"title": "MetaReader Demo",
+	"description": "This is a demo file for the different features of MetaReader",
+	"columns": {
+		"id": {
+			"title": "ID",
+			"description": "ID column for each row",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			},
+			{
+				"show": true,
+				"text": "The data values change in equal intervals of 1.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "equal-intervals"
+			},
+			{
+				"show": true,
+				"text": "The data values are contiguous.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "contiguous values"
+			}],
+			"notes": "",
+			"questions": ["Test Question"]
+		},
+		"text": {
+			"title": "Categorical Text",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 5 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"date1 sorted": {
+			"title": "Sorted Date (US)",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data is sorted descendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"date2": {
+			"title": "Date (D-MMM-YY)",
+			"description": "",
+			"suggestions": [],
+			"notes": "",
+			"questions": []
+		},
+		"date3": {
+			"title": "Date Long Text",
+			"description": "",
+			"suggestions": [],
+			"notes": "",
+			"questions": []
+		},
+		"date5 sorted": {
+			"title": "Sorted Date (US)",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			},
+			{
+				"show": true,
+				"text": "The data values change in equal intervals of 1 day.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "equal-intervals"
+			},
+			{
+				"show": true,
+				"text": "The data values are contiguous.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "contiguous values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"date4": {
+			"title": "Date Time",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 25 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted descendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"date by hours": {
+			"title": "Date by hours",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			},
+			{
+				"show": true,
+				"text": "The data values change in equal intervals of 1 hour.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "equal-intervals"
+			},
+			{
+				"show": true,
+				"text": "The data values are contiguous.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "contiguous values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"date by minutes": {
+			"title": "Date by minutes",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			},
+			{
+				"show": true,
+				"text": "The data values change in equal intervals of 1 minute.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "equal-intervals"
+			},
+			{
+				"show": true,
+				"text": "The data values are contiguous.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "contiguous values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"number1": {
+			"title": "Random Numbers 1",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 51 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"number2": {
+			"title": "Random Floats",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"number3": {
+			"title": "Random Floats 2",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"text2": {
+			"title": "Open Text",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 25 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"index": {
+			"title": "Index with Missing",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 5.30% missing or invalid values (Null, NaN, None, empty..etc).",
+				"importance": 2,
+				"scope": "General",
+				"class": "warning",
+				"category": "missing-values"
+			},
+			{
+				"show": true,
+				"text": "All values  in this column are unique. This column could be the primary key.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "primary-key"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly(Excluding invalid vlaues).",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			}],
+			"notes": "",
+			"questions": []
+		},
+		"group": {
+			"title": "Column Groups",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 22.9% missing or invalid values (Null, NaN, None, empty..etc).",
+				"importance": 2,
+				"scope": "General",
+				"class": "warning",
+				"category": "missing-values"
+			},
+			{
+				"show": true,
+				"text": "The data contains 11 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			},
+			{
+				"show": true,
+				"text": "The data is sorted ascendingly(Excluding invalid vlaues).",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "sorted-values"
+			}],
+			"notes": "Too many missing data",
+			"questions": []
+		},
+		"group_index": {
+			"title": "Column Groups in Numbers",
+			"description": "",
+			"suggestions": [{
+				"show": true,
+				"text": "The data contains 22.5% missing or invalid values (Null, NaN, None, empty..etc).",
+				"importance": 2,
+				"scope": "General",
+				"class": "warning",
+				"category": "missing-values"
+			},
+			{
+				"show": true,
+				"text": "The data contains 101 unique values out of 1000. This column might contain categorical data.",
+				"importance": 2,
+				"scope": "General",
+				"class": "tip",
+				"category": "categorical-values"
+			}],
+			"notes": "",
+			"questions": ["Why is there missing data?"]
+		}
+	}
+}
