@@ -25,7 +25,7 @@ function MetaReader() {
         var result = ''
         result += '# ' + mr.title + '\n------\n';
         result += mr.filename + '\n\n';
-        result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)';
+        result += 'Generated using Meta Reader (http://jannah.github.io/MetaReader)\n\n';
         result += mr.description + '\n\n';
         var index = 1
         _.forEach(mr.statistics, function(col, i) {
