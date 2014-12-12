@@ -263,6 +263,7 @@ ul.affix-bottom {
 
 /* All levels of nav */
 .sidebar{
+    /* display: none; */
     position: fixed;
 
     /* overflow-y: scroll; */
