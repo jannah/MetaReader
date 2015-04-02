@@ -550,7 +550,7 @@ ul.affix-bottom {
         display:block;
     }
     .tooltip{
-        display:none;
+        display:none !important;
     }
     .print-image{
         display:block;
