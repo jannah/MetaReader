@@ -59,7 +59,7 @@ body{
     border-radius: 0px !important;
 
 }
-.show-data-btn{
+.render-btn, .hide-btn, .show-data-btn{
     float:right;
 }
 
