@@ -362,8 +362,10 @@ var MetaReaderCharts = function() {
                 }
 
             } else {
+                var shift = chart.options.isBins ? xScale.rangeBand() / 2 : 0;
                 var bars = svg.append('g')
-                    .attr("transform", "translate(" + chart.options.axisWidth + "," + 0 + ")").selectAll('bars')
+                    .attr("transform", "translate(" +
+                        (chart.options.axisWidth + shift) + "," + 0 + ")").selectAll('bars')
                     .data(data).enter().append('rect')
                     .attr({
                         class: 'bar histogram svg-tooltip',

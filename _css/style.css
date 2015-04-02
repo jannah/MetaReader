@@ -23,14 +23,14 @@ body{
 }
 #wrapper{
     padding-left: 20%;
-    
+
 }
 #page-content-wrapper{
-     /* width: 80%; */
-     /* left: 20%; */
+    /* width: 80%; */
+    /* left: 20%; */
 }
 #content{
-   
+
     /* top: 20px; */
     margin: 30px 30px 0 30px;
     /* margin:  0 auto; */
@@ -88,6 +88,27 @@ body{
     width: 20%;
 
     height: 100%;
+}
+#intro{
+
+}
+#intro li
+{
+    /*content: '✔';*/ 
+    /*margin-left: -1em; margin-right: .100em;*/
+}
+#intro li .glyphicon{
+    margin-right:5px;
+    font-size:2em;
+;
+}
+#intro ul
+{
+    list-style: none;
+    padding-left:20px;
+    text-indent:2px;
+    list-style: none;
+    list-style-position:outside;
 }
 #upload{
 
@@ -242,6 +263,7 @@ ul.affix-bottom {
 
 /* All levels of nav */
 .sidebar{
+    /* display: none; */
     position: fixed;
 
     /* overflow-y: scroll; */
@@ -270,7 +292,7 @@ ul.affix-bottom {
     /* color: #563d7c; */
     color: steelblue;
     background-color: transparent;
-    
+
     /* float: left; */
     display: inline-block;
 }
@@ -401,22 +423,22 @@ ul.affix-bottom {
 
 @media print{
 
-      @page {
+    @page {
         margin: 1cm;
     }
-body{
-/*     border: 3px solid black; */
-}
-.row{
-/*      border: 3px solid red; */
-}
+    body{
+        /*     border: 3px solid black; */
+    }
+    .row{
+        /*      border: 3px solid red; */
+    }
 
-   body, #wrapper, #content, #page-content-wrapper{
+    body, #wrapper, #content, #page-content-wrapper{
         margin:0 !important;
-/*         top:0 ; */
-/*         left:0; */
+        /*         top:0 ; */
+        /*         left:0; */
         padding:0 !important;
-/*         width:100%; */
+        /*         width:100%; */
     }
     .row{
         margin:0;
@@ -435,9 +457,9 @@ body{
     {
         page-break-before:avoid !important;
     }
-      .mrc-card, .card{
-           -webkit-print-color-adjust: exact; 
-/*         border: 4px solid green !important; */
+    .mrc-card, .card{
+        -webkit-print-color-adjust: exact; 
+        /*         border: 4px solid green !important; */
         page-break-before:always;
         margin:20px !important;
         padding: 20px !imoprtant;
@@ -456,14 +478,14 @@ body{
     .card-key{
 
         background-color: #eee !important;
-         font-size:12pt !important;
+        font-size:12pt !important;
 
     }
-.card-value{
-     font-size:12pt !important;
-     font-weight:normal !important;
+    .card-value{
+        font-size:12pt !important;
+        font-weight:normal !important;
 
-}
+    }
 
     .chart-frame,
     .card-print-tab, .card-print-tab h2, .card-print-tab input{
@@ -484,8 +506,8 @@ body{
     svg{
         display: none;
     }
-  
-  
+
+
 
     #generated-by-mr{
         display:block;
@@ -519,7 +541,7 @@ body{
         font-size:12pt !important;
         font-weight: normal !important;
         border:none !important;
-/*         width: 100%; */
+        /*         width: 100%; */
     }
     .mrc-rickshaw{
         display:block
@@ -534,7 +556,7 @@ body{
         display:block;
         width:100%
     }
-  
+
     .label-as-badge{
         border-radius: 2pt;
         text-align: center;

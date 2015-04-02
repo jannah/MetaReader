@@ -245,7 +245,7 @@ function MetaReader() {
             self.quartiles.push(round(d3.quantile(cleanDataSorted, i), statPrecision));
         self.interQuartileRange = self.quartiles[3] - self.quartiles[1];
         self.bins = (self.countUnique > BIN_LIMIT) ? BIN_LIMIT : self.countUnique;
-        self.bins += 1;
+//        self.bins += 1;
         self.frequencyDistribution = getFreqDist(cleanDataSorted);
         self.frequencyDistributionBins = getFreqDistBins(cleanDataSorted, self.bins, self.min, self.range);
         self.zeros = d3.sum(cleanDataSorted, function(item) {
