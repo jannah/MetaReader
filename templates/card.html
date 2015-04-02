@@ -6,6 +6,8 @@
             <a class='mr-tooltip' data-title='[Column name] (Data Type)<br><br>Click to collapse/expand' data-toggle="collapse" data-parent="#cards" href="#card-<%=data.id%>-collapse" aria-expanded="true" aria-controls="#card-<%=data.id%>-collapse">
                 [ <%=data.columnName%> ] (<%=data.type%>)
             </a>
+            <button id='card-<%=data.id%>-render-charts' class='render-btn btn btn-default mr-tooltip' title='Show charts about the data'>Show Charts</button>
+             <button id='card-<%=data.id%>-hide-charts' style='display:none' class='hide-btn btn btn-default mr-tooltip' title='Hide Charts'>Hide Charts</button>
             <button class='show-data-btn btn btn-default mr-tooltip'  title='Show raw data'
                     data-toggle="modal" data-target="#data-modal" data-column="<%=data.columnName%>"><i class='glyphicon glyphicon-eye-open'></i></button>
         </h2>
@@ -14,7 +16,7 @@
     <div id="card-<%=data.id%>-collapse" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="card-<%=data.id%>-heading">
         <div class='panel-body'>
             <div class="card-charts">
-                <button id='card-<%=data.id%>-render-charts' class='render-button btn btn-xlg hidden-print'>Show Charts</button>
+                
 
 
             </div>

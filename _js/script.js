@@ -292,10 +292,14 @@ function showCards(data) {
         var target = '#card-' + d.id + ' .card-charts';
         //        console.log(target);
         if (TEMPLATES_MAP[d.type]) {
-            $(target + ' .render-button').on('click', function() {
+            var show_btn = $('#card-'+d.id+'-render-charts');
+            var hide_btn = $('#card-'+d.id+'-hide-charts');
 
-                    var btn = $(this);
-                    btn.text('Loading...');
+           show_btn.on('click', function() {
+
+                    
+
+                    show_btn.text('Loading...');
 
 
                     window.setTimeout(function() {
@@ -307,9 +311,16 @@ function showCards(data) {
                                 imageMode: imageMode
                             }, target, false, false);
                             activateTooltips();
-                            btn.hide();
+                            show_btn.hide();
+                            hide_btn.show();
                 }, TIMEWAIT);
 
+            })
+            hide_btn.on('click', function()
+            {
+                $(target).empty();
+                hide_btn.hide();
+                show_btn.text('Show Charts').show();
             })
 
             loadQuestions(d);
