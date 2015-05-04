@@ -4,37 +4,5 @@ MRC.imageMode = imageMode
 <!--var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries);-->
 var series = new MRC.timeSeries2(target, {title: data.title+ ' - frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries2);
 
-var stats = {
-    'Total': data.count,
-    'Unique': data.countUnique,
-    'Missing':data.invalidValues,
-    'Range':data.range,
-    'Start': data.min.format(data.format),
-    'End': data.max.format(data.format),
-    'Format': data.format
-};
-var titles = {
-    'Total': 'Number of records',
-    'Unique':'Number of unique records',
-    'Start':'Start Date',
-    'End': 'End Date',
-    'Range':'Range of Values',
-    'Format':'Date format in Dataset',
-     'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.'
-};
+
 %>
-
-<div id="<%=data.title%>-stats" class="card-stats">
-
-    <table>
-        <tr>
-            <%_.each(stats, function(value, key){%>
-            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
-                            <label class="card-key"><%=key%></label>
-            <label class="card-value"><%=value%></label>
-            </td>
-
-            <%});%>
-        </tr>
-    </table>
-</div>

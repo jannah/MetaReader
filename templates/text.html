@@ -25,34 +25,4 @@ if(!categorical)
             colorRange: ["rgb(160, 206, 229)", "rgb(160, 206, 229)", "rgb(40, 149, 204)"]}, wordCount, data.title)
 }
 
-var stats = {
-    'Total': data.count,
-    'Unique': data.countUnique,
-    'Missing':data.invalidValues,
-    'Avg Word Count':data.average_word_count,
-    'Avg Char Count':data.average_char_count
-    
-};
-var titles = {
-    'Total': 'Number of records',
-    'Unique':'Number of unique records',
-     'Avg Word Count':'Average # of words per entry',
-    'Avg Char Count':'Average # of characters per entry',
-     'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.'
-};
 %>
-
-<div id="<%=data.title%>-stats" class="card-stats">
-
-    <table>
-        <tr>
-            <%_.each(stats, function(value, key){%>
-            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
-                            <label class="card-key"><%=key%></label>
-            <label class="card-value"><%=value%></label>
-            </td>
-
-            <%});%>
-        </tr>
-    </table>
-</div>

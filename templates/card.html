@@ -20,6 +20,70 @@
 
 
             </div>
+            <div class='cart-stats'>
+            
+            <%
+
+            var stats = {}
+
+            if(data.type==='integer' || data.type==='float'||data.type==='number')
+            {
+                stats =  {'Count':data.count, 'Unique':data.countUnique, 'Missing':data.invalidValues, 
+                    'Total':data.sum, 'Mean':data.mean, 'Range':data.range, 'Zeros': data.zeros}
+            }
+            else if(data.type==='string')
+            { 
+               stats = {
+                    'Total': data.count,
+                    'Unique': data.countUnique,
+                    'Missing':data.invalidValues,
+                    'Avg Word Count':data.average_word_count,
+                    'Avg Char Count':data.average_char_count
+    
+                };
+            }
+            else
+            {
+                stats = {
+                        'Count': data.count,
+                        'Unique': data.countUnique,
+                        'Missing':data.invalidValues,
+                        'Range':data.range,
+                        'Start': data.min.format(data.format),
+                        'End': data.max.format(data.format),
+                        'Format': data.format
+                    };
+                  
+            }
+
+            var titles = {'Count':'Number of Records', 
+                'Unique':'Number of unique records', 
+                'Total':'Sum of all records', 
+                'Mean':'Average value for all valid records', 
+                'Range':'Range of Values',
+                'Zeros': 'Number of records with value 0',
+                'Missing':'Missing or Invalid numerical values:e.g. Null,None,NaN..etc.',
+                'Avg Word Count':'Average # of words per entry',
+                'Avg Char Count':'Average # of characters per entry',
+                'Start':'Start Date',
+                'End': 'End Date',
+                'Format':'Date format in Dataset'}
+                %>
+                <div id="<%=data.title%>-stats" class="card-stats">
+
+                    <table>
+                        <tr>
+                            <%_.each(stats, function(value, key){%>
+                            <td class='card-item mr-tooltip' data-toggle="tooltip" data-placement="top" title='<%=titles[key]%>'>
+                                            <label class="card-key"><%=key%></label>
+                            <label class="card-value"><%=value%></label>
+                            </td>
+
+                            <%});%>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             <div class='card-print-tabs'>
                 <div class='card-print-tab'>
                     <h2>Description</h2>
