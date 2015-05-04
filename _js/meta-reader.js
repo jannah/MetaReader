@@ -137,7 +137,7 @@ function MetaReader() {
     };
 
     function escapeRegExp(string) {
-        return string.replace(/([.*+?^=!:${}()|\[\]\/\\\s])/g, "-");
+        return string.replace(/([.*+?^=!%:${}()|\[\]\/\\\s])/g, "-");
     }
     var ObjectList = function(data, title, metrics) {
         var self = {};

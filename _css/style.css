@@ -68,7 +68,12 @@ body{
 
     max-height: 500px;
 }
-
+#intro-images{
+    text-align: center;
+}
+.intro-image{
+    width: 100%;
+}
 #side-menu{
     /* width: 48%; */
     /*    position: fixed;

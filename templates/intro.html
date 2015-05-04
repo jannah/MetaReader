@@ -1,16 +1,33 @@
 <div class="jumbotron">
     <h1>Welcome to MetaReader</h1>
     <h2>Learn, Document, Share</h2>
-    </br>
+    <p>MetaReader is a client-side, in-browser dataset meta exploration and documentation tool.</p>
+<!--     </br>
     <ul>
         <li><span class="glyphicon glyphicon-ok text-success"></span> MetaReader is a dataset meta exploration and documentation tool.</li>
-        <li><span class="glyphicon glyphicon-ok text-success"></span> It helps you learn about your data on a meta level before you start your exploratory data analysis.</li>
-        <li><span class="glyphicon glyphicon-ok text-success"></span> MetaReader also allows you to document your dataset to help others explore it.</li>
-    </ul>
+        <li><span class="glyphicon glyphicon-ok text-success"></span> It helps you learn about your data on a meta level before you start your exploratory data analysis.</li>      
+         <li><span class="glyphicon glyphicon-ok text-success"></span> MetaReader allows you to create README files for datasets.</li>
+    </ul> -->
+        <div id='intro-images' class='row '>
+            <div class='col-xs-4'>
+                <h3>Get insights about your data</h3>
+                <img class='intro-image' src='images/insights.png'/>
+            </div>
+            <div class='col-xs-4'>
+                <h3>Visualize value distribution</h3>
+                <img  class='intro-image' src='images/visualize.png'/>
+            </div>
+            <div class='col-xs-4'>
+                <h3>Create and save README giles</h3>
+                <img  class='intro-image' src='images/readme.png'/>
+            </div>
+        </div>
     </br>
     <p><a class='btn btn-success btn-lg' href="javascript:triggerInputFile()">  
             <i class="glyphicon glyphicon-open text-success "></i> Upload your set  
-            <small>(&lt;1MB)</small>    </a> </p>
+            <small>(&lt;1MB)</small>    </a> 
+            <a class='btn btn-success btn-lg' href="javascript:loadSample('data/test.csv', 'data/test.csv_MRSESSION.json')">  
+            <i class="glyphicon glyphicon-info-sign text-success "></i> See a Demo</a> </p>
 
     <h4>
         <small>Note: MetaReader runs entirely on your client browser. The performance is limited by the client specs.</small>
