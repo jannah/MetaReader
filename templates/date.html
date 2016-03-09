@@ -1,8 +1,8 @@
 <%
 var MRC = new MetaReaderCharts();
-MRC.imageMode = imageMode
-<!--var series = new MRC.timeSeries(target, {title: data.title+ ' frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries);-->
-var series = new MRC.timeSeries2(target, {title: data.title+ ' - frequency distribution', id:data.id,height:300, column:data.columnName}, data.timeSeries2);
+MRC.imageMode = imageMode;
+
+var series = new MRC.timeSeries2(target, {title: data.title+ ' - frequency distribution', id:data['id'],height:300, column:data.columnName}, data.timeSeries2);
 
 
 %>
