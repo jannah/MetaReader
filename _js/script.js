@@ -564,7 +564,7 @@ function loadTemplates(templates, templatesURL) {
         // console.log(template);
         templates[tmpl]['url'] = templatesURL + '/' + templates[tmpl].filename;
         templates[tmpl]['html'] = loadTemplate(templates[tmpl].url);
-        templates[tmpl]['render'] = _.template(templates[tmpl]['html']);
+        templates[tmpl]['render'] = _.template(templates[tmpl].html);
     }
     return templates;
 }
