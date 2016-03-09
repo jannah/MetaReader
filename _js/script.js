@@ -560,11 +560,11 @@ function refreshNavigation() {
 function loadTemplates(templates, templatesURL) {
     //    console.log('loading templates ' + templates.length)
     templatesURL = (templatesURL) ? templatesURL : '';
-    for (var template in templates) {
+    for (var tmpl in templates) {
         // console.log(template);
-        templates[template]['url'] = templatesURL + '/' + templates[template].filename;
-        templates[template]['html'] = loadTemplate(templates[template].url);
-        templates[template]['render'] = _.template(templates[template]['html']);
+        templates[tmpl]['url'] = templatesURL + '/' + templates[tmpl].filename;
+        templates[tmpl]['html'] = loadTemplate(templates[tmpl].url);
+        templates[tmpl]['render'] = _.template(templates[tmpl]['html']);
     }
     return templates;
 }
