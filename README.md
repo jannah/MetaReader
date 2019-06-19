@@ -1,6 +1,9 @@
 # MetaReader
 http://jannah.github.io/MetaReader/
 
+[Read the full paper](https://github.com/jannah/MetaReader/blob/master/MetaReader_Final_Approved_FINAL.pdf)
+
+
 Exploratory Data Analysis (EDA) of any given dataset can be an interesting experience. It can also be frustrating especially if the analyst is unfamiliar with the dataset. Such frustrations arise from issues related to data quality, arrangement, missing values, or unclear labeling. Some datasets come with some form of documentation, such as README files, that explains their contents. Sometimes these too are not sufficient. Another source of frustration is ambiguity about the expected outcomes from an EDA activity. Questions and hypotheses can be valuable guides when starting an EDA activity. However, there are situations where analysts would be given a task without any such guidelines and would be asked to “find something interesting”. 
 
 Analysts approach these issues in different ways. Some jump directly into visualizing the dataset using a visual analytics tool. Others prefer to open the dataset in a text or spreadsheet viewer. They would scan through it to learn about the data and formulate questions or hypothesis before moving on to visual or statistical analysis.
